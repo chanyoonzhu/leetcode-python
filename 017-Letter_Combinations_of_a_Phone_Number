@@ -1,0 +1,37 @@
+class Solution:
+    def letterCombinations(self, digits):
+        """
+        :type digits: str
+        :rtype: List[str]
+        """
+        
+        """
+        O(n^2), O(n^2)?
+        - obvious solution
+        mapping = {
+            '2': ['a', 'b', 'c'],
+            '3': ['d', 'e', 'f'],
+            '4': ['g', 'h', 'i'],
+            '5': ['j', 'k', 'l'],
+            '6': ['m', 'n', 'o'],
+            '7': ['p', 'q', 'r', 's'],
+            '8': ['t', 'u', 'v'],
+            '9': ['w', 'x', 'y', 'z']
+        }
+        
+        temp, output = [], []
+        
+        for d in digits:
+            if output:
+                temp = [w + l for l in mapping[d] for w in temp]
+            else:
+                temp = mapping[d]
+            output = temp[:] # deep copy for immutable objects
+            
+        return output
+        """
+        
+    
+        """
+        depth first search
+        """r
