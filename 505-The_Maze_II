@@ -1,0 +1,41 @@
+class Solution:
+    """
+    @param maze: the maze
+    @param start: the start
+    @param destination: the destination
+    @return: the shortest distance for the ball to stop at the destination
+    """
+    def shortestDistance(self, maze, start, destination):
+        # write your code here
+        min_distance = float('inf')
+        visited = [[0 for j in range(len(maze[i]))] for i in range(len(maze))]
+        visited[start[0]][start[1]] = 1
+        
+        def slideToWall(curr_start, stepX, stepY):
+            steps = 0
+            next = [curr_start[0][0] + stepX, curr_start[0][1] + stepY]
+            while next[0] >= 0 and next[0] < len(maze) and next[1] >= 0 and next[1] < len(maze[0]) and maze[next[0]][next[1]] != 1:
+                next = [next[0] + stepX, next[1] + stepY]
+                steps += 1
+            next = [next[0] - stepX, next[1] - stepY]
+            return (next, curr_start[1] + steps)
+            
+        q = [(start, 0)]
+        while q:
+            curr_start = q[0]
+            del q[0]
+            next_west = slideToWall(curr_start, 0, -1)
+            next_east = slideToWall(curr_start, 0, 1)
+            next_north = slideToWall(curr_start, -1, 0)
+            next_south = slideToWall(curr_start, 1, 0)
+            next_dests = [next_north, next_south, next_east, next_west]
+            for next in next_dests:
+                if next[0] == destination:
+                    min_distance = min(min_distance, next[1])
+                elif next[1] != curr_start[1] and visited[next[0][0]][next[0][1]] != 1:
+                    q.append(next)
+                    visited[next[0][0]][next[0][1]] = 1
+        if min_distance != float('inf'):
+            return min_distance
+        else:
+            return -1
