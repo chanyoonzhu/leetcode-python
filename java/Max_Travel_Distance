@@ -1,0 +1,49 @@
+import java.util.*;
+
+class Main {
+  public static void main(String[] args) {
+    List<List<Integer>> forward = new ArrayList<>();
+    List<List<Integer>> returnL = new ArrayList<>();
+
+    forward.add(Arrays.asList(1, 5000));
+    forward.add(Arrays.asList(3, 4000));
+    forward.add(Arrays.asList(2, 3000));
+    forward.add(Arrays.asList(4, 1000));
+    forward.add(Arrays.asList(5, 4000));
+
+    returnL.add(Arrays.asList(1, 2000));
+    returnL.add(Arrays.asList(3, 5000));
+    returnL.add(Arrays.asList(2, 5000));
+    returnL.add(Arrays.asList(4, 6000));
+
+
+    List<List<Integer>> res = MaxTravelDistance(9000, forward, returnL);
+    System.out.println(res);
+  }
+
+  public static List<List<Integer>> MaxTravelDistance(int max, List<List<Integer>> fromList, List<List<Integer>> toList) {
+    List<List<Integer>> res = new ArrayList<>();
+    int fromLen = fromList.size(), toLen = toList.size();
+    int upperBound = 0;
+    
+    for (int i = 0; i < fromLen; i++) {
+      for (int j = 0; j < toLen; j++) {
+        int distance = fromList.get(i).get(1) + toList.get(j).get(1);
+        if (distance <= max && distance > upperBound) {
+          upperBound = distance;
+        }
+      }
+    }
+
+    for (int i = 0; i < fromLen; i++) {
+      for (int j = 0; j < toLen; j++) {
+        int distance = distance = fromList.get(i).get(1) + toList.get(j).get(1);
+        if (distance == upperBound) {
+          res.add(Arrays.asList(fromList.get(i).get(0), toList.get(j).get(0)));
+        }
+      }
+    }
+
+    return res;   
+  }
+}
