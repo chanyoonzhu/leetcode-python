@@ -1,0 +1,60 @@
+import java.util.*;
+import java.awt.Point;
+
+class Main {
+  public static void main(String[] args) {
+    int[][] maze = {{9}};
+    boolean res = existsRoot(maze, 0, 0);
+    System.out.println(res);
+  }
+
+  public static boolean existsRoot(int[][] maze, int startx, int starty) {
+    if (maze.length == 0 || startx < 0 || startx >= maze.length || starty < 0 || starty >= maze[0].length) {
+      return false;
+    }
+    boolean[][] visited = new boolean[maze.length][maze[0].length];
+
+    LinkedList<Point> queue = new LinkedList<Point>();
+    queue.offer(new Point(startx, starty));
+    visited[startx][starty] = true;
+
+    while (queue.size() > 0) {
+
+      Point currPoint = queue.poll();
+      if (maze[(int)currPoint.getX()][(int)currPoint.getY()] == 9) {
+        return true;
+      } else if (maze[(int)currPoint.getX()][(int)currPoint.getY()] == 1) {
+        return false;
+      }
+      
+      Point north = getAdjacent(currPoint, -1, 0);
+      Point south = getAdjacent(currPoint, 1, 0);
+      Point east = getAdjacent(currPoint, 0, 1);
+      Point west = getAdjacent(currPoint, 0, -1);
+
+      addToQueue(queue, north, maze, visited);
+      addToQueue(queue, south, maze, visited);
+      addToQueue(queue, east, maze, visited);
+      addToQueue(queue, west, maze, visited);
+      
+    }
+
+    return false;
+  }
+
+  public static Point getAdjacent(Point p, int movex, int movey) {
+    int startx = (int)p.getX();
+    int starty = (int)p.getY();
+    int endx = startx + movex;
+    int endy = starty + movey;
+    return new Point(endx, endy);
+  }
+
+  public static void addToQueue(LinkedList<Point> q, Point p, int[][] maze, boolean[][] visited) {
+    int x = (int)p.getX();
+    int y = (int)p.getY();
+    if (x > 0 && x < maze.length && y > 0 && y < maze[0].length && !visited[x][y] && maze[x][y] != 1) {
+      q.offer(p);
+    }
+  }
+}
