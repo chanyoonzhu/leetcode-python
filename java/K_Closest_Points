@@ -1,0 +1,54 @@
+public class Solution {
+    /**
+     * @param points: a list of points
+     * @param origin: a point
+     * @param k: An integer
+     * @return: the k closest points
+     */
+    public Point[] kClosest(Point[] points, Point origin, int k) {
+        // write your code here
+        
+        // max heap
+        PriorityQueue<Point> pq = new PriorityQueue<Point> (new Comparator<Point> () {
+            @Override
+            public int compare(Point a, Point b) {
+                int distance = distance(origin, b) - distance(origin, a);
+                if (distance == 0) {
+                    if (a.x == b.x) {
+                        return b.y - a.y;
+                    } else {
+                        return b.x - a.x;
+                    }
+                } else {
+                    return distance;
+                }
+            }
+        });
+        
+        for (Point point : points) {
+            if (pq.size() < k) {
+                pq.offer(point);
+            } else {
+                Point peek = pq.peek();
+                // insert point with a distance smaller than top of heap (largest of k)
+                if (distance(origin, point) <= distance(origin, peek)) {
+                    pq.poll();
+                    pq.offer(point);
+                } else {
+                    continue;
+                }
+            }
+        }
+        
+        int actualK = Math.min(k, pq.size());
+        Point[] kClosestPoints = new Point[actualK];
+        for (int i = 0; i < actualK; i++) {
+            kClosestPoints[actualK - i - 1] = pq.poll();
+        }
+        return kClosestPoints;
+    }
+    
+    public int distance (Point a, Point b) {
+        return (b.x - a.x) * (b.x - a.x) + (b.y - a.y) * (b.y - a.y);
+    }
+}
