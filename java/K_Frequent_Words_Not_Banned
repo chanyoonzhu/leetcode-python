@@ -1,0 +1,44 @@
+class Solution {
+    public String[] mostCommonWord(String paragraph, String[] banned, int k) {
+        
+        Set<String> banset = new HashSet();
+        for (String word : banned) {
+            banset.add(word);
+        }
+        
+        HashMap<String,Integer> count = new HashMap<>();
+        
+        String[] res = new String[k];
+        StringBuilder word = new StringBuilder();
+        
+        for (char c : paragraph.toCharArray()) {
+            if (Character.isLetter(c)) {
+                word.append(Character.toLowerCase(c));
+            } else if (word.length() > 0) {
+                String currWord = word.toString();
+                if (!banset.contains(currWord)) {
+                    count.put(currWord, count.getOrDefault(currWord, 0) + 1); 
+                }
+                word = new StringBuilder();
+            }
+        }
+        
+        List<Map.Entry<String,Integer>> list = new ArrayList<>(count.entrySet());
+        Collections.sort(list, new Comparator<Map.Entry<String,Integer>>(){
+            @Override
+            public int compare(Map.Entry<String,Integer> i1, Map.Entry<String,Integer> i2) {
+                int diff = i2.getValue() - i1.getValue();
+                if (diff == 0) {
+                    diff = i1.getKey().compareTo(i2.getKey());
+                }
+                return diff;
+            }
+        });
+        
+        for (int i = 0; i < k; i++) {
+            res[i] = list.get(i).getKey();
+        }
+        
+        return res;
+    }
+}
