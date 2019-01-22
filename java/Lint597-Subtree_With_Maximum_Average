@@ -1,0 +1,60 @@
+/**
+ * Definition of TreeNode:
+ * public class TreeNode {
+ *     public int val;
+ *     public TreeNode left, right;
+ *     public TreeNode(int val) {
+ *         this.val = val;
+ *         this.left = this.right = null;
+ *     }
+ * }
+ */
+
+public class Solution {
+    /**
+     * @param root: the root of binary tree
+     * @return: the root of the maximum average of subtree
+     */
+    
+    class Node {
+        TreeNode node;
+        int total, size;
+        
+        public Node (TreeNode node, int total, int size) {
+            this.node = node;
+            this.total = total;
+            this.size = size;
+        }
+    }
+     
+    private Node result = null;
+    
+    public TreeNode findSubtree2(TreeNode root) {
+        // write your code here
+        if (root == null) {
+            return root;
+        }
+        
+        Node rootResult = findAverage(root);
+        return result.node;
+    }
+    
+    public Node findAverage(TreeNode root) {
+        Node thisNode = new Node(null, 0, 0);
+        if (root == null) {
+            return thisNode;
+        }
+        Node leftNode = findAverage(root.left);
+        Node rightNode = findAverage(root.right);
+        
+        thisNode = new Node(root, 
+                            leftNode.total + rightNode.total + root.val, 
+                            leftNode.size + rightNode.size + 1);
+        
+        // wrong to use division (float truncated)
+        if (result == null || thisNode.total * result.size > result.total * thisNode.size) {
+            result = thisNode;
+        }
+        return thisNode;
+    }
+}
