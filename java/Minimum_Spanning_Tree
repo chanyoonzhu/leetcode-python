@@ -1,0 +1,93 @@
+class Solution {
+
+    /*
+    class Connection{
+        String city1;
+        String city2;
+        int cost;
+        public Connection(String a, String b, int c){
+            city1 = a;
+            city2 = b;
+            cost = c;
+        }
+    }
+    */
+
+    public List<Connection> findShortestConnection(List<Connection> connections) {
+        Collections.sort(connections, new Comparator<Connection>(){
+        @Override
+        public int compare(Connection a, Connection b) {
+            if (a.cost == b.cost) {
+            if (a.city1 == b.city1) {
+                return a.city2.compareTo(b.city2);
+            } else {
+                return a.city1.compareTo(b.city1);
+            }
+            return a.cost - b.cost;
+            }
+        }
+        });
+
+        int idx = 0;
+        Hashmap<String,Integer> cities = new Hashmap<>();
+        for (Connection connection : connections) {
+        if (!cities.containsKey(connection.city1)) {
+            cities.put(connection.city1, idx++);
+        }
+        if (!cities.containsKey(connection.city2)) {
+            cities.put(connection.city2, idx++);
+        }
+        }
+
+        UnionFind uf = new UnionFind(idx + 1);
+
+        List<Connection> mst = new ArrayList<>();
+
+        for (int i = 0;i < connections.size(); i++) {
+        Connection connection = connections[i];
+        int idxA = cities.get(connection.city1);
+        int idxB = cities.get(connection.city2);
+        if(!uf.find(idxA, idxB)) {
+            mst.add(connection);
+            uf.union(idxA, idxB);
+        }
+        }
+
+        // not connected
+        if (mst.size() < cities.size() - 1) {
+        return new ArrayList<>();
+        }
+
+        return mst;
+    }
+
+    public class UnionFind {
+        private int[] ids;
+
+        public UnionFind(int n) {
+        this.ids = new int[n];
+        for (int i = 0; i < n; i++) {
+            this.ids[i] = i;
+        }
+        }
+
+        public int root(int i) {
+        while (ids[i] != i) {
+            i = ids[i];
+        }
+        return i;
+        }
+
+        public boolean find(int i, int j) {
+        return root(i) == root(j);
+        }
+
+        // linear, can be optimized to log(N) using rank
+        public void union(int i, int j) {
+        int rooti = root(i);
+        int rootj = root(j);
+        id[rooti] = rootj;
+        }
+
+    }
+}
