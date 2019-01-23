@@ -1,0 +1,27 @@
+class Solution {
+    public boolean isValid(String s) {
+        
+        if (s == null || s.length() == 0) {
+            return true;
+        }
+        
+        Stack<Character> stack = new Stack<>();
+        for (Character c : s.toCharArray()) {
+            if (c == '(' || c == '[' || c == '{') {
+                stack.push(c);
+            } else {
+                if (!stack.empty() && isPair(stack.peek(), c)) {
+                    stack.pop();
+                } else {
+                    return false;
+                }
+            }   
+        }
+        
+        return stack.empty();
+    }
+    
+    public boolean isPair(Character a, Character b) {
+        return (a == '(' && b == ')') || (a == '{' && b == '}') || (a == '[' && b == ']');
+    }
+}
