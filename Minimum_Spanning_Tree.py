@@ -79,45 +79,55 @@ def Prim(connections):
 
 def Kruskal(connections):
 
-    def updateSets(sets, nodeA, nodeB):
-        setA_idx = setB_idx = -1
-        for i in range(len(sets)):
-            if nodeA in sets[i]:
-                setA_idx = i
-            if nodeB in sets[i]:
-                setB_idx = i
-        if setA_idx != -1 and setB_idx != -1: # both are connected to other separate node groups
-            sets[setA_idx].union(sets[setB_idx])
-        elif setA_idx == -1 and setB_idx != -1: # B is connected, A is not
-            sets[setB_idx].add(nodeA)
-        elif setA_idx != -1 and setB_idx == -1: # A is connected, B is not
-            sets[setA_idx].add(nodeB)
-        else: # neither A or B is connected
-            sets.append(set([nodeA, nodeB])) 
+    res = []
+    parent, rank = [], []
+    connections = sorted(sorted(sorted(connections,key=lambda x: x[0]),key=lambda x: x[1]),key=lambda x: x[2])
 
-    span = []
-    sets = []
+    def find(parent, i):
+        if parent[i] == i:
+            return i
+        return find(parent, parent[i])
+    
+    def union(parent, rank, x, y):
+        xParent = find(parent, x)
+        yParent = find(parent, y)
 
-    edge_sort = sorted(connections,key=lambda x: x[2])
-    # add edge with min weight to spanning tree
-    for e in edge_sort:
-        # check if nodes at the end of edge belong to the same set (already connected)
-        connected = False
-        for s in sets:
-            if e[0] in s and e[1] in s:
-                connected = True
-                break
-        if not connected:
-            span.append(e)
-            # update sets
-            updateSets(sets, e[0], e[1])
-    # test if all nodes are connected
-    if len(sets) > 1:
-        return []
+        if rank[xParent] < rank[yParent]:
+            parent[xParent] = yParent
+        elif rank[xParent] > rank[yParent]:
+            parent[yParent] = xParent
+        else:
+            parent[yParent] = xParent 
+            rank[xParent] += 1
 
-    return span
+    totalN, dic = 0, {}
+    for connection in connections:
+        if connection[0] not in dic:
+            dic[connection[0]] = totalN
+            parent.append(totalN)
+            rank.append(0)
+            totalN += 1
+        if connection[1] not in dic:
+            dic[connection[1]] = totalN
+            parent.append(totalN)
+            rank.append(0)
+            totalN += 1
+    
+    for connection in connections:
+        head, tail, k = connection
+        headParent = find(parent, dic[head])
+        tailParent = find(parent, dic[tail])
 
-graph = [["Acity","Bcity",1], ["Acity","Ccity",2], ["Bcity","Ccity",3]]
+        if headParent != tailParent:
+            res.append([head, tail, k])
+            union(parent, rank, headParent, tailParent)
+    
+    if len(res) == totalN - 1:
+        return res
+    else:
+        []
+
+graph = [["Acity","Ccity",2], ["Acity","Bcity",2], ["Bcity","Ccity",1]]
 # print(Prim(graph))
 print(Kruskal(graph))        
         
