@@ -10,6 +10,8 @@ class Solution:
         - exceed time limit
         - pick all possible starting and ending positions for a substring, and verify if it is a palindrome.
         
+        
+        """
         def isPalindrome(t):
             reverse = t[::-1]
             return t == reverse
@@ -25,7 +27,6 @@ class Solution:
                         start, end = i, k
                     break #others starting at the same index position cannot be longer than this one
         return s[start:end]
-        """
         
     
         """
