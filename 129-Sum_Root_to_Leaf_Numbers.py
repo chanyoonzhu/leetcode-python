@@ -29,3 +29,20 @@ class Solution(object):
                 return dfs(root.right, n)
             
         return dfs(root, 0)
+
+        """
+        - redo
+        """
+
+        def sumNumbers(self, root: 'TreeNode') -> 'int':
+        
+            def helper(root, num, sum_):
+                if not root:
+                    return sum_
+                num = num * 10 + root.val
+                if not root.left and not root.right:
+                    sum_ += num
+                    return sum_
+                return helper(root.left, num, sum_) + helper(root.right, num, sum_)
+    
+            return helper(root, 0, 0)
