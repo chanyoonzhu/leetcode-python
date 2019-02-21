@@ -50,6 +50,23 @@ class Solution(object):
                     break
         return dp[-1]
 
+        """
+        - O(n^2)
+        - dp
+        """
+        wordSet = set(wordDict)
+        dp = [False] * len(s)
+        
+        for i in range(len(s)):
+            if s[:i+1] in wordSet:
+                dp[i] = True
+            else:
+                for j in range(len(s)):
+                    if dp[j] and s[j+1:i+1] in wordSet:
+                        dp[i] = True
+        
+        return dp[-1]
+
 # Questions: Does case matter?
 
 s = "leetcode"
