@@ -33,7 +33,6 @@ class Solution:
 
         """
         - less memory
-        """
         
         if len(digits) == 0 or not digits:
             return []
@@ -60,10 +59,40 @@ class Solution:
                 self.ans[i] += dic[d][0]
                 
         return self.ans
+        """
+        
         
     
+    
         """
-        depth first search
+        - dfs
+        
         """
+        
+        if len(digits) == 0 or not digits:
+            return []
+        
+        self.ans = []
+        dic = {
+            '2': ['a','b','c'],
+            '3': ['d','e','f'],
+            '4': ['g','h','i'],
+            '5': ['j','k','l'],
+            '6': ['m','n','o'],
+            '7': ['p','q','r','s'],
+            '8': ['t','u','v'],
+            '9': ['w','x','y','z']
+        }
+        
+        def helper(digits, res):
+            
+            if len(digits) == 0:
+                self.ans.append(res)
+            else:
+                for d in dic[digits[0]]:
+                    helper(digits[1:], res + d)
+            
+        helper(digits, "")
+        return self.ans
 
 print(Solution().letterCombinations('23'))
