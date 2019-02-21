@@ -30,8 +30,40 @@ class Solution:
             
         return output
         """
+
+        """
+        - less memory
+        """
+        
+        if len(digits) == 0 or not digits:
+            return []
+        
+        self.ans = [""]
+        
+        dic = {
+            '2': ['a','b','c'],
+            '3': ['d','e','f'],
+            '4': ['g','h','i'],
+            '5': ['j','k','l'],
+            '6': ['m','n','o'],
+            '7': ['p','q','r','s'],
+            '8': ['t','u','v'],
+            '9': ['w','x','y','z']
+        }
+        
+        for d in digits:
+            prevLen = len(self.ans)
+            for i in range(len(dic[d])-1):
+                added = [item + dic[d][i+1] for item in self.ans[:prevLen]]
+                self.ans.extend(added)
+            for i in range(prevLen):
+                self.ans[i] += dic[d][0]
+                
+        return self.ans
         
     
         """
         depth first search
-        """r
+        """
+
+print(Solution().letterCombinations('23'))
