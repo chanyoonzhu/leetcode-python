@@ -36,7 +36,7 @@ class Solution(object):
         
         while end < len(s):
             dic[s[end]] += 1
-            while len(dic) > 2 and start <= end:
+            while len(dic) > 2:
                 dic[s[start]] -= 1
                 if dic[s[start]] == 0: # don't forget to remove key
                     del dic[s[start]]
