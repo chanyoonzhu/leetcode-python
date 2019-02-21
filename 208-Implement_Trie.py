@@ -1,51 +1,54 @@
  
 
-class Trie(object):
+class TrieNode(object):
+    
+    def __init__(self):
+        self.children = {}
+        self.isWord = False
+
+class Trie:
 
     def __init__(self):
         """
         Initialize your data structure here.
         """
-        self.word = False # has to mark eplicitly: app and application can both be legal words
-        self.children = {} # hashmap for O(1) search
-        
+        self.root = TrieNode()
 
-    def insert(self, word):
-        
-        curr = self
+    def insert(self, word: 'str') -> 'None':
+        """
+        Inserts a word into the trie.
+        """
+        pointer = self.root
         for c in word:
-            if c not in curr.children:
-                curr.children[c] = Trie()
-            curr = curr.children[c]
-        curr.word = True
+            if c not in pointer.children:
+                pointer.children[c] = TrieNode()
+            pointer = pointer.children[c]
+        pointer.isWord = True  
         
 
-    def search(self, word):
+    def search(self, word: 'str') -> 'bool':
         """
         Returns if the word is in the trie.
-        :type word: str
-        :rtype: bool
         """
-        curr = self
+        pointer = self.root
         for c in word:
-            if c not in curr.children:
+            if c not in pointer.children:
                 return False
-            curr = curr.children[c]
-        return curr.word
+            else:
+                pointer = pointer.children[c]
+        return pointer.isWord == True
         
 
-    def startsWith(self, prefix):
+    def startsWith(self, prefix: 'str') -> 'bool':
         """
         Returns if there is any word in the trie that starts with the given prefix.
-        :type prefix: str
-        :rtype: bool
         """
-        
-        curr = self
+        pointer = self.root
         for c in prefix:
-            if c not in curr.children:
+            if c not in pointer.children:
                 return False
-            curr = curr.children[c]
+            else:
+                pointer = pointer.children[c]
         return True
 
 
