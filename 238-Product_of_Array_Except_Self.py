@@ -11,19 +11,16 @@ class Solution(object):
         3) To get prod[], multiply left[] and right[].
         """
         
-        n = len(nums)
-        left = [1] * n
-        right = [1] * n
-        prod = [1] * n
+        res = [0] * len(nums)
+        leftProduct = [1] * len(nums)
+        rightProduct = [1] * len(nums)
         
-        for i in range(1, n):
-            left[i] = nums[i-1] * left[i-1]
+        for i in range(1, len(nums)):
+            leftProduct[i] = leftProduct[i-1] * nums[i-1]
+            rightProduct[len(nums)-i-1] = rightProduct[len(nums)-i] * nums[len(nums)-i]
+        
+        for i in range(len(nums)):
+            res[i] = leftProduct[i] * rightProduct[i]
             
-        for i in range(n-2, -1, -1):
-            right[i] = nums[i+1] * right[i+1]
-        
-        for i in range(n):
-            prod[i] = left[i] * right[i]
-        
-        return prod
+        return res
         
