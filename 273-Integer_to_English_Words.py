@@ -51,6 +51,25 @@ class Solution(object):
         - recursive
         check out : https://leetcode.com/problems/integer-to-english-words/discuss/70632/Recursive-Python
         """
+        
+        below20 = ['One', 'Two', 'Three', 'Four', 'Five', 'Six', 'Seven', 'Eight', 'Nine', 'Ten', 'Eleven', 'Twelve', 'Thirteen', 'Fourteen', 'Fifteen', 'Sixteen', 'Seventeen', 'Eighteen', 'Nineteen']
+        tens = ['Twenty', 'Thirty', 'Forty', 'Fifty', 'Sixty', 'Seventy', 'Eighty', 'Ninety']
+        
+        def helper(num):
+            if num == 0:
+                return []
+            if num < 20:
+                return [below20[num-1]]
+            if num < 100:
+                return [tens[num//10-2]] + helper(num%10)
+            if num < 1000:
+                return [below20[num//100-1]] + ['Hundred'] + helper(num%100)
+            else:
+                for p, w in enumerate(['Thousand', 'Million', 'Billion']):
+                    if num < 1000 ** (p+2):
+                        return helper(num//1000 ** (p+1)) + [w] + helper(num%1000 ** (p+1))
+                
+        return ' '.join(helper(num)) if num != 0 else 'Zero'
 
 sl = Solution()
 print(sl.numberToWords(2345))
