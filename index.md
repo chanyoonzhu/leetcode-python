@@ -14,13 +14,13 @@ greedy: 45,135
 hashmap: 1,76,138,159,299,895
 heap: 23
 inorder: 105,
-linked list: 2,21,86,138,146
+linked list: 2,21,86,138,146,445
 map: 205
 math: 268
 preorder: 105,545
 recursive: 2,273
 sort: 56
-stack: 20
+stack: 20,402
 string: 151,165,833,929
 topological sort: 210
 tree: 222
