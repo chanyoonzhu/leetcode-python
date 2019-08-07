@@ -18,12 +18,12 @@ linked list: 2,21,86,138,146,445
 map: 205
 math: 268,794
 preorder: 105,545
-recursive: 2,273
+recursive: 2,273,450
 sort: 56
 stack: 20,402
 string: 151,165,722,833,929
 topological sort: 210
-tree: 222
+tree: 222,450
 trie: 208,212,212
 two pointers: 42,76,86,121,159,167,904
 union find: 323,947
