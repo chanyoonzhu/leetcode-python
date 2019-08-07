@@ -21,7 +21,7 @@ preorder: 105,545
 recursive: 2,273
 sort: 56
 stack: 20,402
-string: 151,165,833,929
+string: 151,165,722,833,929
 topological sort: 210
 tree: 222
 trie: 208,212,212
