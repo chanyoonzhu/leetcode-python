@@ -5,7 +5,7 @@ all, any: 833
 array: 54,56,73,151,186,238,268,349,350,849
 backtracking: 17
 bfs: 103,116,127,297,200,207,210,212,529
-binary search:  222
+binary search:222,240
 bit manipulation: 268
 bucket:299
 dfs: 17,113,124,129,200,207,210,212,236,261,297,529,753,947
