@@ -11,12 +11,13 @@ bucket:299
 dfs: 17,113,124,129,200,207,210,212,236,261,297,529,753,947
 dynamic programming: 5,10,39,72,139
 greedy: 45,135
-hashmap: 1,76,138,159,299,895
+hashmap: 1,76,138,159,169,299,895
 heap: 23
 inorder: 105,
 linked list: 2,21,24,25,86,138,146,445
 map: 205
 math: 268,794,836
+misc:169(moore voting)
 preorder: 105,545
 recursive: 2,116,273,450
 sort: 56
