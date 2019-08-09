@@ -19,9 +19,10 @@ map: 205
 math: 268,794,836
 misc:169,229(moore voting)
 preorder: 105,545
+queue:232
 recursive: 2,116,273,450
 sort: 56
-stack: 20,402
+stack: 20,232,402
 string: 151,165,722,833,929
 topological sort: 210
 tree: 116,222,450
