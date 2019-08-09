@@ -14,7 +14,7 @@ greedy: 45,135
 hashmap: 1,76,138,159,299,895
 heap: 23
 inorder: 105,
-linked list: 2,21,24,86,138,146,445
+linked list: 2,21,24,25,86,138,146,445
 map: 205
 math: 268,794
 preorder: 105,545
