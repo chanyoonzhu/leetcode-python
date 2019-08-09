@@ -16,7 +16,7 @@ heap: 23
 inorder: 105,
 linked list: 2,21,24,25,86,138,146,445
 map: 205
-math: 268,794
+math: 268,794,836
 preorder: 105,545
 recursive: 2,116,273,450
 sort: 56
