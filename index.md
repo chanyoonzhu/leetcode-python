@@ -4,11 +4,11 @@ two sum: 1, 167
 all, any: 833
 array: 54,56,73,151,186,238,268,349,350,849
 backtracking: 17
-bfs: 103,116,127,297,200,207,210,212,529
+bfs: 79,103,116,127,297,200,207,210,212,529
 binary search:222,240
 bit manipulation: 268
 bucket:299
-dfs: 17,113,124,129,200,207,210,212,236,261,297,529,753,947
+dfs: 17,79,113,124,129,200,207,210,212,236,261,297,529,753,947
 dynamic programming: 5,10,39,72,139
 greedy: 45,135
 hashmap: 1,76,138,159,169,229,299,895
@@ -33,6 +33,8 @@ zip: 833
 
 
 bfs - key word: shorted path; elements: queue, visited; steps: while q, if q popped is target, finish, if not, add popped item's neighbors to the q; optimization: visited can be eliminated if allowed to change memory (mark on original data)
+
+dfs - don't forget to reset visited back when all the branched dfs does not succeed.
 
 dynamic programming -
 backtracking with memoization; steps: build dp memory, define what dp[i] represents, find update function(s)
