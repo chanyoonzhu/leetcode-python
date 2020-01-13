@@ -20,6 +20,9 @@ class Solution:
         return ''.join(s)
         """
         
+        """
+        - O(kn)
+        """
         while k > 0:
             idx = 0
             while idx + 1 < len(num) and num[idx] <= num[idx+1] :
@@ -28,5 +31,19 @@ class Solution:
             k -= 1
         num = num.lstrip('0')
         return num if num != "" else "0"
+
+        """
+        - O(n)
+        """
+        out = []
+        for d in num:
+            while k and out and out[-1] > d:
+                out.pop()
+                k -= 1
+            out.append(d)
+        return ''.join(out[:-k or None]).lstrip('0') or '0'
+
+s = Solution()
+print(s.removeKdigits('1234567890', 9))
         
             
