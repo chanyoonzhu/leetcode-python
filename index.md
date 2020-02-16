@@ -9,7 +9,7 @@ binary search:222,240
 bit manipulation: 268
 bucket:299
 dfs: 17,79,113,124,129,200,207,210,212,236,261,297,529,753,947
-dynamic programming: 5,10,39,72,139
+dynamic programming: 5,10,39,72,139,746,1314
 greedy: 45,135
 hashmap: 1,76,138,159,169,229,299,895
 heap: 23,218
@@ -20,6 +20,7 @@ math:168,268,794,836
 misc:169,229(moore voting)
 preorder: 105,545
 queue:232
+range sum: 1314
 recursive: 2,116,273,450
 sort: 56
 stack: 20,232,402

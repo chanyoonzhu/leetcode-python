@@ -23,9 +23,9 @@ class Solution(object):
         """
         
         """
-        - One pass: buy index increase until value smaller than sell, 
-        """
-        
+        - One pass 1: buy index increase until value smaller than sell, 
+
+                
         maxProfit = 0
         buy = sell = 0
         
@@ -36,4 +36,19 @@ class Solution(object):
             else:
                 buy = sell
             
+        return maxProfit
+        """
+
+        """
+        - One pass 2:
+        """
+
+        minPrice = float('inf')
+        maxProfit = 0
+        for price in prices:
+            if price < minPrice:
+                minPrice = price
+            elif price - minPrice > maxProfit:
+                maxProfit = price - minPrice
+        
         return maxProfit
