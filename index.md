@@ -9,9 +9,9 @@ binary search:222,240
 bit manipulation: 268
 bucket:299
 dfs: 17,79,113,124,129,200,207,210,212,236,261,297,529,753,947
-dynamic programming: 5,10,39,72,139,746,1314
+dynamic programming: 5,10,39,70,72,139,746,1314
 greedy: 45,135
-hashmap: 1,76,138,159,169,229,299,895
+hashmap: 1,76,138,159,169,229,299,392,895
 heap: 23,218
 inorder: 105,
 linked list: 2,21,24,25,86,138,146,445
@@ -28,7 +28,7 @@ string: 151,165,722,833,929
 topological sort: 210
 tree: 116,222,450
 trie: 208,212,212
-two pointers: 42,76,86,121,159,167,904
+two pointers: 42,76,86,121,159,167,392,904
 union find: 323,947
 zip: 833
 
