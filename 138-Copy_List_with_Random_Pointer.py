@@ -72,6 +72,33 @@ class Solution(object):
         
         return dic[head]
         """
+
+        """
+        - iterative method reuse
+
+        def copyRandomList(self, head: 'Node') -> 'Node':
+            if head is None: # head not in dict under this situation
+                return None
+            
+            dict = {}
+            new_node = self.copy_node(head, dict)
+            pointer = head
+            while pointer:
+                new_node.next = self.copy_node(pointer.next, dict)
+                new_node.random = self.copy_node(pointer.random, dict)
+                pointer, new_node = pointer.next, new_node.next
+            return dict[head]
+        
+        def copy_node(self, node: 'Node', dict: 'dict') -> 'Node':
+            if node is None:
+                return None
+            if node in dict:
+                return dict[node]
+            else:
+                node_copy = Node(node.val, None, None)
+                dict[node] = node_copy
+            return node_copy
+        """
         
         """
         - O(n), O(1)
@@ -80,32 +107,40 @@ class Solution(object):
         if head is None:
             return None
         
-        oldNode = head
+        pointer = head
+        while pointer:
+            _next = pointer.next
+            pointer.next = Node(pointer.val, _next, None)
+            pointer = pointer.next.next
+          
+        # assign random
+        pointer = head
+        while pointer: 
+            copy = pointer.next
+            if pointer.random:
+                copy.random = pointer.random.next
+            pointer = pointer.next.next
+       
+        # detach
+        pointer = head
+        copy_head = head.next
+        while pointer:
+            copy = pointer.next
+            pointer.next = copy.next
+            if pointer.next:
+                copy.next = pointer.next.next
+            pointer = pointer.next
         
-        # create interleaving list
-        while oldNode:
-            copy = RandomListNode(oldNode.label)
-            copy.next = oldNode.next if oldNode.next else None
-            oldNode.next = copy
-            oldNode = oldNode.next.next
-            
-        # copy random pointer
-        oldNode = head
-        while oldNode:
-            oldNode.next.random = oldNode.random.next if oldNode.random else None
-            oldNode = oldNode.next.next
-        
-        # detach link
-        oldNode = head
-        copyHead = oldNode.next
-        while oldNode:
-            copy = oldNode.next
-            if copy.next:
-                oldNode.next = copy.next
-                copy.next = copy.next.next
-            else:
-                oldNode.next = None
-                copy.next = None
-            oldNode = oldNode.next
-        
-        return copyHead
+        return copy_head
+
+"""
+ 
+难点：一般的链表拷贝可以按顺序直接来，但是因为有random，random指向的是在遍历next的时候可能创建过的或者没有创建过的node，判断这个是一个难点。
+1. 用hashmap建立新旧node的一一对应（旧->新），遍历的时候用hashmap检查，已经有的用reference，没有的就创建新的。
+O(n), O(n)
+2. 
+上面解法的recursion版本
+O(n), O(n)
+3.
+O(n), O(1)
+"""
