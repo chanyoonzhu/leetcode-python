@@ -9,7 +9,7 @@ class Node:
 class Solution:
 
     """
-    - dfs
+    - dfs - recursive
     - O(n), O(n)
     """
     
@@ -26,6 +26,11 @@ class Solution:
         for neighbor in node.neighbors:
             copy.neighbors.append(self.cloneGraph(neighbor))
         return copy
+
+    """
+    - dfs - iterative TODO
+    - O(n), O(n)
+    """
 
     """
     - bfs: harder
