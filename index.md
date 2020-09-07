@@ -3,7 +3,7 @@ two sum: 1, 167
 
 all, any: 833
 array: 54,56,73,151,186,238,268,349,350,849
-backtracking: 17
+backtracking: 17,1239
 bfs: 79,103,116,127,133,297,200,207,210,212,529
 binary search:33,222,240
 bit manipulation: 268
@@ -39,6 +39,8 @@ dfs - don't forget to reset visited back when all the branched dfs does not succ
 
 dynamic programming -
 backtracking with memoization; steps: build dp memory, define what dp[i] represents, find update function(s)
+
+backtracking - if cannot use greedy, then cannot optimize further optimize O(2^n) complexity? 1239
 
 String manipulation:
 use reversed string to avoid index shift (833)
