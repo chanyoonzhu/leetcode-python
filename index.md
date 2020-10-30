@@ -37,7 +37,9 @@ bfs - key word: shorted path; elements: queue, visited; steps: while q, if q pop
 
 dfs - don't forget to reset visited back when all the branched dfs does not succeed.
 
-tree - Recursion can usually be used. If using dfs, has to decide which to use: in-order traversal (aka. dfs), post-order traversal (549), and pre-order traversal (298, search tree). If using bfs, usually uses a FIFO queue to store nodes to be visited.
+tree - Recursion can usually be used. 
+If using dfs, has to decide which to use: in-order traversal (aka. dfs), post-order traversal (549), and pre-order traversal (298, search tree). Time complexity is O(n): every node is visited once. Space complexity is O(n): The extra space comes from implicit stack space due to recursion. For a skewed binary tree, the recursion could go up to n levels deep. 
+If using bfs, usually uses a FIFO queue to store nodes to be visited. 
 
 dynamic programming -
 backtracking with memoization; steps: build dp memory, define what dp[i] represents, find update function(s)

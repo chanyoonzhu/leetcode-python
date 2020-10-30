@@ -7,7 +7,11 @@
 class Solution(object):
     
     longest = 0
-    
+    """
+    - post-order traversal
+    - O(n): every node is visited once -  The time complexity is the same as an post-order traversal of a binary tree with n nodes.
+    - O(n): The extra space comes from implicit stack space due to recursion. For a skewed binary tree, the recursion could go up to nn levels deep.
+    """
     def longestConsecutive(self, root):
         """
         :type root: TreeNode
