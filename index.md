@@ -17,7 +17,7 @@ heap: 23,218
 inorder: 105,333
 linked list: 2,21,24,25,86,138,146,445
 map: 205
-math:168,268,794,836
+math:168,268,794,836,1041
 misc:169,229(moore voting)
 preorder: 105,545,987
 queue:232
