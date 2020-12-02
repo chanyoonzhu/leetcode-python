@@ -10,7 +10,7 @@ bit manipulation: 268
 bst: 333
 bucket:299
 dfs: 17,79,91,113,124,129,133,200,207,210,212,236,261,297,298,333,529,549,687,695,753,947,987,1236
-dynamic programming: 5,10,39,70,72,91,139,198,279,303,746,1314
+dynamic programming: 5,10,39,53,70,72,91,139,198,279,303,746,1314
 greedy: 45,53,135
 hashmap: 1,76,138,159,169,229,299,392,895
 heap: 23,218
@@ -44,6 +44,11 @@ If using bfs, usually uses a FIFO queue to store nodes to be visited.
 
 dynamic programming -
 backtracking with memoization; steps: build dp memory, define what dp[i] represents, find update function(s)
+space can be optimized to O(1) if only need to track constant time of variables for each update
+
+greedy -
+Pick the locally optimal move at each step, and that will lead to the globally optimal solution.
+Iterate over the array and update at each step the standard set for such problems: 1.current element 2.current local maximum sum (at this given point) 3.global maximum sum seen so far.
 
 backtracking - if cannot use greedy, then cannot optimize further optimize O(2^n) complexity? 1239
 
