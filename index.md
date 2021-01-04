@@ -23,6 +23,7 @@ preorder: 105,545,987
 queue:232
 range sum: 1314
 recursive: 2,116,273,450
+sliding window: 3!
 sort: 56
 stack: 20,232,402
 string: 151,157,165,722,833,929
@@ -51,6 +52,8 @@ Pick the locally optimal move at each step, and that will lead to the globally o
 Iterate over the array and update at each step the standard set for such problems: 1.current element 2.current local maximum sum (at this given point) 3.global maximum sum seen so far.
 
 backtracking - if cannot use greedy, then cannot optimize further optimize O(2^n) complexity? 1239
+
+sliding window - 
 
 String manipulation:
 use reversed string to avoid index shift (833)
