@@ -30,7 +30,6 @@ class Solution(object):
     Append deque[0]， which is the maximum in the window, to the output.
     Return the output array.
     """
-    class Solution(object):
     def maxSlidingWindow(self, nums, k):
         """
         :type nums: List[int]
