@@ -40,4 +40,16 @@ dict_s = Counter(s)
 dict_s # {"A": 1, "B": 1, "C": 2, "D": 1}
 ```
 
+# deque
+double-ended queue
+`
+from collections import deque
+deq.popleft() # in-memory
+deq.pop() # in-memory
+deq.append(val) 
+deq.appendleft(val) 
+deq.reverse()
+`
+
+
 

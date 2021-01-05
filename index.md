@@ -20,10 +20,10 @@ map: 205
 math:12,168,268,794,836,1041,1344
 misc:169,229(moore voting)
 preorder: 105,545,987
-queue:232
+queue:232,239
 range sum: 1314
 recursive: 2,116,273,450
-sliding window: 3!,76
+sliding window: 3!,76,239
 sort: 56
 stack: 20,232,402
 string: 151,157,165,722,833,929
