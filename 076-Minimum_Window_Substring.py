@@ -103,12 +103,9 @@ class Solution(object):
         left = 0
         longest = float("inf")
         left_longest = right_longest = 0
-        char_needed = defaultdict(int)
+        char_needed = Counter(t)
         char_window = defaultdict(int)
         matched = 0
-        for char in t:
-            char_needed[char] += 1
-            
         
         for right in range(len(s)): # move right pointer to the right until window satisfies condition
             char_right = s[right]
@@ -142,12 +139,10 @@ class Solution(object):
         left_ptr = 0
         longest = float("inf")
         left_longest = right_longest = 0
-        char_needed = defaultdict(int)
+        char_needed = Counter(t)
         filtered_s = []
         char_window = defaultdict(int)
         matched = 0
-        for char in t:
-            char_needed[char] += 1
         for i, char in enumerate(s):
             if char in t:
                 filtered_s.append((char, i))
