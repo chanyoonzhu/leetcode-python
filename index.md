@@ -23,7 +23,7 @@ preorder: 105,545,987
 queue:232
 range sum: 1314
 recursive: 2,116,273,450
-sliding window: 3!
+sliding window: 3!,76
 sort: 56
 stack: 20,232,402
 string: 151,157,165,722,833,929
