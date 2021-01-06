@@ -6,6 +6,9 @@ smallest = float("-inf")
 ```
 
 # List
+- sort list
+list.sort() # in-place
+sorted(list) # returns a sorted list
 - remove first element from list
     - modifies original list
         ```
@@ -62,6 +65,22 @@ heap # [1,2,3,4,5,6,7]
 ```
 nums = [4,3,5,7,1,2,6]
 heapq.nsmallest(4, nums) # returns [1,2,3,4]
+```
+- heap peek
+```
+heap # [1, 3, 2, 7, 4, 5, 6]
+heap[0] # 1
+```
+- heap push/pop
+```
+heap # [1, 3, 2, 7, 4, 5, 6]
+heapq.heappop(heap) # 1
+heap # [2, 3, 5, 7, 4, 6]
+```
+```
+heap # [1, 3, 2, 7, 4, 5, 6]
+heapq.heappush(heap, 8)
+heap # [1, 3, 2, 7, 4, 5, 6, 8]
 ```
 - tuples in heap (max-heap)
 ``` # get most frequent items
