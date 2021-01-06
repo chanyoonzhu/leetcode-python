@@ -13,7 +13,7 @@ dfs: 17,79,91,113,124,129,133,200,207,210,212,230,236,261,297,298,333,529,549,68
 dynamic programming: 5,10,39,53,70,72,91,139,198,279,303,746,1314
 greedy: 45,53,135,455
 hashmap: 1,76,138,159,169,229,299,392,895
-heap: 23,215,218
+heap: 23,215,218,347
 inorder: 105,230,333
 linked list: 2,21,24,25,86,138,146,445
 map: 205
@@ -55,6 +55,9 @@ Iterate over the array and update at each step the standard set for such problem
 backtracking - if cannot use greedy, then cannot optimize further optimize O(2^n) complexity? 1239
 
 sliding window - 
+
+heap - 
+heapify time complexity: O(n), heap push/pop time complexity: O(logn)
 
 String manipulation:
 use reversed string to avoid index shift (833)
