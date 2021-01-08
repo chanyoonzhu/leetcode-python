@@ -24,6 +24,27 @@ sorted(list) # returns a sorted list
         l = ['a', 'b', 'c', 'd']
         l_copy = l[1:]
         ```
+- insert element to list
+    - at the end:
+    ```
+    l = ['a', 'b', 'c', 'd']
+    l.append('e')
+    l # ['a', 'b', 'c', 'd', 'e']
+    ```
+    - at any index
+    ```
+    l = ['a', 'b', 'c', 'd']
+    l.insert(3, 'e')
+    l # ['a', 'b', 'c', 'e', 'd']
+    ```
+- tips on uses of list
+    - letter frequency with O(1) space
+    ```
+    frequency = [0] * 26
+    for c in string:
+        frequency[ord(c) - ord('A')] += 1
+    frequency.sort() # sort frequency in ascending order
+    ```
 
 # Dict
 * defaultdict:
