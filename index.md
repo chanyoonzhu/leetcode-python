@@ -24,7 +24,7 @@ queue:232,239
 range sum: 1314
 recursive: 2,116,273,450
 sliding window: 3!,76,239,1423
-sort: 56
+sort: 56,252
 stack: 20,232,402
 string: 151,157,165,722,833,929
 topological sort: 210

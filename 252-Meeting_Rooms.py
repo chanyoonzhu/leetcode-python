@@ -1,18 +1,15 @@
-# Definition for an interval.
-# class Interval(object):
-#     def __init__(self, s=0, e=0):
-#         self.start = s
-#         self.end = e
-
 class Solution(object):
+    """
+    - sorting
+    - O(nlogn), O(1) (O(n) with current implementation, copies array)
+    """
     def canAttendMeetings(self, intervals):
         """
-        :type intervals: List[Interval]
+        :type intervals: List[List[int]]
         :rtype: bool
         """
-        
-        intervals = sorted(intervals, key = lambda x: x.start)
-        
-        for i in range(len(intervals)-1):
-            if intervals[i].end > intervals[i+1].start:
+        intervals = sorted(intervals, key = lambda x: x[0])
+        for i in range(len(intervals) - 1):
+            if intervals[i+1][0] < intervals[i][1]:
                 return False
+        return True
