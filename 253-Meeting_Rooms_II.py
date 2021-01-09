@@ -1,5 +1,5 @@
 class Solution(object):
-    """
+    """253-Meeting_Rooms_II
     - priority queue
     - O(nlog(n)), O(n) - worst case one room per meeting
     - intuition: natural way of scheduling rooms
@@ -60,22 +60,22 @@ class Solution(object):
                 ptr1 += 1
                 ptr2 += 1
         
-    
-        
+    """
+    - Chronological order
+    - O(n), O(n)
+    """
+    def minMeetingRooms(self, intervals):
         """
-        # res - largest number of rooms used at the same time of all history
-        # rooms - number of rooms used at the same time at the time being
-        # dic - key: start or end time; value: start ++1/end --1/end and start 0
+        :type intervals: List[List[int]]
+        :rtype: int
         """
-        res = rooms = 0
-        dic = collections.defaultdict(int)
-        
-        for interval in intervals:
-            dic[interval.start] += 1
-            dic[interval.end] -= 1
-        
-        for time in sorted(dic.items(), key=lambda x:x[0]):
-            rooms += time[1]
-            res = max(res, rooms)
-        
+        res = curr = 0
+        times = []
+        for start, end in intervals:
+            times.append((start, 1))
+            times.append((end, -1))
+        times.sort()
+        for time, _type in times:
+            curr += _type
+            res = max(curr, res)
         return res
