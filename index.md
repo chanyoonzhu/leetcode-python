@@ -13,7 +13,7 @@ dfs: 17,79,91,113,124,129,133,200,207,210,212,230,236,261,297,298,333,529,549,68
 dynamic programming: 5,10,39,53,70,72,91,139,198,279,303,746,1314
 greedy: 45,53,135,435,455,621,630
 hashmap: 1,76,138,159,169,229,299,392,560,895
-heap: 23,215,218,253,347,621,630,1229
+heap: 23,215,218,253,347,621,630,759,1229
 inorder: 105,230,333
 linked list: 2,21,24,25,86,138,146,445
 map: 205
@@ -72,9 +72,9 @@ intervals
 Q: Are intervals mutually exclusive? A: Yes
 - Algorithm pattern: 
     - Sort and scan 
-    - Heap/greedy  
+    - priority queue/greedy  
 - Data structures:
 - Complexity:
 O(n), O(n)
 - Examples:
-eg: 56, 57, Lint391, 252, 253, 435, 1272
+eg: 56, 57, Lint391, 252, 253, 435, 986, 1229, 1272; hard-352, 759
