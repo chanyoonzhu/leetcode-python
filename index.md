@@ -35,37 +35,44 @@ union find: 323,947
 zip: 833
 
 
-bfs - key word: shorted path; elements: queue, visited; steps: while q, if q popped is target, finish, if not, add popped item's neighbors to the q; optimization: visited can be eliminated if allowed to change memory (mark on original data)
+# bfs - key word: shorted path; elements: queue, visited; steps: while q, if q popped is target, finish, if not, add popped item's neighbors to the q; optimization: visited can be eliminated if allowed to change memory (mark on original data)
 
-dfs - don't forget to reset visited back when all the branched dfs does not succeed.
+# dfs - don't forget to reset visited back when all the branched dfs does not succeed.
 * recursive and iterative - example: 230
 
-tree - Recursion can usually be used. 
+# tree - Recursion can usually be used. 
 If using dfs, has to decide which to use: in-order traversal (aka. dfs), post-order traversal (549), and pre-order traversal (298, search tree). Time complexity is O(n): every node is visited once. Space complexity is O(n) in worst case and O(log(n)) in average case: The extra space comes from implicit stack space due to recursion. For a skewed binary tree, the recursion could go up to n levels deep. 
 If using bfs, usually uses a FIFO queue to store nodes to be visited. 
 
-dynamic programming -
+# dynamic programming -
 backtracking with memoization; steps: build dp memory, define what dp[i] represents, find update function(s)
 space can be optimized to O(1) if only need to track constant time of variables for each update
 
-greedy -
+# greedy -
 Pick the locally optimal move at each step, and that will lead to the globally optimal solution.
 Iterate over the array and update at each step the standard set for such problems: 1.current element 2.current local maximum sum (at this given point) 3.global maximum sum seen so far.
 
-backtracking - if cannot use greedy, then cannot optimize further optimize O(2^n) complexity? 1239
+# backtracking - if cannot use greedy, then cannot optimize further optimize O(2^n) complexity? 1239
 
-sliding window - 
+# sliding window - 
 
-heap - 
+# heap - 
 heapify time complexity: O(n), heap push/pop time complexity: O(logn)
 
-String manipulation:
+# String manipulation:
 use reversed string to avoid index shift (833)
 
-Cumulative sum:
+# Cumulative sum:
 usually solved with O(n) time using hashmap - eg. 560
 
-Chronological Ordering:
+# Sweep Lines:
+- Key words:
+intervals
+- Clarification Questions: 
+Q: Are intervals mutually exclusive? A: Yes
+- Algorithm: 
 Sort and scan
+- Complexity:
 O(n), O(n)
-eg: Lint391, 252, 253
+- Examples:
+eg: 56, 57, Lint391, 252, 253
