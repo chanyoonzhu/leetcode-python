@@ -11,7 +11,7 @@ bst: 230,333
 bucket:299
 dfs: 17,79,91,113,124,129,133,200,207,210,212,230,236,261,297,298,333,529,549,687,695,753,947,987,1236
 dynamic programming: 5,10,39,53,70,72,91,139,198,279,303,746,1314
-greedy: 45,53,135,455,621,630
+greedy: 45,53,135,455,621,630,1272
 hashmap: 1,76,138,159,169,229,299,392,560,895
 heap: 23,215,218,253,347,621,630,1229
 inorder: 105,230,333
@@ -70,9 +70,11 @@ usually solved with O(n) time using hashmap - eg. 560
 intervals
 - Clarification Questions: 
 Q: Are intervals mutually exclusive? A: Yes
-- Algorithm: 
-Sort and scan
+- Algorithm pattern: 
+    - Sort and scan 
+    - Heap/greedy  
+- Data structures:
 - Complexity:
 O(n), O(n)
 - Examples:
-eg: 56, 57, Lint391, 252, 253
+eg: 56, 57, Lint391, 252, 253, 1272

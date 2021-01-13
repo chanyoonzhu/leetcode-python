@@ -1,7 +1,7 @@
 class Solution(object):
     """
     - Sweep Lines
-    - O(n), O(n)
+    - O(n), O(n1272-Remove_Interval)
     """
     def removeInterval(self, intervals, toBeRemoved):
         """
