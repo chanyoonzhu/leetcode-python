@@ -1,7 +1,6 @@
+import heapq
 class Solution:
     def getSkyline(self, buildings):
-    
-        import heapq
 
         """
         Use a heap to keep the max height ()
@@ -43,7 +42,8 @@ class Solution:
         """   
 
         """
-        - O(n^2logn), O(n)
+        - Better solution
+        - O(nlogn), O(n)
         """
         events = sorted([(L, -H, R) for L, R, H in buildings] + list({(R, 0, None) for _, R, _ in buildings}))
         res, hp = [[0, 0]], [(0, float("inf"))]
@@ -56,8 +56,50 @@ class Solution:
                 res += [x, -hp[0][0]],
         return res[1:]
 
+    """
+    - my solution: line sweeping with heap and set (tracking which buildings are in range)
+    set is not needed actually, can use end value to filter elements popped out from the heap
+    """
+    def getSkyline_heap_and_set(self, buildings):
+        """
+        :type buildings: List[List[int]]
+        :rtype: List[List[int]]
+        """
+        pq = []
+        curr = set()
+        prev = 0
+        res = []
+        min_x = min([start for start, _, _ in buildings]) - 1
+        max_x = max([end for _, end, _ in buildings]) + 1
+        lines = sorted(([(start, end, height) for start, end, height in buildings] + [(end, start, -height) for start, end, height in buildings] + [(min_x, max_x, 0), (max_x, min_x, 0)]), key = lambda x: (x[0], -x[2]))
+        for x1, x2, height in lines:
+            if x1 < x2:
+                curr.add((-height, x1, x2))
+                heapq.heappush(pq, (-height, x1, x2))
+                height_neg, start, end = heapq.heappop(pq)
+                while (height_neg, start, end) not in curr:
+                    height_neg, start, end = heapq.heappop(pq)
+                heapq.heappush(pq, (height_neg, start, end))
+                if -height_neg > prev:
+                    prev = -height_neg
+                    res.append((x1, height))                    
+            else:
+                curr.discard((height, x2, x1))
+                height_neg, start, end = heapq.heappop(pq)
+                while pq and (height_neg, start, end) not in curr:
+                    height_neg, start, end = heapq.heappop(pq)
+                heapq.heappush(pq, (height_neg, start, end))
+                if -height_neg < -height and x1 != res[-1][0]:
+                    res.append((x1, -height_neg))
+                    prev = -height_neg
+        return res
+                
 s = Solution()
-print(s.getSkyline([[0,5,7],[5,10,7],[5,10,12],[10,15,7],[15,20,7],[15,20,12],[20,25,7]]))
+s.getSkyline([[2,9,10],[3,7,15],[5,12,12],[15,20,10],[19,24,8]])
+s.getSkyline([[1,2,1],[1,2,2],[1,2,3]])
+s.getSkyline([[0,5,7],[5,10,7],[5,10,12],[10,15,7],[15,20,7],[15,20,12],[20,25,7]])
+                
+            
         
                 
                 

@@ -77,4 +77,4 @@ Q: Are intervals mutually exclusive? A: Yes
 - Complexity:
 O(n), O(n)
 - Examples:
-eg: 56, 57, Lint391, 252, 253, 435, 986, 1229, 1272; hard-352, 759
+eg: 56, 57, 218, 252, 253, 435, 986, 1229, 1272, Lint391; hard-352, 759
