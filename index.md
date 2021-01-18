@@ -78,3 +78,51 @@ Q: Are intervals mutually exclusive? A: Yes
 O(n), O(n)
 - Examples:
 eg: 56, 57, 218, 252, 253, 435, 986, 1229, 1272, Lint391; hard-352, 759
+
+# binary search
+- Key words:
+find, sorted
+- Three templates
+1. when loop ends, start + 1 = end
+```
+start, end = 0, len(n) - 1
+while start + 1 < end: 
+    mid = start + (end - start) // 2
+    if nums[mid] < target:
+        start = mid
+    else:
+        end = mid
+```
+2. When loop ends, start = end
+```
+start, end = 0, len(n)
+while start < end: # when loop ends, start = end
+    mid = start + (end - start) // 2
+    if nums[mid] < target:
+        start = mid + 1
+    else:
+        end = mid
+```
+3. when loop ends, start = end + 1
+```
+start, end = 0, len(n) - 1
+while start < end: 
+    mid = start + (end - start) // 2
+    if nums[mid] < target:
+        start = mid + 1
+    else:
+        end = mid - 1
+```
+- tips
+    - prevents int overflow:
+
+        use:
+        ```
+        mid = start + (end - start) // 2
+        ```
+        not:
+        ```
+        mid = (start + end) // 2
+        ```
+- Examples: 278(basic)
+    
