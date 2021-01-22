@@ -106,13 +106,40 @@ while start < end: # when loop ends, start = end
 3. when loop ends, start = end + 1
 ```
 start, end = 0, len(n) - 1
-while start < end: 
+while start <= end: 
     mid = start + (end - start) // 2
     if nums[mid] < target:
         start = mid + 1
     else:
         end = mid - 1
 ```
+- My template:
+    - strictly increasing find last one smaller than or equal to target
+    ```
+    start, end = 0, len(n) - 1
+    def bs(nums, start, end, target):
+        if start == end:
+            return start
+        mid = start + (end - start + 1) // 2 # because start = mid, has to + 1 to shift to end or will be endless loop
+        if nums[mid] > target:
+            end = mid - 1
+        else:
+            start = mid
+        return bs(nums, start, end, target)
+    ```
+    - strictly increasing find first one larger than or equal to target
+    ```
+    start, end = 0, len(n) - 1
+    def bs(nums, start, end, target):
+        if start == end:
+            return start
+        mid = start + (end - start) // 2 # because end = mid, don't + 1 to shift to start or will be endless loop
+        if nums[mid] < target:
+            start = mid + 1
+        else:
+            end = mid
+        return bs(nums, start, end, target)
+    ```
 - tips
     - prevents int overflow:
 
@@ -124,5 +151,5 @@ while start < end:
         ```
         mid = (start + end) // 2
         ```
-- Examples: 278(basic)
+- Examples: 278(basic), 981(strictly increasing, find lower)
     
