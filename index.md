@@ -9,6 +9,7 @@ binary search:33,222,240,1428
 bit manipulation: 268
 bst: 230,333
 bucket:299
+divide and conquer: 215
 dfs: 17,79,91,113,124,129,133,200,207,210,212,230,236,261,297,298,333,529,549,687,695,753,947,987,1236
 dynamic programming: 5,10,39,53,70,72,91,139,198,279,303,746,1314
 greedy: 45,53,135,435,455,621,630,1428
@@ -153,3 +154,14 @@ while start <= end:
         ```
 - Examples: 278(basic), 981(strictly increasing, find lower)
     
+# Sorting
+- quick sort 
+    - algorithm:
+        1. find a random pivot
+        2. put the pivot in its sorted position (elements to its left are smaller and elements to its right are greater)
+        3. recursively sort the left and the right partition
+    - Complexity:
+        O(nlogn) on average; O(n^2) worst case
+        O(1) space (in-place sorting)
+    - variations:
+        quick select: eg.215 O(n) on average since only sorting one partition; O(n^2) worst case
