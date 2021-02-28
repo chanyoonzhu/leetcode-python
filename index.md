@@ -9,23 +9,24 @@ binary search:33,222,240,1428
 bit manipulation: 268
 bst: 230,333
 bucket:299
-divide and conquer: 215,312
+divide and conquer: 215,312,973
 dfs: 17,79,91,113,124,129,133,200,207,210,212,230,236,261,297,298,333,529,549,687,695,753,947,987,1236
 dynamic programming: 5,10,39,53,70,72,91,139,198,279,303,312,746,1314
 greedy: 45,53,135,435,455,621,630,1428
 hashmap: 1,76,138,159,169,229,299,359,392,560,895
-heap: 23,215,218,253,347,621,630,759,1229
+heap: 23,215,218,253,347,621,630,759,973,1229
 inorder: 105,230,333
 linked list: 2,21,24,25,86,138,146,445
 map: 205
 math:12,168,268,621,794,836,1041,1344
+merge sort: 315
 misc:169,229(moore voting)
 preorder: 105,545,987
 queue:232,239
 range sum: 1314
 recursive: 2,116,273,450
 sliding window: 3!,76,239,1423
-sort: 56,252,L391
+sort: 56,252,315,L391
 stack: 20,232,402,1249
 string: 151,157,165,722,833,929
 topological sort: 210
@@ -117,12 +118,12 @@ while start <= end:
 - My template:
     - strictly increasing find last one smaller than or equal to target
     ```
-    start, end = 0, len(n) - 1
+    start, end = 0, len(n) - 1  # use start = -1 or end = len(n) if returning -1 or len(n) is possible
     def bs(nums, start, end, target):
         if start == end:
             return start
         mid = start + (end - start + 1) // 2 # because start = mid, has to + 1 to shift to end or will be endless loop
-        if nums[mid] > target:
+        if nums[mid] > target: # use >, >=, <, <= based on specific case
             end = mid - 1
         else:
             start = mid
@@ -152,7 +153,7 @@ while start <= end:
         ```
         mid = (start + end) // 2
         ```
-- Examples: 278(basic), 981(strictly increasing, find lower)
+- Examples: 278(basic), 981(strictly increasing, find lower), 315
     
 # Sorting
 - quick sort 
@@ -164,4 +165,12 @@ while start <= end:
         O(nlogn) on average; O(n^2) worst case
         O(1) space (in-place sorting)
     - variations:
-        quick select: eg.215 O(n) on average since only sorting one partition; O(n^2) worst case
+        quick select: eg.215, 973 O(n) on average since only sorting one partition; O(n^2) worst case
+- merge sort: 
+    - algorithm:
+        1. recursively call merge_sort on left half, then on right half
+        2. merge left half and right half
+    - Complexity:
+        time: O(nlogn)
+        space: O(n) - number of nodes in the recursion tree
+    - Examples: 315(hard)
