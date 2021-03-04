@@ -40,7 +40,31 @@ zip: 833
 # bfs - key word: shorted path; elements: queue, visited; steps: while q, if q popped is target, finish, if not, add popped item's neighbors to the q; optimization: visited can be eliminated if allowed to change memory (mark on original data)
 
 # dfs - don't forget to reset visited back when all the branched dfs does not succeed.
-* recursive and iterative - example: 230
+- recursive (in-order)
+```
+    def dfs(node):
+        if not node:
+            return
+        dfs(node.left)
+        print(node.val)
+        dfs(node.right)
+```
+- iterative (in-order)
+```
+    stack = []
+    while stack or node:
+        if node.left:
+            stack.append(node.left)
+            node = node.left
+        else:
+            node = stack.pop()
+            print(node.val)
+            node = node.right
+```
+- Complexity: 
+    - Time: O(n) - one visit each node
+    - Space: O(n) - n stacks for skewed tree
+- example: 230
 
 # tree - Recursion can usually be used. 
 If using dfs, has to decide which to use: in-order traversal (aka. dfs), post-order traversal (549), and pre-order traversal (298, search tree). Time complexity is O(n): every node is visited once. Space complexity is O(n) in worst case and O(log(n)) in average case: The extra space comes from implicit stack space due to recursion. For a skewed binary tree, the recursion could go up to n levels deep. 

@@ -7,93 +7,77 @@ class TreeNode(object):
         self.left = None
         self.right = None
 
-class Solution(object):
+class Solution:
+    
+    """
+    - hashmap + set: keep a map of child to parent, and a set for all parents of p, search if parents for q from bottom to top is in the set
+    - O(n), O(n)
+    """
+    def lowestCommonAncestor(self, root: 'TreeNode', p: 'TreeNode', q: 'TreeNode') -> 'TreeNode':
+        parent_map = dict()
+        parent_map[root] = None
+        ancestors = set()
+        
+        def create_parents(node):
+            if node:
+                if node.left:
+                    parent_map[node.left] = node
+                    create_parents(node.left)
+                if node.right:
+                    parent_map[node.right] = node
+                    create_parents(node.right)
+        
+        create_parents(root)
+        
+        while p:
+            ancestors.add(p)
+            p = parent_map[p]
 
-    self.ans = None
-
-    def lowestCommonAncestor(self, root, p, q):
-
-        """
-        :type root: TreeNode
-        :type p: TreeNode
-        :type q: TreeNode
-        :rtype: TreeNode
-        """
-
-        """
-        - O(n), O(n)
-        """
-
-    self.traverseTree(root)
-    return self.ans
-
-    def traverseTree(self, root):
-
-        left = self.traverseTree(root.left)
-        right = self.traverseTree(root.right)
-
+        while q not in ancestors:
+            q = parent_map[q]
+        return q
+    
+    """
+    - dfs recursive: returns true when one descendent equals p or q, false otherwise. When has true on both left and right path, mark as common ancestor
+    - Time: (O(n)), Space: O(n)
+    """
+    def lowestCommonAncestor(self, root: 'TreeNode', p: 'TreeNode', q: 'TreeNode') -> 'TreeNode':
+        
+        self.ans = None
+        self.helper(root, p, q)
+        return self.ans
+        
+    def helper(self, root, p, q):
+        
+        if not root:
+            return False
+        
+        left = self.helper(root.left, p, q)
+        right = self.helper(root.right, p, q)
+        
         mid = root == p or root == q
         
-        if mid + left + right >= 2:
+        if mid + left + right == 2:
             self.ans = root
-        
+            
         return mid or left or right
-
-        """
-        - O(n), O(n)
-
-        parents = {}
-        self.traverseTree(root, parents)
+    
+    """
+    - dfs recursive: variation, this approach won't work for problem#1644 when p is q's ancestor or the other way around since it returns as soon as it sees one matching node
+    - Time: (O(n)), Space: O(n)
+    """
+    def lowestCommonAncestor(self, root: 'TreeNode', p: 'TreeNode', q: 'TreeNode') -> 'TreeNode':
         
-        qParents = self.findAllParents(q, parents)
-        pParentsSet = set(self.findAllParents(p, parents))
-        for i in range(len(qParents)): # df: qParents is in reverse order already
-            if qParents[i] in pParentsSet:
-                return qParents[i]
-     
-    def traverseTree(self, root, parents):
-        if root is None:
-            return
-        if root.left:
-            parents[root.left] = root # to append all parents of its parent, not just its direct parent
-            self.traverseTree(root.left, parents)
-        if root.right:
-            parents[root.right] = root
-            self.traverseTree(root.right, parents)
-
-    def findAllParents(self, node, parents):
-        res = [node] # don't forget: itself is also it's parent
-        curr = node
-        while curr in parents:
-            res.append(parents[curr])
-            curr = parents[curr]
-        return res
-        """
-
-        """
-        - O(n)
-        - memory exceeded
-
-        parents = collections.defaultdict(list)
-        self.traverseTree(root, parents)
-       
-        qParents = parents[q]
-        pParentsSet = set(parents[p])
-        for i in range(len(qParents)-1, -1, -1):
-            if qParents[i] in pParentsSet:
-                return qParents[i]
-     
-    def traverseTree(self, root, parents):
-        if root is None:
-            return
-        parents[root].append(root) # don't forget to append itself as parent
-        if root.left:
-            parents[root.left] += parents[root] # to append all parents of its parent, not just its direct parent (memory problem)
-            self.traverseTree(root.left, parents)
-        if root.right:
-            parents[root.right] += parents[root]
-            self.traverseTree(root.right, parents)
-        """
+        if root == None or root == p or root == q:
+            return root
+        
+        left = self.lowestCommonAncestor(root.left, p, q)
+        right = self.lowestCommonAncestor(root.right, p, q)
+        
+        if left and right:
+            return root
+        
+        return left if left else right
         
 
 n1 = TreeNode(3)
@@ -116,5 +100,5 @@ n5.left = n8
 n5.right = n9
 
 sl = Solution()
-print(sl.lowestCommonAncestor(n1, n2, n9))
+print(sl.lowestCommonAncestor_iterative(n1, n2, n9))
 
