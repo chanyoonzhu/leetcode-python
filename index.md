@@ -10,7 +10,7 @@ bit manipulation: 268
 bst: 230,333
 bucket:299
 divide and conquer: 215,312,973
-dfs: 17,79,91,113,124,129,133,200,207,210,212,230,236,261,297,298,333,529,549,687,695,753,947,987,1236,1644,1676
+dfs: 17,79,91,113,124,129,133,200,207,210,212,230,236,261,297,298,333,529,549,687,695,753,947,987,1236,1644,1676,1740
 dynamic programming: 5,10,39,53,70,72,91,139,198,279,303,312,746,1314
 greedy: 45,53,135,435,455,621,630,1428
 hashmap: 1,76,138,159,169,229,299,336,359,392,560,895,1644
@@ -30,7 +30,7 @@ sort: 56,252,315,L391
 stack: 20,232,402,1249
 string: 151,157,165,722,833,929
 topological sort: 210
-tree: 116,222,235,236,333,450,298,549,687,1644,1650,1676
+tree: 116,222,235,236,333,450,298,549,687,1644,1650,1676,1740
 trie: 208,212,336
 two pointers: 42,76,86,121,159,167,253,392,904,986,1229
 union find: 323,947
@@ -67,7 +67,7 @@ zip: 833
 - example: 230
 
 # tree - Recursion can usually be used. 
-If using dfs, has to decide which to use: in-order traversal (aka. dfs), post-order traversal (549), and pre-order traversal (298, search tree). Time complexity is O(n): every node is visited once. Space complexity is O(n) in worst case and O(log(n)) in average case: The extra space comes from implicit stack space due to recursion. For a skewed binary tree, the recursion could go up to n levels deep. 
+If using dfs, has to decide which to use: in-order traversal (aka. dfs), post-order traversal (549,1740), and pre-order traversal (298, search tree). Time complexity is O(n): every node is visited once. Space complexity is O(n) in worst case and O(log(n)) in average case: The extra space comes from implicit stack space due to recursion. For a skewed binary tree, the recursion could go up to n levels deep. 
 If using bfs, usually uses a FIFO queue to store nodes to be visited. 
 
 # dynamic programming -
