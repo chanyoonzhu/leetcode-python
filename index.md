@@ -7,15 +7,15 @@ backtracking: 17,1239
 bfs: 79,103,116,127,133,297,200,207,210,212,529,987,1236
 binary search:33,222,240,1428
 bit manipulation: 268
-bst: 230,333
+bst: 99,230,333
 bucket:299
 divide and conquer: 215,312,973
-dfs: 17,79,91,113,124,129,133,200,207,210,212,230,236,261,297,298,333,529,549,687,695,753,947,987,1236,1644,1676,1740
+dfs: 17,79,91,99,113,124,129,133,200,207,210,212,230,236,261,297,298,333,529,549,687,695,753,947,987,1236,1644,1676,1740
 dynamic programming: 5,10,39,53,70,72,91,139,198,279,303,312,746,1314
 greedy: 45,53,135,435,455,621,630,1428
 hashmap: 1,76,138,159,169,229,299,336,359,392,560,895,1644
 heap: 23,215,218,253,347,621,630,759,973,1229
-inorder: 105,230,333
+inorder: 99,105,230,333
 linked list: 2,21,24,25,86,138,146,445,1650
 map: 205
 math:12,168,268,621,794,836,1041,1344
@@ -26,7 +26,7 @@ queue:232,239
 range sum: 1314
 recursive: 2,116,273,450
 sliding window: 3!,76,239,1423
-sort: 56,252,315,L391
+sort: 56,99,252,315,L391
 stack: 20,232,402,1249
 string: 151,157,165,722,833,929
 topological sort: 210
@@ -53,13 +53,41 @@ zip: 833
 ```
     stack = []
     while stack or node:
-        if node.left:
+        if node:
             stack.append(node.left)
             node = node.left
         else:
             node = stack.pop()
             print(node.val)
             node = node.right
+```
+or 
+```
+    stack = []
+    while stack or node:
+        while node:
+            stack.append(node.left)
+            node = node.left
+        node = stack.pop()
+        print(node.val)
+        node = node.right
+```
+- Inorder Morris*: O(n), O(1); eg.99
+```
+    node = root        
+    while node:
+        if node.left:
+            temp = node.left
+            while temp.right and temp.right != node:
+                temp = temp.right
+            if not temp.right: # when looking for prev, attach temp.right to node
+                temp.right, node = node, node.left
+                continue
+            # when traversal, detach temp.right from node
+            temp.right = None
+        print(node.val)
+        node = node.right
+
 ```
 - Complexity: 
     - Time: O(n) - one visit each node
@@ -198,3 +226,5 @@ while start <= end:
         time: O(nlogn)
         space: O(n) - number of nodes in the recursion tree
     - Examples: 315(hard)
+- *sort an almost sorted array where two elements are swapped
+    - Examples: 99
