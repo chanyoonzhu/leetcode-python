@@ -1,11 +1,11 @@
 class Solution(object):
     """253-Meeting_Rooms_II
-    - priority queue
+    - priority queue - each element keeps the current end time of a room
     - O(nlog(n)), O(n) - worst case one room per meeting
     - intuition: natural way of scheduling rooms
         * starting from earliest meetings
         * find the meeting that finish the earliest, if start time is smaller, create new room
-            if start time is larger, update the finish of that room to this meeting's
+            if start time is larger, update the end time of that room to this meeting's end time
         * use a heap to keep the room finish the earliest
     """
     def minMeetingRooms(self, intervals):
@@ -59,9 +59,33 @@ class Solution(object):
             else:
                 ptr1 += 1
                 ptr2 += 1
+    
+    """
+    - two pointers: same as previous solution but more intuitive
+    """
+    def minMeetingRooms(self, intervals: List[List[int]]) -> int:
+        
+        starts, ends = [], []
+        for start, end in intervals:
+            starts.append(start)
+            ends.append(end)
+            
+        starts.sort()
+        ends.sort()
+        
+        i = 0
+        curr_room = max_room = 0
+        for end in ends: # for each current smallest end, find how many starts before it
+            while i < len(intervals) and starts[i] < end:
+                curr_room += 1
+                i += 1
+            max_room = max(max_room, curr_room)
+            curr_room -= 1
+            
+        return max_room
         
     """
-    - Chronological order
+    - Line Sweeping
     - O(n), O(n)
     """
     def minMeetingRooms(self, intervals):

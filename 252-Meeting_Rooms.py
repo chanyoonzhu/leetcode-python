@@ -8,7 +8,7 @@ class Solution(object):
         :type intervals: List[List[int]]
         :rtype: bool
         """
-        intervals = sorted(intervals, key = lambda x: x[0])
+        intervals = sorted(intervals, key = lambda x: x[0]) # can also use in-place sorting: intervals.sort()
         for i in range(len(intervals) - 1):
             if intervals[i+1][0] < intervals[i][1]:
                 return False
