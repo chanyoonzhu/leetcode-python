@@ -34,6 +34,26 @@ class MyCalendar:
             self.root = Node(start, end)
             return True
         return self.root.insert(Node(start, end))
+    
+    """
+    - line sweeping (stream) with bisect
+    - O(n^2), O(n)
+    """
+    def __init__(self):
+        self.timelines = []
+        
+
+    def book(self, start: int, end: int) -> bool:
+        bisect.insort(self.timelines, (start, 1))
+        bisect.insort(self.timelines, (end, -1))
+        booking = 0
+        for _, time_type in self.timelines:
+            booking += time_type
+            if booking == 2:
+                self.timelines.remove((start, 1))
+                self.timelines.remove((end, -1))
+                return False
+        return True
         
 
 

@@ -130,6 +130,7 @@ Q: Are intervals mutually exclusive? A: Yes
 - Data structures:
 - Complexity:
 O(n), O(n)
+- Variations: streaming intervals (can usually solve using bisect), eg 729, 731, 732
 - Examples:
 eg: 56, 57, 218, 252, 253, 435, 986, 1229, 1272, Lint391; hard-352, 759
 
