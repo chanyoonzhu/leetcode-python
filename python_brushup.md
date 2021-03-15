@@ -7,8 +7,15 @@ smallest = float("-inf")
 
 # List
 - sort list
-list.sort() # in-place
-sorted(list) # returns a sorted list
+    - batch sort
+        list.sort() # in-place
+        sorted(list) # returns a sorted list
+    - stream sort
+        - insert to a sorted list: 
+            bisect.insort(list, ele, start, end) # see also .insort_left and .insort_right
+        - search insertion point in a sorted list:
+            insertion_index = bisect.bisect(list, ele, start, end)
+
 - remove first element from list
     - modifies original list
         ```
@@ -35,7 +42,16 @@ sorted(list) # returns a sorted list
     ```
     l = ['a', 'b', 'c', 'd']
     l.insert(3, 'e')
+    # or: l[3:3] = ['e']
     l # ['a', 'b', 'c', 'e', 'd']
+    ```
+    - caveat
+    ```
+    list1 = []
+    list2 = ['a', 'b']
+    list1.append(list2) # append a deep copy, better do list1.append([*list2])
+    list1[-1][0] = 'c'
+    list2 # ['c', 'b']
     ```
 - tips on uses of list
     - letter frequency with O(1) space
@@ -131,7 +147,10 @@ deq.reverse()
 `
 
 # Tips:
-quick global variable - eg: 230#L20
+- variable scope
+    - non-local variables:
+    quick global variable - eg: 230#L20
+    nonlocal - eg.99
 
 
 
