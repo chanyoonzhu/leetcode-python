@@ -5,7 +5,7 @@ all, any: 833
 array: 54,56,73,151,157,186,238,268,349,350,849
 backtracking: 17,1239
 bfs: 79,103,116,127,133,297,200,207,210,212,529,987,1236
-binary search:33,57,222,240,1428
+binary search:33,57,222,240,1272,1428
 bit manipulation: 268
 bst: 99,230,333,729
 bucket:299
@@ -132,7 +132,7 @@ Q: Are intervals mutually exclusive? A: Yes
 - Data structures:
 - Complexity:
 O(n), O(n)
-- Variations: streaming intervals (can usually solve using bisect), eg 729, 731, 732
+- Variations: streaming intervals (can usually solve using bisect), eg 729, 731, 732, 57
 - Examples:
 eg: 56, 57, 218, 252, 253, 435, 986, 1229, 1272, Lint391; hard-352, 759
 
