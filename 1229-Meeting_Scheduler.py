@@ -39,32 +39,25 @@ A: You can assume this will not happen
 
 class Solution(object):
     """
-    - two pointers
+    - two pointers, sweep lines
     - time: O(max(mlog(m), nlog(n))) sorting:O(max(mlog(m), nlog(n))) and iteration O(max(m, n))
     - space: O(n) for sorting
     """
-    def minAvailableDuration(self, slots1, slots2, duration):
-        """
-        :type slots1: List[List[int]]
-        :type slots2: List[List[int]]
-        :type duration: int
-        :rtype: List[int]
-        """
-        slots1 = sorted(slots1, key = lambda x: x[0])
-        slots2 = sorted(slots2, key = lambda x: x[0])
+    def minAvailableDuration(self, slots1: List[List[int]], slots2: List[List[int]], duration: int) -> List[int]:
+        slots1.sort()
+        slots2.sort()
         
-        n1, n2 = len(slots1), len(slots2)
-        ptr1 = ptr2 = 0
-        while ptr1 < n1 and ptr2 < n2:
-            start1, end1 = slots1[ptr1][0], slots1[ptr1][1]
-            start2, end2 = slots2[ptr2][0], slots2[ptr2][1]
-            intersect_start, intersect_end = max(start1, start2), min(end1, end2)
-            if intersect_end - intersect_start >= duration:
-                return [intersect_start, intersect_start + duration]
-            elif end1 < end2:
-                ptr1 += 1
+        i = j = 0
+        while i < len(slots1) and j < len(slots2):
+            start = max(slots1[i][0], slots2[j][0])
+            end = min(slots1[i][1], slots2[j][1])
+            if end - start >= duration:
+                return [start, start + duration]
+            if slots1[i][1] < slots2[j][1]:
+                i += 1
             else:
-                ptr2 += 1
+                j += 1
+        
         return []
 
     """
