@@ -25,6 +25,7 @@ preorder: 105,545,987
 queue:232,239
 range sum: 1314
 recursive: 2,116,273,450
+segment tree: 850
 sliding window: 3!,76,239,1423
 sort: 56,99,252,315,L391
 stack: 20,232,402,1249
@@ -134,7 +135,7 @@ Q: Are intervals mutually exclusive? A: Yes
 O(n), O(n)
 - Variations: streaming intervals (can usually solve using bisect), eg 729, 731, 732, 57
 - Examples:
-eg: 56, 57, 218, 252, 253, 435, 452, 986, 1229, 1272, 1288, Lint391; hard-352, 759
+eg: 56, 57, 218, 252, 253, 435, 452, 986, 1229, 1272, 1288, Lint391; hard-352, 759, 850(2D)
 
 # binary search
 - Key words:

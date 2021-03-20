@@ -41,7 +41,7 @@ smallest = float("-inf")
     - at any index
     ```
     l = ['a', 'b', 'c', 'd']
-    l.insert(3, 'e')
+    l.insert(3, 'e') # time complexity - O(n)
     # or: l[3:3] = ['e']
     l # ['a', 'b', 'c', 'e', 'd']
     ```
