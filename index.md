@@ -18,7 +18,7 @@ heap: 23,215,218,253,347,621,630,759,973,1229
 inorder: 99,105,230,333
 linked list: 2,21,24,25,86,138,146,445,1650
 map: 205
-math:12,168,268,621,794,836,1041,1344
+math:12,168,268,391,621,794,836,1041,1344
 merge sort: 315
 misc:169,229(moore voting)
 preorder: 105,545,987
@@ -135,7 +135,7 @@ Q: Are intervals mutually exclusive? A: Yes
 O(n), O(n)
 - Variations: streaming intervals (can usually solve using bisect), eg 729, 731, 732, 57
 - Examples:
-eg: 56, 57, 218, 252, 253, 435, 452, 986, 1229, 1272, 1288, Lint391; hard-352, 759, 850(2D)
+eg: 56, 57, 218, 252, 253, 435, 452, 986, 1229, 1272, 1288, Lint391; hard-352, 391(2D), 759, 850(2D)
 
 # binary search
 - Key words:
