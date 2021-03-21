@@ -3,49 +3,46 @@ class Solution:
     def getSkyline(self, buildings):
 
         """
-        Use a heap to keep the max height ()
-        Use a dictionary to keep current active nodes
-        iterate through all edges sorted by their positions
-
-
-        edges, heap, res = [], [], []
-        active = {}
-        # sorting key is important, sort by position then 'l' > 'r' then by height
-        edges = sorted([(building[0], building[1], -building[2], 'l') for building in buildings] + [(building[1], building[0], -building[2], 'r') for building in buildings], key = lambda x: (x[0], x[3], x[2]))
-        maxHeight = 0
-        for pos, pos2, h, side in edges:
-            h = -h
-            if side == 'l':
-                if h > maxHeight:
-                    res.append([pos, h])
-                    maxHeight = h
-                if (pos, pos2) not in active or -h < active[(pos, pos2)]: # higher building replace building(s) in same position
-                    heapq.heappush(heap, (-h, pos, pos2))
-                    active[(pos, pos2)] = -h
+        - sweep lines: my solution
+        - O(nlogn), O(n)
+        - time limit exceeded
+        """
+        def getSkyline(self, buildings: List[List[int]]) -> List[List[int]]:
+                
+        lines = []
+        for start, end, height in buildings:
+            lines.append((start, -1, -height))
+            lines.append((end, 1, height))
+        lines.sort()
+            
+        active = []
+        result = []
+        for x, _type, height in lines:
+            if _type == -1:
+                height = -height
+            if _type == -1:
+                if height > -active[0]:
+                    result.append((x, height))
+                heapq.heappush(active, -height)
             else:
-                if (pos2, pos) in active and -h == active[(pos2, pos)]: # do nothing if it's not the highest building in that position
-                    del active[(pos2, pos)]
-                    hHeap = posHeap = pos2Heap = 0
-                    found = False
-                    while not found and heap: # pop until found the current active highest building
-                        hHeap, posHeap, pos2Heap = heapq.heappop(heap)
-                        if (posHeap, pos2Heap) in active and active[(posHeap, pos2Heap)] == hHeap:
-                            found = True
-                    if found:
-                        if h > -hHeap and pos != pos2Heap:
-                            res.append([pos, -hHeap])
-                            maxHeight = -hHeap
-                        heapq.heappush(heap, (hHeap, posHeap, pos2Heap))
-                    elif res and [pos, -hHeap] != res[-1]:
-                        maxHeight = 0
-                        res.append([pos, 0])
-        """   
+                temp = []
+                while active and -active[0] >= height:
+                    temp.append(heapq.heappop(active))
+                
+                if len(temp) == 1:
+                    result.append((x, -active[0] if active else 0))
+                    
+                    
+                for height_neg in temp[:-1]:
+                    heapq.heappush(active, height_neg)
+        
+        return result
 
         """
         - Better solution
         - O(nlogn), O(n)
         """
-        events = sorted([(L, -H, R) for L, R, H in buildings] + list({(R, 0, None) for _, R, _ in buildings}))
+        events = sorted([(L, -H, R) for L, R, H in buildings] + [(R, 0, None) for _, R, _ in buildings])
         res, hp = [[0, 0]], [(0, float("inf"))]
         for x, negH, R in events:
             while x >= hp[0][1]: # remove inactive buildings
