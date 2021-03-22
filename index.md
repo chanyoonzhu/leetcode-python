@@ -26,7 +26,7 @@ queue:232,239
 range sum: 1314
 recursive: 2,116,273,450
 segment tree: 850
-sliding window: 3!,76,239,1423
+sliding window: 3!,76,239,1052,1423
 sort: 56,99,252,315,L391
 stack: 20,232,402,1249
 string: 151,157,165,722,833,929
