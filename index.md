@@ -26,7 +26,7 @@ queue:232,239
 range sum: 1314
 recursive: 2,116,273,450
 segment tree: 850
-sliding window: 3!,76,239,1052,1423
+sliding window: 3!,76,239,1052,1234,1423,1574,1577
 sort: 56,99,252,315,L391
 stack: 20,232,402,1249
 string: 151,157,165,722,833,929
@@ -111,7 +111,13 @@ Iterate over the array and update at each step the standard set for such problem
 
 # backtracking - if cannot use greedy, then cannot optimize further optimize O(2^n) complexity? 1239
 
-# sliding window - 
+# sliding window -
+- variations:
+    - fixed length sliding window:
+        - eg. 1052
+    - substring that has given numbers of certain characters: 
+        - algorithm: move right pointer to right until satisfies condition, then move left pointer to right to tighten window until condition not satisfied
+        - eg. 76,1234
 
 # heap - 
 heapify time complexity: O(n), heap push/pop time complexity: O(logn)
