@@ -5,7 +5,7 @@ all, any: 833
 array: 54,56,73,151,157,186,238,268,349,350,849
 backtracking: 17,1239
 bfs: 79,103,116,127,133,297,200,207,210,212,529,987,1236
-binary search:33,57,222,240,410,875,1272,1428,1482
+binary search:33,57,222,240,410,875,1272,1283,1428,1482
 bit manipulation: 268
 bst: 99,230,333,729
 bucket:299
@@ -215,7 +215,7 @@ while start <= end:
         ```
         mid = (start + end) // 2
         ```
-- Examples: 57(bisect), 278(basic), 981(strictly increasing, find lower), 315, 410|875|1482(binary search + greedy)
+- Examples: 57(bisect), 278(basic), 981(strictly increasing, find lower), 315, 410|875|1283|1482(binary search + greedy)
     
 # Sorting
 - quick sort 
