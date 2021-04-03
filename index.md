@@ -24,7 +24,7 @@ misc:169,229(moore voting)
 preorder: 105,545,987
 queue:232,239
 range sum: 1314
-recursive: 2,116,273,450
+recursive: 2,116,247,273,450
 segment tree: 850
 sliding window: 3!,76,239,1052,1234,1423,1498,1537,1574,1577,1793
 sort: 56,99,252,315,L391
