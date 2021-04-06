@@ -6,6 +6,22 @@
 #         self.right = None
 
 class Solution(object):
+
+    """
+    - dfs (preorder)
+    - O(n), O(n)
+    """
+    def buildTree(self, preorder: List[int], inorder: List[int]) -> TreeNode:
+        if not preorder:
+            return None
+        root = TreeNode(preorder.pop(0))
+        for i in range(len(inorder)):
+            if inorder[i] == root.val:
+                break
+        root.left = self.buildTree(preorder[:i], inorder[:i])
+        root.right = self.buildTree(preorder[i:], inorder[i + 1:])
+        return root
+
     def buildTree(self, preorder, inorder):
         """
         :type preorder: List[int]
