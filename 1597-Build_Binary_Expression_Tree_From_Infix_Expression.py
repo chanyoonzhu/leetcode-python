@@ -7,7 +7,7 @@
 class Solution:
     """
     - stack (two stacks)
-    - hard: answer copied; has other solutions such as using parser
+    - similar questions: Basic calculator III
     """
     def expTree(self, s: str) -> 'Node':
         

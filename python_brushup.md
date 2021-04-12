@@ -130,27 +130,85 @@ heapq.heapify(heap)
 
 # stack
 Python's built-in list type makes a decent stack data structure as it supports push and pop operations in amortized O(1) time. ... The list over-allocates its backing storage so that not every push or pop requires resizing and you get an amortized O(1) time complexity for these operations.
-`
+```
 list.append() # add to top of stack
 list.pop() # remove from top of stack
-`
+```
 
 # deque
 double-ended queue
-`
+```
 from collections import deque
 deq.popleft() # in-memory
 deq.pop() # in-memory
 deq.append(val) 
 deq.appendleft(val) 
 deq.reverse()
-`
+```
 
 # Tips:
 - variable scope
     - non-local variables:
     quick global variable - eg: 230#L20
     nonlocal - eg.99
+
+# Math
+- random:
+```
+random.randint(low, high) # low and high included
+```
+- combination and permutations:
+```
+math.comb(5, 4) # 5
+```
+```
+combi = itertools.combinations(['p', 'y', 't', 'h', 'o', 'n'], 5)
+combi 
+"""
+('p', 'y', 't', 'h', 'o')
+('p', 'y', 't', 'h', 'n')
+('p', 'y', 't', 'o', 'n')
+('p', 'y', 'h', 'o', 'n')
+('p', 't', 'h', 'o', 'n')
+('y', 't', 'h', 'o', 'n')
+"""
+```
+```
+permu = permutations(['p', 'y', 't', 'h', 'o', 'n'], 2)
+permu
+"""
+('p', 'y')
+('p', 't')
+('p', 'h')
+('p', 'o')
+('p', 'n')
+('y', 'p')
+('y', 't')
+('y', 'h')
+('y', 'o')
+('y', 'n')
+('t', 'p')
+('t', 'y')
+('t', 'h')
+('t', 'o')
+('t', 'n')
+('h', 'p')
+('h', 'y')
+('h', 't')
+('h', 'o')
+('h', 'n')
+('o', 'p')
+('o', 'y')
+('o', 't')
+('o', 'h')
+('o', 'n')
+('n', 'p')
+('n', 'y')
+('n', 't')
+('n', 'h')
+('n', 'o')
+"""
+```
 
 
 
