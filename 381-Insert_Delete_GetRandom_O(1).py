@@ -1,60 +1,50 @@
 class RandomizedCollection(object):
 
+    """
+    - array + hashmap + hashset
+    - similar question: 380
+    - caveat: since dups allowed, the dictionary value can't just be a list because item search is not O(1), has to use a hashset
+    """
     def __init__(self):
         """
         Initialize your data structure here.
         """
         self.nums = []
-        """
-        since dups allowed, the dictionary value can't just be a number, it has to be a collection of numbers
-        (array, set, queue)
-        - can't use array and queue because item search is not O(1)
-        """
         self.pos = collections.defaultdict(set)
         
 
-    def insert(self, val):
+    def insert(self, val: int) -> bool:
         """
         Inserts a value to the collection. Returns true if the collection did not already contain the specified element.
-        :type val: int
-        :rtype: bool
         """
-        unseen = True
-        if val in self.pos:
-            unseen = False
-        self.pos[val].add(len(self.nums))
+        doesContain = False
+        if self.pos[val]:
+            doesContain = True
         self.nums.append(val)
-        return unseen
+        self.pos[val].add(len(self.nums) - 1)
+        return doesContain
         
 
-    def remove(self, val):
+    def remove(self, val: int) -> bool:
         """
         Removes a value from the collection. Returns true if the collection contained the specified element.
-        :type val: int
-        :rtype: bool
         """
-
-        if val not in self.pos:
+        if not self.pos[val]:
             return False
-        pos, lastVal = self.pos[val].pop(), self.nums[-1]
-        if len(self.nums) - 1 != pos:
-            self.nums[pos] = lastVal
-            self.pos[lastVal].remove(len(self.nums) - 1)
-            self.pos[lastVal].add(pos)
-        if len(self.pos[val]) == 0:
-            del self.pos[val]
+        index, last, last_index = self.pos[val].pop(), self.nums[-1], len(self.nums) - 1 # self.pos[val][-1] won't work on set, has to use self.pos[val].pop()
+        self.nums[index] = last
+        self.pos[last].add(index)
+        self.pos[last].remove(last_index)
         self.nums.pop()
         return True
         
-
-    def getRandom(self):
+        
+    def getRandom(self) -> int:
         """
         Get a random element from the collection.
-        :rtype: int
         """
-        
-        import random
-        return self.nums[random.randint(0, len(self.nums)-1)]
+        index = random.randint(0, len(self.nums) - 1)
+        return self.nums[index]
         
 
 

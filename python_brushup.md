@@ -81,6 +81,31 @@ counter # {"A": 1, "B": 1, "C": 2, "D": 1}
 counter.most_common(3) # [('C', 2), ('A', 1), ('B', 1)]
 ```
 
+# Set
+- add element
+```
+s = set()
+s.add("a")
+s # ["a"]
+```
+- remove element
+```
+s = set()
+s.add("a")
+s.remove("a") # or s.discard("a")
+s # []
+```
+```
+s = set()
+s.remove("a") # key error
+s.discard("a")  # no error
+```
+```
+s = set("a", "b", "c")
+s.pop() # returns "a" or "b" or "c" and pops the returned from set
+```
+
+
 # heap
 
 - max heap
