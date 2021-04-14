@@ -2,10 +2,10 @@ two sum: 1, 167
 
 
 all, any: 833
-array: 54,56,73,151,157,186,238,268,349,350,380,381,849
+array: 54,56,73,151,157,186,238,268,349,350,380,381,849,1146
 backtracking: 17,1239
 bfs: 79,103,116,127,133,297,200,207,210,212,529,971,987,1236
-binary search:33,57,222,240,374,410,774,875,1011,1055,1231,1272,1283,1428,1482
+binary search:33,57,222,240,374,410,774,875,1011,1055,1146,1231,1272,1283,1428,1482
 bit manipulation: 268
 bst: 99,230,333,490,729
 bucket:299
@@ -96,23 +96,23 @@ or
     - Space: O(n) - n stacks for skewed tree
 - example: 230
 
-# tree - Recursion can usually be used. 
+## tree - Recursion can usually be used. 
 If using dfs, has to decide which to use: in-order traversal (aka. dfs), post-order traversal (549,1740), and pre-order traversal (298, search tree). Time complexity is O(n): every node is visited once. Space complexity is O(n) in worst case and O(log(n)) in average case: The extra space comes from implicit stack space due to recursion. For a skewed binary tree, the recursion could go up to n levels deep. 
 If using bfs, usually uses a FIFO queue to store nodes to be visited. 
 
-# dynamic programming -
+## dynamic programming -
 backtracking with memoization; steps: build dp memory, define what dp[i] represents, find update function(s)
 space can be optimized to O(1) if only need to track constant time of variables for each update
 - Top down: recursion using memoization
 - Bottom up: loop using memoization
 
-# greedy -
+## greedy -
 Pick the locally optimal move at each step, and that will lead to the globally optimal solution.
 Iterate over the array and update at each step the standard set for such problems: 1.current element 2.current local maximum sum (at this given point) 3.global maximum sum seen so far.
 
-# backtracking - if cannot use greedy, then cannot optimize further optimize O(2^n) complexity? 1239
+## backtracking - if cannot use greedy, then cannot optimize further optimize O(2^n) complexity? 1239
 
-# sliding window -
+## sliding window -
 - variations:
     - fixed length sliding window:
         - eg. 1052
@@ -120,16 +120,16 @@ Iterate over the array and update at each step the standard set for such problem
         - algorithm: move right pointer to right until satisfies condition, then move left pointer to right to tighten window until condition not satisfied
         - eg. 76,1234
 
-# heap - 
+## heap - 
 heapify time complexity: O(n), heap push/pop time complexity: O(logn)
 
-# String manipulation:
+## String manipulation:
 use reversed string to avoid index shift (833)
 
-# Cumulative sum:
+## Cumulative sum:
 usually solved with O(n) time using hashmap - eg. 560
 
-# Sweep Lines:
+## Sweep Lines:
 - Key words:
 intervals
 - Clarification Questions: 
@@ -144,7 +144,7 @@ O(n), O(n)
 - Examples:
 eg: 56, 57, 218, 252, 253, 435, 452, 986, 1229, 1272, 1288, Lint391; hard-352, 391(2D), 759, 850(2D)
 
-# binary search
+## binary search
 - Key words:
 find, sorted
 - Three templates
@@ -216,9 +216,9 @@ while start <= end:
         ```
         mid = (start + end) // 2
         ```
-- Examples: 57(bisect), 278,374(basic), 981(strictly increasing, find lower), 315, 410|774|875|1011|1231|1283|1482(binary search + greedy)
+- Examples: 57,1146(bisect), 278,374(basic), 981(strictly increasing, find lower), 315, 410|774|875|1011|1231|1283|1482(binary search + greedy)
     
-# Sorting
+## Sorting
 - quick sort 
     - algorithm:
         1. find a random pivot
@@ -240,7 +240,11 @@ while start <= end:
 - *sort an almost sorted array where two elements are swapped
     - Examples: 99
 
-# Math
+## Math
 - permutation and combination
     - formula: P(n, r) = n! / (n - r)!   C(n, r) = n! / (r! * (n - r)!)
     - eg. 1569
+
+## Data Structure Implementation 
+- summary: implement a data structure with required APIs and targeted complexity
+- eg: 380,381,432,1146
