@@ -9,6 +9,10 @@ smallest = float("-inf")
 - sort list
     - batch sort
         list.sort() # in-place
+        ```
+        dictionary = ["ale","apple","monkey","plea"]
+        dictionary.sort(key = lambda x: (-len(x), x)) # sort by length then lexigraphical order (524)
+        ```
         sorted(list) # returns a sorted list
     - stream sort
         - insert to a sorted list: 
