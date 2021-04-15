@@ -27,7 +27,7 @@ queue:232,239
 range sum: 1314
 recursive: 2,116,247,273,450
 segment tree: 850
-sliding window: 3!,76,239,1052,1234,1423,1498,1537,1574,1577,1793
+sliding window: 3!,76,239,904,1052,1234,1423,1498,1537,1574,1577,1793
 sort: 56,99,252,315,L391
 stack: 20,227,232,331,402,1028,1249,1381,1597
 string: 151,157,165,722,833,929
@@ -118,7 +118,7 @@ Iterate over the array and update at each step the standard set for such problem
         - eg. 1052
     - substring that has given numbers of certain characters: 
         - algorithm: move right pointer to right until satisfies condition, then move left pointer to right to tighten window until condition not satisfied
-        - eg. 76,1234
+        - eg. 76,1234; similar:904
 
 ## heap - 
 heapify time complexity: O(n), heap push/pop time complexity: O(logn)
