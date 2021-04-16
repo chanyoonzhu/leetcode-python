@@ -1,3 +1,9 @@
+"""
+- hashmap + doubly-linkedlist: official solution
+- get: O(1), put: O(1)
+- instinct: O(1) get can be achieved through hashmap; O(1) move elements can be achieved through linkedlist and hashmap
+- caveat: use dummy node for linkedlist avoids checking edge cases
+"""
 class LinkedNode:
     
     # doubly-linkedList
@@ -32,8 +38,7 @@ class LRUCache:
         node = self.dic[key]
         self.remove(node)
         self.insertAtTail(node)
-        return node.val
-        
+        return node.val      
 
     def put(self, key, value):
         """
@@ -51,9 +56,7 @@ class LRUCache:
         else:
             self.dic[key].val = value
             self.remove(self.dic[key])
-        self.insertAtTail(self.dic[key])
-        
-        
+        self.insertAtTail(self.dic[key])   
     
     def insertAtTail(self, node):
         self.tail.prev.next = node
@@ -64,6 +67,69 @@ class LRUCache:
     def remove(self, node):
         node.prev.next = node.next
         node.next.prev = node.prev
+
+    
+"""
+- hashmap + doubly-linkedlist: my solution
+- get: O(1), put: O(1)
+- instinct: O(1) get can be achieved through hashmap; O(1) move elements can be achieved through linkedlist and hashmap
+- caveat: use dummy node for linkedlist avoids checking edge cases
+"""
+class Node:
+    def __init__(self, key, prev=None, next=None):
+        self.key = key
+        self.prev = prev
+        self.next = next
+
+class LRUCache:
+
+    def __init__(self, capacity: int):
+        self.capacity = capacity
+        self.dict = dict()
+        self.head = Node(0)  # dummy head, all keys are positive so using 0 is safe
+        self.tail = Node(0)  # dummy tail
+        self.head.next = self.tail
+        self.tail.prev = self.head
+        
+
+    def get(self, key: int) -> int:
+        if key in self.dict:
+            val, node = self.dict[key]
+            self.move_to_head(node)
+            return val
+        return -1
+        
+
+    def put(self, key: int, value: int) -> None:
+        if key in self.dict:
+            self.dict[key][0] = value
+            self.move_to_head(self.dict[key][1])
+        else:
+            node = Node(key)
+            self.dict[key] = [value, node]
+            self.make_head(node)  
+        if len(self.dict) > self.capacity:
+            self.remove_from_tail()
+    
+    def make_head(self, node):
+        node.prev = self.head
+        node.next = self.head.next
+        self.head.next.prev = node
+        self.head.next = node
+    
+    def move_to_head(self, node):
+        if node.prev != self.head:
+            node.prev.next = node.next
+            node.next.prev = node.prev
+            self.make_head(node)
+    
+    def remove_from_tail(self): # can be optimized to remove any node, which move_to_head can call.
+        node = self.tail.prev
+        del self.dict[node.key]
+        node.prev.next = node.next
+        node.next.prev = node.prev
+        node.next = None
+        node.prev = None
 
 # Your LRUCache object will be instantiated and called as such:
 # obj = LRUCache(capacity)
