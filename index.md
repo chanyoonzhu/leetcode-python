@@ -13,11 +13,11 @@ divide and conquer: 215,312,973
 dfs: 17,79,91,99,105,106,113,124,129,133,200,207,210,212,230,236,261,297,298,329,331,333,490,529,549,687,695,753,947,987,1028,1236,1569,1644,1676,1740
 dynamic programming: 5,10,39,53,70,72,91,139,198,279,303,312,322,403,410,416,435,518,562,746,1314
 greedy: 45,53,135,410,435,455,621,630,774,875,1011,1231,1428,1482
-hashmap: 1,76,106,138,146,149,159,169,229,299,336,359,380,381,392,403,560,895,1055,1577,1644
-hashset: 381
+hashmap: 1,76,106,138,146,149,159,169,229,299,336,359,380,381,392,403,432,560,895,1055,1577,1644
+hashset: 381,432
 heap: 23,215,218,253,347,621,630,759,973,1229
 inorder: 99,105,230,333
-linked list: 2,21,24,25,86,138,146,445,1650
+linked list: 2,21,24,25,86,138,146,432,445,1650
 map: 205
 math:12,149,168,268,391,621,794,836,1041,1344,1569
 merge sort: 315,1574
@@ -123,6 +123,9 @@ usually solved with O(n) time using hashmap - eg. 560
 ## Data Structure Implementation 
 - summary: implement a data structure with required APIs and targeted complexity
 - eg: 146,380,381,432,1146,1381
+- tips:
+    use hashmap to achieve O(1) retrieval of a key
+    use hashmap and doubly linked list to achieve retrieving min/max in O(1) eg:146,432,460
 
 ## DFS - don't forget to reset visited back when all the branched dfs does not succeed.
 - recursive (in-order)
