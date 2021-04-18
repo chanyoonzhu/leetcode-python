@@ -122,10 +122,10 @@ usually solved with O(n) time using hashmap - eg. 560
 
 ## Data Structure Implementation 
 - summary: implement a data structure with required APIs and targeted complexity
-- eg: 146,380,381,432,1146,1381
+- eg: 146,380,381,432,460,1146,1381
 - tips:
     use hashmap to achieve O(1) retrieval of a key
-    use hashmap and doubly linked list to achieve retrieving min/max in O(1) eg:146,432,460
+    use hashmap and doubly linked list to achieve retrieving min/max in O(1) eg:(LRU/LFU)146,432,460
 
 ## DFS - don't forget to reset visited back when all the branched dfs does not succeed.
 - recursive (in-order)
