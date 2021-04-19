@@ -5,7 +5,7 @@ all, any: 833
 array: 54,56,73,151,157,186,238,268,349,350,380,381,849,1146,1381
 backtracking: 17,1239
 bfs: 79,103,116,127,133,297,200,207,210,212,529,971,987,1236
-binary search:33,57,222,240,374,410,774,875,911,1011,1055,1146,1231,1272,1283,1428,1482
+binary search:33,57,222,240,295,374,410,774,875,911,1011,1055,1146,1231,1272,1283,1428,1482
 bit manipulation: 268
 bst: 99,230,333,490,729
 bucket:299
@@ -15,7 +15,7 @@ dynamic programming: 5,10,39,53,70,72,91,139,198,279,303,312,322,403,410,416,435
 greedy: 45,53,135,410,435,455,621,630,774,875,1011,1231,1428,1482
 hashmap: 1,76,106,138,146,149,159,169,229,299,336,359,380,381,392,403,432,560,895,1055,1577,1644
 hashset: 381,432
-heap: 23,215,218,253,347,621,630,759,973,1229
+heap: 23,215,218,253,295,347,621,630,759,973,1229
 inorder: 99,105,230,333
 linked list: 2,21,24,25,86,138,146,432,445,1650
 map: 205
@@ -122,7 +122,9 @@ usually solved with O(n) time using hashmap - eg. 560
 
 ## Data Structure Implementation 
 - summary: implement a data structure with required APIs and targeted complexity
-- eg: 146,380,381,432,460,1146,1381
+- eg: 
+    - hashmap / doubly linked list: 146,380,381,432,460,1146,1381
+    - heap: 295
 - tips:
     use hashmap to achieve O(1) retrieval of a key
     use hashmap and doubly linked list to achieve retrieving min/max in O(1) eg:(LRU/LFU)146,432,460
@@ -196,6 +198,8 @@ Iterate over the array and update at each step the standard set for such problem
 
 ## Heap - 
 heapify time complexity: O(n), heap push/pop time complexity: O(logn)
+- eg:
+    - median: 295
 
 ## LinkedList
 - tips:

@@ -35,6 +35,30 @@ class MedianFinder(object):
         else:
             return self.nums[length//2]
     """
+
+    """
+    - O(n) (for array shifting) + O(logn) (for searching) ≈ O(n): addNum.  O(1): findMedian
+    """
+    class MedianFinder:
+
+    def __init__(self):
+        """
+        initialize your data structure here.
+        """
+        self.nums = []
+        
+
+    def addNum(self, num: int) -> None:
+        bisect.insort(self.nums, num)
+        
+
+    def findMedian(self) -> float:
+        div, mod = divmod(len(self.nums), 2)
+        if mod:
+            return self.nums[div]
+        return (self.nums[div] + self.nums[div - 1]) / 2.0
+
+
     
     """
     - two heaps
@@ -56,7 +80,7 @@ class MedianFinder(object):
         """
         import heapq
         if len(self.small) == len(self.large):
-            heapq.heappush(self.small, -heapq.heappushpop(self.large,num))
+            heapq.heappush(self.small, -heapq.heappushpop(self.large, num))
         else:
             heapq.heappush(self.large, -heapq.heappushpop(self.small, -num))
 
