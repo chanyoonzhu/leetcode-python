@@ -9,7 +9,7 @@ binary search:33,57,222,240,295,374,410,774,875,911,1011,1055,1146,1231,1272,128
 bit manipulation: 268
 bst: 99,230,333,490,729
 bucket:299
-divide and conquer: 215,312,973
+divide and conquer: 215,307,312,973
 dfs: 17,79,91,99,105,106,113,124,129,133,200,207,210,212,230,236,261,297,298,329,331,333,490,529,549,687,695,753,947,987,1028,1236,1569,1644,1676,1740
 dynamic programming: 5,10,39,53,70,72,91,139,198,279,303,312,322,403,410,416,435,518,562,746,1314
 greedy: 45,53,135,410,435,455,621,630,774,875,1011,1231,1428,1482
@@ -26,7 +26,7 @@ preorder: 105,106,331,545,971,987,1028,1569
 queue:232,239
 range sum: 1314
 recursive: 2,116,247,273,450
-segment tree: 850
+segment tree: 307,850
 sliding window: 3!,76,239,904,1052,1234,1423,1498,1537,1574,1577,1793
 sort: 56,99,252,280,315,524,L391
 stack: 20,227,232,331,402,1028,1249,1381,1597
@@ -209,6 +209,10 @@ heapify time complexity: O(n), heap push/pop time complexity: O(logn)
 - permutation and combination
     - formula: P(n, r) = n! / (n - r)!   C(n, r) = n! / (r! * (n - r)!)
     - eg. 1569
+
+## Segment tree:
+- used to solve numerous RANGE QUERY problems like finding minimum, maximum, sum, greatest common divisor, least common denominator in array in logarithmic time.
+- eg: 307
 
 ## Sliding window -
 - variations:
