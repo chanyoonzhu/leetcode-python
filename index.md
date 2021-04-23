@@ -125,9 +125,11 @@ usually solved with O(n) time using hashmap - eg. 560
 - eg: 
     - hashmap / doubly linked list: 146,380,381,432,460,1146,1381
     - heap: 295
+    - Fenwick tree / segment tree: 307
 - tips:
     use hashmap to achieve O(1) retrieval of a key
     use hashmap and doubly linked list to achieve retrieving min/max in O(1) eg:(LRU/LFU)146,432,460
+    use Fenwick tree or Segment tree to solve range sum/max/min problem
 
 ## DFS - don't forget to reset visited back when all the branched dfs does not succeed.
 - recursive (in-order)
@@ -210,9 +212,10 @@ heapify time complexity: O(n), heap push/pop time complexity: O(logn)
     - formula: P(n, r) = n! / (n - r)!   C(n, r) = n! / (r! * (n - r)!)
     - eg. 1569
 
-## Segment tree:
+## Fenwick Tree (or binary index tree):
 - used to solve numerous RANGE QUERY problems like finding minimum, maximum, sum, greatest common divisor, least common denominator in array in logarithmic time.
 - eg: 307
+- can also use "Segment tree" to solve with more space
 
 ## Sliding window -
 - variations:

@@ -83,6 +83,37 @@ class NumArray:
                 return self.sumRangeNodes(node.right, left, right)
             else:
                 return self.sumRangeNodes(node.left, left, mid) + self.sumRangeNodes(node.right, mid + 1, right)
+    
+    """
+    - divide and conquer with binary index tree: https://leetcode.com/problems/range-sum-query-mutable/discuss/75730/148ms-Python-solution-Binary-Indexed-Tree
+    - create: O(n); update: O(logn), O(1); rangesum: O(logn), O(1)
+    """
+    def __init__(self, nums: List[int]):
+        self.n = len(nums)
+        self.nums = nums
+        self.sums = [0] * (self.n + 1)
+        for i in range(self.n):
+            k = i + 1
+            while k <= self.n:
+                self.sums[k] += nums[i]
+                k += (k & -k)
+        
+    def update(self, index: int, val: int) -> None:
+        k = index + 1
+        while k <= self.n:
+            self.sums[k] += (val - self.nums[index])
+            k += (k & -k)
+        self.nums[index] = val
+
+    def sumRange(self, left: int, right: int) -> int:
+        res, right = 0, right + 1
+        while right:
+            res += self.sums[right]
+            right -= (right & -right)
+        while left:
+            res -= self.sums[left]
+            left -= (left & -left)
+        return res
             
 
 
