@@ -9,11 +9,11 @@ binary search:33,57,222,240,295,374,410,774,875,911,1011,1055,1146,1231,1272,128
 bit manipulation: 268
 bst: 99,230,333,490,729
 bucket:299
-divide and conquer: 215,307,308,312,973
+divide and conquer: 215,307,308,312,327,973
 dfs: 17,79,91,99,105,106,113,124,129,133,200,207,210,212,230,236,261,297,298,329,331,333,490,529,549,687,695,753,947,987,1028,1236,1569,1644,1676,1740
 dynamic programming: 5,10,39,53,70,72,91,139,198,279,303,312,322,403,410,416,435,518,562,746,1314
 greedy: 45,53,135,410,435,455,621,630,774,875,1011,1231,1428,1482
-hashmap: 1,76,106,138,146,149,159,169,229,299,336,359,380,381,392,403,432,560,895,1055,1577,1644
+hashmap: 1,76,106,138,146,149,159,169,229,299,327,336,359,380,381,392,403,432,560,895,1055,1577,1644
 hashset: 381,432
 heap: 23,215,218,253,295,347,621,630,759,973,1229
 inorder: 99,105,230,333
@@ -24,9 +24,9 @@ merge sort: 315,1574
 misc:169,229(moore voting)
 preorder: 105,106,331,545,971,987,1028,1569
 queue:232,239
-range sum: 1314
+range sum: 307,308,327,1314
 recursive: 2,116,247,273,450
-segment tree: 307,308,850
+segment tree: 307,308,327,850
 sliding window: 3!,76,239,904,1052,1234,1423,1498,1537,1574,1577,1793
 sort: 56,99,252,280,315,524,L391
 stack: 20,227,232,331,402,1028,1249,1381,1597
@@ -125,7 +125,7 @@ usually solved with O(n) time using hashmap - eg. 560
 - eg: 
     - hashmap / doubly linked list: 146,380,381,432,460,1146,1381
     - heap: 295
-    - Fenwick tree / segment tree: 307,308
+    - Fenwick tree / segment tree: 307,308,327
 - tips:
     use hashmap to achieve O(1) retrieval of a key
     use hashmap and doubly linked list to achieve retrieving min/max in O(1) eg:(LRU/LFU)146,432,460
@@ -214,7 +214,7 @@ heapify time complexity: O(n), heap push/pop time complexity: O(logn)
 
 ## Fenwick Tree (or binary index tree):
 - used to solve numerous RANGE QUERY problems like finding minimum, maximum, sum, greatest common divisor, least common denominator in array in logarithmic time.
-- eg: 307,308(2D)
+- eg: 307,308(2D),327(prefix-sum)
 - can also use "Segment tree" to solve with more space
 
 ## Sliding window -
