@@ -5,6 +5,10 @@
 #         self.left = None
 #         self.right = None
 
+"""
+- binary search
+- O(logn*logn)
+"""
 class Solution(object):
     def countNodes(self, root):
         """
@@ -12,45 +16,45 @@ class Solution(object):
         :rtype: int
         """
         
-        """
-        - O(n)
-        - binary tree nodes general solution
-        
-        if not root:
-            return 0
-
-        return 1 + self.countNodes(root.left) + self.countNodes(root.right)
-        """
-        
-        """
-        - log(n)*log(n)
-        - binary search leaf nodes
-        
+        def countNodes(self, root: TreeNode) -> int:
         if not root:
             return 0
         
-        height = 0
-        ptr = root
-        while ptr:
-            height += 1
-            ptr = ptr.left
-            
-        def helper(root, pos, level, height):
-            if level == height:
-                return pos
-            else: 
-                currLevel = level
-                node, prev = root.right, root
-                while node:
-                    currLevel += 1
-                    prev, node = prev, node.left
-                if currLevel == height: # still full
-                    return helper(root.right, pos*2+1, level+1, height)
-                else:
-                    return helper(root.left, pos*2, level+1, height)
+        max_depth = 0
+        node = root
+        while node:
+            max_depth += 1
+            node = node.left
+        
+        if max_depth == 1:
+            return 1
                 
-        return (2 ** (height - 1) - 1) + (helper(root, 0, 1, height) + 1)
-        """
+        def binary_search(node, depth):
+            l, r = 0, 2 ** (depth - 1) # positions of leaf nodes
+            while l < r:
+                mid = l + (r - l) // 2
+                if is_middle_full(node, depth):
+                    l = mid + 1
+                    node = node.right
+                else:
+                    r = mid
+                    node = node.left
+                depth -= 1
+            return l
+        
+        def is_middle_full(node, depth):
+            if not node:
+                return depth == 0
+            if not node.right:
+                return depth == 1
+            ptr, depth = node.right, depth - 1
+            while ptr:
+                ptr = ptr.left
+                depth -= 1
+            return depth == 0
+        
+        last_full_index = binary_search(root, max_depth)
+        return 2 ** (max_depth - 1) - 1 + last_full_index
         
         """
         - divide and conquer
@@ -74,4 +78,27 @@ class Solution(object):
             return 2 ** (left_h) - 1
         else:
             return 1 + self.countNodes(root.left) + self.countNodes(root.right)
+
+"""
+- binary search
+- O(logn*logn)
+"""
+class Solution2:
+        # @param {TreeNode} root
+        # @return {integer}
+        def countNodes(self, root):
+            if not root:
+                return 0
+            leftDepth = self.getDepth(root.left)
+            rightDepth = self.getDepth(root.right)
+            if leftDepth == rightDepth:
+                return pow(2, leftDepth) + self.countNodes(root.right) # number of nodes of root and left tree.
+            else: 
+                return pow(2, rightDepth) + self.countNodes(root.left) # number of nodes of root and right tree.
+    
+        def getDepth(self, root):
+            if not root:
+                return 0
+            return 1 + self.getDepth(root.left)
+
             
