@@ -23,8 +23,9 @@ class Solution(object):
         return res
 
     """
-    - hashmap
+    - prefix sum with hashmap
     - O(n), O(n)
+    - similar problem: 437(tree)
     """
     def subarraySum_hashmap(self, nums, k):
         """

@@ -13,7 +13,7 @@ divide and conquer: 215,307,308,312,327,973
 dfs: 17,79,91,99,105,106,113,124,129,133,200,207,210,212,230,236,261,297,298,329,331,333,490,529,549,687,695,753,947,987,1028,1236,1569,1644,1676,1740
 dynamic programming: 5,10,39,53,70,72,91,139,198,279,303,312,322,403,410,416,435,518,562,746,1314
 greedy: 45,53,135,410,435,455,621,630,774,875,1011,1231,1428,1482
-hashmap: 1,76,106,138,146,149,159,169,229,299,327,336,359,380,381,392,403,432,560,895,1055,1577,1644
+hashmap: 1,76,106,138,146,149,159,169,229,299,327,336,359,380,381,392,403,432,437,560,895,1055,1577,1644
 hashset: 381,432
 heap: 23,215,218,253,295,347,621,630,759,973,1229
 inorder: 99,105,230,333
@@ -117,8 +117,8 @@ while start <= end:
 
 ## BFS - key word: shorted path; elements: queue, visited; steps: while q, if q popped is target, finish, if not, add popped item's neighbors to the q; optimization: visited can be eliminated if allowed to change memory (mark on original data)
 
-## Cumulative sum:
-usually solved with O(n) time using hashmap - eg. 560
+## prefix sum:
+usually solved with O(n) time using hashmap - eg. 560,437(tree version)
 
 ## Data Structure Implementation 
 - summary: implement a data structure with required APIs and targeted complexity
