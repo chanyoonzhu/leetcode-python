@@ -4,13 +4,12 @@
 #         self.val = val
 #         self.left = left
 #         self.right = right
+
+"""
+- O(n), O(n)
+- post-order dfs (get child nodes value from traversal)
+"""
 class Solution(object):
-
-
-    """
-    - O(n), O(n)
-    - post-order dfs
-    """
     
     longest = 0
     
@@ -35,5 +34,34 @@ class Solution(object):
             curr_longest_one_side = max(curr_longest_one_side, r_longest + 1)
         self.longest = max(self.longest, curr_longest)
         return curr_longest_one_side
+
+"""
+- O(n), O(n)
+- post-order dfs: (get child nodes value from return value)
+"""
+class Solution(object):
+    def longestUnivaluePath(self, root):
+        """
+        :type root: TreeNode
+        :rtype: int
+        """
+        self.longest = 0
+        
+        def dfs(node):
+            if not node:
+                return (None, 0)
+            l_val, l_length = dfs(node.left)
+            r_val, r_length = dfs(node.right)
+            max_length_one_side = 0
+            if node.val == l_val:
+                self.longest = max(self.longest,  l_length + 1)
+                max_length_one_side = l_length + 1
+            if node.val == r_val:
+                self.longest = max(self.longest, max_length_one_side + r_length + 1) # caveat: have to add both sides when calculate longest
+                max_length_one_side = max(length, r_length + 1) # only pick the longest side
+            return (node.val, max_length_one_side)
+        
+        dfs(root)
+        return self.longest
             
         
