@@ -58,6 +58,26 @@ class Solution(object):
             if prev_reachable_index > i - 1:
                 prev_reachable_index = max(prev_reachable_index, i + nums[i])
         return prev_reachable_index >= n - 1
+
+"""
+- dp (bottom-up): previous solution optimized
+- reachable problem: dp[i] - farthest index that can be reached next (considering all previous indexes)
+- O(n), O(1) - space optimized, only need to track previous reachable
+"""
+class Solution(object):
+    def canJump(self, nums):
+        """
+        :type nums: List[int]
+        :rtype: bool
+        """
+        n = len(nums)
+        reachable_index = 0
+        
+        for i in range(n):
+            if reachable_index < i:
+                return False
+            reachable_index = max(reachable_index, i + nums[i])
+        return True
                 
                 
             
