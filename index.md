@@ -11,7 +11,7 @@ bst: 99,230,333,490,729
 bucket:299
 divide and conquer: 215,307,308,312,327,973
 dfs: 17,79,91,99,105,106,113,124,129,133,200,207,210,212,230,236,261,297,298,329,331,333,490,529,549,666,687,695,753,947,987,1028,1236,1569,1644,1676,1740
-dynamic programming: 5,10,39,53,70,72,91,139,198,279,303,312,322,403,410,416,435,518,562,746,1314
+dynamic programming: 5,10,39,53,55,70,72,91,139,198,279,303,312,322,403,410,416,435,518,562,746,1314
 greedy: 45,53,135,410,435,455,621,630,774,875,1011,1231,1428,1482
 hashmap: 1,76,106,138,146,149,159,169,229,299,327,336,359,380,381,392,403,432,437,560,666,895,1055,1577,1644
 hashset: 381,432
@@ -193,6 +193,7 @@ space can be optimized to O(1) if only need to track constant time of variables 
 - Bottom up: loop using memoization
 - types:
     - length in matrix: 562
+    - reachable problem: 55
 
 ## Greedy -
 Pick the locally optimal move at each step, and that will lead to the globally optimal solution.
