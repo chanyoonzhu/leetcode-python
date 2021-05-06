@@ -4,7 +4,7 @@ two sum: 1, 167
 all, any: 833
 array: 54,56,73,151,157,186,238,268,349,350,380,381,849,1146,1381
 backtracking: 17,1239
-bfs: 79,103,116,127,133,297,200,207,210,212,529,863,971,987,1236,1306
+bfs: 79,103,116,127,133,297,200,207,210,212,529,863,971,987,1236,1306,1345
 binary search:33,57,222,240,295,374,410,774,875,911,1011,1055,1146,1231,1272,1283,1428,1482
 bit manipulation: 268
 bst: 99,230,333,490,729
@@ -116,7 +116,11 @@ while start <= end:
         ```
 - Examples: 57,911,1146(bisect), 278,374(basic), 981(strictly increasing, find lower), 315, 410|774|875|1011|1231|1283|1482(binary search + greedy)
 
-## BFS - key word: shorted path; elements: queue, visited; steps: while q, if q popped is target, finish, if not, add popped item's neighbors to the q; optimization: visited can be eliminated if allowed to change memory (mark on original data)
+## BFS
+- key word: shorted path (eg. 1345); 
+- algorithm: 
+    elements: queue, visited hashset; 
+    steps: while q, if q popped is target, finish, if not, add popped item's neighbors to the q; optimization: visited can be eliminated if allowed to change memory (mark on original data)
 
 ## prefix sum:
 usually solved with O(n) time using hashmap - eg. 560,437(tree version)
