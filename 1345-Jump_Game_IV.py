@@ -1,5 +1,6 @@
 """
 - bfs + hashmap
+- O(n), O(n)
 - Time limit exceeded
 """
 class Solution(object):
@@ -30,7 +31,7 @@ class Solution(object):
 
 """
 - bfs + hashmap (optimized)
-- Time limit exceeded
+- O(n), O(n)
 """
 class Solution(object):
     def minJumps(self, arr):
@@ -56,3 +57,4 @@ class Solution(object):
                         return step + 1
                     visited.add(j)
                     stack.append((j, step + 1))
+            del value_map[arr[i]] # remove already reversed
