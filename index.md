@@ -11,12 +11,12 @@ bst: 99,230,333,490,729
 bucket:299
 divide and conquer: 215,307,308,312,327,973
 dfs: 17,79,91,99,105,106,113,124,129,133,200,207,210,212,230,236,261,297,298,329,331,333,490,529,549,666,687,695,753,863,947,987,1028,1236,1306,1340,1569,1644,1676,1740
-dynamic programming: 5,10,39,45,53,55,70,72,91,139,198,279,303,312,322,403,410,416,435,518,562,746,1314
+dynamic programming: 5,10,39,45,53,55,70,72,91,139,198,279,303,312,322,403,410,416,435,518,562,746,1314,1696
 graph: 863
 greedy: 45,53,55,135,410,435,455,621,630,774,875,1011,1231,1428,1482
 hashmap: 1,76,106,138,146,149,159,169,229,299,327,336,359,380,381,392,403,432,437,560,666,895,1055,1577,1644
 hashset: 381,432
-heap: 23,215,218,253,295,347,621,630,759,973,1229
+heap: 23,215,218,253,295,347,621,630,759,973,1229,1696
 inorder: 99,105,230,333
 linked list: 2,21,24,25,86,138,146,432,445,1650
 map: 205
@@ -24,11 +24,11 @@ math:12,149,168,268,391,621,794,836,1041,1344,1569
 merge sort: 315,1574
 misc:169,229(moore voting)
 preorder: 105,106,113,331,437,545,666,971,987,1028,1569
-queue:232,239
+queue:232,239,1696
 range sum: 307,308,327,1314
 recursive: 2,116,247,273,450
 segment tree: 307,308,327,850
-sliding window: 3!,76,239,904,1052,1234,1423,1498,1537,1574,1577,1793
+sliding window: 3!,76,239,904,1052,1234,1423,1498,1537,1574,1577,1696,1793
 sort: 56,99,252,280,315,524,L391
 stack: 20,227,232,331,402,1028,1249,1381,1597
 string: 151,157,165,722,833,929
@@ -230,6 +230,8 @@ heapify time complexity: O(n), heap push/pop time complexity: O(logn)
     - substring that has given numbers of certain characters: 
         - algorithm: move right pointer to right until satisfies condition, then move left pointer to right to tighten window until condition not satisfied
         - eg. 76,1234; similar:904
+    - tips:
+        - can use monotonically decreasing queue to keep track of the max/min in window. Suitable for when the window size is large. eg.239,1696
 
 ## Sorting
 - quick sort 

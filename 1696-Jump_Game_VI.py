@@ -1,0 +1,77 @@
+"""
+- dp(bottom-up) dp[i] - max score to end starting from index i
+- O(nk), O(n)
+- time limit exceeded
+"""
+
+class Solution(object):
+    def maxResult(self, nums, k):
+        """
+        :type nums: List[int]
+        :type k: int
+        :rtype: int
+        """
+        n = len(nums)
+        dp = [float("-inf")] * n
+        dp[-1] = nums[-1]
+        
+        for i in range(n - 2, -1, -1):
+            for j in range(i + 1, min(n, i + k + 1)):
+                dp[i] = max(dp[i], nums[i] + dp[j])
+                
+        return dp[0]
+
+"""
+- dp + priority queue (optimizes when k is large)
+- O(n), O(n)
+"""
+class Solution(object):
+    def maxResult(self, nums, k):
+        """
+        :type nums: List[int]
+        :type k: int
+        :rtype: int
+        """
+        n = len(nums)
+        result = nums[-1]
+        q = [(-nums[-1], n - 1)]
+        
+        for i in range(n - 2, -1, -1):
+            while q[0][1] > i + k:
+                heapq.heappop(q)
+            result = -q[0][0] + nums[i]
+            heapq.heappush(q, (-result, i))
+                
+        return result
+
+"""
+- dp + monotonic increasing queue (optimizes previous solution)
+- O(n), O(n)
+- similar question: 239(sliding window)
+- algorithm:
+ Iterate over nums. For each element nums[i]:
+    - Pop all the indexes larger than i+k out of dq from left.
+    - Update score[i] to score[dq.peekFirst()] + nums[i].
+    - If the corresponding score of the rightmost index in dq (i.e., score[dq.peekLast()]) is smaller than score[i], pop it from the right to make corresponding values monotonically decreasing. Repeat.
+    - Push i into the right of dq.
+"""
+class Solution(object):
+    def maxResult(self, nums, k):
+        """
+        :type nums: List[int]
+        :type k: int
+        :rtype: int
+        """
+        n = len(nums)
+        dp = [0] * n
+        dp[-1] = nums[-1]
+        next_candidate_index = [n - 1] # a monotonically decreasing queue
+        
+        for i in range(n - 2, -1, -1):
+            while next_candidate_index and next_candidate_index[0] > i + k:
+                next_candidate_index.pop(0)
+            dp[i] = nums[i] + dp[next_candidate_index[0]]
+            while next_candidate_index and dp[next_candidate_index[-1]] <= dp[i]:
+                next_candidate_index.pop()
+            next_candidate_index.append(i)        
+        return dp[0]
