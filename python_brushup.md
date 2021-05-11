@@ -19,6 +19,8 @@ smallest = float("-inf")
             bisect.insort(list, ele, start, end) # see also .insort_left and .insort_right
         - search insertion point in a sorted list:
             insertion_index = bisect.bisect(list, ele, start, end)
+    - custom sort
+        - eg. 179-Largest_Number
 
 - remove first element from list
     - modifies original list
@@ -147,6 +149,11 @@ heap # [2, 3, 5, 7, 4, 6]
 heap # [1, 3, 2, 7, 4, 5, 6]
 heapq.heappush(heap, 8)
 heap # [1, 3, 2, 7, 4, 5, 6, 8]
+
+heap # [1, 3, 2, 7, 4, 5, 6]
+heapq.heappushpop(heap, 8)
+heap # [2, 3, 7, 4, 5, 6, 8]
+
 ```
 - tuples in heap (max-heap)
 ``` # get most frequent items

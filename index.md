@@ -29,7 +29,7 @@ range sum: 307,308,327,1314
 recursive: 2,116,247,273,450
 segment tree: 307,308,327,850
 sliding window: 3!,76,239,904,1052,1234,1423,1498,1537,1574,1577,1696,1793
-sort: 56,99,252,280,315,524,L391
+sort: 56,99,179,252,280,315,524,L391
 stack: 20,227,232,331,402,975,1028,1249,1381,1597
 string: 151,157,165,722,833,929
 topological sort: 210,329
@@ -259,6 +259,8 @@ heapify time complexity: O(n), heap push/pop time complexity: O(logn)
     - Examples: 99
 - wiggle sort
     - Example: 280
+- custom sort
+    - eg: 179-Largest_Number
 
 ## String manipulation:
 use reversed string to avoid index shift (833)
