@@ -13,7 +13,7 @@ divide and conquer: 215,307,308,312,327,973
 dfs: 17,79,91,99,105,106,113,124,129,133,200,207,210,212,230,236,261,297,298,329,331,333,490,529,549,666,687,695,753,863,947,975,987,1028,1236,1306,1340,1569,1644,1676,1740
 dynamic programming: 5,10,39,45,53,55,70,72,91,139,198,279,303,312,322,403,410,416,435,494,518,562,473,746,1314,1696
 graph: 863
-greedy: 45,53,55,135,410,435,455,621,630,774,875,1011,1231,1428,1482,1520,1665
+greedy: 45,53,55,135,410,435,455,621,630,774,875,1011,1231,1402,1428,1482,1520,1665
 hashmap: 1,76,106,138,146,149,159,169,229,299,327,336,359,380,381,392,403,432,437,560,666,895,1055,1577,1644
 hashset: 381,432
 heap: 23,215,218,253,295,347,621,630,759,973,1229,1696
@@ -206,7 +206,7 @@ space can be optimized to O(1) if only need to track constant time of variables 
 ## Greedy -
 Pick the locally optimal move at each step, and that will lead to the globally optimal solution.
 Iterate over the array and update at each step the standard set for such problems: 1.current element 2.current local maximum sum (at this given point) 3.global maximum sum seen so far.
-eg: 1520,1665
+    - eg: 1402,1520,1665
 
 ## Heap - 
 heapify time complexity: O(n), heap push/pop time complexity: O(logn)
