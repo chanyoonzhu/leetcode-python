@@ -198,8 +198,9 @@ space can be optimized to O(1) if only need to track constant time of variables 
 - Bottom up: loop using memoization (calculate those won't change first, eg.1340)
 - types:
     - knapsack: 
+        - 0/1 knapsack: 1049
         - tip: dp[_sum][i]
-        - eg: 416, 494
+        - eg: 416, 494, 1049
     - length in matrix: 562
     - reachable problem: 45,55
 
