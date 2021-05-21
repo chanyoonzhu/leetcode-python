@@ -269,7 +269,7 @@ heapify time complexity: O(n), heap push/pop time complexity: O(logn)
 
 ## Stack
 - classic problems:
-    - parenthesis: eg. 678
+    - parenthesis: eg. 678, 1249
 
 ## String manipulation:
 use reversed string to avoid index shift (833)
