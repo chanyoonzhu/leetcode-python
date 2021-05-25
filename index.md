@@ -14,7 +14,7 @@ dfs: 17,79,91,99,105,106,113,124,129,133,200,207,210,212,230,236,241,261,297,298
 dynamic programming: 5,10,32,39,45,53,55,70,72,91,139,198,279,303,312,322,403,410,416,435,494,518,562,473,746,1314,1696
 graph: 863
 greedy: 45,53,55,135,410,435,455,621,630,678,774,875,1011,1231,1402,1428,1482,1520,1665
-hashmap: 1,76,106,138,146,149,159,169,229,299,327,336,359,380,381,392,403,432,437,560,666,895,1055,1577,1644
+hashmap: 1,76,106,138,146,149,159,169,229,299,327,336,359,380,381,392,403,432,437,560,666,895,930,1055,1577,1644
 hashset: 381,432
 heap: 23,215,218,253,295,347,621,630,759,973,1229,1696
 inorder: 99,105,230,333
@@ -28,7 +28,7 @@ queue:232,239,1696
 range sum: 307,308,327,1314
 recursive: 2,116,241,247,273,450
 segment tree: 307,308,327,850
-sliding window: 3!,76,239,904,1052,1234,1423,1498,1537,1574,1577,1696,1793
+sliding window: 3!,76,239,904,930,1052,1234,1423,1498,1537,1574,1577,1696,1793
 sort: 56,99,164,179,252,280,315,524,581,L391
 stack: 20,32,227,232,331,402,581,678,856,975,1028,1249,1381,1541,1597
 string: 151,157,165,722,833,929,1520
@@ -125,7 +125,8 @@ while start <= end:
     - all shortest paths: 301
 
 ## prefix sum:
-usually solved with O(n) time using hashmap - eg. 560,437(tree version)
+- key words: sum of subarray 
+usually solved with O(n) time using hashmap - eg. 560,930,437(tree version)
 
 ## Data Structure Implementation 
 - summary: implement a data structure with required APIs and targeted complexity
@@ -238,8 +239,10 @@ heapify time complexity: O(n), heap push/pop time complexity: O(logn)
     - substring that has given numbers of certain characters: 
         - algorithm: move right pointer to right until satisfies condition, then move left pointer to right to tighten window until condition not satisfied
         - eg. 76,1234; similar:904
-    - tips:
-        - can use monotonically decreasing queue to keep track of the max/min in window. Suitable for when the window size is large. eg.239,1696
+    - subarray sum: sliding window with prefix-sum
+        - eg: 930
+- tips:
+    - can use monotonically decreasing queue to keep track of the max/min in window. Suitable for when the window size is large. eg.239,1696
 
 ## Sorting
 - quick sort 
