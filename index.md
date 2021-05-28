@@ -14,7 +14,7 @@ dfs: 17,79,91,99,105,106,113,124,129,133,200,207,210,212,230,236,241,261,297,298
 dynamic programming: 5,10,32,39,45,53,55,70,72,91,139,198,279,303,312,322,403,410,416,435,494,518,562,473,746,1314,1696
 graph: 863
 greedy: 45,53,55,135,410,435,455,621,630,678,774,875,1011,1231,1402,1428,1482,1520,1567,1665
-hashmap: 1,76,106,138,146,149,159,169,229,299,327,336,359,380,381,392,403,432,437,560,666,895,930,974,1055,1371,1442,1577,1644
+hashmap: 1,76,106,138,146,149,159,169,229,299,327,336,359,380,381,392,403,432,437,560,666,895,930,974,1055,1371,1442,1577,1590,1644
 hashset: 381,432
 heap: 23,215,218,253,295,347,621,630,759,973,1229,1696
 inorder: 99,105,230,333
@@ -131,7 +131,7 @@ while start <= end:
 
 ## prefix sum:
 - key words: sum of subarray 
-usually solved with O(n) time using hashmap - eg. 560,930,974(division),1371,1442,437(tree version)
+usually solved with O(n) time using hashmap - eg. 560,930,974|1590(division),1371,1442,437(tree version)
 
 ## Data Structure Implementation 
 - summary: implement a data structure with required APIs and targeted complexity
