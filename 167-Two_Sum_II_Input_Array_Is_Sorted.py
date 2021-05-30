@@ -9,7 +9,7 @@ class Solution(object):
         while l < r:
             sum_ = numbers[l] + numbers[r]
             if sum_ == target:
-                return [l+1, r+1]
+                return [l + 1, r + 1] # caveat: 1-indexed
             elif sum_ > target:
                 r -= 1
             else:
