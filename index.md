@@ -28,14 +28,14 @@ queue:232,239,1696
 range sum: 307,308,327,1314,930,1442
 recursive: 2,116,241,247,273,450
 segment tree: 307,308,327,850
-sliding window: 3!,76,239,904,930,1052,1234,1423,1498,1537,1574,1577,1696,1793
+sliding window: 3!,76,209,239,904,930,1052,1234,1423,1498,1537,1574,1577,1696,1793
 sort: 56,99,164,179,252,280,315,524,581,L391
 stack: 20,32,227,232,331,402,581,678,856,975,1028,1249,1381,1541,1597
 string: 151,157,165,722,833,929,1520
 topological sort: 210,329
 tree: 116,222,235,236,333,450,298,549,687,729,1644,1650,1676,1740
 trie: 208,212,336
-two pointers: 15,42,76,86,121,159,167,253,259,392,524,581,904,986,1055,1229,1537,1574,1577
+two pointers: 15,42,76,86,121,159,167,209,253,259,392,524,581,904,986,1055,1229,1537,1574,1577
 union find: 323,947
 zip: 833
 
@@ -244,8 +244,8 @@ heapify time complexity: O(n), heap push/pop time complexity: O(logn)
     - substring that has given numbers of certain characters: 
         - algorithm: move right pointer to right until satisfies condition, then move left pointer to right to tighten window until condition not satisfied
         - eg. 76,1234; similar:904
-    - subarray sum: sliding window with prefix-sum
-        - eg: 930
+    - subarray sum with a target: sliding window with prefix-sum / two pointers
+        - eg: 209,930
 - tips:
     - can use monotonically decreasing queue to keep track of the max/min in window. Suitable for when the window size is large. eg.239,1696
 
@@ -299,6 +299,12 @@ O(n), O(n)
 - Variations: streaming intervals (can usually solve using bisect), eg 729, 731, 732, 57
 - Examples:
 eg: 56, 57, 218, 252, 253, 435, 452, 986, 1229, 1272, 1288, Lint391; hard-352, 391(2D), 759, 850(2D)
+
+## Sums:
+- Key words: 2 sum, 3 sum equal/smaller/closest to the target
+- eg: 1, 167, 15, 259
+- tips:
+    hashmap or two-pointers
 
 ## Tree - Recursion can usually be used. 
 If using dfs, has to decide which to use: in-order traversal (aka. dfs), post-order traversal (549,1740), and pre-order traversal (298, search tree). Time complexity is O(n): every node is visited once. Space complexity is O(n) in worst case and O(log(n)) in average case: The extra space comes from implicit stack space due to recursion. For a skewed binary tree, the recursion could go up to n levels deep. 
