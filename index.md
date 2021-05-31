@@ -9,6 +9,7 @@ binary search:33,57,222,240,259,275,295,374,410,774,875,911,1011,1055,1146,1231,
 bit manipulation: 268,473,1371,1442
 bst: 99,230,333,490,729
 bucket:299
+circular array: 1658
 divide and conquer: 215,241,307,308,312,327,973
 dfs: 17,79,91,99,105,106,113,124,129,133,200,207,210,212,230,236,241,261,297,298,301,329,331,333,490,529,549,666,687,695,753,863,947,975,987,1028,1236,1306,1340,1569,1644,1676,1740
 dynamic programming: 5,10,32,39,45,53,55,70,72,91,139,198,279,303,312,322,403,410,416,435,494,518,562,473,746,1314,1696
@@ -28,14 +29,14 @@ queue:232,239,1696
 range sum: 307,308,327,1314,930,1442
 recursive: 2,116,241,247,273,450
 segment tree: 307,308,327,850
-sliding window: 3!,76,209,239,904,930,1052,1234,1423,1498,1537,1574,1577,1696,1793
+sliding window: 3!,76,209,239,904,930,1052,1234,1423,1498,1537,1574,1577,1658,1696,1793
 sort: 56,99,164,179,252,280,315,524,581,L391
 stack: 20,32,227,232,331,402,581,678,856,975,1028,1249,1381,1541,1597
 string: 151,157,165,722,833,929,1520
 topological sort: 210,329
 tree: 116,222,235,236,333,450,298,549,687,729,1644,1650,1676,1740
 trie: 208,212,336
-two pointers: 15,42,76,86,121,159,167,209,253,259,392,524,581,904,986,1055,1229,1537,1574,1577
+two pointers: 15,42,76,86,121,159,167,209,253,259,392,524,581,904,986,1055,1229,1537,1574,1577,1658
 union find: 323,947
 zip: 833
 
@@ -245,7 +246,7 @@ heapify time complexity: O(n), heap push/pop time complexity: O(logn)
         - algorithm: move right pointer to right until satisfies condition, then move left pointer to right to tighten window until condition not satisfied
         - eg. 76,1234; similar:904
     - subarray sum with a target: sliding window with prefix-sum / two pointers
-        - eg: 209,930
+        - eg: 209,930,1658
 - tips:
     - can use monotonically decreasing queue to keep track of the max/min in window. Suitable for when the window size is large. eg.239,1696
 
