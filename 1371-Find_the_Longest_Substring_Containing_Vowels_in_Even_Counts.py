@@ -1,4 +1,8 @@
 """
+- similar: 1542
+"""
+
+"""
 - two pointers with hashset
 - O(n^2), O(n)
 - time limit exceeded
@@ -36,15 +40,15 @@ class Solution:
     def findTheLongestSubstring(self, s: str) -> int:
         vowels = {'a': 1, 'e': 2, 'i': 4, 'o': 8, 'u': 16}
         result = 0
-        n = 0
-        states = {0: -1}
+        state = 0
+        memo = {0: -1}
         for i, c in enumerate(s):
             if c in vowels:
-                n ^= vowels[c]
-            if n not in states:
-                states[n] = i
+                state ^= vowels[c]
+            if state not in memo:
+                memo[state] = i
             else:
-                result = max(result, i - states[n])
+                result = max(result, i - memo[state])
         return result
                 
             
