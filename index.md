@@ -30,7 +30,7 @@ range sum: 307,308,327,1314,930,1442
 recursive: 2,116,241,247,273,450
 segment tree: 307,308,327,850
 sliding window: 3!,76,209,239,904,930,1052,1234,1423,1498,1537,1574,1577,1658,1696,1793
-sort: 56,99,164,179,252,280,315,524,581,L391,1608
+sort: 56,99,164,179,252,280,315,524,581,L391,1300,1608
 stack: 20,32,227,232,331,402,581,678,856,975,1028,1249,1381,1541,1597
 string: 151,157,165,722,833,929,1520
 topological sort: 210,329
@@ -118,7 +118,7 @@ while start <= end:
 - Examples: 57,911,1146(bisect), 278,374(basic), 981(strictly increasing, find lower), 315
 - classic problems:
     - binary search + greedy: get the possible range of answer, binary search between range and see if current number can satisfy condition using greedy algorithm
-        - eg: 410|774|875|1011|1231|1283|1482|1552|1802(complex)|1870
+        - eg: 410|774|875|1011|1231|1283|1300|1482|1552|1802(complex)|1870
 
 ## Bit manipulation
 - XOR
