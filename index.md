@@ -223,6 +223,7 @@ space can be optimized to O(1) if only need to track constant time of variables 
         - calculation among adjacent items: 312, 1039, 1547, 1000(hard)
             - tip: when bottom-up, use subproblem size as the outer loop
     - string common subsequence: 97,516,583,1092,1143
+        - subcategory: edit-distance: 72
 
 ## Greedy -
 Pick the locally optimal move at each step, and that will lead to the globally optimal solution.
