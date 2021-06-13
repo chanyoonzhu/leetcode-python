@@ -69,6 +69,12 @@ smallest = float("-inf")
     ```
 
 # Dict
+* get or default:
+```
+m = {'A': 1}
+m.get('B', -1) # -1
+```
+
 * defaultdict:
 ```
 from collections import defaultdict
