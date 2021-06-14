@@ -31,7 +31,7 @@ recursive: 2,116,241,247,273,450
 segment tree: 307,308,327,850
 sliding window: 3!,76,209,239,904,930,1052,1234,1423,1498,1537,1574,1577,1658,1696,1793
 sort: 56,99,164,179,252,280,315,524,581,L391,1300,1608
-stack: 20,32,227,232,331,402,456,496,503,581,678,739,856,901,946,975,1028,1249,1381,1541,1597
+stack: 20,32,155,227,232,331,402,456,496,503,581,678,739,856,901,946,975,1028,1249,1381,1541,1597
 string: 151,157,165,722,833,929,1520
 topological sort: 210,329
 tree: 116,222,235,236,333,337,450,298,549,687,729,1644,1650,1676,1740
@@ -145,6 +145,8 @@ usually solved with O(n) time using hashmap - eg. 560,930,974|1590(division),137
 - summary: implement a data structure with required APIs and targeted complexity
 - eg: 
     - hashmap / doubly linked list: 146,380,381,432,460,1146,1381
+    - stack: 
+        155-Min Stack
     - heap: 295
     - Fenwick tree / segment tree: 307,308,327
 - tips:
