@@ -31,7 +31,7 @@ recursive: 2,116,241,247,273,450
 segment tree: 307,308,327,850
 sliding window: 3!,76,209,239,904,930,1052,1234,1423,1498,1537,1574,1577,1658,1696,1793
 sort: 56,99,164,179,252,280,315,524,581,L391,1300,1608
-stack: 20,32,84,155,227,232,331,402,456,496,503,581,678,739,856,901,946,962,975,1019,1028,1130,1249,1381,1541,1597,1856
+stack: 20,32,84,155,227,232,331,402,456,496,503,581,678,739,856,901,907,946,962,975,1019,1028,1130,1249,1381,1541,1597,1856
 string: 151,157,165,722,833,929,1520
 topological sort: 210,329
 tree: 116,222,235,236,333,337,450,298,549,687,729,1644,1650,1676,1740
@@ -301,10 +301,10 @@ heapify time complexity: O(n), heap push/pop time complexity: O(logn)
         - can also use two passes: 32
     - comparison:
         - monotonically increasing/decreasing stack
-        - eg: 496,503-Next Greater Element I/II; 739-Daily Temperatures; 901-Online Stock Span; 456-132 Pattern; 1019-Next Greater Node In Linked List, 1130-Minimum Cost Tree From Leaf Values
+        - eg: 496,503-Next Greater Element I/II; 739-Daily Temperatures; 901-Online Stock Span; 456-132 Pattern; 1019-Next Greater Node In Linked List, 1130-Minimum Cost Tree From Leaf Values;
     - window max/min (with monotonically increasing/decreasing stack)
         - intuition: it is very useful to get "next bigger item", "next smaller item", "previous bigger item", "previous smaller item" and therefore "window max" and "window min"
-        - eg: 84-Largest Rectangle in Histogram; 1856-Maximum Subarray Min-Product; 962-Maximum Width Ramp
+        - eg: 84-Largest Rectangle in Histogram; 907-Sum of Subarray Minimums; 1856-Maximum Subarray Min-Product(similar:907); 962-Maximum Width Ramp
         
 
 ## String manipulation:
