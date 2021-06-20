@@ -299,13 +299,15 @@ heapify time complexity: O(n), heap push/pop time complexity: O(logn)
     - parenthesis: 
         - eg. 32, 678, 856, 1249, 1541
         - can also use two passes: 32
-    - comparison:
-        - monotonically increasing/decreasing stack
-        - eg: 496,503-Next Greater Element I/II; 1063-Number of Valid Subarrays; 739-Daily Temperatures; 901-Online Stock Span; 456-132 Pattern; 1019-Next Greater Node In Linked List, 1130-Minimum Cost Tree From Leaf Values; 1673-Find the Most Competitive Subsequence
-    - window max/min (with monotonically increasing/decreasing stack)
-        - intuition: it is very useful to get "next bigger item", "next smaller item", "previous bigger item", "previous smaller item" and therefore "window max" and "window min"
-        - eg: 84-Largest Rectangle in Histogram; 907-Sum of Subarray Minimums; 1856-Maximum Subarray Min-Product(similar:907); 962-Maximum Width Ramp; 1124-Longest Well-Performing Interval
-        
+    - monotonically increasing/decreasing stack
+        - comparison:
+            - eg: 496,503-Next Greater Element I/II; 1063-Number of Valid Subarrays; 739-Daily Temperatures; 901-Online Stock Span; 456-132 Pattern; 1019-Next Greater Node In Linked List, 1130-Minimum Cost Tree From Leaf Values; 
+        - smallest/largest number formed by subsequence:
+            -eg. 1673-Find the Most Competitive Subsequence; 402-Remove K Digits
+        - window max/min (with monotonically increasing/decreasing stack)
+            - intuition: it is very useful to get "next bigger item", "next smaller item", "previous bigger item", "previous smaller item" and therefore "window max" and "window min"
+            - eg: 84-Largest Rectangle in Histogram; 907-Sum of Subarray Minimums; 1856-Maximum Subarray Min-Product(similar:907); 962-Maximum Width Ramp; 1124-Longest Well-Performing Interval
+            
 
 ## String manipulation:
 use reversed string to avoid index shift (833)

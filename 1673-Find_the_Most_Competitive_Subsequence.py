@@ -1,6 +1,7 @@
 """
 - monotonically increasing stack
 - O(n), O(n)
+- similar problem: 402-Remove K Digits
 """
 class Solution:
     def mostCompetitive(self, nums: List[int], k: int) -> List[int]:
