@@ -4,7 +4,7 @@ two sum: 1, 167
 all, any: 833
 array: 54,56,73,151,157,186,238,268,349,350,380,381,849,1146,1371,1381,1567
 backtracking: 17,46,47,78,90,301,1239
-bfs: 79,103,116,127,133,200,207,210,212,297,301,529,743,863,971,987,1236,1306,1345
+bfs: 79,103,116,127,133,200,207,210,212,297,301,529,743,863,971,987,1236,1306,1345,1654
 binary search:33,57,222,240,259,275,295,374,410,774,875,911,1011,1055,1146,1231,1272,1283,1428,1482,1552,1608,1648,1802,1870
 bit manipulation: 268,473,1371,1442,1542
 bst: 99,230,333,490,729
@@ -137,6 +137,7 @@ while start <= end:
     steps: while q, if q popped is target, finish, if not, add popped item's neighbors to the q; optimization: visited can be eliminated if allowed to change memory (mark on original data)
 - classic problems:
     - all shortest paths: 301
+    - 1D (array): 1654-Minimum Jumps to Reach Home 
     - Dijkstra's Algorithm: 743-Network Delay Time
 
 ## prefix sum:
@@ -327,7 +328,7 @@ Q: Are intervals mutually exclusive? A: Yes
 O(n), O(n)
 - Variations: streaming intervals (can usually solve using bisect), eg 729, 731, 732, 57
 - Examples:
-eg: 56, 57, 218, 252, 253, 435, 452, 986, 1229, 1272, 1288, Lint391; hard-352, 391(2D), 759, 850(2D)
+eg: 56, 57, 218, 252, 253, 435, 452, 986-Interval List Intersections, 1229, 1272, 1288, Lint391; hard-352, 391(2D), 759, 850(2D)
 
 ## Sums:
 - Key words: 2 sum, 3 sum equal/smaller/closest to the target
