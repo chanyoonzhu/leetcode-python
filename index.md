@@ -328,7 +328,7 @@ Q: Are intervals mutually exclusive? A: Yes
 O(n), O(n)
 - Variations: streaming intervals (can usually solve using bisect), eg 729, 731, 732, 57
 - Examples:
-eg: 56, 57, 218, 252, 253, 435, 452, 986-Interval List Intersections, 1229, 1272, 1288, Lint391; hard-352, 391(2D), 759, 850(2D)
+eg: 56, 57, 218, 252, 253, 435, 452, 986-Interval List Intersections, 1229-Meeting Scheduler, 1272, 1288, Lint391; hard-352, 391(2D), 759, 850(2D)
 
 ## Sums:
 - Key words: 2 sum, 3 sum equal/smaller/closest to the target

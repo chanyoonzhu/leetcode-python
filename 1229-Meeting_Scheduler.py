@@ -37,12 +37,12 @@ Q: Between two available times for a single person, could there be an overlap? F
 A: You can assume this will not happen
 """
 
+"""
+- two pointers, sweep lines
+- time: O(max(mlog(m), nlog(n))) sorting:O(max(mlog(m), nlog(n))) and iteration O(max(m, n))
+- space: O(n) for sorting
+"""
 class Solution(object):
-    """
-    - two pointers, sweep lines
-    - time: O(max(mlog(m), nlog(n))) sorting:O(max(mlog(m), nlog(n))) and iteration O(max(m, n))
-    - space: O(n) for sorting
-    """
     def minAvailableDuration(self, slots1: List[List[int]], slots2: List[List[int]], duration: int) -> List[int]:
         slots1.sort()
         slots2.sort()
@@ -60,16 +60,17 @@ class Solution(object):
         
         return []
 
-    """
-    - heap: push all available time tuples from both slots into one priority queue
-    - O(max(mlog(m), nlog(n))), log(m) for each pop, pop m times in worst scenario
-    - algorithm:
-    1. remove available time tuples from slots list if available time is smaller than duration
-    2. put all available time tuples from both slots into a priority queue (min heap)
-    3. pop from heap and see if available time tuple popped has an interval with top of heap (next available time tuple) larger than duration, if yes, return interval
-    4. heap pops until empty and returns []
+"""
+- heap: push all available time tuples from both slots into one priority queue
+- O(max(mlog(m), nlog(n))), log(m) for each pop, pop m times in worst scenario
+- algorithm:
+1. remove available time tuples from slots list if available time is smaller than duration
+2. put all available time tuples from both slots into a priority queue (min heap)
+3. pop from heap and see if available time tuple popped has an interval with top of heap (next available time tuple) larger than duration, if yes, return interval
+4. heap pops until empty and returns []
 
-    """
+"""
+class Solution(object):
     def minAvailableDuration(self, slots1, slots2, duration):
         """
         :type slots1: List[List[int]]
@@ -81,7 +82,7 @@ class Solution(object):
         # or: list(filter(lambda slot: slot[1] - slot[0] >= duration, slots1 + slots2))
         heapq.heapify(heap)
         
-        while len(heap) > 1:
+        while len(heap) > 1: # need at least 1 to peek
             if heapq.heappop(heap)[1] - heap[0][0] >= duration:
                 return [heap[0][0], heap[0][0] + duration]
         return []
