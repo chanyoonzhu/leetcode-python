@@ -340,6 +340,10 @@ eg: 56, 57, 218, 252, 253, 435, 452, 986-Interval List Intersections, 1229-Meeti
 - eg: 1, 167, 15, 259
 - tips:
     hashmap or two-pointers
+- variations:
+    - running counter (with hashmap): 
+        - key words: number of ways to get target sum/product
+        - eg: 1577-Number of Ways Where Square of Number Is Equal to Product of Two Numbers
 
 ### Two pointers:
 - classic problems:

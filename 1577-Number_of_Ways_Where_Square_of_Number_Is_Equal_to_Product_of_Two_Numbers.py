@@ -1,8 +1,8 @@
+"""
+- two-pointers with hashmap - put the squares in hashmap
+- O(m^2 + n^2), O(m + n)
+"""
 class Solution:
-    """
-    - two-pointers with hashmap - put the squares in hashmap
-    - O(m^2 + n^2), O(m + n)
-    """
     def numTriplets(self, nums1: List[int], nums2: List[int]) -> int:
         dict1, dict2 = collections.Counter([num * num for num in nums1]), collections.Counter([num * num for num in nums2])
         self.total = 0
@@ -20,10 +20,11 @@ class Solution:
         
         return self.total
 
-    """
-    - two-pointers with hashmap - put the numbers in hashmap
-    - O(m*n), O(m + n)
-    """
+"""
+- two-pointers with hashmap - put the numbers in hashmap
+- O(m*n), O(m + n)
+"""
+class Solution:
      def numTriplets(self, nums1: List[int], nums2: List[int]) -> int:
            
         def helper(target, nums):
@@ -38,10 +39,11 @@ class Solution:
         
         return sum(helper(num * num, nums2) for num in nums1) + sum(helper(num * num, nums1) for num in nums2)
     
-    """
-    - two-pointers with hashmap - put the numbers in hashmap - optimized with cache
-    - O(m*n), O(m + n)
-    """
+"""
+- two-pointers with hashmap - put the numbers in hashmap - optimized with cache
+- O(m*n), O(m + n)
+"""
+class Solution:
     def numTriplets(self, nums1: List[int], nums2: List[int]) -> int:
            
         def helper(target, nums):
