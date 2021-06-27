@@ -1,8 +1,8 @@
+"""
+- greedy with two pointers - my solution
+- O(m + n), O(1)
+"""
 class Solution:
-    """
-    - sliding window - my solution
-    - O(m + n), O(1)
-    """
     def maxSum(self, nums1: List[int], nums2: List[int]) -> int:
         part_total1 = part_total2 = total = 0 # part_total1 and part_total2 tracks the sum in between two shared points
         mod = 10 ** 9 + 7
@@ -30,10 +30,11 @@ class Solution:
         
         return total % mod
     
-    """
-    - sliding window - better solution
-    - O(m + n), O(1)
-    """
+"""
+- two pointers - better solution
+- O(m + n), O(1)
+"""
+class Solution:
     def maxSum(self, nums1: List[int], nums2: List[int]) -> int:
         total1 = total2 = 0
         mod = 10 ** 9 + 7
