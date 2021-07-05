@@ -250,7 +250,13 @@ heapify time complexity: O(n), heap push/pop time complexity: O(logn)
 
 ## LinkedList
 - tips:
-    use dummy node to avoid checking edgecases eg.146
+    use dummy node to avoid checking edgecases 146
+- problems:
+    - find out the size of a circular linkedlist or the middle of the linkedlist
+        - algorithm: fast and slow pointers
+        - eg: 143-Reorder List
+    - reverse a linkedlist:
+        - eg: 143-Reorder List
 
 ## Math
 - permutation and combination
