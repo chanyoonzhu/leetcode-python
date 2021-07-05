@@ -1,45 +1,75 @@
-class ListNode:
-    def __init__(self, x):
-        self.val = x
-        self.next = None
-
+# Definition for singly-linked list.
+# class ListNode:
+#     def __init__(self, val=0, next=None):
+#         self.val = val
+#         self.next = next
+"""
+- reverse a linkedlist (recursive)
+- O(n), O(n/k)
+"""
 class Solution:
-    def reverseKGroup(self, head, k):
-
-        """
-        if k == 0 or k == 1: return head
-        dummy = ListNode(0)
-        dummy.next = head
-        nextDummy = dummy
-        while nextDummy.next:
-            count = 0
-            thisDummy = nextDummy
-            while nextDummy.next and count < k:
-                nextDummy = nextDummy.next
-                count += 1
-            if count == k:
-                end = thisDummy.next
-                for _ in range(count-1):
-                    thisHead = end.next
-                    end.next = thisHead.next
-                    thisHead.next = thisDummy.next
-                    thisDummy.next = thisHead
-                nextDummy = end
-            else:
-                break
-        return dummy.next
-        """
+    def reverseKGroup(self, head: ListNode, k: int) -> ListNode:
         
-        """
-        recursive?
-        """
+        count = 0
+        ptr = head
+        
+        while count < k and ptr:
+            ptr = ptr.next
+            count += 1
+        
+        if count < k:
+            return head
+        
+        new_next, cur = None, head
+        for _ in range(k):
+            old_next = cur.next
+            cur.next = new_next
+            new_next, cur = cur, old_next
 
-s = Solution()
-head = ListNode(1)
-head.next = ListNode(2)
-head.next.next = ListNode(3)
-head.next.next.next = ListNode(4)
-head.next.next.next.next = ListNode(5)
-s.reverseKGroup(head, 2)
+        head.next = self.reverseKGroup(cur, k)
+        return new_next
+
+"""
+- reverse a linkedlist (iterative)
+- O(n), O(n/k)
+"""
+# Definition for singly-linked list.
+# class ListNode:
+#     def __init__(self, val=0, next=None):
+#         self.val = val
+#         self.next = next
+class Solution:
+    def reverseKGroup(self, head: ListNode, k: int) -> ListNode:
+        
+        groups = count = 0
+        dummy_head = ListNode()
+        dummy_head.next = head
+        ptr = head
+        
+        # get number of groups
+        while ptr:
+            ptr = ptr.next
+            count += 1
+            if count == k:
+                groups += 1
+                count = 0
+    
+        group_prev_end = dummy_head
+        while groups:
+            group_start = group_prev_end.next
+            
+            prev, cur = None, group_start
+            for _ in range(k):
+                nextt = cur.next
+                cur.next = prev
+                prev, cur = cur, nextt 
+            
+            group_prev_end.next = prev # new start
+            group_prev_end = group_start # new end
+            group_start.next = nextt
+            groups -= 1
+        
+        return dummy_head.next
+            
             
             

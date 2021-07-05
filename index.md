@@ -262,7 +262,7 @@ heapify time complexity: O(n), heap push/pop time complexity: O(logn)
         - algorithm: fast and slow pointers
         - eg: 143-Reorder List
     - reverse a linkedlist:
-        - eg: 143-Reorder List
+        - eg: 143-Reorder List; 25-Reverse Nodes in k-Group
 
 ## Math
 - permutation and combination
