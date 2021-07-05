@@ -140,9 +140,15 @@ while start <= end:
     - 1D (array): 1654-Minimum Jumps to Reach Home 
     - Dijkstra's Algorithm: 743-Network Delay Time
 
-## prefix sum:
+## Prefix sum:
 - key words: sum of subarray 
 usually solved with O(n) time using hashmap - eg. 560,930,974|1590(division),1371,1442,437(tree version), 1124
+
+## Priority Queue:
+- key words: sort
+- problems:
+    - sorting:
+        - eg: 23-Merge k Sorted Lists
 
 ## Data Structure Implementation 
 - summary: implement a data structure with required APIs and targeted complexity

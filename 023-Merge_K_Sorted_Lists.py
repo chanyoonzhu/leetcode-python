@@ -4,16 +4,16 @@
 #         self.val = x
 #         self.next = None
 
+"""
+- priority queue - python2 solution
+- O(nlogk) k: number of, O(n)
+- intuition
+"""
 class Solution(object):
     def mergeKLists(self, lists):
         """
         :type lists: List[ListNode]
         :rtype: ListNode
-        """
-        """
-        - O(nlog(k))
-        priority queue
-        put the 1st element of each row into a queue, pop and push the one following it until all popped out
         """
         import heapq
         heap = []
@@ -30,4 +30,23 @@ class Solution(object):
             pointer = pointer.next
         
         return res.next
+
+"""
+- same solution Python3 
+(at any time in the priority queue, the i will be unique. Use the unique i as a tie breaker so that it doesn't compare two listnodes, which will throw an error)
+"""
+class Solution:
+    def mergeKLists(self, lists: List[ListNode]) -> ListNode:
+        q = [(list_.val, i, list_) for i, list_ in enumerate(lists) if list_]
+        heapq.heapify(q)
+        ptr = head = ListNode()
+        
+        while q:
+            val, i, node = heapq.heappop(q)
+            ptr.next = node
+            ptr = ptr.next
+            if node.next:
+                heapq.heappush(q, (node.next.val, i, node.next))
+                
+        return head.next
             
