@@ -10,7 +10,7 @@ bit manipulation: 268,473,1371,1442,1542
 bst: 99,230,333,490,729
 bucket:299
 circular array: 213,1658
-divide and conquer: 215,241,307,308,312,327,973,1000,1039,1547
+divide and conquer: 53,215,241,307,308,312,327,973,1000,1039,1547
 dfs: 17,79,91,99,105,106,113,124,129,133,200,207,210,212,230,236,241,261,297,298,301,329,331,333,337,490,529,549,666,687,695,743,753,863,947,975,987,1028,1236,1306,1340,1569,1644,1676,1740
 dynamic programming: 5,10,32,39,45,53,55,70,72,91,97,139,198,213,279,303,312,322,403,410,416,435,473,494,518,562,583,712,746,1000,1035,1039,1143,1155,1312,1314,1458,1547,1696
 graph: 863
@@ -140,6 +140,11 @@ while start <= end:
     - 1D (array): 1654-Minimum Jumps to Reach Home 
     - Dijkstra's Algorithm: 743-Network Delay Time
 
+## Divide and Conquer
+- problems:
+    - find subarrays with conditions:
+        - eg: 53-Maximum Subarray
+
 ## Prefix sum:
 - key words: sum of subarray 
 usually solved with O(n) time using hashmap - eg. 560,930,974|1590(division),1371,1442,437(tree version), 1124
@@ -240,6 +245,8 @@ space can be optimized to O(1) if only need to track constant time of variables 
         - edit-distance: 72,583,712,1312
     - number of ways to combine: knapsack?
         - eg: 1155-Number of Dice Rolls With Target Sum
+    - subarray max/min:
+        - eg: 53-Maximum Subarray
 
 ## Greedy -
 - instinct: 
