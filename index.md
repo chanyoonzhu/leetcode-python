@@ -145,16 +145,6 @@ while start <= end:
     - find subarrays with conditions:
         - eg: 53-Maximum Subarray
 
-## Prefix sum:
-- key words: sum of subarray 
-usually solved with O(n) time using hashmap - eg. 560,930,974|1590(division),1371,1442,437(tree version), 1124
-
-## Priority Queue:
-- key words: sort
-- problems:
-    - sorting:
-        - eg: 23-Merge k Sorted Lists
-
 ## Data Structure Implementation 
 - summary: implement a data structure with required APIs and targeted complexity
 - problems: 
@@ -271,6 +261,11 @@ heapify time complexity: O(n), heap push/pop time complexity: O(logn)
     - reverse a linkedlist:
         - eg: 143-Reorder List; 25-Reverse Nodes in k-Group
 
+## Fenwick Tree (or binary index tree):
+- used to solve numerous RANGE QUERY problems like finding minimum, maximum, sum, greatest common divisor, least common denominator in array in logarithmic time.
+- eg: 307,308(2D),327(prefix-sum)
+- can also use "Segment tree" to solve with more space
+
 ## Math
 - permutation and combination
     - formula: P(n, r) = n! / (n - r)!   C(n, r) = n! / (r! * (n - r)!)
@@ -282,10 +277,20 @@ heapify time complexity: O(n), heap push/pop time complexity: O(logn)
     - reservoir sampling: sampling in dynamic-size arrays
         - eg: 308-Linked List Random Node
 
-## Fenwick Tree (or binary index tree):
-- used to solve numerous RANGE QUERY problems like finding minimum, maximum, sum, greatest common divisor, least common denominator in array in logarithmic time.
-- eg: 307,308(2D),327(prefix-sum)
-- can also use "Segment tree" to solve with more space
+## Precomputation:
+- problems:
+    - Calculation with certain restrictions: precompute partial results
+        - eg: 238-Product of Array Except Self
+
+## Prefix sum:
+- key words: sum of subarray 
+usually solved with O(n) time using hashmap - eg. 560,930,974|1590(division),1371,1442,437(tree version), 1124
+
+## Priority Queue:
+- key words: sort
+- problems:
+    - sorting:
+        - eg: 23-Merge k Sorted Lists
 
 ## Sliding window -
 - variations:
