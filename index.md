@@ -288,7 +288,7 @@ heapify time complexity: O(n), heap push/pop time complexity: O(logn)
 
 ## Prefix sum:
 - key words: sum of subarray 
-usually solved with O(n) time using hashmap - eg.303-Range Sum Query - Immutable; 560,930,974|1590(division),1371,1442,437(tree version), 1124, 528-Random Pick with Weight
+usually solved with O(n) time using hashmap - eg.303-Range Sum Query - Immutable; 560-Subarray Sum Equals K,325-Maximum Size Subarray Sum Equals k; 930,974|1590(division),1371,1442,437(tree version), 1124, 528-Random Pick with Weight
 
 ## Priority Queue:
 - key words: sort
