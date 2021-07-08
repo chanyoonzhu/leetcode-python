@@ -276,6 +276,8 @@ heapify time complexity: O(n), heap push/pop time complexity: O(logn)
 - Sampling:
     - reservoir sampling: sampling in dynamic-size arrays
         - eg: 308-Linked List Random Node
+    - others:
+        - eg: 528-Random Pick with Weight (with prefix-sum)
 
 ## Pre-computing:
 - problems:
@@ -286,7 +288,7 @@ heapify time complexity: O(n), heap push/pop time complexity: O(logn)
 
 ## Prefix sum:
 - key words: sum of subarray 
-usually solved with O(n) time using hashmap - eg.303-Range Sum Query - Immutable; 560,930,974|1590(division),1371,1442,437(tree version), 1124, 
+usually solved with O(n) time using hashmap - eg.303-Range Sum Query - Immutable; 560,930,974|1590(division),1371,1442,437(tree version), 1124, 528-Random Pick with Weight
 
 ## Priority Queue:
 - key words: sort
