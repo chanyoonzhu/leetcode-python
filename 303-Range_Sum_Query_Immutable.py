@@ -1,22 +1,16 @@
-class NumArray(object):
+"""
+- Pre-computing with prefix sum
+- initiation: O(n), O(1), sumRange: O(1), O(1)
+"""
+class NumArray:
 
-    def __init__(self, nums):
-        """
-        :type nums: List[int]
-        """
-        self.n = len(nums)
-        self.dp = [0] * (self.n + 1)
-        for i in range(self.n):
-            self.dp[i+1] = self.dp[i] + nums[i]
-        
+    def __init__(self, nums: List[int]):
+        self.prefix_sum = [0] + [0] * len(nums)
+        for i in range(len(nums)):
+            self.prefix_sum[i + 1] = self.prefix_sum[i] + nums[i] 
 
-    def sumRange(self, i, j):
-        """
-        :type i: int
-        :type j: int
-        :rtype: int
-        """
-        return self.dp[j+1] - self.dp[i]
+    def sumRange(self, left: int, right: int) -> int:
+        return self.prefix_sum[right + 1] - self.prefix_sum[left]
         
 
 
