@@ -1,98 +1,55 @@
+"""
+- cache
+- O(n*4^n), O(n^2)
+"""
 class Solution:
-    def letterCombinations(self, digits):
-        """
-        :type digits: str
-        :rtype: List[str]
-        """
-        
-        """
-        O(n^2), O(n^2)?
-        - obvious solution
-        mapping = {
-            '2': ['a', 'b', 'c'],
-            '3': ['d', 'e', 'f'],
-            '4': ['g', 'h', 'i'],
-            '5': ['j', 'k', 'l'],
-            '6': ['m', 'n', 'o'],
-            '7': ['p', 'q', 'r', 's'],
-            '8': ['t', 'u', 'v'],
-            '9': ['w', 'x', 'y', 'z']
+    def letterCombinations(self, digits: str) -> List[str]:
+        letters = {
+            '2': 'abc', 
+            '3': 'def', 
+            '4': 'ghi', 
+            '5': 'jkl', 
+            '6': 'mno', 
+            '7': 'pqrs',
+            '8': 'tuv',
+            '9': 'wxyz'
         }
-        
-        temp, output = [], []
-        
+        result = []
         for d in digits:
-            if output:
-                temp = [w + l for l in mapping[d] for w in temp]
+            cur_result = []
+            if not result:
+                cur_result = letters[d]
             else:
-                temp = mapping[d]
-            output = temp[:] # deep copy for immutable objects
-            
-        return output
-        """
+                cur_result = [w + c for c in letters[d] for w in result]
+            result = cur_result
+        return result 
 
-        """
-        - less memory
-        
-        if len(digits) == 0 or not digits:
-            return []
-        
-        self.ans = [""]
-        
-        dic = {
-            '2': ['a','b','c'],
-            '3': ['d','e','f'],
-            '4': ['g','h','i'],
-            '5': ['j','k','l'],
-            '6': ['m','n','o'],
-            '7': ['p','q','r','s'],
-            '8': ['t','u','v'],
-            '9': ['w','x','y','z']
+"""
+- backtracking
+- O(n*4^n), O(n^2)
+"""  
+class Solution:
+    def letterCombinations(self, digits: str) -> List[str]:
+        letters = {
+            '2': 'abc', 
+            '3': 'def', 
+            '4': 'ghi', 
+            '5': 'jkl', 
+            '6': 'mno', 
+            '7': 'pqrs',
+            '8': 'tuv',
+            '9': 'wxyz'
         }
         
-        for d in digits:
-            prevLen = len(self.ans)
-            for i in range(len(dic[d])-1):
-                added = [item + dic[d][i+1] for item in self.ans[:prevLen]]
-                self.ans.extend(added)
-            for i in range(prevLen):
-                self.ans[i] += dic[d][0]
-                
-        return self.ans
-        """
-        
-        
-    
-    
-        """
-        - dfs
-        
-        """
-        
-        if len(digits) == 0 or not digits:
-            return []
-        
-        self.ans = []
-        dic = {
-            '2': ['a','b','c'],
-            '3': ['d','e','f'],
-            '4': ['g','h','i'],
-            '5': ['j','k','l'],
-            '6': ['m','n','o'],
-            '7': ['p','q','r','s'],
-            '8': ['t','u','v'],
-            '9': ['w','x','y','z']
-        }
-        
-        def helper(digits, res):
-            
-            if len(digits) == 0:
-                self.ans.append(res)
+        def backtrack(i, output):
+            if i == len(digits):
+                return output
+            if not output: 
+                temp = letters[digits[i]]
             else:
-                for d in dic[digits[0]]:
-                    helper(digits[1:], res + d)
+                temp = [w + c for c in letters[digits[i]] for w in output]
+            return backtrack(i + 1, temp)
             
-        helper(digits, "")
-        return self.ans
+        return backtrack(0, [])
 
 print(Solution().letterCombinations('23'))

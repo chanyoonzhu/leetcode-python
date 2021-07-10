@@ -42,7 +42,7 @@ zip: 833
 
 
 ## backtracking 
-eg: 78-Subsets(classic)|90-Subsets II|46-Permutations|47-Permutations II; 1239
+eg: 17-Letter Combinations of a Phone Number; 78-Subsets(classic)|90-Subsets II|46-Permutations|47-Permutations II; 1239
 
 ## binary search
 - Key words:
