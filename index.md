@@ -31,7 +31,7 @@ recursive: 2,116,241,247,273,450
 segment tree: 307,308,327,850
 sliding window: 3!,76,209,239,904,930,1004,1052,1234,1358,1423,1498,1537,1574,1577,1658,1696,1793
 sort: 56,99,164,179,252,280,315,524,581,L391,1300,1608
-stack: 20,32,84,155,227,232,331,402,456,496,503,581,678,739,856,901,907,946,962,975,1019,1028,1063,1124,1130,1249,1381,1541,1597,1673,1856
+stack: 20,32,84,155,227,232,331,402,456,496,503,581,636,678,739,856,901,907,946,962,975,1019,1028,1063,1124,1130,1249,1381,1541,1597,1673,1856
 string: 151,157,165,722,833,929,1520
 topological sort: 210,329
 tree: 116,222,235,236,333,337,450,298,549,687,729,1644,1650,1676,1740
@@ -42,7 +42,7 @@ zip: 833
 
 
 ## backtracking 
-eg: 17-Letter Combinations of a Phone Number; 78-Subsets(classic)|90-Subsets II|46-Permutations|47-Permutations II; 1239
+    - eg: 17-Letter Combinations of a Phone Number; 78-Subsets(classic)|90-Subsets II|46-Permutations|47-Permutations II; 1239
 
 ## binary search
 - Key words:
@@ -346,6 +346,8 @@ usually solved with O(n) time using hashmap - eg.303-Range Sum Query - Immutable
 
 ## Stack
 - classic problems:
+    - straight forward stack:
+        - eg: 636-Exclusive Time of Functions
     - parenthesis: 
         - eg. 32, 678, 856, 1249, 1541
         - can also use two passes: 32
