@@ -1,50 +1,39 @@
-class Solution(object):
-    def lengthOfLongestSubstringTwoDistinct(self, s):
-        """
-        :type s: str
-        :rtype: int
-        """
+"""
+- Brute force
+- O(n^2), O(n^2)
+"""
+class Solution:
+    def lengthOfLongestSubstringTwoDistinct(self, s: str) -> int:
+        result = 0
+        n = len(s)
         
-        """
-        - O(n^2), O(n^2)
-        - Brute force
-        
-        
-        maxLen = 0
-        for i in range(len(s)): #substring starting at i
-            charSet = set()
-            maxJ = i
-            for j in range(i, len(s)):
-                if s[j] not in charSet:
-                    charSet.add(s[j])
-                    if len(charSet) > 2:
-                        maxJ = j-1
-                        break
-                maxJ = j
-            maxLen = max(maxLen, maxJ-i+1)
-        
-        return maxLen
-        """
+        for l in range(n):
+            chars = set()
+            for r in range(l, n):
+                chars.add(s[r])
+                if len(chars) > 2:
+                    break
+                result = max(result, r - l + 1)
+        return result
     
-        """
-        - O(n), O(n)
-        - Sliding window
-        """
-        dic = collections.defaultdict(int)
-        maxLen = 0
-        start = end = 0
-        
-        while end < len(s):
-            dic[s[end]] += 1
-            while len(dic) > 2:
-                dic[s[start]] -= 1
-                if dic[s[start]] == 0: # don't forget to remove key
-                    del dic[s[start]]
-                start += 1
-            maxLen = max(maxLen, end-start+1)
-            end += 1
-            
-        return maxLen
+"""
+- Sliding window
+- O(n), O(n)
+"""
+class Solution:
+    def lengthOfLongestSubstringTwoDistinct(self, s: str) -> int:
+        counter = collections.defaultdict(int)
+        result = 0
+        l = 0
+        for r, c in enumerate(s):
+            counter[c] += 1
+            while len(counter) > 2:
+                counter[s[l]] -= 1
+                if counter[s[l]] == 0:
+                    del counter[s[l]]
+                l += 1
+            result = max(result, r - l + 1)
+        return result
         
 
 sl = Solution()
