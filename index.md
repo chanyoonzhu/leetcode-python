@@ -10,7 +10,7 @@ bit manipulation: 268,473,1371,1442,1542
 bst: 99,230,333,490,729
 bucket:299
 circular array: 213,1658
-divide and conquer: 53,215,241,307,308,312,327,973,1000,1039,1547
+divide and conquer: 53,215,241,307,308,312,327,395,973,1000,1039,1547
 dfs: 17,79,91,99,105,106,113,124,129,133,200,207,210,212,230,236,241,261,297,298,301,329,331,333,337,490,529,549,666,687,695,743,753,778,785,863,947,975,987,1028,1236,1306,1340,1569,1644,1676,1740
 dynamic programming: 5,10,32,39,45,53,55,70,72,91,97,139,198,213,279,312,322,403,410,416,435,473,494,518,562,583,712,746,1000,1035,1039,1143,1155,1312,1314,1458,1547,1696
 graph: 785,863
@@ -29,7 +29,7 @@ queue:232,239,1696
 range sum: 307,308,327,1314,930,1442
 recursive: 2,116,241,247,273,450
 segment tree: 307,308,327,850
-sliding window: 3,76,159,209,239,340,904,930,1004,1052,1234,1358,1423,1498,1537,1574,1577,1658,1696,1793
+sliding window: 3,76,159,209,239,340,395,904,930,1004,1052,1234,1358,1423,1498,1537,1574,1577,1658,1696,1793
 sort: 56,99,164,179,252,280,315,524,581,L391,1300,1608
 stack: 20,32,84,155,227,232,331,402,456,496,503,581,636,678,739,856,901,907,946,962,975,1019,1028,1063,1124,1130,1249,1381,1541,1597,1673,1856
 string: 151,157,165,722,833,929,1520
@@ -310,7 +310,7 @@ usually solved with O(n) time using hashmap - eg.303-Range Sum Query - Immutable
         - eg. 1052
     - substring that has given numbers of certain characters: 
         - algorithm: move right pointer to right until satisfies condition, then move left pointer to right to tighten window until condition not satisfied
-        - eg. 3-Longest Substring Without Repeating Characters | 159-Longest Substring with At Most Two Distinct Characters | 340. Longest Substring with At Most K Distinct Characters; 76,1234; similar:904;1004-Max Consecutive Ones III;1358-Number of Substrings Containing All Three Characters;
+        - eg. 3-Longest Substring Without Repeating Characters | 159-Longest Substring with At Most Two Distinct Characters | 340. Longest Substring with At Most K Distinct Characters | 395. Longest Substring with At Least K Repeating Characters; 76,1234; similar:904;1004-Max Consecutive Ones III;1358-Number of Substrings Containing All Three Characters;
     - subarray sum with a target: sliding window with prefix-sum / two pointers
         - eg: 209,930,1658
 - tips:
