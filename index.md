@@ -29,7 +29,7 @@ queue:232,239,1696
 range sum: 307,308,327,1314,930,1442
 recursive: 2,116,241,247,273,450
 segment tree: 307,308,327,850
-sliding window: 3,76,159,209,239,340,395,904,930,1004,1052,1234,1358,1423,1498,1537,1574,1577,1658,1696,1793
+sliding window: 3,76,159,209,239,340,395,904,930,992,1004,1052,1234,1358,1423,1498,1537,1574,1577,1658,1696,1793
 sort: 56,99,164,179,252,280,315,524,581,L391,1300,1608
 stack: 20,32,84,155,227,232,331,402,456,496,503,581,636,678,739,856,901,907,946,962,975,1019,1028,1063,1124,1130,1249,1381,1541,1597,1673,1856
 string: 151,157,165,722,833,929,1520
@@ -310,7 +310,7 @@ usually solved with O(n) time using hashmap - eg.303-Range Sum Query - Immutable
         - eg. 1052
     - substring that has given numbers of certain characters: 
         - algorithm: move right pointer to right until satisfies condition, then move left pointer to right to tighten window until condition not satisfied
-        - eg. 3-Longest Substring Without Repeating Characters | 159-Longest Substring with At Most Two Distinct Characters | 340. Longest Substring with At Most K Distinct Characters | 395. Longest Substring with At Least K Repeating Characters; 76,1234; similar:904;1004-Max Consecutive Ones III;1358-Number of Substrings Containing All Three Characters;
+        - eg. 3-Longest Substring Without Repeating Characters | 159-Longest Substring with At Most Two Distinct Characters | 340. Longest Substring with At Most K Distinct Characters | 992-Subarrays with K Different Integers | 395. Longest Substring with At Least K Repeating Characters; 76,1234; similar:904;1004-Max Consecutive Ones III;1358-Number of Substrings Containing All Three Characters;
     - subarray sum with a target: sliding window with prefix-sum / two pointers
         - eg: 209,930,1658
 - tips:
