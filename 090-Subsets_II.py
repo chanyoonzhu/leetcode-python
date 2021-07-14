@@ -19,3 +19,23 @@ class Solution:
           
         backtrack(sorted(nums), [])
         return result
+
+"""
+- enumeration with bit-masking
+- O(n* 2^n), O(n) - excluding result arr
+"""
+class Solution:
+    def subsetsWithDup(self, nums: List[int]) -> List[List[int]]:
+        
+        nums.sort()
+        n = len(nums)
+        result = []
+        for i in range(2 ** n):
+            subset = []
+            for j in range(n):
+                if(i & (1 << j)):
+                    subset.append(nums[j])
+            if(subset not in result):
+                result.append(subset)
+                
+        return result
