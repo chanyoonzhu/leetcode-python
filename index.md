@@ -3,7 +3,7 @@ two sum: 1, 167
 
 all, any: 833
 array: 54,56,73,151,157,186,238,268,349,350,380,381,849,1146,1371,1381,1567
-backtracking: 17,46,47,78,90,301,491,698,1593,1239
+backtracking: 17,46,47,78,90,301,491,698,996,1593,1239
 bfs: 79,103,116,127,133,200,207,210,212,297,301,529,743,785,787,863,971,987,1236,1306,1345,1654
 binary search:33,57,222,240,259,275,295,374,410,774,875,911,1011,1055,1146,1231,1272,1283,1428,1482,1552,1608,1648,1802,1870
 bit manipulation: 268,473,491,698,1371,1442,1542,1593
@@ -42,7 +42,7 @@ zip: 833
 
 
 ## backtracking 
-    - eg: 17-Letter Combinations of a Phone Number; 78-Subsets(classic)|90-Subsets II|46-Permutations|47-Permutations II; 491-Increasing Subsequences; 1239; 698-Partition to K Equal Sum Subsets; 1593-Split a String Into the Max Number of Unique Substrings
+    - eg: 17-Letter Combinations of a Phone Number; 78-Subsets(classic)|90-Subsets II|46-Permutations|47-Permutations II; 491-Increasing Subsequences; 996-Number of Squareful Arrays; 1239; 698-Partition to K Equal Sum Subsets; 1593-Split a String Into the Max Number of Unique Substrings
 
 ## binary search
 - Key words:
