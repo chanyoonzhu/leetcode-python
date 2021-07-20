@@ -397,7 +397,7 @@ eg: 56, 57, 218, 252, 253, 435, 452, 986-Interval List Intersections, 1229-Meeti
         - eg: 1577-Number of Ways Where Square of Number Is Equal to Product of Two Numbers
 
 ## Topological Sort:
-    - eg: 207-Course Schedule;
+    - eg: 207-Course Schedule | 210. Course Schedule II
 
 ### Two pointers:
 - classic problems:

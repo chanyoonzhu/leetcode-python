@@ -4,25 +4,23 @@
 """
 class Solution:
     def canFinish(self, numCourses: int, prerequisites: List[List[int]]) -> bool:
-        can_take = {}
         graph = collections.defaultdict(list)
+        visited = {}
+        
         for c, pre in prerequisites:
-            graph[c].append(pre)
+            graph[pre].append(c)
             
-        def dfs(c):
-            if c in can_take:
-                return can_take[c]
-            can_take[c] = False
-            for pre in graph[c]:
+        def dfs(node):
+            if node in visited:
+                return visited[node]
+            visited[node] = False # for detecting cycles
+            for pre in graph[node]:
                 if not dfs(pre):
                     return False
-            can_take[c] = True
+            visited[node] = True
             return True
         
-        for c in range(numCourses):
-            if not dfs(c): return False
-        return True
-        # return all(dfs(i) for i in range(numCourses))
+        return all(dfs(c) for c in range(numCourses))
         
 """
 - topological sort with BFS
