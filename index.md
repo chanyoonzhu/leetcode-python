@@ -412,3 +412,8 @@ eg: 56, 57, 218, 252, 253, 435, 452, 986-Interval List Intersections, 1229-Meeti
 ## Tree - Recursion can usually be used. 
 If using dfs, has to decide which to use: in-order traversal (aka. dfs), post-order traversal (549,1740), and pre-order traversal (298, search tree). Time complexity is O(n): every node is visited once. Space complexity is O(n) in worst case and O(log(n)) in average case: The extra space comes from implicit stack space due to recursion. For a skewed binary tree, the recursion could go up to n levels deep. 
 If using bfs, usually uses a FIFO queue to store nodes to be visited. 
+
+## Union Find
+- algorithm: union find by rank (assign node with higher rank as parent of a connected group)
+- problem:
+    - find connected groups: 323-Number of Connected Components in an Undirected Graph

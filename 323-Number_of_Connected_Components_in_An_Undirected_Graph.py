@@ -1,41 +1,37 @@
-class Solution(object):
-    def countComponents(self, n, edges):
-        """
-        :type n: int
-        :type edges: List[List[int]]
-        :rtype: int
-        """
-        parents = [i for i in range(n)]
-        ranks = [0] * n
-        components = n
-        
-        for e in edges:
-            if self.find(parents, e[0]) == self.find(parents, e[1]):
-                continue
-            else:
-                self.union(parents, ranks, e[0], e[1])
-                components -= 1 # components subtract 1 every time two groups union
-        
-        return components
-        
-        
-    def find(self, parents, i):
-        if parents[i] != i:
-            parents[i] = self.find(parents, parents[i])
-        return parents[i]
-            
+"""
+- todo: bfs, dfs
+"""
 
-    def union(self, parents, ranks, u, v):
-        parentU = self.find(parents, u)
-        parentV = self.find(parents, v)
+"""
+- union find
+- time: O(E⋅α(n)) E = Number of edges, V = Number of vertices. Iterating over every edge requires O(E) operations, and for every operation, we are performing the combine method which is O(α(n)), where α(n) is the inverse Ackermann function.
+    space: O(V)
+"""
+class Solution:
+    def countComponents(self, n: int, edges: List[List[int]]) -> int:
+        parents = list(range(n))
+        rank = [0] * n
         
-        if ranks[parentU] > ranks[parentV]:
-            parents[parentV] = parentU
-        elif ranks[parentU] < ranks[parentV]:
-            parents[parentU] = parentV
-        else:
-            ranks[parentU] += 1
-            parents[parentV] = parentU
+        def find(x):
+            if parents[x] != x:
+                parents[x] = find(parents[x])
+            return parents[x]
+        
+        def union(x, y): # union by rank
+            rx, ry = find(x), find(y)
+            if rx == ry:
+                return
+            if rank[rx] > rank[ry]:
+                parents[ry] = rx
+            elif rank[rx] < rank[ry]:
+                parents[rx] = ry
+            else:
+                parents[rx] = ry
+                rank[ry] += 1
+        
+        for x, y in edges:
+            union(x, y)
+        return len({find(i) for i in range(n)})
 
 print(Solution().countComponents(4,
 [[0,1],[2,3],[1,2]]))
