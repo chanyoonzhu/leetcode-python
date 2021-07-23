@@ -3,7 +3,7 @@ two sum: 1, 167
 
 all, any: 833
 array: 54,56,73,151,157,186,238,268,349,350,380,381,849,1146,1371,1381,1567
-backtracking: 17,46,47,78,90,301,491,698,996,1593,1239,1307,1681
+backtracking: 17,46,47,78,90,301,491,698,996,1593,1239,1307,1681,1718
 bfs: 79,103,116,127,133,200,207,210,212,297,301,529,743,785,787,863,959,971,987,1236,1306,1345,1654,1778
 binary search:33,57,222,240,259,275,295,374,410,774,875,911,1011,1055,1146,1231,1272,1283,1428,1482,1552,1608,1648,1802,1870
 bit manipulation: 268,473,491,698,1371,1442,1542,1593,1681
@@ -14,7 +14,7 @@ divide and conquer: 53,215,241,307,308,312,327,395,973,1000,1039,1547
 dfs: 17,79,91,99,105,106,113,124,129,133,200,207,210,212,230,236,241,261,297,298,301,329,331,333,337,490,529,549,666,687,695,743,753,778,785,787,863,947,959,975,987,1028,1236,1306,1340,1569,1644,1676,1740,1778
 dynamic programming: 5,10,32,39,45,53,55,70,72,91,97,139,198,213,279,312,322,403,410,416,435,473,494,518,562,583,712,746,1000,1035,1039,1143,1155,1312,1314,1458,1547,1696
 graph: 785,863
-greedy: 45,53,55,135,410,435,455,621,630,678,774,785,875,1011,1231,1402,1428,1482,1520,1537,1552,1567,1648,1665,1775,1802,1870
+greedy: 45,53,55,135,410,435,455,621,630,678,774,785,875,1011,1231,1402,1428,1482,1520,1537,1552,1567,1648,1665,1718,1775,1802,1870
 hashmap: 1,15,76,106,138,146,149,159,169,229,299,327,336,340,359,380,381,392,403,432,437,496,560,666,895,930,974,1000,1055,1371,1442,1542,1577,1590,1644
 hashset: 1,381,432
 heap: 23,215,218,253,295,347,621,630,759,778,973,1229,1696
@@ -42,7 +42,7 @@ zip: 833
 
 
 ## backtracking 
-    - eg: 17-Letter Combinations of a Phone Number; 78-Subsets(classic)|90-Subsets II|46-Permutations|47-Permutations II; 491-Increasing Subsequences; 996-Number of Squareful Arrays; 1239; 698-Partition to K Equal Sum Subsets; 1593-Split a String Into the Max Number of Unique Substrings; 1681-Minimum Incompatibility; 1307-Verbal Arithmetic Puzzle(hard)
+    - eg: 17-Letter Combinations of a Phone Number; 78-Subsets(classic)|90-Subsets II|46-Permutations|47-Permutations II; 491-Increasing Subsequences; 996-Number of Squareful Arrays; 1239; 698-Partition to K Equal Sum Subsets; 1593-Split a String Into the Max Number of Unique Substrings; 1681-Minimum Incompatibility; 1307-Verbal Arithmetic Puzzle(hard); 1718-Construct the Lexicographically Largest Valid Sequence (with greedy)
 
 ## binary search
 - Key words:
