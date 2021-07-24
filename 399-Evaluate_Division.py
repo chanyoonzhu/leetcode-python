@@ -1,65 +1,67 @@
-class Solution(object):
-    def calcEquation(self, equations, values, queries):
-        """
-        :type equations: List[List[str]]
-        :type values: List[float]
-        :type queries: List[List[str]]
-        :rtype: List[float]
-        """
-        
-        dic, idxes = {}, {}
-        idx = 0
-        res = []
-        
+"""
+- graph bfs search
+- O(n*E), O(E) n - number of queries E - number of equations
+"""
+class Solution:
+    def calcEquation(self, equations: List[List[str]], values: List[float], queries: List[List[str]]) -> List[float]:
+        graph = collections.defaultdict(dict)
         for i in range(len(equations)):
-            if equations[i][0] in dic:
-                dic[equations[i][0]].append((equations[i][1], values[i]))
-            else:
-                dic[equations[i][0]] = [(equations[i][1], values[i])]
-                idxes[equations[i][0]] = idx
-                idx += 1
-            if equations[i][1] in dic:
-                dic[equations[i][1]].append((equations[i][0], 1 / values[i]))
-            else:
-                dic[equations[i][1]] = [(equations[i][0], 1 / values[i])]
-                idxes[equations[i][1]] = idx
-                idx += 1
+            x, y = equations[i]
+            value = values[i]
+            graph[x][y] = value
+            graph[y][x] = 1.0 / value
         
+        visited = set()
+        result = []
         for query in queries:
-            
-            if query[0] not in idxes or query[1] not in idxes:
-                res.append(-1.0)
-                continue
-                
-            visited = [0] * (idx + 1)
-            q = [(query[0], 1.0)]
-            visited[idxes[query[0]]] = 1
-            ans = -1
+            found = False
+            src, dest = query
+            q = [(src, 1)]
+            visited.add(src)
             while q:
-                curr = q[0]
-                del q[0]
-                if curr[0] == query[1]:
-                    ans = curr[1]
-                    res.append(ans)
+                v, div = q.pop(0)
+                if v == dest and v in graph: # v in graph check: easy to miss for [x:x] x not in equation case
+                    result.append(div)
+                    found = True
                 else:
-                    neighbors = dic[curr[0]]
-                    for nb in neighbors:
-                        if not visited[idxes[nb[0]]]:
-                            visited[idxes[nb[0]]] = 1
-                            if nb[0] == query[1]:
-                                ans = curr[1] * nb[1]
-                                res.append(ans)
-                            else:
-                                q.append((nb[0], curr[1] * nb[1]))
-            if ans < 0:
-                res.append(-1.0)
-                
-        return res
-    
-sl = Solution()
-equations = [["a", "b"], ["b", "c"]]
-values = [2.0, 3.0]
-queries = [["a", "c"], ["b", "a"], ["a", "e"], ["a", "a"], ["x", "x"]]
-# print(equations[0][0])
-print(sl.calcEquation(equations, values, queries))
-            
+                    for neib, neib_div in graph[v].items():
+                        if neib not in visited:
+                            visited.add(neib)
+                            q.append((neib, div * neib_div))
+            if not found: result.append(-1.0)
+            q.clear()
+            visited.clear()
+        return result
+
+"""
+- union find
+- O((n+E)*logE), O(E) n - number of queries E - number of equations
+"""
+class Solution:
+    def calcEquation(self, equations: List[List[str]], values: List[float], queries: List[List[str]]) -> List[float]:
+        parents = {}
+	
+        def find(v):
+            p, vratio = parents.setdefault(v, (v, 1.0))
+            if v != p:
+                pp, pratio = find(p)
+                parents[v] = (pp, vratio * pratio)
+            return parents[v]
+
+        def union(x, y, ratio):
+            xparent, xratio, yparent, yratio = *find(x), *find(y)
+            if xparent != yparent:
+                parents[xparent] = (yparent, yratio / xratio * ratio)
+
+        for (x, y), v in zip(equations, values):
+            union(x, y, v)
+        
+        result = []
+        for x, y in queries:
+            if x not in parents or y not in parents:
+                ratio = -1
+            else:
+                xparent, xratio, yparent, yratio = *find(x), *find(y)
+                ratio = xratio / yratio if xparent == yparent else -1.0
+            result.append(ratio)
+        return result
