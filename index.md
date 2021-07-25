@@ -4,14 +4,14 @@ two sum: 1, 167
 all, any: 833
 array: 54,56,73,151,157,186,238,268,349,350,380,381,849,1146,1371,1381,1567
 backtracking: 17,46,47,78,90,301,491,698,996,1593,1239,1307,1681,1718
-bfs: 79,103,116,127,133,200,207,210,212,297,301,399,529,743,785,787,863,959,971,987,1236,1306,1345,1654,1778
+bfs: 79,103,116,127,133,200,207,210,212,297,301,399,529,743,785,787,803,863,959,971,987,1236,1306,1345,1654,1778
 binary search:33,57,222,240,259,275,295,374,410,774,875,911,1011,1055,1146,1231,1272,1283,1428,1482,1552,1608,1648,1802,1870
 bit manipulation: 268,473,491,698,1371,1442,1542,1593,1681
 bst: 99,230,333,490,729
 bucket:299
 circular array: 213,1658
 divide and conquer: 53,215,241,307,308,312,327,395,973,1000,1039,1547
-dfs: 17,79,91,99,105,106,113,124,129,133,200,207,210,212,230,236,241,261,297,298,301,329,331,333,337,399,490,529,549,666,687,695,743,753,778,785,787,863,947,959,975,987,1028,1236,1306,1340,1569,1644,1676,1740,1778
+dfs: 17,79,91,99,105,106,113,124,129,133,200,207,210,212,230,236,241,261,297,298,301,329,331,333,337,399,490,529,549,666,687,695,743,753,778,785,787,803,863,947,959,975,987,1028,1236,1306,1340,1569,1644,1676,1740,1778
 dynamic programming: 5,10,32,39,45,53,55,70,72,91,97,139,198,213,279,312,322,403,410,416,435,473,494,518,562,583,712,746,1000,1035,1039,1143,1155,1312,1314,1458,1547,1696
 graph: 785,863
 greedy: 45,53,55,135,410,435,455,621,630,678,774,785,875,1011,1231,1402,1428,1482,1520,1537,1552,1567,1648,1665,1718,1775,1802,1870
@@ -221,12 +221,12 @@ or
     - Space: O(n) - n stacks for skewed tree
 - example: 230, 337; 778-Swim in Rising Water
 
-## 2D DFS
+## 2D DFS/BFS
 - problems:
     - map hidden graph
         - eg: 1778-Shortest Path in a Hidden Grid; 1810-Minimum Path Cost in a Hidden Grid
     - find contiguous "islands"
-        - eg: 959-Regions Cut By Slashes (need pixelating)
+        - eg: 959-Regions Cut By Slashes (need pixelating); 803-Bricks Falling When Hit (hard)
     - operation chaining:
         - eg: 399-Evaluate Division
 
@@ -420,5 +420,5 @@ If using bfs, usually uses a FIFO queue to store nodes to be visited.
 ## Union Find
 - algorithm: union find by rank (assign node with higher rank as parent of a connected group)
 - problem:
-    - find connected groups: 323-Number of Connected Components in an Undirected Graph
+    - find connected groups: 323-Number of Connected Components in an Undirected Graph; 803-Bricks Falling When Hit (hard)
     - operation chaining: 399-Evaluate Division
