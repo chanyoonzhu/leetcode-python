@@ -35,7 +35,7 @@ stack: 20,32,84,155,227,232,331,402,456,496,503,581,636,678,739,856,901,907,946,
 string: 151,157,165,722,833,929,1520
 topological sort: 207,210,329
 tree: 116,222,235,236,333,337,450,298,549,687,729,1644,1650,1676,1740
-trie: 208,212,336
+trie: 208,211,212,336
 two pointers: 15,42,76,86,121,159,167,209,253,259,392,524,581,680,904,986,1055,1229,1537,1574,1577,1658,1775,1868
 union find: 323,778,947
 zip: 833
@@ -417,6 +417,17 @@ eg: 56, 57, 218, 252, 253, 435, 452, 986-Interval List Intersections, 1229-Meeti
 ## Tree - Recursion can usually be used. 
 If using dfs, has to decide which to use: in-order traversal (aka. dfs), post-order traversal (549,1740), and pre-order traversal (298, search tree). Time complexity is O(n): every node is visited once. Space complexity is O(n) in worst case and O(log(n)) in average case: The extra space comes from implicit stack space due to recursion. For a skewed binary tree, the recursion could go up to n levels deep. 
 If using bfs, usually uses a FIFO queue to store nodes to be visited. 
+
+## Trie
+- when to use: Trie could use less space compared to hashmap when storing many keys with the same prefix (word search, spell checker, etc.)
+- Trie data structure
+```
+class TrieNode:
+    def __init__(self):
+        self.isWord = False # mark word end
+        self.children = collections.defaultdict(TrieNode)
+```
+- eg: 211-Design Add and Search Words Data Structure(basic)
 
 ## Union Find
 - algorithm: union find by rank (assign node with higher rank as parent of a connected group)
