@@ -14,10 +14,10 @@ divide and conquer: 53,215,241,307,308,312,327,395,973,1000,1039,1547
 dfs: 17,79,91,99,105,106,113,124,129,133,200,207,210,212,230,236,241,261,297,298,301,329,331,333,337,399,490,529,549,666,687,695,743,753,778,785,787,803,863,947,959,975,987,1028,1236,1306,1340,1569,1644,1676,1740,1766,1778
 dynamic programming: 5,10,32,39,45,53,55,70,72,91,97,139,198,213,279,312,322,403,410,416,435,473,494,518,562,583,712,746,1000,1035,1039,1143,1155,1312,1314,1458,1547,1696
 graph: 785,863
-greedy: 45,53,55,135,410,435,455,621,630,678,774,785,875,1011,1231,1402,1428,1482,1520,1537,1552,1567,1648,1665,1718,1775,1802,1870
+greedy: 45,53,55,135,410,435,455,621,630,678,774,785,875,1011,1231,1353,1402,1428,1482,1520,1537,1552,1567,1648,1665,1718,1775,1802,1870
 hashmap: 1,15,76,106,138,146,149,159,169,229,299,327,336,340,359,380,381,392,403,432,437,496,560,666,895,930,974,1000,1055,1371,1442,1542,1577,1590,1644
 hashset: 1,381,432
-heap: 23,215,218,253,295,347,621,630,759,778,973,1229,1696
+heap: 23,215,218,253,295,347,621,630,759,778,973,1229,1353,1696
 inorder: 99,105,230,333
 linked list: 2,21,24,25,86,138,146,382,432,445,705,706,1650
 map: 205
@@ -320,6 +320,8 @@ usually solved with O(n) time using hashmap - eg.303-Range Sum Query - Immutable
 - problems:
     - sorting:
         - eg: 23-Merge k Sorted Lists; 778-Swim in Rising Water
+    - greedy:
+        - eg: 1353-Maximum Number of Events That Can Be Attended
 
 ## Sliding window -
 - variations:
@@ -392,7 +394,9 @@ Q: Are intervals mutually exclusive? A: Yes
 - Data structures:
 - Complexity:
 O(n), O(n)
-- Variations: streaming intervals (can usually solve using bisect), eg 729, 731, 732, 57
+- Variations: 
+    - streaming intervals (can usually solve using bisect), eg 729, 731, 732, 57
+    - greedy with priority queue: 1353-Maximum Number of Events That Can Be Attended
 - Examples:
 eg: 56, 57, 218, 252, 253, 435, 452, 986-Interval List Intersections, 1229-Meeting Scheduler, 1272, 1288, Lint391; hard-352, 391(2D), 759, 850(2D)
 
