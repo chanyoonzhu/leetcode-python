@@ -321,7 +321,7 @@ usually solved with O(n) time using hashmap - eg.303-Range Sum Query - Immutable
     - sorting:
         - eg: 23-Merge k Sorted Lists; 778-Swim in Rising Water
     - greedy:
-        - eg: 1353-Maximum Number of Events That Can Be Attended
+        - eg: 1353-Maximum Number of Events That Can Be Attended; 502-IPO
 
 ## Sliding window -
 - variations:
