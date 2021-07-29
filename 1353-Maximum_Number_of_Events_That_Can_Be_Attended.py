@@ -1,6 +1,6 @@
 """
 - greedy with priority queue
-- O(dlogn) d: max day, n: len(events)
+- O(dlogn) d: max day, n: len(events)?
 """
 class Solution:
     def maxEvents(self, events: List[List[int]]) -> int:
