@@ -1,33 +1,27 @@
-import heapq
+"""
+- greedy + knapsack dp
+- O(n*t), O(n*t)
+"""
+class Solution:
+    def scheduleCourse(self, courses: List[List[int]]) -> int:
+        courses.sort(key=lambda x: x[1]) # greedily take course ends earlier
+        
+        @lru_cache(None)
+        def helper(time, i):
+            if i == len(courses):
+                return 0
+            maxTaken = helper(time, i + 1) # not take current course
+            if time + courses[i][0] <= courses[i][1]:
+                maxTaken = max(maxTaken, 1 + helper(time + courses[i][0], i + 1)) # take current course
+            return maxTaken
+        
+        return helper(0, 0)
 
+"""
+- greedy (*2) with priority queue 
+- O(nlogn), O(n)
+"""
 class Solution(object):
-
-    """
-    - greedy with heap - failed: [[5,5],[4,6],[2,6]] output: 1 expected: 2
-    """
-    def scheduleCourse(self, courses):
-        """
-        :type courses: List[List[int]]
-        :rtype: int
-        """
-        pq = [(d, t) for t, d in courses]
-        heapq.heapify(pq)
-        total_duration, total_courses = 0, 0
-        while pq:
-            d, t = heapq.heappop(pq)
-            if total_duration + t <= d:
-                total_duration += t
-                total_courses += 1
-        return total_courses
-
-    """
-    - greedy with heap - correct answer
-    - O(nlogn), O(n)
-    - algorithm: greedy, picking courses taking less time over those taking longer time
-    1. sort courses by close day
-    2. iterate courses, in each iteration, check if taking the course violates "finish before close day" rule
-    3. if rule is violated, remove the previously iterated course that needs the longest time (using a priority queue)
-    """
     def scheduleCourse(self, courses):
         """
         :type courses: List[List[int]]
@@ -35,10 +29,10 @@ class Solution(object):
         """
         pq = []
         start = 0
-        for t, end in sorted(courses, key = lambda x: x[1]):
+        for t, end in sorted(courses, key = lambda x: x[1]): # greedily take courses that ends earlier
             start += t
             heapq.heappush(pq, -t)
-            while start > end:
+            while start > end: # when don't have enough time to take current course, greedily "unlearn" previously taken course with largest duration
                 start += heapq.heappop(pq)
         return len(pq)
 

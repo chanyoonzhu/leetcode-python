@@ -240,7 +240,7 @@ space can be optimized to O(1) if only need to track constant time of variables 
     - knapsack: 
         - 0/1 knapsack: 1049
         - tip: dp[_sum][i]
-        - eg: 416, 494, 1049
+        - eg: 416, 494, 1049, 630-Course Schedule III
     - length in matrix: 562
     - reachable problem: 45,55
     - divide and conquer: 241
@@ -321,7 +321,7 @@ usually solved with O(n) time using hashmap - eg.303-Range Sum Query - Immutable
     - sorting:
         - eg: 23-Merge k Sorted Lists; 778-Swim in Rising Water
     - greedy:
-        - eg: 1353-Maximum Number of Events That Can Be Attended; 502-IPO
+        - eg: 1353-Maximum Number of Events That Can Be Attended; 502-IPO, 630-Course Schedule III(greedy * 2)
 
 ## Sliding window -
 - variations:
