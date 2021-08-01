@@ -19,7 +19,7 @@ hashmap: 1,15,76,106,138,146,149,159,169,229,299,327,336,340,359,380,381,392,403
 hashset: 1,381,432
 heap: 23,215,218,253,295,347,621,630,759,778,973,1229,1353,1696,1834
 inorder: 99,105,230,333
-linked list: 2,21,24,25,86,138,146,382,432,445,705,706,1650
+linked list: 2,21,24,25,86,138,146,382,432,445,587,705,706,1650
 map: 205
 math:12,149,168,268,391,621,794,836,1041,1344,1569
 merge sort: 315,1574
@@ -303,6 +303,9 @@ heapify time complexity: O(n), heap push/pop time complexity: O(logn)
         - eg: 308-Linked List Random Node
     - others:
         - eg: 528-Random Pick with Weight (with prefix-sum)
+- Convex Hull:
+    - algorithms: Jarvis Algorithm, Graham Scan, Monotone Chain
+    - eg: 587-Erect the Fence
 
 ## Pre-computing:
 - problems:
