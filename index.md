@@ -33,7 +33,7 @@ sliding window: 3,76,159,209,239,340,395,904,930,992,1004,1052,1234,1358,1423,14
 sort: 56,99,164,179,252,280,315,524,581,L391,1300,1608
 stack: 20,32,84,155,227,232,331,402,456,496,503,581,636,678,739,856,901,907,946,962,975,1019,1028,1063,1124,1130,1249,1381,1541,1597,1673,1856
 string: 151,157,165,722,833,929,1520
-topological sort: 207,210,329
+topological sort: 207,210,329,444
 tree: 116,222,235,236,333,337,450,298,549,687,729,1644,1650,1676,1740
 trie: 208,211,212,336
 two pointers: 15,42,76,86,121,159,167,209,253,259,392,524,581,680,904,986,1055,1229,1537,1574,1577,1658,1775,1868
@@ -415,7 +415,7 @@ eg: 56, 57, 218, 252, 253, 435, 452, 986-Interval List Intersections, 1229-Meeti
         - eg: 1577-Number of Ways Where Square of Number Is Equal to Product of Two Numbers
 
 ## Topological Sort:
-    - eg: 207-Course Schedule | 210. Course Schedule II
+    - eg: 207-Course Schedule | 210. Course Schedule II; 444-Sequence Reconstruction
 
 ### Two pointers:
 - classic problems:
