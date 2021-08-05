@@ -303,7 +303,7 @@ heapify time complexity: O(n), heap push/pop time complexity: O(logn)
     - reservoir sampling: sampling in dynamic-size arrays
         - eg: 308-Linked List Random Node
     - others:
-        - eg: 528-Random Pick with Weight (with prefix-sum)
+        - eg: 528-Random Pick with Weight (with prefix-sum); 497-Random Point in Non-overlapping Rectangles (with binary search)
 - Convex Hull:
     - algorithms: Jarvis Algorithm, Graham Scan, Monotone Chain
     - eg: 587-Erect the Fence
