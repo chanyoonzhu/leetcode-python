@@ -21,7 +21,7 @@ heap: 23,215,218,253,295,347,621,630,759,778,973,1229,1353,1383,1696,1834,1851
 inorder: 99,105,230,333
 linked list: 2,21,24,25,86,138,146,382,432,445,587,705,706,1650
 map: 205
-math:12,149,168,268,391,621,794,836,1041,1344,1569
+math:12,149,168,268,391,470,621,794,836,1041,1344,1569
 merge sort: 315,1574
 misc:169,229(moore voting)
 preorder: 105,106,113,331,437,545,666,971,987,1028,1569
@@ -302,6 +302,8 @@ heapify time complexity: O(n), heap push/pop time complexity: O(logn)
 - Sampling:
     - reservoir sampling: sampling in dynamic-size arrays
         - eg: 308-Linked List Random Node
+    - Implement RandM() using RandN()
+        - 470-Implement Rand10() Using Rand7()
     - others:
         - eg: 528-Random Pick with Weight (with prefix-sum); 497-Random Point in Non-overlapping Rectangles (with binary search)
 - Convex Hull:
