@@ -12,7 +12,7 @@ bucket:299
 circular array: 213,1658
 divide and conquer: 53,215,241,307,308,312,327,395,973,1000,1039,1547
 dfs: 17,79,91,99,105,106,113,124,129,133,200,207,210,212,230,236,241,261,297,298,301,329,331,333,337,399,490,529,549,666,687,695,743,753,778,785,787,803,863,947,959,975,987,1028,1236,1306,1340,1569,1644,1676,1740,1766,1778
-dynamic programming: 5,10,32,39,45,53,55,70,72,91,97,139,198,213,279,312,322,403,410,413,416,435,473,494,518,562,583,712,746,1000,1035,1039,1143,1155,1312,1314,1458,1547,1696
+dynamic programming: 5,10,32,39,45,53,55,64,70,72,91,97,139,198,213,279,312,322,403,410,413,416,435,473,494,518,562,583,712,746,1000,1035,1039,1143,1155,1312,1314,1458,1547,1696
 graph: 785,863
 greedy: 45,53,55,135,410,435,455,621,630,678,774,785,875,1011,1231,1353,1383,1402,1428,1482,1520,1537,1552,1567,1648,1665,1718,1775,1802,1851,1870
 hashmap: 1,15,76,106,138,146,149,159,169,229,299,327,336,340,359,380,381,392,398,403,432,437,496,560,666,895,930,974,1000,1055,1371,1442,1542,1577,1590,1644
@@ -239,6 +239,7 @@ space can be optimized to O(1) if only need to track constant time of variables 
 - Bottom up: loop using memoization (calculate those won't change first, eg.1143, 1340) - look at the transformation formula from the top-down solution to figure out what needs to be calculated first in the loop. Can use the subproblem size as the outer loop if dp(i, j) need dp(i + 1, j - 1) (eg.312，1312)
 - types:
     - 1D: 70-Climbing Stairs; 198-House Robber; 413-Arithmetic Slices
+    - 2D: 64-Minimum Path Sum
     - knapsack: 
         - 0/1 knapsack: 1049
         - tip: dp[_sum][i]
