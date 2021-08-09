@@ -4,8 +4,8 @@ two sum: 1, 167
 all, any: 833
 array: 54,56,73,151,157,186,238,268,349,350,380,381,849,1146,1371,1381,1567
 backtracking: 17,46,47,78,90,301,491,698,996,1593,1239,1307,1681,1718,1723
-bfs: 79,103,116,127,133,200,207,210,212,297,301,399,529,542,743,752,785,787,803,863,959,971,987,1236,1306,1345,1654,1778
-binary search:33,57,222,240,259,275,295,374,410,774,875,911,1011,1055,1146,1231,1272,1283,1428,1482,1552,1608,1648,1723,1802,1870
+bfs: 79,103,116,127,133,200,207,210,212,279,297,301,399,529,542,743,752,785,787,803,863,959,971,987,1236,1306,1345,1654,1778
+binary search:33,57,222,240,259,275,279,295,374,410,774,875,911,1011,1055,1146,1231,1272,1283,1428,1482,1552,1608,1648,1723,1802,1870
 bit manipulation: 268,473,491,698,1371,1442,1542,1593,1681
 bst: 99,230,333,490,729
 bucket:299
@@ -21,7 +21,7 @@ heap: 23,215,218,253,295,347,621,630,759,778,973,1229,1353,1383,1696,1834,1851
 inorder: 99,105,230,333
 linked list: 2,21,24,25,86,138,146,382,432,445,587,705,706,1650
 map: 205
-math:12,149,168,268,391,470,621,794,836,1041,1344,1569
+math:12,149,168,268,279,391,470,621,794,836,1041,1344,1569
 merge sort: 315,1574
 misc:169,229(moore voting)
 preorder: 105,106,113,331,437,545,666,971,987,1028,1569
@@ -119,7 +119,7 @@ while start <= end:
 - Examples: 57,911,1146(bisect), 278,374(basic), 981(strictly increasing, find lower), 315
 - classic problems:
     - binary search + greedy: get the possible range of answer, binary search between range and see if current number can satisfy condition using greedy algorithm
-        - eg: 410|774; 778-Swim in Rising Water(graph)|875|1011|1231|1283|1300|1482|1552|1648|1802(complex)|1870;1723-Find Minimum Time to Finish All Jobs(hard, with backtracking)
+        - eg: 410|774; 778-Swim in Rising Water(graph)|875|1011|1231|1283|1300|1482|1552|1648|1802(complex)|1870;1723-Find Minimum Time to Finish All Jobs(hard, with backtracking); 279-Perfect Squares
 
 ## Bit manipulation
 - XOR
@@ -142,7 +142,7 @@ while start <= end:
     steps: while q, if q popped is target, finish, if not, add popped item's neighbors to the q; optimization: visited can be eliminated if allowed to change memory (mark on original data)
 - classic problems:
     - all shortest paths: 301
-    - 1D (array): 1654-Minimum Jumps to Reach Home 
+    - 1D (array): 1654-Minimum Jumps to Reach Home; 279-Perfect Squares
     - 2D shortest paths: 542-01 Matrix
     - String: 752-Open the Lock
     - Dijkstra's Algorithm: 743-Network Delay Time, 787-Cheapest Flights Within K Stops
@@ -253,7 +253,7 @@ space can be optimized to O(1) if only need to track constant time of variables 
     - string subsequence with min/max cost: 97,516,583,1035,1092,1143,1458
         - edit-distance: 72,583,712,1312
     - number of ways to combine: knapsack?
-        - eg: 1155-Number of Dice Rolls With Target Sum
+        - eg: 1155-Number of Dice Rolls With Target Sum; 279-Perfect Squares
     - subarray max/min:
         - eg: 53-Maximum Subarray
 
@@ -307,11 +307,14 @@ heapify time complexity: O(n), heap push/pop time complexity: O(logn)
         - eg: 382-Linked List Random Node; 398-Random Pick Index
     - Implement RandM() using RandN()
         - 470-Implement Rand10() Using Rand7()
-    - others:
+    - sampling with weight:
+        - algorithm: prefix-sum with binary search
         - eg: 528-Random Pick with Weight (with prefix-sum); 497-Random Point in Non-overlapping Rectangles (with binary search)
 - Convex Hull:
     - algorithms: Jarvis Algorithm, Graham Scan, Monotone Chain
     - eg: 587-Erect the Fence
+- Bachet's conjecture:
+    - eg: 279-Perfect Squares
 
 ## Pre-computing:
 - problems:
