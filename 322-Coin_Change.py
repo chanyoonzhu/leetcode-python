@@ -1,8 +1,8 @@
+"""
+- dp (bottom-up)
+- O(S*n), O(S)
+"""
 class Solution:
-    """
-    - dp (bottom-up)
-    - O(S*n), O(S)
-    """
     def coinChange(self, coins: List[int], amount: int) -> int:
         dp = [0] * (amount + 1)
         
@@ -15,11 +15,12 @@ class Solution:
             
         return dp[-1] if dp[-1] != float("inf") else -1
     
-    """
-    - dp (top-down)
-    - O(S*n), O(S)
-    - time limit exceeded
-    """
+"""
+- dp (top-down)
+- O(S*n), O(S)
+- time limit exceeded
+"""
+class Solution:
     def coinChange(self, coins: List[int], amount: int) -> int:
         dp = [0] + [float("inf")] * amount
         
@@ -33,3 +34,24 @@ class Solution:
         dfs(dp, amount)
         
         return dp[-1] if dp[-1] != float("inf") else -1
+
+"""
+- dp (top-down) - with cache
+- O(S*n), O(S)
+"""
+class Solution:
+    def coinChange(self, coins, amount):
+        INF = float("inf")
+        @lru_cache(None)
+        def dp(n):
+            if n < 0:
+                return -1
+            if n == 0:
+                return 0
+            ans = INF
+            for m in coins:
+                if dp(n-m) >= 0:
+                    ans = min(ans, 1 + dp(n-m))
+            return ans
+        
+        return dp(amount) if dp(amount) < INF else -1
