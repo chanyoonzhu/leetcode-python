@@ -1,9 +1,8 @@
+"""
+- sort then swap
+- O(nlogn), O(1)
+"""
 class Solution:
-
-    """
-    - sort then swap
-    - O(nlogn), O(1)
-    """
     def wiggleSort(self, nums: List[int]) -> None:
         """
         Do not return anything, modify nums in-place instead.
@@ -15,10 +14,11 @@ class Solution:
             i += 2
         return nums
 
-    """
-    - one pass swap
-    - O(n), O(1)
-    """
+"""
+- one pass swap
+- O(n), O(1)
+"""
+class Solution:
     def wiggleSort(self, nums: List[int]) -> None:
         """
         Do not return anything, modify nums in-place instead.

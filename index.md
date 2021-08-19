@@ -386,7 +386,7 @@ usually solved with O(n) time using hashmap - eg.303-Range Sum Query - Immutable
 - *sort an almost sorted array where two elements are swapped
     - Examples: 99
 - wiggle sort
-    - Example: 280
+    - Example: 280-Wiggle Sort
 - bucket sort
     - eg. 164
 - custom sort
