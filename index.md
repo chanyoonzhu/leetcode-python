@@ -123,7 +123,9 @@ while start <= end:
 
 ## Bitwise Operation
 - AND
-    - 191-Number of 1 Bits; 231-Power of Two; 338-Counting Bits
+    - tricks:
+        - x & 1: get the rightmost bit
+    - eg. 190-Reverse Bits; 191-Number of 1 Bits; 231-Power of Two; 338-Counting Bits
 - XOR
     - definition - same: 0, different: 1
     - a number XOR itself equals 0: 268-Missing Number; 137-Single Number II
