@@ -6,7 +6,7 @@ array: 54,56,73,122,151,157,186,238,268,349,350,380,381,849,1146,1371,1381,1567
 backtracking: 17,46,47,78,90,301,491,698,996,1593,1239,1307,1681,1718,1723
 bfs: 79,103,116,127,133,200,207,210,212,279,297,301,399,529,542,743,752,785,787,803,863,959,971,987,1236,1306,1345,1654,1778
 binary search:33,57,222,240,259,268,275,279,295,300,374,410,774,875,911,1011,1055,1146,1231,1272,1283,1428,1482,1552,1608,1648,1723,1802,1870
-bitwise operation: 136,137,191,231,268,338,371,461,473,491,698,1371,1442,1542,1593,1681
+bitwise operation: 136,137,191,231,268,338,342,371,461,473,491,698,1371,1442,1542,1593,1681
 bst: 99,230,333,490,729
 bucket:299
 circular array: 213,1658
@@ -125,7 +125,8 @@ while start <= end:
 - AND
     - tricks:
         - x & 1: get the rightmost bit
-    - eg. 190-Reverse Bits; 191-Number of 1 Bits; 231-Power of Two; 338-Counting Bits
+        - x & (x - 1): remove rightmost 1
+    - eg. 190-Reverse Bits; 191-Number of 1 Bits; 231-Power of Two; 342-Power of Four; 338-Counting Bits
 - XOR
     - definition - same: 0, different: 1
     - a number XOR itself equals 0: 136-Single Number; 137-Single Number II; 268-Missing Number
