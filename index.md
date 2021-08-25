@@ -18,7 +18,7 @@ greedy: 45,53,55,135,410,435,455,621,630,678,774,785,875,1011,1231,1353,1383,140
 hashmap: 1,15,76,106,138,146,149,159,169,229,299,327,336,340,359,380,381,392,398,403,432,437,496,560,666,895,930,974,1000,1055,1371,1442,1525,1542,1577,1590,1644
 hashset: 1,381,432
 heap: 23,215,218,253,295,347,621,630,759,778,973,1229,1353,1383,1696,1834,1851
-inorder: 99,105,230,333
+inorder: 99,105,230,333,426
 linked list: 2,21,24,25,86,138,146,382,432,445,587,705,706,1650
 map: 205
 math:12,149,168,268,279,391,470,621,794,836,1041,1344,1569
@@ -34,7 +34,7 @@ sort: 56,99,164,179,252,280,315,524,581,L391,1300,1509,1608
 stack: 20,32,84,155,227,232,331,402,456,496,503,581,636,678,735,739,856,901,907,946,962,975,1019,1028,1063,1124,1130,1249,1381,1541,1597,1673,1856
 string: 151,157,165,722,833,929,1520
 topological sort: 207,210,329,444
-tree: 116,222,235,236,333,337,450,298,549,687,729,1644,1650,1676,1740
+tree: 116,222,235,236,333,337,426,450,298,549,687,729,1644,1650,1676,1740
 trie: 208,211,212,336
 two pointers: 15,42,76,86,121,159,167,209,253,259,392,524,581,680,904,986,1055,1229,1537,1574,1577,1658,1775,1868
 union find: 323,778,947
@@ -458,8 +458,11 @@ eg: 56, 57, 218, 252, 253, 435, 452, 986-Interval List Intersections, 1229-Meeti
     - two arrays: 1537-Get the Maximum Score; 1868-Product of Two Run-Length Encoded Arrays
 
 ## Tree - Recursion can usually be used. 
-If using dfs, has to decide which to use: in-order traversal (aka. dfs), post-order traversal (549,1740), and pre-order traversal (298, search tree). Time complexity is O(n): every node is visited once. Space complexity is O(n) in worst case and O(log(n)) in average case: The extra space comes from implicit stack space due to recursion. For a skewed binary tree, the recursion could go up to n levels deep. 
+- If using dfs, has to decide which to use: in-order traversal (aka. dfs), post-order traversal (549,1740), and pre-order traversal (298, search tree). Time complexity is O(n): every node is visited once. Space complexity is O(n) in worst case and O(log(n)) in average case: The extra space comes from implicit stack space due to recursion. For a skewed binary tree, the recursion could go up to n levels deep. 
 If using bfs, usually uses a FIFO queue to store nodes to be visited. 
+- Problems:
+    - in-order traversal: 426-Convert Binary Search Tree to Sorted Doubly Linked List
+
 
 ## Trie
 - when to use: Trie could use less space compared to hashmap when storing many keys with the same prefix (word search, spell checker, etc.)
