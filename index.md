@@ -462,6 +462,7 @@ eg: 56, 57, 218, 252, 253, 435, 452, 986-Interval List Intersections, 1229-Meeti
 If using bfs, usually uses a FIFO queue to store nodes to be visited. 
 - Problems:
     - in-order traversal: 426-Convert Binary Search Tree to Sorted Doubly Linked List
+    - pre-order traversal: 105-Construct Binary Tree from Preorder and Inorder Traversal
 
 
 ## Trie
