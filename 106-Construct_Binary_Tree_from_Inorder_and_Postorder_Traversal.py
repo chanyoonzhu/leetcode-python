@@ -4,28 +4,24 @@
 #         self.val = val
 #         self.left = left
 #         self.right = right
+"""
+- dfs (postorder, inorder)
+- O(n), O(n)
+"""
 class Solution:
-    """
-    - dfs (preorder)
-    - O(n), O(n)
-    """
     def buildTree(self, inorder: List[int], postorder: List[int]) -> TreeNode:
-        if not postorder:
-            return None
+        if not postorder: return None
         root = TreeNode(postorder.pop())
-        i = 0
-        while i < len(inorder):
-            if inorder[i] == root.val:
-                break
-            i += 1
-        root.left = self.buildTree(inorder[:i], postorder[:i])
-        root.right = self.buildTree(inorder[i + 1:], postorder[i:])
+        root_index = inorder.index(root.val)
+        root.left = self.buildTree(inorder[:root_index], postorder[:root_index])
+        root.right = self.buildTree(inorder[root_index + 1:], postorder[root_index:])
         return root
 
-    """
-    - dfs (preorder) - optimized using hashmap
-    - O(n), O(n) - space optimized
-    """
+"""
+- dfs (preorder) - optimized using hashmap
+- O(n), O(n) - space optimized
+"""
+class Solution:
     def buildTree(self, inorder: List[int], postorder: List[int]) -> TreeNode:
         
         def dfs(inorder, postorder, il, ir, pl, pr):
