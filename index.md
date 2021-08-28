@@ -7,7 +7,7 @@ backtracking: 17,46,47,78,90,301,491,698,996,1593,1239,1307,1681,1718,1723
 bfs: 79,103,116,127,133,200,207,210,212,279,297,301,399,529,542,743,752,785,787,803,863,959,971,987,1236,1306,1345,1654,1778
 binary search:33,57,222,240,259,268,275,279,295,300,374,410,774,875,911,1011,1055,1146,1231,1272,1283,1428,1482,1552,1608,1648,1723,1802,1870
 bitwise operation: 136,137,191,231,268,318,338,342,371,461,473,476,491,693,698,1371,1442,1542,1593,1681
-bst: 99,230,333,490,729
+bst: 99,230,333,490,729,1008
 bucket:299
 circular array: 213,1658
 divide and conquer: 53,215,241,307,308,312,327,395,973,1000,1039,1547
@@ -24,7 +24,7 @@ map: 205
 math:12,149,168,268,279,391,470,621,794,836,1041,1344,1569
 merge sort: 315,1574
 misc:169,229(moore voting)
-preorder: 105,106,113,331,437,545,666,889,971,987,1028,1569
+preorder: 105,106,113,331,437,545,666,889,971,987,1008,1028,1569
 queue:232,239,1696
 range sum: 307,308,327,1314,930,1442
 recursive: 2,116,241,247,273,450
@@ -462,10 +462,10 @@ eg: 56, 57, 218, 252, 253, 435, 452, 986-Interval List Intersections, 1229-Meeti
 - If using dfs, has to decide which to use: in-order traversal (aka. dfs), post-order traversal (549,1740), and pre-order traversal (298, search tree). Time complexity is O(n): every node is visited once. Space complexity is O(n) in worst case and O(log(n)) in average case: The extra space comes from implicit stack space due to recursion. For a skewed binary tree, the recursion could go up to n levels deep. 
 If using bfs, usually uses a FIFO queue to store nodes to be visited. 
 - Problems:
+    - pre-order: 1008-Construct Binary Search Tree from Preorder Traversal
     - in-order traversal: 426-Convert Binary Search Tree to Sorted Doubly Linked List
     - traversal combinations: 105-Construct Binary Tree from Preorder and Inorder Traversal; 106-Construct Binary Tree from Inorder and Postorder Traversal; 889-Construct Binary Tree from Preorder and Postorder Traversal
-;
-
+    - BST Problems: 1008-Construct Binary Search Tree from Preorder Traversal
 
 ## Trie
 - when to use: Trie could use less space compared to hashmap when storing many keys with the same prefix (word search, spell checker, etc.)
