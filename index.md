@@ -17,7 +17,7 @@ graph: 785,863
 greedy: 45,53,55,135,410,435,455,621,630,678,774,785,853,875,1011,1231,1353,1383,1402,1419,1428,1482,1520,1537,1552,1567,1648,1665,1718,1746,1775,1802,1824,1851,1870
 hashmap: 1,15,76,106,138,146,149,159,169,229,299,327,336,340,359,380,381,392,398,403,432,437,496,560,666,895,930,974,1000,1055,1371,1442,1525,1542,1577,1590,1644
 hashset: 1,381,432
-heap: 23,215,218,253,295,347,621,630,759,778,973,1229,1353,1383,1696,1834,1851
+heap: 23,215,218,253,295,347,621,630,759,778,973,1229,1353,1383,1499,1696,1834,1851
 inorder: 99,105,230,333,426
 linked list: 2,21,24,25,86,138,146,382,432,445,587,705,706,1650
 map: 205
@@ -360,7 +360,7 @@ usually solved with O(n) time using hashmap - eg.303-Range Sum Query - Immutable
     - sorting:
         - eg: 23-Merge k Sorted Lists; 778-Swim in Rising Water
     - greedy:
-        - eg: 1353-Maximum Number of Events That Can Be Attended; 502-IPO, 630-Course Schedule III(greedy * 2)|1383-Maximum Performance of a Team; 1851-Minimum Interval to Include Each Query
+        - eg: 1353-Maximum Number of Events That Can Be Attended; 502-IPO, 630-Course Schedule III(greedy * 2)|1383-Maximum Performance of a Team; 1499-Max Value of Equation; 1851-Minimum Interval to Include Each Query; 
 
 ## Sliding window -
 - variations:
