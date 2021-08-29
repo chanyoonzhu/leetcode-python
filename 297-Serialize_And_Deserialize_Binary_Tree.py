@@ -5,71 +5,11 @@
 #         self.left = None
 #         self.right = None
 
+"""
+- bfs
+- O(n), O(n)
+"""
 class Codec:
-    
-    
-    """
-    - bfs
-    def serialize(self, root):
-        
-        q = [root]
-        bfs = []
-        
-        while q:
-            node = q.pop(0)
-            if node:
-                bfs.append(str(node.val))
-            else:
-                bfs.append('None')
-            if node:
-                q.append(node.left)
-                q.append(node.right)
-              
-        while len(bfs) > 0:
-            if bfs[-1] == 'None':
-                bfs.pop()
-            else:
-                break
-        
-        return ','.join(bfs)
-                
-            
-        
-
-    def deserialize(self, data):
-        
-        if not data:
-            return None
-        
-        bfs = data.split(',')
-        for i in range(len(bfs)):
-            if bfs[i] == 'None':
-                bfs[i] = None
-            elif bfs[i][0] == '-':
-                bfs[i] = -int(bfs[i][1:])
-            else:
-                bfs[i] = int(bfs[i])
-
-        if not bfs:
-            return None
-        
-        root = TreeNode(bfs[0])
-        level = [root]
-        i = 1
-        while i < len(bfs):
-            copy, level = level[:], []
-            for node in copy:
-                if i < len(bfs): 
-                    if bfs[i] is not None: 
-                        node.left = TreeNode(bfs[i])
-                        level.append(node.left)
-                if i + 1 < len(bfs): 
-                    if bfs[i+1] is not None:
-                        node.right = TreeNode(bfs[i+1])
-                        level.append(node.right)
-                i += 2
-        return root
-    """
 
     def serialize(self, root):
         """Encodes a tree to a single string.
@@ -77,20 +17,18 @@ class Codec:
         :type root: TreeNode
         :rtype: str
         """
-        p = []
-        
-        def preorder(root):
-            if not root:
-                p.append('')
-            if root:
-                p.append(str(root.val))
-                preorder(root.left)
-                preorder(root.right)
-        
-        preorder(root)
-            
-        return ','.join(p)
-                
+        q = [root]
+        result = []
+        node = root
+        while q:
+            node = q.pop(0)
+            if not node:
+                result.append("#")
+            else:
+                result.append(str(node.val))
+                q.append(node.left)
+                q.append(node.right)
+        return ','.join(result)
 
     def deserialize(self, data):
         """Decodes your encoded data to tree.
@@ -98,23 +36,79 @@ class Codec:
         :type data: str
         :rtype: TreeNode
         """
-        p = data.split(',')
+        der = data.split(",")
+        if der[0] == "#": return None
+        root = TreeNode(int(der.pop(0)))
+        q = [root]
+        i = 0
+        while q:
+            node = q.pop(0)
+            if der[i] != "#":
+                node.left = TreeNode(int(der[i]))
+                q.append(node.left)
+            i += 1
+            if der[i] != "#":
+                node.right = TreeNode(int(der[i]))
+                q.append(node.right)
+            i += 1
+        return root
+
+"""
+- dfs (preorder)
+- O(n), O(n)
+"""
+class Codec:
+
+    def serialize(self, root):
+        """Encodes a tree to a single string.
         
-        def helper(p):
-            if not p:
-                return None
-            val = p[0]
-            if not val:
-                del p[0]
-                return None
+        :type root: TreeNode
+        :rtype: str
+        """
+        result = []
+        # recursive
+        self.preorder(root, result)
+        # iterative
+        """
+        stack = []
+        node = root
+        while stack or node:
+            if node:
+                stack.append(node)
+                result.append(str(node.val))
+                node = node.left
             else:
-                root = TreeNode(int(p[0]))
-                del p[0]
-                root.left = helper(p)
-                root.right = helper(p)
-            return root
+                result.append("#")
+                node = stack.pop().right
+        """
+        return ','.join(result)
+    
+    def preorder(self, node, ser):
+        if not node:
+            ser.append("#")
+        else:
+            ser.append(str(node.val)) # remember to str()
+            self.preorder(node.left, ser)
+            self.preorder(node.right, ser) 
+
+    def deserialize(self, data):
+        """Decodes your encoded data to tree.
         
-        return helper(p)
+        :type data: str
+        :rtype: TreeNode
+        """
+        der = data.split(",")
+        return self.dfs(der)
+    
+    def dfs(self, der):
+        if not der: return None
+        val = der.pop(0)
+        if val == "#": 
+            return None
+        node = TreeNode(int(val))
+        node.left = self.dfs(der)
+        node.right = self.dfs(der)
+        return node
         
 
 # Your Codec object will be instantiated and called as such:

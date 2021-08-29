@@ -158,6 +158,7 @@ while start <= end:
     - 2D shortest paths: 542-01 Matrix
     - String: 752-Open the Lock
     - Dijkstra's Algorithm: 743-Network Delay Time, 787-Cheapest Flights Within K Stops
+    - tree traversal: see "## Tree"
 
 ## Counter
     eg: 1419-Minimum Number of Frogs Croaking
@@ -462,10 +463,11 @@ eg: 56, 57, 218, 252, 253, 435, 452, 986-Interval List Intersections, 1229-Meeti
 - If using dfs, has to decide which to use: in-order traversal (aka. dfs), post-order traversal (549,1740), and pre-order traversal (298, search tree). Time complexity is O(n): every node is visited once. Space complexity is O(n) in worst case and O(log(n)) in average case: The extra space comes from implicit stack space due to recursion. For a skewed binary tree, the recursion could go up to n levels deep. 
 If using bfs, usually uses a FIFO queue to store nodes to be visited. 
 - Problems:
-    - pre-order: 1008-Construct Binary Search Tree from Preorder Traversal
+    - pre-order: 297-Serialize and Deserialize Binary Tree; 1008-Construct Binary Search Tree from Preorder Traversal
     - in-order traversal: 426-Convert Binary Search Tree to Sorted Doubly Linked List
     - traversal combinations: 105-Construct Binary Tree from Preorder and Inorder Traversal; 106-Construct Binary Tree from Inorder and Postorder Traversal; 889-Construct Binary Tree from Preorder and Postorder Traversal
     - BST Problems: 1008-Construct Binary Search Tree from Preorder Traversal
+    - Breath-first search(BFS): 297-Serialize and Deserialize Binary Tree
 
 ## Trie
 - when to use: Trie could use less space compared to hashmap when storing many keys with the same prefix (word search, spell checker, etc.)
