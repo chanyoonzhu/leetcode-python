@@ -7,11 +7,11 @@ backtracking: 17,46,47,78,90,301,491,698,996,1593,1239,1307,1681,1718,1723
 bfs: 79,103,116,127,133,200,207,210,212,279,297,301,399,529,542,743,752,785,787,803,863,959,971,987,1236,1293,1306,1345,1654,1778
 binary search:33,57,222,240,259,268,275,279,295,300,374,410,774,875,911,1011,1055,1146,1231,1272,1283,1428,1482,1552,1608,1648,1723,1802,1870
 bitwise operation: 136,137,191,231,268,318,338,342,371,461,473,476,491,693,698,1371,1442,1542,1593,1681
-bst: 99,230,333,490,729,1008
+bst: 99,230,333,449,490,729,1008
 bucket:299
 circular array: 213,1658
 divide and conquer: 53,215,241,307,308,312,327,395,973,1000,1039,1547
-dfs: 17,79,91,99,105,106,113,124,129,133,200,207,210,212,230,236,241,261,297,298,301,329,331,333,337,399,490,529,549,666,687,690,695,743,753,778,785,787,803,863,889,947,959,975,987,1028,1236,1306,1340,1569,1644,1676,1740,1766,1778
+dfs: 17,79,91,99,105,106,113,124,129,133,200,207,210,212,230,236,241,261,297,298,301,329,331,333,337,399,449,490,529,549,666,687,690,695,743,753,778,785,787,803,863,889,947,959,975,987,1028,1236,1306,1340,1569,1644,1676,1740,1766,1778
 dynamic programming: 5,10,32,39,45,53,55,64,70,72,91,97,139,188,198,213,221,279,300,312,322,403,410,413,416,435,473,474,494,518,542,562,583,712,740,746,1000,1035,1039,1048,1143,1155,1312,1314,1458,1547,1548,1696,1746,1824
 graph: 785,863
 greedy: 45,53,55,135,410,435,455,621,630,678,774,785,853,875,1011,1231,1353,1383,1402,1419,1428,1482,1520,1537,1552,1567,1648,1665,1718,1746,1775,1802,1824,1851,1870
@@ -24,7 +24,7 @@ map: 205
 math:12,149,168,268,279,391,470,621,794,836,1041,1344,1569
 merge sort: 315,1574
 misc:169,229(moore voting)
-preorder: 105,106,113,331,437,545,666,889,971,987,1008,1028,1569
+preorder: 105,106,113,331,437,449,545,666,889,971,987,1008,1028,1569
 queue:232,239,1696
 range sum: 307,308,327,1314,930,1442
 recursive: 2,116,241,247,273,450
@@ -463,7 +463,7 @@ eg: 56, 57, 218, 252, 253, 435, 452, 986-Interval List Intersections, 1229-Meeti
 - If using dfs, has to decide which to use: in-order traversal (aka. dfs), post-order traversal (549,1740), and pre-order traversal (298, search tree). Time complexity is O(n): every node is visited once. Space complexity is O(n) in worst case and O(log(n)) in average case: The extra space comes from implicit stack space due to recursion. For a skewed binary tree, the recursion could go up to n levels deep. 
 If using bfs, usually uses a FIFO queue to store nodes to be visited. 
 - Problems:
-    - pre-order: 297-Serialize and Deserialize Binary Tree; 1008-Construct Binary Search Tree from Preorder Traversal
+    - pre-order: 297-Serialize and Deserialize Binary Tree; 449. Serialize and Deserialize BST; 1008-Construct Binary Search Tree from Preorder Traversal
     - in-order traversal: 426-Convert Binary Search Tree to Sorted Doubly Linked List
     - traversal combinations: 105-Construct Binary Tree from Preorder and Inorder Traversal; 106-Construct Binary Tree from Inorder and Postorder Traversal; 889-Construct Binary Tree from Preorder and Postorder Traversal
     - BST Problems: 1008-Construct Binary Search Tree from Preorder Traversal
