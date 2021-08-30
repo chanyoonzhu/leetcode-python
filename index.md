@@ -248,7 +248,7 @@ or
     - map hidden graph
         - eg: 1778-Shortest Path in a Hidden Grid; 1810-Minimum Path Cost in a Hidden Grid
     - find contiguous "islands"
-        - eg: 959-Regions Cut By Slashes (need pixelating); 803-Bricks Falling When Hit (hard)
+        - eg: 200-Number of Islands; 959-Regions Cut By Slashes (need pixelating); 803-Bricks Falling When Hit (hard)
     - operation chaining:
         - eg: 399-Evaluate Division
     - other: 1766-Tree of Coprimes (hard)
