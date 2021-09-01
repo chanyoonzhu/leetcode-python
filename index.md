@@ -165,7 +165,7 @@ while start <= end:
 - eg: 418-Sentence Screen Fitting
 
 ## Counter
-    eg: 1419-Minimum Number of Frogs Croaking
+    eg: 900-RLE Iterator; 1419-Minimum Number of Frogs Croaking
 
 ## Divide and Conquer
 - problems:
