@@ -1,41 +1,31 @@
-class Solution(object):
-    def numDistinctIslands(self, grid):
-        """
-        :type grid: List[List[int]]
-        :rtype: int
-        """
-
-        """
-        - O(mn), -O(mn)
-        - store each of the island's positions (relative to its start position) in sets
-        - count length of sets
-        """
-        islands = []
+"""
+- dfs
+- O(mn), -O(mn)
+- store each of the island's positions (relative to its start position) in sets
+- count length of sets
+"""
+class Solution:
+    def numDistinctIslands(self, grid: List[List[int]]) -> int:
         
-        def destroy(grid, i, j, islandMap):
-            if len(islandMap) == 0:
-                islandMap.append((i, j))
-            else:
-                islandMap.append((i-islandMap[0][0], j-islandMap[0][1])) # record relative position to start point
-            grid[i][j] = 0
-            if i-1 >= 0 and grid[i-1][j] == 1:
-                destroy(grid, i-1, j, islandMap)
-            if i+1 < len(grid) and grid[i+1][j] == 1:
-                destroy(grid, i+1, j, islandMap)
-            if j-1 >= 0 and grid[i][j-1] == 1:
-                destroy(grid, i, j-1, islandMap)
-            if j+1 < len(grid[0]) and grid[i][j+1] == 1:
-                destroy(grid, i, j+1, islandMap)
+        M, N = len(grid), len(grid[0])
+        visited = set()
         
-        for i in range(len(grid)):
-            for j in range(len(grid[0])):
-                if grid[i][j] == 1:
-                    islandMap = []
-                    destroy(grid, i, j, islandMap)
-                    islands.append(islandMap)
+        def dfs(r, c, r0, c0, points):
+            for rr, cc in [(r + 1, c), (r - 1, c), (r, c + 1), (r, c - 1)]:
+                if 0 <= rr < M and 0 <= cc < N and grid[rr][cc] == 1 and (rr, cc) not in visited:
+                    points.append((rr - r0, cc - c0)) # stores pos relative to the start pos
+                    visited.add((rr, cc))
+                    dfs(rr, cc, r0, c0, points)
                     
-        distinctIslands = set([tuple(i[1:]) for i in islands]) # i[1:] for removing the start pos
-        return len(distinctIslands)
+            
+        islands = set()
+        for r in range(M):
+            for c in range(N):
+                if grid[r][c] == 1 and (r, c) not in visited:
+                    points = []
+                    dfs(r, c, r, c, points)
+                    islands.add(tuple(points)) # use tuple to "serialize" list
+        return len(islands)
         
         
         
