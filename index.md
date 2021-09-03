@@ -5,7 +5,7 @@ all, any: 833
 array: 54,56,73,122,151,157,186,238,268,349,350,380,381,849,1146,1371,1381,1526,1567
 backtracking: 17,46,47,78,90,301,491,698,996,1593,1239,1307,1681,1718,1723
 bfs: 79,103,116,127,133,200,207,210,212,279,297,301,399,529,542,743,752,785,787,803,863,934,959,971,987,1110,1236,1254,1293,1306,1345,1654,1778
-binary search:33,57,222,240,259,268,275,279,295,300,374,410,774,875,911,1011,1055,1146,1231,1272,1283,1428,1482,1552,1608,1648,1723,1802,1870
+binary search:33,57,222,240,259,268,275,279,295,300,374,410,715,774,875,911,1011,1055,1146,1231,1272,1283,1428,1482,1552,1608,1648,1723,1802,1870
 bitwise operation: 136,137,191,231,268,318,338,342,371,461,473,476,491,693,698,1371,1442,1542,1593,1681
 bst: 99,230,333,449,490,729,1008
 bucket:299
@@ -443,7 +443,7 @@ Q: Are intervals mutually exclusive? A: Yes
 - Complexity:
 O(n), O(n)
 - Variations: 
-    - streaming intervals (can usually solve using bisect), eg 729, 731, 732, 57
+    - streaming intervals (can usually solve using bisect), eg: 715. Range Module; 729, 731, 732, 57
     - greedy with priority queue: 1353-Maximum Number of Events That Can Be Attended; 1834-Single-Threaded CPU
 - Examples:
 eg: 56, 57, 218, 252, 253, 435, 452, 986-Interval List Intersections, 1229-Meeting Scheduler, 1272, 1288, Lint391; hard-352, 391(2D), 759, 850(2D)
