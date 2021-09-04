@@ -37,7 +37,7 @@ topological sort: 207,210,329,444
 tree: 116,222,235,236,333,337,426,450,298,549,687,729,1644,1650,1676,1740
 trie: 208,211,212,336
 two pointers: 15,42,76,86,121,159,167,209,253,259,392,524,581,680,904,986,1055,1229,1537,1574,1577,1658,1775,1868
-union find: 323,778,947
+union find: 305,323,778,947
 zip: 833
 
 
@@ -490,5 +490,5 @@ class TrieNode:
 ## Union Find
 - algorithm: union find by rank (assign node with higher rank as parent of a connected group)
 - problem:
-    - find connected groups: 323-Number of Connected Components in an Undirected Graph; 803-Bricks Falling When Hit (hard)
+    - find connected groups: 305-Number of Islands II(hard); 323-Number of Connected Components in an Undirected Graph; 803-Bricks Falling When Hit (hard)
     - operation chaining: 399-Evaluate Division

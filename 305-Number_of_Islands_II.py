@@ -1,3 +1,30 @@
+"""
+- union find - my solution
+- TLE
+"""
+class Solution:
+    def numIslands2(self, m: int, n: int, positions: List[List[int]]) -> List[int]:
+        result = []
+        islands = list()
+        visited = set()        
+        
+        for x, y in positions:
+            should_join = set()
+            for i, island in enumerate(islands):
+                for xx, yy in [(x + 1, y), (x - 1, y), (x, y + 1), (x, y - 1), ()]:
+                    if 0 <= xx < m and 0 <= yy < n and (xx, yy) in island:
+                        should_join.add(i)
+                        island.add((x, y))
+            if not should_join:
+                islands.append(set([(x, y)]))
+            else:
+                joined = set().union(*[island for i, island in enumerate(islands) if i in should_join])
+                new_islands = [island for i, island in enumerate(islands) if i not in should_join]
+                new_islands.append(joined)
+                islands = new_islands
+            result.append(len(islands))
+        return result
+
 class Solution(object):
     def numIslands2(self, m, n, positions):
         """
