@@ -11,7 +11,7 @@ bst: 99,230,333,449,490,729,1008
 bucket:299
 circular array: 213,1658
 divide and conquer: 53,215,241,307,308,312,327,395,973,1000,1039,1547
-dfs: 17,79,91,99,105,106,113,124,129,133,200,207,210,212,230,236,241,261,297,298,301,329,331,333,337,399,449,490,529,549,666,687,690,694,695,743,753,778,785,787,803,863,889,934,947,959,975,987,1028,1110,1236,1306,1340,1569,1644,1676,1740,1766,1778
+dfs: 17,79,91,99,105,106,113,124,129,133,200,207,210,212,230,236,241,261,297,298,301,329,331,333,337,399,449,490,529,549,666,687,690,694,695,743,753,778,785,787,803,863,889,934,947,951,959,975,987,1028,1110,1236,1306,1340,1569,1644,1676,1740,1766,1778
 dynamic programming: 5,10,32,39,45,53,55,64,70,72,91,97,139,188,198,213,221,279,300,312,322,403,410,413,416,435,473,474,494,518,542,562,583,712,740,746,837,877,1000,1035,1039,1048,1140,1143,1155,1277,1312,1314,1458,1547,1548,1696,1746,1824
 graph: 785,863
 greedy: 45,53,55,135,410,435,455,621,630,678,774,785,853,875,877,1011,1231,1353,1383,1402,1419,1428,1482,1520,1537,1552,1567,1648,1665,1718,1746,1775,1802,1824,1851,1870
@@ -477,7 +477,7 @@ eg: 56, 57, 218, 252, 253, 435, 452, 986-Interval List Intersections, 1229-Meeti
 - If using dfs, has to decide which to use: in-order traversal (aka. dfs), post-order traversal (549,1740), and pre-order traversal (298, search tree). Time complexity is O(n): every node is visited once. Space complexity is O(n) in worst case and O(log(n)) in average case: The extra space comes from implicit stack space due to recursion. For a skewed binary tree, the recursion could go up to n levels deep. 
 If using bfs, usually uses a FIFO queue to store nodes to be visited. 
 - Problems:
-    - pre-order: 297-Serialize and Deserialize Binary Tree; 449. Serialize and Deserialize BST; 1008-Construct Binary Search Tree from Preorder Traversal; 1110-Delete Nodes And Return Forest
+    - pre-order: 297-Serialize and Deserialize Binary Tree; 449. Serialize and Deserialize BST; 951-Flip Equivalent Binary Trees; 1008-Construct Binary Search Tree from Preorder Traversal; 1110-Delete Nodes And Return Forest;
     - in-order traversal: 426-Convert Binary Search Tree to Sorted Doubly Linked List
     - traversal combinations: 105-Construct Binary Tree from Preorder and Inorder Traversal; 106-Construct Binary Tree from Inorder and Postorder Traversal; 889-Construct Binary Tree from Preorder and Postorder Traversal
     - BST Problems: 1008-Construct Binary Search Tree from Preorder Traversal
