@@ -12,7 +12,7 @@ bucket:299
 circular array: 213,1658
 divide and conquer: 53,215,241,307,308,312,327,395,973,1000,1039,1547
 dfs: 17,79,91,99,105,106,113,124,129,133,200,207,210,212,230,236,241,261,297,298,301,329,331,333,337,399,449,490,529,549,666,687,690,694,695,743,753,778,785,787,803,863,889,934,947,959,975,987,1028,1110,1236,1306,1340,1569,1644,1676,1740,1766,1778
-dynamic programming: 5,10,32,39,45,53,55,64,70,72,91,97,139,188,198,213,221,279,300,312,322,403,410,413,416,435,473,474,494,518,542,562,583,712,740,746,877,1000,1035,1039,1048,1140,1143,1155,1277,1312,1314,1458,1547,1548,1696,1746,1824
+dynamic programming: 5,10,32,39,45,53,55,64,70,72,91,97,139,188,198,213,221,279,300,312,322,403,410,413,416,435,473,474,494,518,542,562,583,712,740,746,837,877,1000,1035,1039,1048,1140,1143,1155,1277,1312,1314,1458,1547,1548,1696,1746,1824
 graph: 785,863
 greedy: 45,53,55,135,410,435,455,621,630,678,774,785,853,875,877,1011,1231,1353,1383,1402,1419,1428,1482,1520,1537,1552,1567,1648,1665,1718,1746,1775,1802,1824,1851,1870
 hashmap: 1,15,76,106,138,146,149,159,169,229,299,327,336,340,359,380,381,392,398,403,432,437,496,560,666,792,895,930,974,1000,1055,1371,1442,1525,1542,1577,1590,1644
@@ -21,7 +21,7 @@ heap: 23,215,218,253,295,347,621,630,759,778,973,1229,1353,1383,1499,1696,1834,1
 inorder: 99,105,230,333,426
 linked list: 2,21,24,25,86,138,146,382,432,445,587,705,706,1650
 map: 205
-math:12,149,168,268,279,391,470,621,794,836,1041,1344,1569
+math:12,149,168,268,279,391,470,621,794,836,837,1041,1344,1569
 merge sort: 315,1574
 misc:169,229(moore voting)
 preorder: 105,106,113,331,437,449,545,666,889,971,987,1008,1028,1569
@@ -29,7 +29,7 @@ queue:232,239,1696
 range sum: 307,308,327,1314,930,1442
 recursive: 2,116,241,247,273,450
 segment tree: 307,308,327,850
-sliding window: 3,76,159,209,239,340,395,904,930,992,1004,1052,1234,1358,1423,1498,1509,1537,1574,1577,1658,1696,1793,1839
+sliding window: 3,76,159,209,239,340,395,837,904,930,992,1004,1052,1234,1358,1423,1498,1509,1537,1574,1577,1658,1696,1793,1839
 sort: 56,99,164,179,252,280,315,524,581,L391,1300,1509,1608
 stack: 20,32,84,155,227,232,331,402,456,496,503,581,636,678,735,739,856,901,907,946,962,975,1019,1028,1063,1124,1130,1249,1381,1541,1597,1673,1776,1856
 string: 151,157,165,418,722,833,929,1520
@@ -263,7 +263,7 @@ space can be optimized to O(1) if only need to track constant time of variables 
 - Top down (depth-first-search): recursion using memoization
 - Bottom up: loop using memoization (calculate those won't change first, eg.1143, 1340) - look at the transformation formula from the top-down solution to figure out what needs to be calculated first in the loop. Can use the subproblem size as the outer loop if dp(i, j) need dp(i + 1, j - 1) (eg.312，1312)
 - types:
-    - 1D: 70-Climbing Stairs; 198-House Robber|740-Delete and Earn; 413-Arithmetic Slices; 91-Decode Ways; 139-Word Break
+    - 1D: 70-Climbing Stairs; 198-House Robber|740-Delete and Earn; 413-Arithmetic Slices; 91-Decode Ways; 139-Word Break; 837-New 21 Game;
     - 2D: 64-Minimum Path Sum; 542-01 Matrix; 221-Maximal Square | 1277. Count Square Submatrices with All Ones
     - knapsack: 
         - memo: dp[_sum][i]
@@ -354,6 +354,8 @@ heapify time complexity: O(n), heap push/pop time complexity: O(logn)
     - eg. 877-Stone Game
 - Bachet's conjecture:
     - eg: 279-Perfect Squares
+- Probability:
+    - eg: 837-New 21 Game
 
 ## Pre-computing:
 - problems:
@@ -375,7 +377,7 @@ usually solved with O(n) time using hashmap - eg.303-Range Sum Query - Immutable
         - eg: 1353-Maximum Number of Events That Can Be Attended; 502-IPO, 630-Course Schedule III(greedy * 2)|1383-Maximum Performance of a Team; 1499-Max Value of Equation; 1851-Minimum Interval to Include Each Query; 
 
 ## Sliding window -
-- variations:
+- problems:
     - fixed length sliding window:
         - eg. 1052; 1509-Minimum Difference Between Largest and Smallest Value in Three Moves
     - substring that has given numbers of certain characters: 
@@ -383,6 +385,7 @@ usually solved with O(n) time using hashmap - eg.303-Range Sum Query - Immutable
         - eg. 3-Longest Substring Without Repeating Characters | 159-Longest Substring with At Most Two Distinct Characters | 340. Longest Substring with At Most K Distinct Characters | 992-Subarrays with K Different Integers | 395. Longest Substring with At Least K Repeating Characters; 76,1234; similar:904;1004-Max Consecutive Ones III;1358-Number of Substrings Containing All Three Characters;1839-Longest Substring Of All Vowels in Order
     - subarray sum with a target: sliding window with prefix-sum / two pointers
         - eg: 209,930,1658
+    - use a sliding window to keep the running sum of last n items: 837-New 21 Game
 - tips:
     - can use monotonically decreasing queue to keep track of the max/min in window. Suitable for when the window size is large. eg.239,1696
 
