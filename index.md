@@ -15,7 +15,7 @@ dfs: 17,79,91,99,105,106,113,124,129,133,200,207,210,212,230,236,241,261,297,298
 dynamic programming: 5,10,32,39,45,53,55,64,70,72,91,97,139,188,198,213,221,279,300,312,322,403,410,413,416,435,473,474,494,518,542,552,562,583,712,740,746,837,877,1000,1035,1039,1048,1140,1143,1155,1277,1312,1314,1458,1547,1548,1696,1746,1824
 graph: 785,863
 greedy: 45,53,55,135,410,435,455,621,630,678,774,785,853,875,877,1011,1231,1353,1383,1402,1419,1428,1482,1520,1537,1552,1567,1648,1665,1718,1746,1775,1802,1824,1851,1870
-hashmap: 1,15,76,106,138,146,149,159,169,229,299,327,336,340,359,380,381,392,398,403,432,437,496,560,666,792,895,930,974,1000,1055,1371,1442,1525,1542,1577,1590,1644
+hashmap: 1,15,76,106,138,146,149,159,169,229,299,327,336,340,359,380,381,392,398,403,432,437,465,496,560,666,792,895,930,974,1000,1055,1371,1442,1525,1542,1577,1590,1644
 hashset: 1,381,432,694
 heap: 23,215,218,253,295,347,621,630,759,778,973,1229,1353,1383,1499,1696,1834,1851
 inorder: 99,105,230,333,426
@@ -47,7 +47,7 @@ zip: 833
     - 2D array: 1706-Where Will the Ball Fall
 
 ## backtracking 
-    - eg: 17-Letter Combinations of a Phone Number; 78-Subsets(classic)|90-Subsets II|46-Permutations|47-Permutations II; 491-Increasing Subsequences; 996-Number of Squareful Arrays; 1239; 698-Partition to K Equal Sum Subsets; 1088-Confusing Number II; 1593-Split a String Into the Max Number of Unique Substrings; 1681-Minimum Incompatibility; 1307-Verbal Arithmetic Puzzle(hard); 1718-Construct the Lexicographically Largest Valid Sequence (with greedy); 1723. Find Minimum Time to Finish All Jobs(hard, with binary search)
+    - eg: 17-Letter Combinations of a Phone Number; 78-Subsets(classic)|90-Subsets II|46-Permutations|47-Permutations II; 491-Increasing Subsequences; 996-Number of Squareful Arrays; 1239; 698-Partition to K Equal Sum Subsets; 1088-Confusing Number II; 1593-Split a String Into the Max Number of Unique Substrings; 1681-Minimum Incompatibility; 1307-Verbal Arithmetic Puzzle(hard); 1718-Construct the Lexicographically Largest Valid Sequence (with greedy); 1723-Find Minimum Time to Finish All Jobs(hard, with binary search); 465-Optimal Account Balancing (hard)
 
 ## binary search
 - Key words:
@@ -501,3 +501,6 @@ class TrieNode:
 - problem:
     - find connected groups: 305-Number of Islands II(hard); 323-Number of Connected Components in an Undirected Graph; 803-Bricks Falling When Hit (hard)
     - operation chaining: 399-Evaluate Division
+
+## Other
+- Account Balance: 465-Optimal Account Balancing (hashmap + backtracking)
