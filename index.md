@@ -4,7 +4,7 @@ two sum: 1, 167
 all, any: 833
 array: 54,56,68,73,122,151,157,186,238,268,349,350,380,381,849,1146,1371,1381,1526,1567,1706
 backtracking: 17,46,47,78,90,301,491,698,996,1088,1593,1239,1307,1681,1718,1723
-bfs: 79,103,116,127,133,200,207,210,212,279,297,301,399,529,542,743,752,785,787,803,863,934,959,971,987,1110,1236,1254,1293,1306,1345,1654,1778
+bfs: 79,103,116,127,133,200,207,210,212,279,297,301,399,529,542,743,752,785,787,803,863,919,934,959,971,987,1110,1236,1254,1293,1306,1345,1654,1778
 binary search:33,57,222,240,259,268,275,279,295,300,374,410,715,774,875,911,1011,1055,1146,1231,1272,1283,1428,1482,1552,1608,1648,1723,1802,1870
 bitwise operation: 136,137,191,231,268,318,338,342,371,461,473,476,491,693,698,1371,1442,1542,1593,1681
 bst: 99,230,333,449,490,729,1008
@@ -21,7 +21,7 @@ heap: 23,215,218,253,295,347,621,630,759,778,973,1229,1353,1383,1499,1696,1834,1
 inorder: 99,105,230,333,426
 linked list: 2,21,24,25,86,138,146,382,432,445,587,705,706,1650
 map: 205
-math:12,149,168,268,279,391,470,621,794,836,837,952,1041,1344,1569
+math:12,149,168,268,279,391,470,621,794,836,837,952,1041,1344,1569,1998
 merge sort: 315,1574
 misc:169,229(moore voting)
 preorder: 105,106,113,331,437,449,545,652,666,889,971,987,1008,1028,1569
@@ -34,10 +34,10 @@ sort: 56,99,164,179,252,280,315,524,581,593,L391,1300,1509,1608
 stack: 20,32,84,155,227,232,331,394,402,456,496,503,581,636,678,735,739,856,901,907,946,962,975,1019,1028,1063,1124,1130,1249,1381,1541,1597,1673,1776,1856
 string: 151,157,165,418,722,833,929,1520
 topological sort: 207,210,329,444
-tree: 116,222,235,236,333,337,426,450,298,549,652,687,729,1644,1650,1676,1740
+tree: 116,222,235,236,333,337,426,450,298,549,652,687,729,919,1644,1650,1676,1740
 trie: 208,211,212,336
 two pointers: 15,42,76,86,121,159,167,209,253,259,392,524,581,680,904,986,1055,1229,1537,1574,1577,1658,1775,1868
-union find: 305,323,778,947,952,1722,1970
+union find: 305,323,778,947,952,1722,1970,1998
 zip: 833
 
 
@@ -358,7 +358,9 @@ heapify time complexity: O(n), heap push/pop time complexity: O(logn)
 - Probability:
     - eg: 837-New 21 Game
 - Factorization:
-    - eg: 952-Largest Component Size by Common Factor
+    - eg: 952-Largest Component Size by Common Factor; 1998-GCD Sort of an Array
+- Primes:
+    - eg: 1998-GCD Sort of an Array(Sieve of Eratosthenes)
 
 ## Pre-computing:
 - problems:
@@ -485,7 +487,10 @@ If using bfs, usually uses a FIFO queue to store nodes to be visited.
     - in-order traversal: 426-Convert Binary Search Tree to Sorted Doubly Linked List
     - traversal combinations: 105-Construct Binary Tree from Preorder and Inorder Traversal; 106-Construct Binary Tree from Inorder and Postorder Traversal; 889-Construct Binary Tree from Preorder and Postorder Traversal
     - BST Problems: 1008-Construct Binary Search Tree from Preorder Traversal
-    - Breath-first search(BFS): 297-Serialize and Deserialize Binary Tree; 1110-Delete Nodes And Return Forest;
+    - Breath-first search(BFS): 
+        - eg: 297-Serialize and Deserialize Binary Tree; 1110-Delete Nodes And Return Forest;
+        - complete binary tree
+            - eg: 919-Complete Binary Tree Inserter
     - Subtree hashing: 652-Find Duplicate Subtrees
 
 ## Trie
@@ -502,7 +507,7 @@ class TrieNode:
 ## Union Find
 - algorithm: union find by rank (assign node with higher rank as parent of a connected group)
 - problem:
-    - find connected groups: 305-Number of Islands II(hard); 323-Number of Connected Components in an Undirected Graph; 803-Bricks Falling When Hit (hard); 1722-Minimize Hamming Distance After Swap Operations (implicit); 952-Largest Component Size by Common Factor; 1970-Last Day Where You Can Still Cross
+    - find connected groups: 305-Number of Islands II(hard); 323-Number of Connected Components in an Undirected Graph; 803-Bricks Falling When Hit (hard); 1722-Minimize Hamming Distance After Swap Operations (implicit); 952-Largest Component Size by Common Factor; 1970-Last Day Where You Can Still Cross; 1998-GCD Sort of an Array
     - operation chaining: 399-Evaluate Division
 
 ## Other
