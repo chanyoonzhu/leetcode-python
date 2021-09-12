@@ -37,7 +37,7 @@ topological sort: 207,210,329,444
 tree: 116,222,235,236,333,337,426,450,298,549,652,687,729,919,1644,1650,1676,1740
 trie: 208,211,212,336
 two pointers: 15,42,76,86,121,159,167,209,253,259,392,524,581,680,904,986,1055,1229,1537,1574,1577,1658,1775,1868
-union find: 305,323,778,947,952,1627,1722,1970,1998
+union find: 128,305,323,778,947,952,1627,1722,1970,1998
 zip: 833
 
 
@@ -505,9 +505,33 @@ class TrieNode:
 - eg: 211-Design Add and Search Words Data Structure(basic)
 
 ## Union Find
+- key word: connected group in a graph
 - algorithm: union find by rank (assign node with higher rank as parent of a connected group)
+```
+parents = [i for i in range(n)]
+        
+def find(x):
+    if parents[x] != x:
+        parents[x] = find(parents[x]) # recursion
+    return parents[x]
+
+# simple version: when only need to find pair-wise connection (don't need a universal parent for all items in a connected part)
+def union(x, y):
+    px, py = find(x), find(y)
+    if px != py: # connect parents of x, y
+        parents[px] = py
+
+# todo: full verion - assign parents by rank (guarantees that all connected items have the same parent)
+
+def isXandYConnected(n):
+    if shouldConnectXandY(x, y):
+        union(x, y)
+    
+    return find(x) == find(y) # bubble up to parents
+
+```
 - problem:
-    - find connected groups: 305-Number of Islands II(hard); 323-Number of Connected Components in an Undirected Graph; 803-Bricks Falling When Hit (hard); 1722-Minimize Hamming Distance After Swap Operations (implicit); 952-Largest Component Size by Common Factor; 1627-Graph Connectivity With Threshold | 1970-Last Day Where You Can Still Cross; 1998-GCD Sort of an Array
+    - find connected groups: 128-Longest Consecutive Sequence; 305-Number of Islands II(hard); 323-Number of Connected Components in an Undirected Graph; 803-Bricks Falling When Hit (hard); 1722-Minimize Hamming Distance After Swap Operations (implicit); 952-Largest Component Size by Common Factor; 1627-Graph Connectivity With Threshold | 1970-Last Day Where You Can Still Cross; 1998-GCD Sort of an Array
     - operation chaining: 399-Evaluate Division
 
 ## Other
