@@ -21,7 +21,7 @@ heap: 23,215,218,253,295,347,621,630,759,778,973,1229,1353,1383,1499,1696,1834,1
 inorder: 99,105,230,333,426
 linked list: 2,21,24,25,86,138,146,382,432,445,587,705,706,1650
 map: 205
-math:12,149,168,268,279,391,470,621,794,836,837,952,1041,1344,1569,1998
+math:12,149,168,268,279,391,470,621,794,836,837,952,1041,1344,1569,1627,1998
 merge sort: 315,1574
 misc:169,229(moore voting)
 preorder: 105,106,113,331,437,449,545,652,666,889,971,987,1008,1028,1569
@@ -37,7 +37,7 @@ topological sort: 207,210,329,444
 tree: 116,222,235,236,333,337,426,450,298,549,652,687,729,919,1644,1650,1676,1740
 trie: 208,211,212,336
 two pointers: 15,42,76,86,121,159,167,209,253,259,392,524,581,680,904,986,1055,1229,1537,1574,1577,1658,1775,1868
-union find: 305,323,778,947,952,1722,1970,1998
+union find: 305,323,778,947,952,1627,1722,1970,1998
 zip: 833
 
 
@@ -360,7 +360,7 @@ heapify time complexity: O(n), heap push/pop time complexity: O(logn)
 - Factorization:
     - eg: 952-Largest Component Size by Common Factor; 1998-GCD Sort of an Array
 - Primes:
-    - eg: 1998-GCD Sort of an Array(Sieve of Eratosthenes)
+    - eg: 1627-Graph Connectivity With Threshold; 1998-GCD Sort of an Array(Sieve of Eratosthenes)
 
 ## Pre-computing:
 - problems:
@@ -507,7 +507,7 @@ class TrieNode:
 ## Union Find
 - algorithm: union find by rank (assign node with higher rank as parent of a connected group)
 - problem:
-    - find connected groups: 305-Number of Islands II(hard); 323-Number of Connected Components in an Undirected Graph; 803-Bricks Falling When Hit (hard); 1722-Minimize Hamming Distance After Swap Operations (implicit); 952-Largest Component Size by Common Factor; 1970-Last Day Where You Can Still Cross; 1998-GCD Sort of an Array
+    - find connected groups: 305-Number of Islands II(hard); 323-Number of Connected Components in an Undirected Graph; 803-Bricks Falling When Hit (hard); 1722-Minimize Hamming Distance After Swap Operations (implicit); 952-Largest Component Size by Common Factor; 1627-Graph Connectivity With Threshold | 1970-Last Day Where You Can Still Cross; 1998-GCD Sort of an Array
     - operation chaining: 399-Evaluate Division
 
 ## Other
