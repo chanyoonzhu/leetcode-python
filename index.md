@@ -21,7 +21,7 @@ heap: 23,215,218,253,295,347,621,630,759,778,973,1229,1353,1383,1499,1696,1834,1
 inorder: 99,105,230,333,426
 linked list: 2,21,24,25,86,138,146,382,432,445,587,705,706,1650
 map: 205
-math:12,149,168,268,279,391,470,621,794,836,837,952,1041,1344,1569,1627,1998
+math:12,149,168,268,279,391,470,621,794,836,837,952,1041,1344,1569,1610,1627,1998
 merge sort: 315,1574
 misc:169,229(moore voting)
 preorder: 105,106,113,331,437,449,545,652,666,889,971,987,1008,1028,1569
@@ -29,8 +29,8 @@ queue:232,239,1696
 range sum: 307,308,327,1314,930,1442
 recursive: 2,116,241,247,273,450
 segment tree: 307,308,327,850
-sliding window: 3,76,159,209,239,340,395,837,904,930,992,1004,1052,1234,1358,1423,1498,1509,1537,1574,1577,1658,1696,1793,1839
-sort: 56,99,164,179,252,280,315,524,581,593,L391,1300,1509,1608
+sliding window: 3,76,159,209,239,340,395,837,904,930,992,1004,1052,1234,1358,1423,1498,1509,1537,1574,1577,1610,1658,1696,1793,1839
+sort: 56,99,164,179,252,280,315,524,581,593,L391,1300,1509,1608,1610
 stack: 20,32,84,155,227,232,331,394,402,456,496,503,581,636,678,735,739,856,901,907,946,962,975,1019,1028,1063,1124,1130,1249,1381,1541,1597,1673,1776,1856
 string: 151,157,165,418,722,833,929,1520
 topological sort: 207,210,329,444
@@ -361,6 +361,10 @@ heapify time complexity: O(n), heap push/pop time complexity: O(logn)
     - eg: 952-Largest Component Size by Common Factor; 1998-GCD Sort of an Array
 - Primes:
     - eg: 1627-Graph Connectivity With Threshold; 1998-GCD Sort of an Array(Sieve of Eratosthenes)
+- Trignometry:
+    - radian
+        - def: radians (0 degree - 0, 90 - 1.57, 180 - pi, 270 - -1.57, 360 - 0); radian of a line (defined by two points (a, b)) to positive x axis: math.atan2(b[1] - a[1], b[0] - a[0])
+        - eg: 1610-Maximum Number of Visible Points
 
 ## Pre-computing:
 - problems:
@@ -392,6 +396,9 @@ usually solved with O(n) time using hashmap - eg.303-Range Sum Query - Immutable
     - subarray sum with a target: sliding window with prefix-sum / two pointers
         - eg: 209,930,1658
     - use a sliding window to keep the running sum of last n items: 837-New 21 Game
+    - largest size of subsequence with in target diff: 
+        - tip: sort first
+        - eg. 1610-Maximum Number of Visible Points(hard, 2D)
 - tips:
     - can use monotonically decreasing queue to keep track of the max/min in window. Suitable for when the window size is large. eg.239,1696
 
