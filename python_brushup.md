@@ -117,14 +117,32 @@ s = set("a", "b", "c")
 s.pop() # returns "a" or "b" or "c" and pops the returned from set
 ```
 - set overlap (using '&')
+```
 s1 = set("ab")
 s2 = set("cd)
 s1 & s2 # False
+```
 
 - set union (using '|')
+```
 s1 = set("ab")
 s2 = set("cd)
 s1 | s2 # ('a', 'b', 'c', 'd')
+```
+
+- set diff (using '-')
+```
+s1 = set("ab")
+s2 = set("bc)
+s1 - s2 # ('a')
+```
+
+- is subset
+```
+s1 = set("ab")
+s2 = set("abc)
+s1.isSubset(s2) # True
+```
 
 # heap
 
