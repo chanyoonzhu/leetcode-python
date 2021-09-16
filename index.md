@@ -3,7 +3,7 @@ two sum: 1, 167
 
 all, any: 833
 array: 54,56,68,73,122,151,157,186,238,268,349,350,380,381,849,1146,1371,1381,1526,1567,1706
-backtracking: 17,46,47,78,90,301,491,698,996,1088,1593,1239,1307,1681,1718,1723
+backtracking: 17,46,47,78,90,301,491,698,996,1088,1593,1239,1307,1681,1718,1723,1774
 bfs: 79,103,116,127,133,200,207,210,212,279,297,301,399,529,542,743,752,785,787,803,863,919,934,959,971,987,1110,1236,1254,1293,1306,1345,1654,1778
 binary search:33,57,222,240,259,268,275,279,295,300,374,410,715,774,875,911,1011,1055,1146,1231,1272,1283,1428,1482,1552,1608,1648,1723,1802,1870
 bitwise operation: 136,137,191,231,268,318,338,342,371,461,473,476,491,693,698,1371,1442,1542,1593,1681
@@ -12,11 +12,11 @@ bucket:299
 circular array: 213,1658
 divide and conquer: 53,215,241,307,308,312,327,395,973,1000,1039,1547
 dfs: 17,79,91,99,105,106,113,124,129,133,200,207,210,212,230,236,241,261,297,298,301,329,331,333,337,394,399,449,490,529,549,652,666,687,690,694,695,743,753,778,785,787,803,863,889,934,947,951,959,975,987,1028,1110,1236,1306,1340,1569,1644,1676,1740,1766,1778
-dynamic programming: 5,10,32,39,45,53,55,64,70,72,91,97,139,188,198,213,221,279,300,312,322,403,410,413,416,435,473,464,474,494,518,542,552,562,583,712,740,746,837,877,931,1000,1035,1039,1048,1140,1143,1155,1277,1312,1314,1458,1547,1548,1696,1746,1824,1937
+dynamic programming: 5,10,32,39,45,53,55,64,70,72,91,97,139,188,198,213,221,279,300,312,322,403,410,413,416,435,473,464,474,494,518,542,552,562,583,712,740,746,837,877,931,1000,1035,1039,1048,1140,1143,1155,1277,1312,1314,1458,1547,1548,1696,1746,1774,1824,1937
 graph: 785,863
 greedy: 45,53,55,135,410,435,455,621,630,678,774,785,843,853,875,877,1011,1231,1353,1383,1402,1419,1428,1482,1520,1537,1552,1567,1648,1665,1718,1746,1775,1802,1824,1851,1870
 hashmap: 1,15,76,106,138,146,149,159,169,229,299,327,336,340,359,380,381,392,398,403,432,437,465,496,560,666,792,895,930,974,1000,1055,1371,1442,1525,1542,1577,1590,1644
-hashset: 1,381,432,694,1239,1452
+hashset: 1,381,432,694,1239,1452,1774
 heap: 23,215,218,253,295,347,621,630,759,778,973,1229,1353,1383,1499,1696,1834,1851,1882
 inorder: 99,105,230,333,426
 linked list: 2,21,24,25,86,138,146,382,432,445,587,705,706,1650
@@ -47,7 +47,7 @@ zip: 833
     - 2D array: 1706-Where Will the Ball Fall
 
 ## backtracking 
-    - eg: 17-Letter Combinations of a Phone Number; 78-Subsets(classic)|90-Subsets II|46-Permutations|47-Permutations II; 491-Increasing Subsequences; 996-Number of Squareful Arrays; 1239-Maximum Length of a Concatenated String with Unique Characters; 698-Partition to K Equal Sum Subsets; 1088-Confusing Number II; 1593-Split a String Into the Max Number of Unique Substrings; 1681-Minimum Incompatibility; 1307-Verbal Arithmetic Puzzle(hard); 1718-Construct the Lexicographically Largest Valid Sequence (with greedy); 1723-Find Minimum Time to Finish All Jobs(hard, with binary search); 465-Optimal Account Balancing (hard)
+    - eg: 17-Letter Combinations of a Phone Number; 78-Subsets(classic)|90-Subsets II|46-Permutations|47-Permutations II; 491-Increasing Subsequences; 996-Number of Squareful Arrays; 1239-Maximum Length of a Concatenated String with Unique Characters; 698-Partition to K Equal Sum Subsets; 1088-Confusing Number II; 1593-Split a String Into the Max Number of Unique Substrings; 1681-Minimum Incompatibility; 1307-Verbal Arithmetic Puzzle(hard); 1718-Construct the Lexicographically Largest Valid Sequence (with greedy); 1723-Find Minimum Time to Finish All Jobs(hard, with binary search); 1774-Closest Dessert Cost；465-Optimal Account Balancing (hard)
 
 ## binary search
 - Key words:
@@ -273,7 +273,7 @@ space can be optimized to O(1) if only need to track constant time of variables 
                 - eg: 416-Partition Equal Subset Sum;474-Ones and Zeroes(two bags);1049-Last Stone Weight II
             - 0/n knapsack: each element can be used 0 or infinite amount of times
                 - eg: 322-Coin Change
-        - eg: 494, 630-Course Schedule III;
+        - eg: 494, 630-Course Schedule III; 1774-Closest Dessert Cost
     - length in matrix: 562
     - reachable problem: 45,55
     - divide and conquer: 241
@@ -316,6 +316,7 @@ Iterate over the array and update at each step the standard set for such problem
 ## Hashset
 - problems:
     - set operation: 1452-People Whose List of Favorite Companies Is Not a Subset of Another List
+    - Storing states: 1774-Closest Dessert Cost
 
 ## Heap - 
 heapify time complexity: O(n), heap push/pop time complexity: O(logn)
