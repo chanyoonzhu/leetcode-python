@@ -490,7 +490,7 @@ eg: 56, 57, 218, 252, 253, 435, 452, 986-Interval List Intersections, 1229-Meeti
         2. add nodes with indegrees == 0 to queuq
         3. while q, pop node and bfs search neighbors of nodes, decrease their indegrees by 1, if indegree turns to 0, append to q
     - key words: construct sequence
-    - eg: 207-Course Schedule | 210. Course Schedule II; 444-Sequence Reconstruction
+    - eg: 207-Course Schedule | 210. Course Schedule II | 1462-Course Schedule IV; 444-Sequence Reconstruction
 
 ## Two pointers:
 - classic problems:
