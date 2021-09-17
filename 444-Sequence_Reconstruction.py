@@ -1,42 +1,30 @@
 """
 - topological sort (with BFS)
-- many corner cases
 """
 class Solution:
     def sequenceReconstruction(self, org: List[int], seqs: List[List[int]]) -> bool:
-        N = len(org)
-        edges = collections.defaultdict(set)
-        degrees = [0] * N
-        indexes = {}
-        vals = set()
         
-        for i, n in enumerate(org):
-            indexes[n] = i
-            
+        indexes = {n: i for i, n in enumerate(org)}
+        in_degree = [-1] * len(org) # i: number - 1
+        graph = collections.defaultdict(list)
         for seq in seqs:
             for i in range(len(seq)):
-                cur = seq[i]
-                vals.add(cur)
-                if cur not in indexes: return False # caveat: may not exist in org
-                if i < len(seq) - 1:
-                    nxt = seq[i + 1]
-                    if nxt not in edges[cur]: # caveat: can have seq duplicates, only add once
-                        edges[cur].add(nxt)
-                        if nxt in indexes: # caveat: may not exist in org
-                            degrees[indexes[nxt]] += 1
+                if seq[i] not in indexes: return False # edge case: number in seq not in org
+                if in_degree[seq[i] - 1] == -1: in_degree[seq[i] - 1] = 0 # edge case: a number in org doesn't show up in seq
+                if i > 0: 
+                    graph[seq[i - 1]].append(seq[i])
+                    in_degree[seq[i] - 1] += 1
         
-        org_i = 0
-        q = [i for i in range(N) if not degrees[i]]  
-        while len(q) == 1:
-            i = q.pop()
-            if i != org_i: return False
-            org_i += 1
-            if org[i] not in vals: return False # may not exist in seqs
-            for nei in edges[org[i]]:
-                degrees[indexes[nei]] -= 1
-                if not degrees[indexes[nei]]:
-                    q.append(indexes[nei])
-        return org_i == N
+        queue = [i + 1 for i, c in enumerate(in_degree) if c == 0]
+        idx = 0
+        while queue:
+            if len(queue) > 1: return False
+            if idx != indexes[queue.pop(0)]: return False
+            for n in graph[org[idx]]:
+                in_degree[n - 1] -= 1
+                if in_degree[n - 1] == 0: queue.append(n)
+            idx += 1
+        return idx == len(org)
 
 """
 - Logic (with hashmaps)
