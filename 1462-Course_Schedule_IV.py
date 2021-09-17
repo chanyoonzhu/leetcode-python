@@ -22,3 +22,24 @@ class Solution:
                 if indegrees[course] == 0: q.append(course)
         
         return [pre in pres[course] for pre, course in queries]
+
+"""
+- dfs
+- O(E * n ^ 2)?, O(n ^ 2)
+"""
+class Solution:
+    def checkIfPrerequisite(self, numCourses: int, prerequisites: List[List[int]], queries: List[List[int]]) -> List[bool]:
+        
+        graph = collections.defaultdict(set)
+        for pre, course in prerequisites:
+            graph[pre].add(course)
+
+        @lru_cache(None)
+        def dfs(c1, c2):
+            if c1 == c2 or c1 not in graph: return False
+            if c1 < 0 or c1 >= numCourses or c2 < 0 or c2 >= numCourses: return False
+            for n in graph[c1]:
+                if n == c2 or dfs(n, c2): return True
+            return False
+        
+        return [dfs(pre, course) for pre, course in queries]
