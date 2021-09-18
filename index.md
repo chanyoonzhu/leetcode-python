@@ -438,12 +438,14 @@ usually solved with O(n) time using hashmap - eg.303-Range Sum Query - Immutable
     - eg: 179-Largest_Number
 
 ## Stack
-- classic problems:
+- problems:
     - straight forward stack:
         - eg: 636-Exclusive Time of Functions; 735-Asteroid Collision
     - parenthesis: 
         - eg. 32, 394-Decode String; 678, 856, 1249, 1541
         - can also use two passes: 32
+    - calculator:
+        - eg. 227-Basic Calculator II
     - monotonically increasing/decreasing stack
         - comparison:
             - eg: 496,503-Next Greater Element I/II; 1063-Number of Valid Subarrays; 739-Daily Temperatures; 901-Online Stock Span; 456-132 Pattern; 1019-Next Greater Node In Linked List, 1130-Minimum Cost Tree From Leaf Values; 
