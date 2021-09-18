@@ -4,7 +4,7 @@ two sum: 1, 167
 all, any: 833
 array: 54,56,68,73,122,151,157,186,238,268,349,350,380,381,849,1146,1371,1381,1526,1567,1706
 backtracking: 17,46,47,78,90,301,491,698,996,1088,1593,1239,1307,1681,1718,1723,1774
-bfs: 79,103,116,127,133,200,207,210,212,279,297,301,399,444,529,542,743,752,785,787,803,863,919,934,959,971,987,1110,1236,1254,1293,1306,1345,1654,1778
+bfs: 79,103,116,127,133,200,207,210,212,269,279,297,301,399,444,529,542,743,752,785,787,803,863,919,934,959,971,987,1110,1236,1254,1293,1306,1345,1654,1778
 binary search:33,57,222,240,259,268,275,279,295,300,374,410,715,774,875,911,1011,1055,1146,1231,1272,1283,1428,1482,1552,1608,1648,1723,1802,1870
 bitwise operation: 136,137,191,231,268,318,338,342,371,461,473,476,491,693,698,1371,1442,1542,1593,1681
 bst: 99,230,333,449,490,729,1008
@@ -34,7 +34,7 @@ sliding window: 3,76,159,209,239,340,395,837,904,930,992,1004,1052,1234,1358,142
 sort: 56,99,164,179,252,280,315,524,581,593,L391,1300,1509,1608,1610
 stack: 20,32,84,155,227,232,331,394,402,456,496,503,581,636,678,735,739,856,901,907,946,962,975,1019,1028,1063,1124,1130,1249,1381,1541,1597,1673,1776,1856
 string: 151,157,165,418,722,833,929,1520
-topological sort: 207,210,329,444.1462
+topological sort: 207,210,269,329,444.1462
 tree: 116,222,235,236,333,337,426,450,298,549,652,687,729,919,1644,1650,1676,1740
 trie: 208,211,212,336
 two pointers: 15,42,76,86,121,159,167,209,246,253,259,392,524,581,680,904,986,1055,1229,1537,1574,1577,1658,1775,1868
@@ -165,6 +165,7 @@ while start <= end:
     - String: 752-Open the Lock
     - Dijkstra's Algorithm: 743-Network Delay Time, 787-Cheapest Flights Within K Stops
     - tree traversal: see "## Tree"
+    - construct sequence with topological sort (see "## Topological Sort")
 
 ## Cache
 - tip: cache previous result to save time
@@ -490,7 +491,7 @@ eg: 56, 57, 218, 252, 253, 435, 452, 986-Interval List Intersections, 1229-Meeti
         2. add nodes with indegrees == 0 to queuq
         3. while q, pop node and bfs search neighbors of nodes, decrease their indegrees by 1, if indegree turns to 0, append to q
     - key words: construct sequence
-    - eg: 207-Course Schedule | 210. Course Schedule II | 1462-Course Schedule IV; 444-Sequence Reconstruction
+    - eg: 207-Course Schedule | 210. Course Schedule II | 1462-Course Schedule IV; 444-Sequence Reconstruction; 269-Alien Dictionary(hard)
 
 ## Two pointers:
 - classic problems:

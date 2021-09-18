@@ -1,43 +1,33 @@
-class Solution(object):
-    def alienOrder(self, words):
-        """
-        :type words: List[str]
-        :rtype: str
-        """
-
-        """
-        - topological sort (bfs)
-        """
+"""
+- topological sort with bfs
+- key: compare words pair by pair
+"""      
+class Solution:
+    def alienOrder(self, words: List[str]) -> str:
         
         chars = set(''.join(words))
         afterDic = collections.defaultdict(set) 
-        ins = [0] * 26 # number of in nodes of each character
+        indegrees = [0] * 26 
         
-        idx = 0
-        for pair in zip(words, words[1:]):
-            for a, b in zip(*pair):  # classic zip!
+        for pair in zip(words, words[1:]): # for each iteration, compare word to its next word
+            for a, b in zip(*pair):
                 if a != b:
-                    if b not in afterDic[a]: # don't forget this or you will give b more ins value than actually is
+                    if b not in afterDic[a]: # easy to miss: dedup
                         afterDic[a].add(b)
-                        ins[ord(b)-ord('a')] += 1
-                    break
+                        indegrees[ord(b) - ord('a')] += 1
+                    break # easy to miss: only handles the first a != b
         
         q, res = [], ""
     
-        for i in range(26):
-            c = chr(ord('a')+i)
-            if c in chars and ins[i] == 0:
-                q.append(c)
+        q = [chr(ord('a') + i) for i, d in enumerate(indegrees) if d == 0 and chr(ord('a') + i) in chars]
         
-        for _ in range(len(chars)):
-            if not q:
-                return "" # topological sort - exit when a char cannot be selected
+        while q:
             curr = q.pop(0)
             res += curr
-            for prec in afterDic[curr]:
-                ins[ord(prec)-ord('a')] -= 1
-                if ins[ord(prec)-ord('a')] == 0:
-                    q.append(prec)
+            for nextt in afterDic[curr]:
+                indegrees[ord(nextt)-ord('a')] -= 1
+                if indegrees[ord(nextt)-ord('a')] == 0:
+                    q.append(nextt)
         
         return res 
 
