@@ -102,15 +102,16 @@ class Solution:
                     return -(abs(n1) // abs(n2)) # easy to miss: -3 // 2 should equal to -1 not -2
                 return n1 // n2
         
+        s += '+' # smart: avoids handling end of string in a separate condition
         stack = []
         num, op = 0, '+'
         for i in range(len(s)):
             c = s[i]
-            if c == ' ' and i != len(s) - 1: # edge case: ' ' at the end, need to calculate last number
+            if c == ' ':
                 continue
             if c.isdigit():
                 num = num * 10 + ord(c) - ord('0')
-            if not c.isdigit() or i == len(s) - 1: # edge case: at the end, need to calculate last number
+            else:
                 if op == '*' or op == '/':
                     stack.append(compute(stack.pop(), num, op))
                 else:
@@ -125,15 +126,17 @@ class Solution:
 class Solution:
     def calculate(self, s: str) -> int:
         
-        result = prev = cur = 0 # result: result that can be finalized at this point, prev: result with calculations pending
+        stack = []
+        result = prev = cur = 0
         prev_op = '+'
+        s += '+' # smart!
         for i in range(len(s)):
             c = s[i]
-            if c == ' ' and i != len(s) - 1:
+            if c == ' ':
                 continue
             if c.isdigit():
                 cur = cur * 10 + ord(c) - ord('0')
-            if not c.isdigit() or i == len(s) - 1:
+            else:
                 if prev_op == '*':
                     prev *= cur
                 elif prev_op == '/':
@@ -141,7 +144,7 @@ class Solution:
                         prev = -(abs(prev) // abs(cur))
                     else:
                         prev //= cur
-                else: # can store prev to result if prev_op is "+-"
+                else:
                     result += prev
                     prev = cur if prev_op == "+" else -cur
                 cur, prev_op = 0, c
