@@ -32,7 +32,7 @@ recursive: 2,116,241,247,273,450
 segment tree: 307,308,327,850
 sliding window: 3,76,159,209,239,340,395,837,904,930,992,1004,1052,1234,1358,1423,1498,1509,1537,1574,1577,1610,1658,1696,1793,1839
 sort: 56,99,164,179,252,280,315,524,581,593,L391,1300,1509,1608,1610
-stack: 20,32,84,155,227,232,331,394,402,456,496,503,581,636,678,735,739,856,901,907,946,962,975,1019,1028,1063,1124,1130,1249,1381,1541,1597,1673,1776,1856
+stack: 20,32,84,155,224,227,232,331,394,402,456,496,503,581,636,678,735,739,856,901,907,946,962,975,1019,1028,1063,1124,1130,1249,1381,1541,1597,1673,1776,1856
 string: 151,157,165,418,722,833,929,1520
 topological sort: 207,210,269,329,444.1462
 tree: 116,222,235,236,333,337,426,450,298,549,652,687,729,919,1644,1650,1676,1740
@@ -445,7 +445,7 @@ usually solved with O(n) time using hashmap - eg.303-Range Sum Query - Immutable
         - eg. 32, 394-Decode String; 678, 856, 1249, 1541
         - can also use two passes: 32
     - calculator:
-        - eg. 227-Basic Calculator II
+        - eg. 224-Basic Calculator; 227-Basic Calculator II
     - monotonically increasing/decreasing stack
         - comparison:
             - eg: 496,503-Next Greater Element I/II; 1063-Number of Valid Subarrays; 739-Daily Temperatures; 901-Online Stock Span; 456-132 Pattern; 1019-Next Greater Node In Linked List, 1130-Minimum Cost Tree From Leaf Values; 
