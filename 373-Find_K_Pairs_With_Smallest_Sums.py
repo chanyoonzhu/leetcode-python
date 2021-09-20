@@ -29,27 +29,30 @@ class Solution:
         return res
         """
         
-        """
-        O(klog(k))
-        - keep a heap, after popping the smallest at nums1[i], nums2[j],
-        - add nums1[i+1], nums1[j] and nums[j+1], nums[i] to the heap 
-        """
-        res, hp, visited = [], [], []
+"""
+- priority queue
+- intuition: if current smallest is nums1[i] + nums2[j], the next smallest can only be nums1[i + 1] + nums2[j] or nums1[i] + nums2[j + 1]
+- O(klog(k))
+"""
+class Solution:
+    def kSmallestPairs(self, nums1: List[int], nums2: List[int], k: int) -> List[List[int]]:
+        result = []
         
-        if len(nums1) == 0 or len(nums2) == 0:
-            return []
+        heap = [(nums1[0] + nums2[0], 0, 0)]
+        visited = set((0, 0))
+        N1, N2 = len(nums1), len(nums2)
         
-        heappush(hp, [nums1[0] + nums2[0], 0, 0])
-        visited.append([0,0])
-        
-        while hp and len(res) < k:
-            sum, i, j = heappop(hp)
-            res.append([nums1[i], nums2[j]])
-            if i + 1 < len(nums1) and [i+1,j] not in visited:
-                heappush(hp, [nums1[i+1] + nums2[j], i+1, j])
-                visited.append([i+1,j])
-            if j + 1 < len(nums2) and [i,j+1] not in visited:
-                heappush(hp, [nums1[i] + nums2[j+1], i, j+1])
-                visited.append([i,j+1])
-        return res
+        while len(result) < k and heap: # easy to miss: check heap
+            _, i1, i2 = heapq.heappop(heap)
+            result.append((nums1[i1], nums2[i2]))
+            
+            if i1 < N1 - 1 and (i1 + 1, i2) not in visited:
+                heapq.heappush(heap, (nums1[i1 + 1] + nums2[i2], i1 + 1, i2))
+                visited.add((i1 + 1, i2))
+                
+            if i2 < N2 - 1 and (i1, i2 + 1) not in visited:
+                heapq.heappush(heap, (nums1[i1] + nums2[i2 + 1], i1, i2 + 1))
+                visited.add((i1, i2 + 1))
+            
+        return result
             

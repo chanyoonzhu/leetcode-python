@@ -17,7 +17,6 @@ graph: 785,863
 greedy: 45,53,55,135,410,435,455,621,630,678,774,785,843,853,875,877,1011,1231,1353,1383,1402,1419,1428,1482,1520,1537,1552,1567,1648,1665,1718,1746,1775,1802,1824,1851,1870
 hashmap: 1,15,76,106,138,146,149,159,169,229,246,299,327,336,340,359,380,381,392,398,403,432,437,465,496,560,666,792,895,930,974,1000,1055,1371,1442,1525,1542,1577,1590,1644
 hashset: 1,381,432,694,1239,1452,1774
-heap: 23,215,218,253,295,347,621,630,632,759,778,973,1229,1353,1383,1499,1696,1834,1851,1882
 inorder: 99,105,230,333,426
 linked list: 2,21,24,25,86,138,146,382,432,445,587,705,706,1650
 logic deduction: 444 
@@ -26,6 +25,7 @@ math:12,149,168,268,279,391,470,621,794,836,837,952,1041,1344,1569,1610,1627,199
 merge sort: 315,1574
 misc:169,229(moore voting)
 preorder: 105,106,113,331,437,449,545,652,666,889,971,987,1008,1028,1569
+priority queue: 23,215,218,253,295,347,373,621,630,632,759,778,973,1229,1353,1383,1439,1499,1696,1834,1851,1882
 queue:232,239,1696
 range sum: 307,308,327,1314,930,1442
 recursive: 2,116,241,247,273,450,772,1106
@@ -384,12 +384,13 @@ heapify time complexity: O(n), heap push/pop time complexity: O(logn)
 - key words: sum of subarray 
 usually solved with O(n) time using hashmap - eg.303-Range Sum Query - Immutable; 560-Subarray Sum Equals K,325-Maximum Size Subarray Sum Equals k; 930,974|1590(division),1371,1442,437(tree version), 1124, 528-Random Pick with Weight; 1525-Number of Good Ways to Split a String
 
-## Priority Queue:
+## Priority Queue (Heap):
+- tip: stores tuples in queues, a tuple is comprised of number (a group of numbers) needs to be sorted and the information need to pass when that number is popped from the heap
 - key words: sort
 - problems:
     - queue with conditions: 1882-Process Tasks Using Servers
     - sorting:
-        - eg: 23-Merge k Sorted Lists; 632-Smallest Range Covering Elements from K Lists; 778-Swim in Rising Water
+        - eg: 23-Merge k Sorted Lists; 373-Find K Pairs with Smallest Sums|1439-Find the Kth Smallest Sum of a Matrix With Sorted Rows; 632-Smallest Range Covering Elements from K Lists; 778-Swim in Rising Water
     - greedy:
         - eg: 1353-Maximum Number of Events That Can Be Attended; 502-IPO, 630-Course Schedule III(greedy * 2)|1383-Maximum Performance of a Team; 1499-Max Value of Equation; 1851-Minimum Interval to Include Each Query; 
 
