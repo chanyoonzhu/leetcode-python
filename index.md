@@ -25,7 +25,7 @@ math:12,149,168,268,279,391,470,621,794,836,837,952,1041,1344,1569,1610,1627,199
 merge sort: 315,1574
 misc:169,229(moore voting)
 preorder: 105,106,113,331,437,449,545,652,666,889,971,987,1008,1028,1569
-priority queue: 23,215,218,253,295,347,373,621,630,632,759,778,973,1229,1353,1383,1439,1499,1696,1834,1851,1882
+priority queue: 23,215,218,253,295,347,373,621,630,632,759,778,973,1229,1353,1383,1439,1499,1675,1696,1834,1851,1882
 queue:232,239,1696
 range sum: 307,308,327,1314,930,1442
 recursive: 2,116,241,247,273,450,772,1106
@@ -390,7 +390,7 @@ usually solved with O(n) time using hashmap - eg.303-Range Sum Query - Immutable
 - problems:
     - queue with conditions: 1882-Process Tasks Using Servers
     - sorting:
-        - eg: 23-Merge k Sorted Lists; 373-Find K Pairs with Smallest Sums|1439-Find the Kth Smallest Sum of a Matrix With Sorted Rows; 632-Smallest Range Covering Elements from K Lists; 778-Swim in Rising Water
+        - eg: 23-Merge k Sorted Lists; 373-Find K Pairs with Smallest Sums|1439-Find the Kth Smallest Sum of a Matrix With Sorted Rows; 632-Smallest Range Covering Elements from K Lists; 778-Swim in Rising Water; 1675-Minimize Deviation in Array
     - greedy:
         - eg: 1353-Maximum Number of Events That Can Be Attended; 502-IPO, 630-Course Schedule III(greedy * 2)|1383-Maximum Performance of a Team; 1499-Max Value of Equation; 1851-Minimum Interval to Include Each Query; 
 
