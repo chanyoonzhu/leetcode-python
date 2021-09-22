@@ -7,7 +7,7 @@ backtracking: 17,46,47,78,90,301,491,698,996,1088,1593,1239,1307,1681,1718,1723,
 bfs: 79,103,116,127,133,200,207,210,212,269,279,297,301,399,444,529,542,743,752,785,787,803,863,919,934,959,971,987,1110,1236,1254,1293,1306,1345,1654,1778
 binary search:33,57,222,240,259,268,275,279,295,300,374,410,715,774,875,911,1011,1055,1146,1231,1272,1283,1428,1482,1552,1608,1648,1723,1802,1870
 bitwise operation: 136,137,191,231,268,318,338,342,371,461,473,476,491,693,698,1371,1442,1542,1593,1681
-bst: 99,230,333,449,490,729,1008
+binary search tree: 99,230,333,449,450,490,729,1008
 bucket:299
 circular array: 213,1658
 divide and conquer: 53,215,241,307,308,312,327,395,973,1000,1039,1547
@@ -509,7 +509,7 @@ If using bfs, usually uses a FIFO queue to store nodes to be visited.
     - pre-order: 297-Serialize and Deserialize Binary Tree; 449. Serialize and Deserialize BST; 951-Flip Equivalent Binary Trees; 1008-Construct Binary Search Tree from Preorder Traversal; 1110-Delete Nodes And Return Forest;
     - in-order traversal: 426-Convert Binary Search Tree to Sorted Doubly Linked List
     - traversal combinations: 105-Construct Binary Tree from Preorder and Inorder Traversal; 106-Construct Binary Tree from Inorder and Postorder Traversal; 889-Construct Binary Tree from Preorder and Postorder Traversal
-    - BST Problems: 1008-Construct Binary Search Tree from Preorder Traversal
+    - BST(Binary Search Tree) Problems: 450-Delete Node in a BST; 1008-Construct Binary Search Tree from Preorder Traversal
     - Breath-first search(BFS): 
         - eg: 297-Serialize and Deserialize Binary Tree; 1110-Delete Nodes And Return Forest;
         - complete binary tree
