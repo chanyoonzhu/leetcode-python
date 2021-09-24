@@ -264,7 +264,7 @@ or
 backtracking with memoization; steps: build dp memory, define what dp[i] represents, find update function(s)
 space can be optimized to O(1) if only need to track constant time of variables for each update
 - Top down (depth-first-search): recursion using memoization
-- Bottom up: loop using memoization (calculate those won't change first, eg.1143, 1340) - look at the transformation formula from the top-down solution to figure out what needs to be calculated first in the loop. Can use the subproblem size as the outer loop if dp(i, j) need dp(i + 1, j - 1) (eg.312，375, 486, 1312)
+- Bottom up: loop using memoization (calculate those won't change first, eg.1143, 1340) - look at the transformation formula from the top-down solution to figure out what needs to be calculated first in the loop. Can use the subproblem size as the outer loop if dp(i, j) need dp(i + 1, j - 1) (eg.312，375, 486, 877, 1312)
 - types:
     - 1D: 70-Climbing Stairs; 198-House Robber|740-Delete and Earn; 413-Arithmetic Slices; 91-Decode Ways; 139-Word Break; 837-New 21 Game;
     - 2D: 64-Minimum Path Sum; 542-01 Matrix; 221-Maximal Square | 1277-Count Square Submatrices with All Ones; 931-Minimum Falling Path Sum | 1937-Maximum Number of Points with Cost
@@ -281,7 +281,7 @@ space can be optimized to O(1) if only need to track constant time of variables 
     - divide and conquer: 241
         - calculation among adjacent items: 312, 1039, 1547, 1000(hard)
             - tip: when bottom-up, use subproblem size as the outer loop
-    - game theory: 375. Guess Number Higher or Lower II; 486-Predict the Winner; 
+    - game theory: 375. Guess Number Higher or Lower II; 486-Predict the Winner|877-Stone Game; 
     - string subsequence with min/max cost: 97,516,583,1035,1092,1143,1458
         - edit-distance: 72,583,712,1312,1548-The Most Similar Path in a Graph
     - string/serialized list or set as memoization key: 464-Can I Win; 1048-Longest String Chain
