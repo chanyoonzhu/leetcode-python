@@ -1,11 +1,10 @@
 from collections import deque
 
+"""
+- brutal force sliding window: time exceeded
+- O(Nk), O(N−k+1)
+"""
 class Solution(object):
-
-    """
-    - brutal force sliding window: time exceeded
-    - O(Nk), O(N−k+1)
-    """
     def maxSlidingWindow(self, nums, k):
         """
         :type nums: List[int]
@@ -17,46 +16,41 @@ class Solution(object):
             res.append(max([nums[j] for j in range(i, i + k)]))
         return res
 
-    """
-    - sliding window: deque
-    - O(N), O(N−k+1)
+"""
+- priority queue
+- O(n * log(k)), O(k)
+"""
+class Solution:
+    def maxSlidingWindow(self, nums: List[int], k: int) -> List[int]:
+        heap = []
+        result = []
+        for i, num in enumerate(nums):
+            heapq.heappush(heap, (-num, i))
+            if i >= k - 1:
+                while heap[0][1] < i - k + 1:
+                    heapq.heappop(heap)
+                result.append(-heap[0][0])
+        return result
 
-    Algorithm:
-    Iterate over the array. At each step :
-    Clean the deque :
-    Keep only the indexes of elements from the current sliding window.
-    Remove indexes of all elements smaller than the current one, since they will not be the maximum ones.
-    Append the current element to the deque.
-    Append deque[0]， which is the maximum in the window, to the output.
-    Return the output array.
-    """
-    def maxSlidingWindow(self, nums, k):
-        """
-        :type nums: List[int]
-        :type k: int
-        :rtype: List[int]
-        """
-        
-        def clean_deque(i):
-            # remove from deq indexes of all elements 
-            # which are smaller than current element nums[i]
-            if deq and deq[0] == i - k:
-                deq.popleft()
-            # "sorts" deq 
-            # if current item is larger than previous candidates, remove all previous candidates that are smaller than current
-            while deq and nums[i] > nums[deq[-1]]:
-                deq.pop()
-                
-        deq = deque() # keep the index of candidates, with nums[index] ordered from largest to smallest
-        max_idx = 0
-        res = []
-        
-        for i in range(len(nums)):
-            clean_deque(i)
-            deq.append(i)
-            if i >= k - 1: # only then starts adding to res
-                res.append(nums[deq[0]])
-        return res
+"""
+- sliding window with monotonic queue
+- O(n), O(k)
+"""
+class Solution:
+    def maxSlidingWindow(self, nums: List[int], k: int) -> List[int]:
+        q = collections.deque()
+        result = []
+        for i, num in enumerate(nums):
+            
+            while q and num >= nums[q[-1]]:
+                q.pop()
+            q.append(i)
+            
+            if i >= k - 1:
+                while q[0] < i - k + 1:
+                    q.popleft()
+                result.append(nums[q[0]])
+        return result
 
 s = Solution()
 # s.maxSlidingWindow_optimized([1,3,-1,-3,5,3,6,7], 3)
