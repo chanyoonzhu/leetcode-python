@@ -12,7 +12,7 @@ bucket:299
 circular array: 213,1658
 divide and conquer: 53,215,241,307,308,312,327,395,973,1000,1039,1547
 dfs: 17,79,91,99,105,106,113,124,129,133,200,207,210,212,230,236,241,261,297,298,301,329,331,333,337,394,399,449,490,529,549,652,666,687,690,694,695,743,753,778,785,787,803,863,889,934,947,951,959,975,987,1028,1110,1236,1306,1340,1462,1569,1644,1676,1740,1766,1778
-dynamic programming: 5,10,32,39,45,53,55,64,70,72,91,97,139,188,198,213,221,279,300,312,322,375,403,410,413,416,435,464,473,474,486,494,518,542,552,562,583,712,740,746,837,877,931,956,1000,1035,1039,1048,1140,1143,1155,1277,1312,1314,1406,1458,1547,1548,1696,1746,1774,1824,1937
+dynamic programming: 5,10,32,39,45,53,55,64,70,72,91,97,139,188,198,213,221,279,300,312,322,375,403,410,413,416,435,464,473,474,486,494,518,542,552,562,583,712,740,746,837,877,931,956,1000,1035,1039,1048,1140,1143,1155,1277,1312,1314,1406,1458,1510,1547,1548,1696,1746,1774,1824,1937
 graph: 785,863
 greedy: 45,53,55,135,410,435,455,621,630,678,774,785,843,853,875,877,1011,1231,1353,1383,1402,1419,1428,1482,1520,1537,1552,1567,1648,1665,1718,1746,1775,1802,1824,1851,1870
 hashmap: 1,15,76,106,138,146,149,159,169,229,246,299,327,336,340,359,380,381,392,398,403,432,437,465,496,560,666,792,895,930,974,1000,1055,1371,1442,1525,1542,1577,1590,1644
@@ -281,7 +281,7 @@ space can be optimized to O(1) if only need to track constant time of variables 
     - divide and conquer: 241
         - calculation among adjacent items: 312, 1039, 1547, 1000(hard)
             - tip: when bottom-up, use subproblem size as the outer loop
-    - game theory: 375. Guess Number Higher or Lower II; 486-Predict the Winner|877-Stone Game|1140-Stone Game II|1406-Stone Game III; 
+    - game theory: 375. Guess Number Higher or Lower II; 486-Predict the Winner|877-Stone Game|1140-Stone Game II|1406-Stone Game III|1510-Stone Game IV
     - string subsequence with min/max cost: 97,516,583,1035,1092,1143,1458
         - edit-distance: 72,583,712,1312,1548-The Most Similar Path in a Graph
     - string/serialized list or set as memoization key: 464-Can I Win; 1048-Longest String Chain
@@ -314,7 +314,7 @@ Iterate over the array and update at each step the standard set for such problem
     - greedy with sort: 853-Car Fleet; 1775-Equal Sum Arrays With Minimum Number of Operations; 1537-Get the Maximum Score
     - maximum subarray: 53-Maximum Subarray; 1746. Maximum Subarray Sum After One Operation
     - minimum state change: 1824-Minimum Sideway Jumps
-    - game theory: 464-Can I Win; 486-Predict the Winner; 843-Guess the Word; 877-Stone Game | 1140-Stone Game II|1406-Stone Game III
+    - game theory: 464-Can I Win; 486-Predict the Winner; 843-Guess the Word; 877-Stone Game | 1140-Stone Game II|1406-Stone Game III|1510-Stone Game IV
 
 ## Hashset
 - problems:
