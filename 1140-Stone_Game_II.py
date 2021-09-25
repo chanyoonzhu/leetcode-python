@@ -21,6 +21,21 @@ class Solution:
             return maxx
 
 """
-- https://leetcode.com/problems/stone-game-ii/discuss/793881/python-DP-Thought-process-explained
-- todo: bottom-up
+- dynamic programming (top-down)
+- TLE
 """
+class Solution:
+    def stoneGameII(self, piles: List[int]) -> int:
+        
+        @lru_cache(None)
+        def dp(i, m): # dp[i][m] - max diff between a and b
+            if i >= len(piles):
+                return 0
+            maxx_diff = float("-inf")
+            for x in range(1, 2 * m + 1):
+                taken = sum(piles[i: i + x])
+                next_m = max(m, x)
+                maxx_diff = max(maxx_diff, taken - dp(i + x, next_m))
+            return maxx_diff
+        
+        return (sum(piles) + dp(0, 1)) // 2
