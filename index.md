@@ -30,7 +30,7 @@ queue:232,239,1696
 range sum: 307,308,327,1314,930,1442
 recursive: 2,116,241,247,273,450,772,1106
 segment tree: 307,308,327,850
-sliding window: 3,76,159,209,239,340,395,837,904,930,992,1004,1052,1234,1358,1423,1498,1509,1537,1574,1577,1610,1658,1696,1793,1839
+sliding window: 3,76,159,209,239,340,395,837,862,904,930,992,1004,1052,1234,1358,1423,1498,1509,1537,1574,1577,1610,1658,1696,1793,1839
 sort: 56,99,164,179,252,280,315,524,581,593,L391,1300,1509,1608,1610
 stack: 20,32,84,155,224,227,232,331,394,402,456,496,503,581,636,678,735,739,772,856,901,907,946,962,975,1019,1028,1063,1106,1124,1130,1249,1381,1541,1597,1673,1776,1856
 string: 151,157,165,418,722,833,929,1520
@@ -408,8 +408,10 @@ usually solved with O(n) time using hashmap - eg.303-Range Sum Query - Immutable
     - largest size of subsequence with in target diff: 
         - tip: sort first
         - eg. 1610-Maximum Number of Visible Points(hard, 2D)
-- tips:
-    - can use monotonically decreasing queue to keep track of the max/min in window. Suitable for when the window size is large. eg.239-Sliding Window Maximum; 1696
+    - monotonic queue: 
+        - tip: can use monotonically decreasing queue to keep track of the max/min in window. Suitable for when the window size is large
+        - complexity: O(n), O(n) - each item queued and popped exactly once
+        - eg. 239-Sliding Window Maximum;862-Shortest Subarray with Sum at Least K; 1696
 
 ## Sorting
 - quick sort 
