@@ -19,7 +19,7 @@ class Solution:
 - priority queue
 - intuitioin: yi + yj + |xi - xj| where |xi - xj| <= k is same as (yi - xi) + (yj + xj) where |xi - xj| <= k
     heap keeps: ((xi - yi), xi)
-- O(n), O(n)
+- O(nlogk), O(n)
 """
 class Solution:
     def findMaxValueOfEquation(self, points: List[List[int]], k: int) -> int:
@@ -32,3 +32,23 @@ class Solution:
                 res = max(res, -h[0][0] + x + y)
             heapq.heappush(h, (x - y, x))
         return res
+
+"""
+- monotonic queue
+- O(n), O(n)
+"""
+class Solution:
+    def findMaxValueOfEquation(self, points: List[List[int]], k: int) -> int:
+        q = collections.deque()
+        result = float("-inf")
+        for j, point in enumerate(points):
+            xj, yj = point
+            while q and points[q[0]][0] < xj - k:
+                q.popleft()
+            if q:
+                xi, yi = points[q[0]] 
+                result = max(result, xj + yj + yi - xi)
+            while q and yj - xj >= points[q[-1]][1] - points[q[-1]][0]:
+                q.pop()
+            q.append(j)
+        return result
