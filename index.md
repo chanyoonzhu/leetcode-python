@@ -409,9 +409,12 @@ usually solved with O(n) time using hashmap - eg.303-Range Sum Query - Immutable
         - tip: sort first
         - eg. 1610-Maximum Number of Visible Points(hard, 2D)
     - monotonic queue: 
-        - tip: can use monotonically decreasing queue to keep track of the max/min in window. Suitable for when the window size is large
+        - intuition: keep track of the max/min in window when window size is large
+        - algorithm: 
+            - after popleft() indexes out of range, q[0] is the next smallest/largest
+            - after pop() indexes i with nums[i] >(<) nums[curr_i], append curr_i to q as next candidate.
         - complexity: O(n), O(n) - each item queued and popped exactly once
-        - eg. 239-Sliding Window Maximum;862-Shortest Subarray with Sum at Least K; 1696
+        - eg. 239-Sliding Window Maximum;862-Shortest Subarray with Sum at Least K; 1696-Jump Game VI
 
 ## Sorting
 - quick sort 

@@ -1,4 +1,21 @@
 """
+- dp(top-down) dp[i] - max score to end starting from index i
+- O(nk), O(n)
+- time limit exceeded
+"""
+class Solution:
+    def maxResult(self, nums: List[int], k: int) -> int:
+        
+        @lru_cache
+        def dp(i):
+            # easy to miss: must end at len(nums) - 1
+            if i >= len(nums): return float("-inf")
+            if i == len(nums) - 1: return nums[i]
+            return max(nums[i] + dp(i + step) for step in range(1, k + 1))
+        
+        return dp(0)
+
+"""
 - dp(bottom-up) dp[i] - max score to end starting from index i
 - O(nk), O(n)
 - time limit exceeded
@@ -11,15 +28,15 @@ class Solution(object):
         :type k: int
         :rtype: int
         """
-        n = len(nums)
-        dp = [float("-inf")] * n
-        dp[-1] = nums[-1]
+        N = len(nums)
+        dp =[float("-inf")] * N
+        dp[0] = nums[0]
         
-        for i in range(n - 2, -1, -1):
-            for j in range(i + 1, min(n, i + k + 1)):
+        for i in range(N):
+            for j in range(max(0, i - k), i):
                 dp[i] = max(dp[i], nums[i] + dp[j])
-                
-        return dp[0]
+        
+        return dp[-1]
 
 """
 - dp + priority queue (optimizes when k is large)
@@ -75,3 +92,20 @@ class Solution(object):
                 next_candidate_index.pop()
             next_candidate_index.append(i)        
         return dp[0]
+
+"""
+- monotonic queue
+- O(n), O(k)
+"""
+class Solution:
+    def maxResult(self, nums: List[int], k: int) -> int:
+        q = collections.deque([0])
+        N = len(nums)
+
+        for i in range(1, N):
+            while q and q[0] < i - k: q.popleft()
+            nums[i] += nums[q[0]]   
+            while q and nums[i] >= nums[q[-1]]: q.pop()
+            q.append(i)
+            
+        return nums[-1]
