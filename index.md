@@ -25,8 +25,8 @@ math:12,149,168,268,279,391,470,621,794,836,837,952,1041,1344,1569,1610,1627,199
 merge sort: 315,1574
 misc:169,229(moore voting)
 preorder: 105,106,113,331,437,449,545,652,666,889,971,987,1008,1028,1569
-priority queue: 23,215,218,239,253,295,347,373,621,630,632,759,778,973,1229,1353,1383,1439,1499,1675,1696,1834,1851,1882
-queue:232,239,1499,1696
+priority queue: 23,215,218,239,253,295,347,373,621,630,632,759,778,973,1229,1353,1383,1438,1439,1499,1675,1696,1834,1851,1882
+queue:232,239,1438,1499,1696
 range sum: 307,308,327,1314,930,1442
 recursive: 2,116,241,247,273,450,772,1106
 segment tree: 307,308,327,850
@@ -402,7 +402,7 @@ usually solved with O(n) time using hashmap - eg.303-Range Sum Query - Immutable
         - eg. 1052; 1509-Minimum Difference Between Largest and Smallest Value in Three Moves
     - substring that has given numbers of certain characters: 
         - algorithm: move right pointer to right until satisfies condition, then move left pointer to right to tighten window until condition not satisfied
-        - eg. 3-Longest Substring Without Repeating Characters | 159-Longest Substring with At Most Two Distinct Characters | 340. Longest Substring with At Most K Distinct Characters | 992-Subarrays with K Different Integers | 395. Longest Substring with At Least K Repeating Characters; 76,1234; similar:904;1004-Max Consecutive Ones III;1358-Number of Substrings Containing All Three Characters;1839-Longest Substring Of All Vowels in Order
+        - eg. 3-Longest Substring Without Repeating Characters | 159-Longest Substring with At Most Two Distinct Characters | 340. Longest Substring with At Most K Distinct Characters | 992-Subarrays with K Different Integers | 395. Longest Substring with At Least K Repeating Characters; 76,1234; similar:904;1004-Max Consecutive Ones III;1358-Number of Substrings Containing All Three Characters;1438-Longest Continuous Subarray With Absolute Diff Less Than or Equal to Limit;1839-Longest Substring Of All Vowels in Order
     - subarray sum with a target: sliding window with prefix-sum / two pointers
         - eg: 209,930,1658
     - use a sliding window to keep the running sum of last n items: 837-New 21 Game
@@ -410,12 +410,12 @@ usually solved with O(n) time using hashmap - eg.303-Range Sum Query - Immutable
         - tip: sort first
         - eg. 1610-Maximum Number of Visible Points(hard, 2D)
     - monotonic queue: 
-        - intuition: keep track of the max/min in window when window size is large
+        - intuition: keep track of the max/min in window when window size is large; can be more effiecient than the solution using a priority queue which has a complexity of O(nlogk) where k is the window size (eg.1499).
         - algorithm: 
             - after popleft() indexes out of range, q[0] is the next smallest/largest
             - after pop() indexes i with nums[i] >(<) nums[curr_i], append curr_i to q as next candidate.
         - complexity: O(n), O(n) - each item queued and popped exactly once
-        - eg. 239-Sliding Window Maximum;862-Shortest Subarray with Sum at Least K; 1499-Max Value of Equation; 1696-Jump Game VI
+        - eg. 239-Sliding Window Maximum;862-Shortest Subarray with Sum at Least K; 1438-Longest Continuous Subarray With Absolute Diff Less Than or Equal to Limit(two queues); 1499-Max Value of Equation; 1696-Jump Game VI
 
 ## Sorting
 - quick sort 
