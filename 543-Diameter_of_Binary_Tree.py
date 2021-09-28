@@ -5,25 +5,25 @@ class TreeNode:
         self.left = None
         self.right = None
 
+"""
+- dfs
+- O(n), O(n)
+"""
 class Solution:
-    def diameterOfBinaryTree(self, root: 'TreeNode') -> 'int':
+    def diameterOfBinaryTree(self, root: Optional[TreeNode]) -> int:
         
-        self.diameter = 0
+        self.result = 0
         
-        def helper(root):
-            if not root:
-                return [-1, -1]
-            left = max(helper(root.left))
-            right = max(helper(root.right))
-            curr = left + right + 2
-            self.diameter = max(self.diameter, curr)
-            return [left+1, right+1]
+        def dfs(node):
+            if not node: return 0
+            left = dfs(node.left)
+            right = dfs(node.right)
+            diameter = left + right + 1
+            self.result = max(self.result, diameter)
+            return max(left, right) + 1
         
-        self.diameter = 0
-        helper(root)
-        
-        return self.diameter
-
+        dfs(root)
+        return self.result - 1 # diameter = node number - 1
 
 n1 = TreeNode(1)
 n1.left = TreeNode(2)
