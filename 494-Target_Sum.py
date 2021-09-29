@@ -35,8 +35,8 @@ class Solution:
         def dfs(i, _sum):
             if i < 0:
                 return 0
-            if i == 0 and (_sum == nums[0] or _sum == -nums[0]):
-                return 2 if nums[0] == 0 else 1
+            if i == 0:
+                return (sum_ == nums[0]) + (sum_ == -nums[0])
             return dfs(i - 1, _sum - nums[i]) + dfs(i - 1, _sum + nums[i])
         
         return dfs(len(nums) - 1, S)

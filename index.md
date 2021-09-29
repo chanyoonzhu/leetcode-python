@@ -273,10 +273,11 @@ space can be optimized to O(1) if only need to track constant time of variables 
         - memo: dp[_sum][i]
         - variations:
             - 0/1 knapsack: each element can be used 0 or 1 time
-                - eg: 416-Partition Equal Subset Sum;474-Ones and Zeroes(two bags);1049-Last Stone Weight II|1981-Minimize the Difference Between Target and Chosen Elements; 956-Tallest Billboard(hard)
+                - eg: 416-Partition Equal Subset Sum;474-Ones and Zeroes(two bags);1981-Minimize the Difference Between Target and Chosen Elements; 956-Tallest Billboard(hard)
             - 0/n knapsack: each element can be used 0 or infinite amount of times
                 - eg: 322-Coin Change
-        - eg: 494, 630-Course Schedule III; 1774-Closest Dessert Cost
+            - pos/neg knapsack: 494-Target Sum;1049-Last Stone Weight II
+        - eg: 630-Course Schedule III; 1774-Closest Dessert Cost
     - length in matrix: 562
     - reachable problem: 45,55
     - divide and conquer: 241
