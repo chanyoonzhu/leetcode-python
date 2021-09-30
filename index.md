@@ -278,6 +278,10 @@ space can be optimized to O(1) if only need to track constant time of variables 
             - 0/n knapsack: each element can be used 0 or infinite amount of times
                 - eg: 322-Coin Change
             - pos/neg knapsack: 494-Target Sum;1049-Last Stone Weight II
+        - problems:
+            - ways to reach a target: 
+                - tip: decrease i to avoid over counting
+                - eg.416-Partition Equal Subset Sum;879-Profitable Schemes(hard 3D);
         - eg: 630-Course Schedule III; 1774-Closest Dessert Cost
     - length in matrix: 562
     - reachable problem: 45,55
