@@ -281,7 +281,7 @@ space can be optimized to O(1) if only need to track constant time of variables 
         - problems:
             - ways to reach a target: 
                 - tip: decrease i to avoid over counting
-                - eg.416-Partition Equal Subset Sum;805-Split Array With Same Average(hard 3D); 879-Profitable Schemes(hard 3D);
+                - eg.416-Partition Equal Subset Sum|956-Tallest Billboard(hard, need max);805-Split Array With Same Average(hard 3D); 879-Profitable Schemes(hard 3D);
         - eg: 630-Course Schedule III; 1774-Closest Dessert Cost
     - length in matrix: 562
     - reachable problem: 45,55

@@ -41,8 +41,22 @@ class Solution:
         return dp(0, 0)
 
 """
-- todo: 1D bottom-up
+- dynamic programming - knapsack dp[i] - the largest sum of all positive numbers for subsequence with sum equal to i
+- intuition: Given a list of numbers, multiply each number with 1 or 0 or -1, make the sum of all numbers to 0. Find a combination which has the largest sum of all positive numbers
 """
+class Solution:
+    def tallestBillboard(self, rods: List[int]) -> int:
+        prev_dp = dict()
+        prev_dp[0] = 0
+        
+        for n in rods:
+            dp = collections.defaultdict(int)
+            for s in prev_dp:
+                dp[s + n] = max(prev_dp[s] + n, dp[s + n])
+                dp[s] = max(prev_dp[s], dp[s])
+                dp[s - n] = max(prev_dp[s], dp[s - n])
+            prev_dp = dp
+        return dp[0]  # the largest sum of all positive numbers for subsequence with sum equal to 0
     
     
 
