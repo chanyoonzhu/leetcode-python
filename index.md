@@ -271,17 +271,15 @@ space can be optimized to O(1) if only need to track constant time of variables 
     - 2D: 64-Minimum Path Sum; 542-01 Matrix; 221-Maximal Square | 1277-Count Square Submatrices with All Ones; 931-Minimum Falling Path Sum | 1937-Maximum Number of Points with Cost
     - 3D: 879-Profitable Schemes
     - knapsack: 
+        - keyword: combine numbers in array to reach a target
         - memo: dp[_sum][i]
-        - variations:
-            - 0/1 knapsack: each element can be used 0 or 1 time
-                - eg: 416-Partition Equal Subset Sum;474-Ones and Zeroes(two bags);1981-Minimize the Difference Between Target and Chosen Elements;805-Split Array With Same Average;879-Profitable Schemes(hard 3D);956-Tallest Billboard(hard);
-            - 0/n knapsack: each element can be used 0 or infinite amount of times
-                - eg: 322-Coin Change
-            - pos/neg knapsack: 494-Target Sum;1049-Last Stone Weight II
+        - tip: for 0/1 knapsack: decrease i to avoid over counting; for 0/n knapsack: increase i to allow counting more than 1 time
         - problems:
-            - ways to reach a target: 
-                - tip: decrease i to avoid over counting
-                - eg.416-Partition Equal Subset Sum|956-Tallest Billboard(hard, need max);805-Split Array With Same Average(hard 3D); 879-Profitable Schemes(hard 3D);
+            - 0/1 knapsack: each element can be used 0 or 1 time
+                - eg: 416-Partition Equal Subset Sum|956-Tallest Billboard(hard, need max);474-Ones and Zeroes(two bags);1981-Minimize the Difference Between Target and Chosen Elements;805-Split Array With Same Average;879-Profitable Schemes(hard 3D);
+            - 0/n knapsack: each element can be used 0 or infinite amount of times
+                - eg: 322-Coin Change; 1449-Form Largest Integer With Digits That Add up to Target
+            - pos/neg knapsack: 494-Target Sum;1049-Last Stone Weight II
         - eg: 630-Course Schedule III; 1774-Closest Dessert Cost
     - length in matrix: 562
     - reachable problem: 45,55
