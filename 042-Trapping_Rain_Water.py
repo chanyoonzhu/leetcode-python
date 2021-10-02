@@ -26,3 +26,20 @@ class Solution(object):
                 continue
                 
         return total
+
+"""
+- stack (monotonically decreasing)
+- O(n), O(n)
+"""
+class Solution:
+    def trap(self, height: List[int]) -> int:
+        stack = []
+        result = 0
+        for i, h in enumerate(height):
+            while stack and h >= height[stack[-1]]:
+                min_height = height[stack.pop()]
+                if not stack: break # no elevation on the left side to trap water with
+                min_i = stack[-1]
+                result += (min(h, height[min_i]) - min_height) * (i - 1 - min_i) # height diff * width
+            stack.append(i)
+        return result
