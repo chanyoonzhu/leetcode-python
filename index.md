@@ -164,7 +164,10 @@ while start <= end:
     - 1D (array): 1654-Minimum Jumps to Reach Home; 279-Perfect Squares
     - 2D shortest paths: 505-The Maze II;542-01 Matrix; 1293-Shortest Path in a Grid with Obstacles Elimination (hard)
     - String: 752-Open the Lock
-    - Dijkstra's Algorithm: 743-Network Delay Time, 787-Cheapest Flights Within K Stops
+    - Dijkstra's Algorithm:
+        - key words: minimal cost of paths (unlike regular shortest path where cost is always 1, each connection can have various cost)
+        - intuition: similar as bfs, difference is that instead of using a queue and always pop left (which is by default the minimal cost), use a heap to store tuple (cost, node) to always pop the smallest cost
+        - eg. 743-Network Delay Time (classic), 787-Cheapest Flights Within K Stops
     - tree traversal: see "## Tree"
     - construct sequence with topological sort (see "## Topological Sort")
 
