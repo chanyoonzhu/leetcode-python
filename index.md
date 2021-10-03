@@ -6,7 +6,7 @@ array: 54,56,68,73,122,151,157,186,238,268,349,350,380,381,849,1146,1371,1381,15
 backtracking: 17,46,47,78,90,301,491,698,996,1088,1593,1239,1307,1681,1718,1723,1774
 bfs: 79,103,116,127,133,200,207,210,212,269,279,297,301,399,407,444,505,529,542,743,752,785,787,803,863,919,934,959,971,987,1110,1236,1254,1293,1306,1345,1654,1778
 binary search:33,57,222,240,259,268,275,279,295,300,374,410,715,774,875,911,1011,1055,1146,1231,1272,1283,1428,1482,1552,1608,1648,1723,1802,1870
-bitwise operation: 136,137,191,231,268,318,338,342,371,461,473,476,491,693,698,1371,1442,1542,1593,1681
+bitwise operation: 136,137,191,231,268,318,338,342,371,461,473,476,491,693,698,1284,1371,1442,1542,1593,1681
 binary search tree: 99,230,333,449,450,490,729,1008
 bucket:299
 circular array: 213,1658
@@ -149,8 +149,8 @@ while start <= end:
 
 ## Bit-masking
 - problems:
-    - String compression (unique chars):
-        - eg: 318-Maximum Product of Word Lengths
+    - compression/serialization:
+        - eg: 318-Maximum Product of Word Lengths; 1284-Minimum Number of Flips to Convert Binary Matrix to Zero Matrix (bfs)
     - enumeration (can be solved using backtracking):
         - eg: 90-Subsets II; 491-Increasing Subsequences; 698-Partition to K Equal Sum Subsets; 1593-Split a String Into the Max Number of Unique Substrings; 1681-Minimum Incompatibility
 
@@ -162,7 +162,7 @@ while start <= end:
 - problems:
     - all shortest paths: 301
     - 1D (array): 1654-Minimum Jumps to Reach Home; 279-Perfect Squares
-    - 2D shortest paths: 505-The Maze II;542-01 Matrix; 1293-Shortest Path in a Grid with Obstacles Elimination (hard)
+    - 2D shortest paths: 505-The Maze II;542-01 Matrix; 1284-Minimum Number of Flips to Convert Binary Matrix to Zero Matrix (hard); 1293-Shortest Path in a Grid with Obstacles Elimination (hard)
     - String: 752-Open the Lock
     - Dijkstra's Algorithm:
         - key words: minimal cost of paths (unlike regular shortest path where cost is always 1, each connection can have various cost)
