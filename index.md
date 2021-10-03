@@ -156,7 +156,7 @@ while start <= end:
 
 ## BFS
 - key word: shorted path (eg. 1345); 
-- algorithm: 
+- algorithm:
     elements: queue, visited hashset; 
     steps: while q, if q popped is target, finish, if not, add popped item's neighbors to the q; optimization: visited can be eliminated if allowed to change memory (mark on original data)
 - problems:
@@ -170,6 +170,10 @@ while start <= end:
         - eg. 743-Network Delay Time (classic); 505-The Maze II; 787-Cheapest Flights Within K Stops; 407-Trapping Rain Water II (implicit)
     - tree traversal: see "## Tree"
     - construct sequence with topological sort (see "## Topological Sort")
+    - bidrectional dfs
+        - purpose: speeding up bfs
+        - patterns: use two sets to store current nodes visited from beginning and end layers; for each round of bfs, search from the set with fewer nodes
+        - 1345-Jump Game IV
 
 ## Cache
 - tip: cache previous result to save time
