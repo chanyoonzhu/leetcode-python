@@ -4,7 +4,7 @@ two sum: 1, 167
 all, any: 833
 array: 54,56,68,73,122,151,157,186,238,268,349,350,380,381,849,1146,1371,1381,1526,1567,1706
 backtracking: 17,46,47,78,90,301,491,698,996,1088,1593,1239,1307,1681,1718,1723,1774
-bfs: 79,103,116,127,133,200,207,210,212,269,279,297,301,399,444,505,529,542,743,752,785,787,803,863,919,934,959,971,987,1110,1236,1254,1293,1306,1345,1654,1778
+bfs: 79,103,116,127,133,200,207,210,212,269,279,297,301,399,407,444,505,529,542,743,752,785,787,803,863,919,934,959,971,987,1110,1236,1254,1293,1306,1345,1654,1778
 binary search:33,57,222,240,259,268,275,279,295,300,374,410,715,774,875,911,1011,1055,1146,1231,1272,1283,1428,1482,1552,1608,1648,1723,1802,1870
 bitwise operation: 136,137,191,231,268,318,338,342,371,461,473,476,491,693,698,1371,1442,1542,1593,1681
 binary search tree: 99,230,333,449,450,490,729,1008
@@ -25,7 +25,7 @@ math:12,149,168,268,279,391,470,621,794,836,837,952,1041,1344,1569,1610,1627,199
 merge sort: 315,1574
 misc:169,229(moore voting)
 preorder: 105,106,113,331,437,449,545,652,666,889,971,987,1008,1028,1569
-priority queue: 23,215,218,239,253,295,347,373,621,630,632,759,778,973,1229,1353,1383,1438,1439,1499,1675,1696,1834,1851,1882
+priority queue: 23,215,218,239,253,295,347,373,404,621,630,632,759,778,973,1229,1353,1383,1438,1439,1499,1675,1696,1834,1851,1882
 queue:232,239,1438,1499,1696
 range sum: 307,308,327,1314,930,1442
 recursive: 2,116,241,247,273,450,772,1106
@@ -159,7 +159,7 @@ while start <= end:
 - algorithm: 
     elements: queue, visited hashset; 
     steps: while q, if q popped is target, finish, if not, add popped item's neighbors to the q; optimization: visited can be eliminated if allowed to change memory (mark on original data)
-- classic problems:
+- problems:
     - all shortest paths: 301
     - 1D (array): 1654-Minimum Jumps to Reach Home; 279-Perfect Squares
     - 2D shortest paths: 505-The Maze II;542-01 Matrix; 1293-Shortest Path in a Grid with Obstacles Elimination (hard)
@@ -167,7 +167,7 @@ while start <= end:
     - Dijkstra's Algorithm:
         - key words: minimal cost of paths (unlike regular shortest path where cost is always 1, each connection can have various cost)
         - intuition: similar as bfs, difference is that instead of using a queue and always pop left (which is by default the minimal cost), use a heap to store tuple (total_cost, node) to always pop the smallest cost; also need an array/map to memoize smallest cost to each node
-        - eg. 743-Network Delay Time (classic); 505-The Maze II; 787-Cheapest Flights Within K Stops
+        - eg. 743-Network Delay Time (classic); 505-The Maze II; 787-Cheapest Flights Within K Stops; 407-Trapping Rain Water II (implicit)
     - tree traversal: see "## Tree"
     - construct sequence with topological sort (see "## Topological Sort")
 
@@ -401,6 +401,7 @@ usually solved with O(n) time using hashmap - eg.303-Range Sum Query - Immutable
         - eg: 23-Merge k Sorted Lists; 373-Find K Pairs with Smallest Sums|1439-Find the Kth Smallest Sum of a Matrix With Sorted Rows; 632-Smallest Range Covering Elements from K Lists; 778-Swim in Rising Water; 1675-Minimize Deviation in Array
     - greedy:
         - eg: 1353-Maximum Number of Events That Can Be Attended; 502-IPO, 630-Course Schedule III(greedy * 2)|1383-Maximum Performance of a Team; 1499-Max Value of Equation; 1851-Minimum Interval to Include Each Query; 
+    - Dijkstra's Algorithm (see "## BFS")
 
 ## Sliding window -
 - problems:
