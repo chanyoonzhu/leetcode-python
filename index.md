@@ -173,7 +173,7 @@ while start <= end:
     - bidrectional dfs
         - purpose: speeding up bfs
         - patterns: use two sets to store current nodes visited from beginning and end layers; for each round of bfs, search from the set with fewer nodes
-        - 1345-Jump Game IV
+        - 127-Word Ladder; 1345-Jump Game IV
 
 ## Cache
 - tip: cache previous result to save time

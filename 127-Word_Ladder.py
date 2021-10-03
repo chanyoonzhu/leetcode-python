@@ -1,111 +1,94 @@
-class Solution(object):
-    def ladderLength(self, beginWord, endWord, wordList):
-        """
-        :type beginWord: str
-        :type endWord: str
-        :type wordList: List[str]
-        :rtype: int
-        """
+"""
+- BFS
+- O(n*s), O(n*s)
+""" 
+class Solution:
+    def ladderLength(self, beginWord: str, endWord: str, wordList: List[str]) -> int:
+        N = len(beginWord)
+        ORD_A = ord('a')
+        all_words = set(wordList)
+        if endWord not in all_words: return 0
         
-        """
-        - O(n^2)
-        - graph BFS
-        - time limit exceeded: generating graph is O(n^2)
-        
-        def connected(word1, word2):
-            diff = 0
-            for i in range(len(word1)):
-                if word1[i] != word2[i]:
-                    diff += 1
-            if diff == 1:
-                return True
-            return False
-        
-        graph = collections.defaultdict(list)
-        for i in range(len(wordList)):
-            for j in range(len(wordList)):
-                if i != j and connected(wordList[i], wordList[j]):
-                    graph[i].append(j)
-        
-        q = []
-        visited = [0] * len(wordList)
-        for i in range(len(wordList)):
-            if connected(beginWord, wordList[i]):
-                q.append((i, 1))
-                visited[i] = 1
-        while q:
-            curr = q[0]
-            del q[0]
-            if wordList[curr[0]] == endWord:
-                return curr[1] + 1
-            else:
-                neighbors = [i for i in graph[curr[0]] if visited[i] == 0]
-                for i in neighbors:
-                    q.append((i, curr[1] + 1))
-                    visited[i] = 1
-        return 0
-        """
-        
-    
-        """
-        - O(n^2)
-        - with words removed from wordList everytime visited
-        """
-        def connected(word1, word2):
-            diff = 0
-            for i in range(len(word1)):
-                if word1[i] != word2[i]:
-                    diff += 1
-            if diff == 1:
-                return True
-            return False
-        
-        def findNextWords(begin, words):
-            idx, res = [], []
-            for i in range(len(words)):
-                if begin != words[i] and connected(begin, words[i]):
-                    idx.insert(0, i)
-            for i in idx:
-                res.append(words[i])
-                del words[i]
-            return res
-        
-        nextWords = findNextWords(beginWord, wordList)
-            
-        q = []
-        for w in nextWords:
-            q.append((w, 1))
-        while q:
-            curr = q[0]
-            del q[0]
-            if curr[0] == endWord:
-                return curr[1] + 1
-            else:
-                neighbors = [w for w in findNextWords(curr[0], wordList)]
-                for w in neighbors:
-                    q.append((w, curr[1] + 1))
-        return 0
-    
-        """
-        - O(n)
-        - store Wordlist as sets, find if all possible one distance word is in wordlist
-        """
-        wordSet = set(wordList)
+        q = collections.deque()
         visited = set()
-        if endWord not in wordSet:
-            return 0
+        q.append((beginWord, 1))
+        visited.add(beginWord)
         
-        q = [(beginWord, 1)]
         while q:
-            word, distance = q.pop(0) # q.pop(0)
-            if word == endWord:
-                return distance
-            for i in range(len(word)):
-                for c in "abcdefghijklmnopqrstuvwxyz":
-                    candidate = word[:i] + c + word[i+1:]
-                    if candidate != word and candidate in wordSet and candidate not in visited:
-                        q.append[(candidate, distance + 1)]
-                        visited.add(candidate)
+            word, steps = q.popleft()
+            if word == endWord: return steps
+            for i in range(N):
+                for c in [chr(ORD_A + ci) for ci in range(26)]:
+                    if c != word[i]:
+                        new_word = word[:i] + c + word[i + 1:]
+                        if new_word in all_words and new_word not in visited:
+                            q.append((new_word, steps + 1))
+                            visited.add(new_word)
+                        
+        return 0
+
+"""
+- BFS (space optimized: no visited, keep removing visited out of wordList instead)
+- O(n*s), O(n*s)
+"""
+class Solution:
+    def ladderLength(self, beginWord: str, endWord: str, wordList: List[str]) -> int:
+        N = len(beginWord)
+        ORD_A = ord('a')
+        all_words = set(wordList)
+        if endWord not in all_words: return 0
+        
+        q = collections.deque()
+        q.append((beginWord, 1))
+        
+        while q:
+            word, steps = q.popleft()
+            if word == endWord: return steps
+            for i in range(N):
+                for c in [chr(ORD_A + ci) for ci in range(26)]:
+                    if c != word[i]:
+                        new_word = word[:i] + c + word[i + 1:]
+                        if new_word in all_words:
+                            q.append((new_word, steps + 1))
+                            all_words.remove(new_word)
+                        
+        return 0
+
+
+"""
+- birectional bfs
+- O(n*s), O(n*s)
+"""
+class Solution:
+    def ladderLength(self, beginWord: str, endWord: str, wordList: List[str]) -> int:
+        N = len(beginWord)
+        ORD_A = ord('a')
+        all_words = set(wordList)
+        if endWord not in all_words: return 0
+        
+        words1, words2 = set(), set()
+        words1.add(beginWord)
+        words2.add(endWord)
+        all_words.discard(endWord)
+        
+        steps = 0
+        while words1:
+            if len(words1) > len(words2):
+                words1, words2 = words2, words1
+            new_words = set()
+            
+            for word in words1:
+                for i in range(N):
+                    for c in [chr(ORD_A + ci) for ci in range(26)]:
+                        if c != word[i]:
+                            new_word = word[:i] + c + word[i + 1:]
+                            if new_word in words2:
+                                return steps + 2
+                            if new_word in all_words:
+                                new_words.add(new_word)
+                                all_words.remove(new_word)
+            words1 = new_words
+            steps += 1
         return 0
         
 
