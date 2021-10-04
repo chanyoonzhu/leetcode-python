@@ -12,7 +12,7 @@ bucket:299
 circular array: 213,1658
 divide and conquer: 53,215,241,307,308,312,327,395,973,1000,1039,1547
 dfs: 17,79,91,99,105,106,113,124,129,133,200,207,210,212,230,236,241,261,297,298,301,329,331,333,337,394,399,449,490,529,543,549,652,666,687,690,694,695,743,753,778,785,787,803,863,889,934,947,951,959,975,987,1028,1110,1236,1306,1340,1462,1569,1644,1676,1740,1766,1778
-dynamic programming: 5,10,32,39,45,53,55,64,70,72,91,97,139,188,198,213,221,256,276,279,300,312,322,375,403,410,413,416,435,464,473,474,486,494,518,542,552,562,583,712,740,746,805,837,877,879,931,956,1000,1035,1039,1048,1140,1143,1155,1269,1277,1312,1314,1406,1458,1510,1547,1548,1696,1746,1774,1824,1937,1981
+dynamic programming: 5,10,32,39,45,53,55,64,70,72,91,97,139,188,198,213,221,256,265,276,279,300,312,322,375,403,410,413,416,435,464,473,474,486,494,518,542,552,562,583,712,740,746,805,837,877,879,931,956,1000,1035,1039,1048,1140,1143,1155,1269,1277,1312,1314,1406,1458,1510,1547,1548,1696,1746,1774,1824,1937,1981
 graph: 785,863
 greedy: 45,53,55,135,410,435,455,621,630,678,774,785,843,853,875,877,1011,1231,1353,1383,1402,1419,1428,1482,1520,1537,1552,1567,1648,1665,1718,1746,1775,1802,1824,1851,1870
 hashmap: 1,15,76,106,138,146,149,159,169,229,246,299,327,336,340,359,380,381,392,398,403,432,437,465,496,560,666,792,895,930,974,1000,1055,1371,1442,1525,1542,1577,1590,1644
@@ -276,7 +276,7 @@ space can be optimized to O(1) if only need to track constant time of variables 
 - Top down (depth-first-search): recursion using memoization
 - Bottom up: loop using memoization (calculate those won't change first, eg.1143, 1340) - look at the transformation formula from the top-down solution to figure out what needs to be calculated first in the loop. Can use the subproblem size as the outer loop if dp(i, j) need dp(i + 1, j - 1) (eg.312，375, 486, 877, 1312)
 - types:
-    - 1D: 70-Climbing Stairs; 198-House Robber|213. House Robber II||740-Delete and Earn; 256. Paint House; 276-Paint Fence(a hard medium); 413-Arithmetic Slices; 91-Decode Ways;139-Word Break; 837-New 21 Game;
+    - 1D: 70-Climbing Stairs; 198-House Robber|213. House Robber II||740-Delete and Earn; 256-Paint House|265-Paint House II; 276-Paint Fence(a hard medium); 413-Arithmetic Slices; 91-Decode Ways;139-Word Break; 837-New 21 Game;
     - 2D: 64-Minimum Path Sum; 542-01 Matrix; 221-Maximal Square | 1277-Count Square Submatrices with All Ones; 931-Minimum Falling Path Sum | 1937-Maximum Number of Points with Cost
     - 3D: 879-Profitable Schemes
     - knapsack: 
