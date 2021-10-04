@@ -1,10 +1,12 @@
 from collections import defaultdict
 
+"""
+- prefix sum
+- O(n^2), O(n)
+- TLE
+"""
 class Solution(object):
-    """
-    - cumulative sum: time exceeded
-    - O(n^2), O(n)
-    """
+    
     def subarraySum(self, nums, k):
         """
         :type nums: List[int]
@@ -22,26 +24,26 @@ class Solution(object):
                     res += 1                  
         return res
 
-    """
-    - prefix sum with hashmap
-    - O(n), O(n)
-    - similar problem: 437(tree)
-    """
-    def subarraySum_hashmap(self, nums, k):
+"""
+- prefix sum with hashmap
+- O(n), O(n)
+- similar problem: 437(tree)
+"""
+class Solution(object):
+    def subarraySum(self, nums, k):
         """
         :type nums: List[int]
         :type k: int
         :rtype: int
         """
-        _sum, sums = 0, defaultdict(int)
-        sums[0] = 1 # easy to miss, for where the number itself equals k
-        res = 0
-        for i in range(len(nums)):
-            _sum += nums[i]
-            if _sum - k in sums:
-                res += sums[_sum - k]
-            sums[_sum] += 1
-        return res
+        _sum = 0
+        prefixes = collections.Counter({0: 1})
+        result = 0
+        for n in nums:
+            _sum += n
+            result += prefixes[_sum - k]
+            prefixes[_sum] += 1
+        return result
                     
 s = Solution()
 # s.subarraySum([1,1,1], 2)
