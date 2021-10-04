@@ -276,7 +276,7 @@ space can be optimized to O(1) if only need to track constant time of variables 
 - Top down (depth-first-search): recursion using memoization
 - Bottom up: loop using memoization (calculate those won't change first, eg.1143, 1340) - look at the transformation formula from the top-down solution to figure out what needs to be calculated first in the loop. Can use the subproblem size as the outer loop if dp(i, j) need dp(i + 1, j - 1) (eg.312，375, 486, 877, 1312)
 - types:
-    - 1D: 70-Climbing Stairs; 198-House Robber|740-Delete and Earn; 256. Paint House; 413-Arithmetic Slices; 91-Decode Ways;139-Word Break; 837-New 21 Game;
+    - 1D: 70-Climbing Stairs; 198-House Robber|213. House Robber II||740-Delete and Earn; 256. Paint House; 413-Arithmetic Slices; 91-Decode Ways;139-Word Break; 837-New 21 Game;
     - 2D: 64-Minimum Path Sum; 542-01 Matrix; 221-Maximal Square | 1277-Count Square Submatrices with All Ones; 931-Minimum Falling Path Sum | 1937-Maximum Number of Points with Cost
     - 3D: 879-Profitable Schemes
     - knapsack: 

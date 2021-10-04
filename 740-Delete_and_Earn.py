@@ -3,6 +3,7 @@
 """
 """
 - dynamic programming (bottom-up)
+- intuition: [2,2,3,3,3,4] transformed to house robber problem is [0, 0, 2, 3, 1], which is its Counter
 - O(max(n, max-min))
 """
 class Solution:
