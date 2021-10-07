@@ -292,8 +292,8 @@ space can be optimized to O(1) if only need to track constant time of variables 
         - eg: 630-Course Schedule III; 1774-Closest Dessert Cost
     - length in matrix: 562
     - reachable problem: 45,55
-    - divide and conquer: 241
-        - calculation among adjacent items: 312, 1039, 1547, 1000(hard)
+    - merge: divide and conquer: 241
+        - calculation among adjacent items: 312, 1039, 1547, 1000-Minimum Cost to Merge Stones(hard)
             - tip: when bottom-up, use subproblem size as the outer loop
     - game theory: 375. Guess Number Higher or Lower II; 486-Predict the Winner|877-Stone Game|1140-Stone Game II|1406-Stone Game III|1510-Stone Game IV
     - string subsequence with min/max cost: 97,516,583,1035,1092,1143,1458
