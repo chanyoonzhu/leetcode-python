@@ -30,7 +30,7 @@ queue:232,239,1438,1499,1696
 range sum: 307,308,327,1314,930,1442
 recursive: 2,116,241,247,273,450,772,1106
 segment tree: 307,308,327,850
-sliding window: 3,76,159,209,239,340,395,837,862,904,930,992,1004,1052,1234,1358,1423,1498,1509,1537,1574,1577,1610,1658,1696,1793,1839
+sliding window: 3,76,159,209,239,340,395,837,862,904,930,992,1004,1052,1234,1358,1371,1423,1498,1509,1537,1574,1577,1610,1658,1696,1793,1839
 sort: 56,99,164,179,252,280,315,524,581,593,L391,1300,1509,1608,1610
 stack: 20,32,42,71,84,155,224,227,232,331,394,402,456,496,503,581,636,678,735,739,772,856,901,907,946,962,975,1019,1028,1063,1106,1124,1130,1209,1249,1381,1541,1597,1673,1776,1856
 string: 151,157,165,418,722,833,929,1520
@@ -399,7 +399,7 @@ heapify time complexity: O(n), heap push/pop time complexity: O(logn)
 ## Prefix sum:
 - key words: sum of subarray 
 - tip: usually solved with O(n) time using hashmap 
-- eg.303-Range Sum Query - Immutable; 560-Subarray Sum Equals K,325-Maximum Size Subarray Sum Equals k; 930,974|1590(division),1371,1442,437(tree version), 1124, 528-Random Pick with Weight; 1248-Count Number of Nice Subarrays1525-Number of Good Ways to Split a String
+- eg.303-Range Sum Query - Immutable; 560-Subarray Sum Equals K,325-Maximum Size Subarray Sum Equals k; 930,974|1590(division),1371-Find the Longest Substring Containing Vowels in Even Counts;1442,437(tree version), 1124, 528-Random Pick with Weight; 1248-Count Number of Nice Subarrays1525-Number of Good Ways to Split a String
 
 ## Priority Queue (Heap):
 - tip: stores tuples in queues, a tuple is comprised of number (a group of numbers) needs to be sorted and the information need to pass when that number is popped from the heap
@@ -418,7 +418,7 @@ heapify time complexity: O(n), heap push/pop time complexity: O(logn)
         - eg. 1052; 1509-Minimum Difference Between Largest and Smallest Value in Three Moves
     - substring that has given numbers of certain characters: 
         - algorithm: move right pointer to right until satisfies condition, then move left pointer to right to tighten window until condition not satisfied
-        - eg. 3-Longest Substring Without Repeating Characters | 159-Longest Substring with At Most Two Distinct Characters | 340. Longest Substring with At Most K Distinct Characters | 992-Subarrays with K Different Integers | 395. Longest Substring with At Least K Repeating Characters; 76,1234; similar:904;1004-Max Consecutive Ones III;1248-Count Number of Nice Subarrays (loose end); 1358-Number of Substrings Containing All Three Characters;1438-Longest Continuous Subarray With Absolute Diff Less Than or Equal to Limit;1839-Longest Substring Of All Vowels in Order
+        - eg. 3-Longest Substring Without Repeating Characters | 159-Longest Substring with At Most Two Distinct Characters | 340. Longest Substring with At Most K Distinct Characters | 992-Subarrays with K Different Integers | 395. Longest Substring with At Least K Repeating Characters; 76,1234; similar:904;1004-Max Consecutive Ones III;1248-Count Number of Nice Subarrays (loose end); 1358-Number of Substrings Containing All Three Characters; 1371-Find the Longest Substring Containing Vowels in Even Counts; 1438-Longest Continuous Subarray With Absolute Diff Less Than or Equal to Limit;1839-Longest Substring Of All Vowels in Order; 1658-Minimum Operations to Reduce X to Zero
     - subarray sum with a target: sliding window with prefix-sum / two pointers
         - eg: 209,930,1658
     - use a sliding window to keep the running sum of last n items: 837-New 21 Game
