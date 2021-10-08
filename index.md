@@ -37,7 +37,7 @@ string: 151,157,165,418,722,833,929,1520
 topological sort: 207,210,269,329,444.1462
 tree: 116,222,235,236,298,333,337,426,450,543,549,652,687,729,919,1644,1650,1676,1740
 trie: 208,211,212,336
-two pointers: 15,42,76,86,121,159,167,209,246,253,259,392,524,581,680,904,986,1055,1229,1537,1574,1577,1658,1775,1868
+two pointers: 15,42,76,86,121,159,167,209,246,253,259,392,524,581,680,904,986,1055,1229,1248,1537,1574,1577,1658,1775,1868
 union find: 128,305,323,778,947,952,1562,1627,1722,1970,1998
 zip: 833
 
@@ -398,7 +398,8 @@ heapify time complexity: O(n), heap push/pop time complexity: O(logn)
 
 ## Prefix sum:
 - key words: sum of subarray 
-usually solved with O(n) time using hashmap - eg.303-Range Sum Query - Immutable; 560-Subarray Sum Equals K,325-Maximum Size Subarray Sum Equals k; 930,974|1590(division),1371,1442,437(tree version), 1124, 528-Random Pick with Weight; 1525-Number of Good Ways to Split a String
+- tip: usually solved with O(n) time using hashmap 
+- eg.303-Range Sum Query - Immutable; 560-Subarray Sum Equals K,325-Maximum Size Subarray Sum Equals k; 930,974|1590(division),1371,1442,437(tree version), 1124, 528-Random Pick with Weight; 1248-Count Number of Nice Subarrays1525-Number of Good Ways to Split a String
 
 ## Priority Queue (Heap):
 - tip: stores tuples in queues, a tuple is comprised of number (a group of numbers) needs to be sorted and the information need to pass when that number is popped from the heap
@@ -417,7 +418,7 @@ usually solved with O(n) time using hashmap - eg.303-Range Sum Query - Immutable
         - eg. 1052; 1509-Minimum Difference Between Largest and Smallest Value in Three Moves
     - substring that has given numbers of certain characters: 
         - algorithm: move right pointer to right until satisfies condition, then move left pointer to right to tighten window until condition not satisfied
-        - eg. 3-Longest Substring Without Repeating Characters | 159-Longest Substring with At Most Two Distinct Characters | 340. Longest Substring with At Most K Distinct Characters | 992-Subarrays with K Different Integers | 395. Longest Substring with At Least K Repeating Characters; 76,1234; similar:904;1004-Max Consecutive Ones III;1358-Number of Substrings Containing All Three Characters;1438-Longest Continuous Subarray With Absolute Diff Less Than or Equal to Limit;1839-Longest Substring Of All Vowels in Order
+        - eg. 3-Longest Substring Without Repeating Characters | 159-Longest Substring with At Most Two Distinct Characters | 340. Longest Substring with At Most K Distinct Characters | 992-Subarrays with K Different Integers | 395. Longest Substring with At Least K Repeating Characters; 76,1234; similar:904;1004-Max Consecutive Ones III;1248-Count Number of Nice Subarrays (loose end); 1358-Number of Substrings Containing All Three Characters;1438-Longest Continuous Subarray With Absolute Diff Less Than or Equal to Limit;1839-Longest Substring Of All Vowels in Order
     - subarray sum with a target: sliding window with prefix-sum / two pointers
         - eg: 209,930,1658
     - use a sliding window to keep the running sum of last n items: 837-New 21 Game
@@ -520,9 +521,10 @@ eg: 56, 57, 218, 252, 253, 435, 452, 986-Interval List Intersections, 1229-Meeti
     - eg: 207-Course Schedule | 210. Course Schedule II | 1462-Course Schedule IV; 444-Sequence Reconstruction; 269-Alien Dictionary(hard)
 
 ## Two pointers:
-- classic problems:
+- problems:
     - palindrom: 680-Valid Palindrome II; 246-Strobogrammatic Number
     - two arrays: 1537-Get the Maximum Score; 1868-Product of Two Run-Length Encoded Arrays
+    - sliding window (see "## sliding window")
 
 ## Tree - Recursion can usually be used. 
 - If using dfs, has to decide which to use: in-order traversal (aka. dfs), post-order traversal (549,1740), and pre-order traversal (298, search tree). Time complexity is O(n): every node is visited once. Space complexity is O(n) in worst case and O(log(n)) in average case: The extra space comes from implicit stack space due to recursion. For a skewed binary tree, the recursion could go up to n levels deep. 
