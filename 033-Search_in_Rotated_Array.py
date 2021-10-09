@@ -1,16 +1,10 @@
+ """
+- binary search
+- two passes: find rotate index, then search in the right portion
+- O(logN), O(1)
+"""
 class Solution(object):
     def search(self, nums, target):
-        """
-        :type nums: List[int]
-        :type target: int
-        :rtype: int
-        """
-
-        """
-        - two passes: find rotate index, then search in the right portion
-        - O(logN), O(1)
-        """
-        
         def helper(left, right):
             if nums[left] <= nums[right]: # easy to miss this base condition
                 return left
@@ -39,25 +33,30 @@ class Solution(object):
             return helper2(nums, 0, smallest_index - 1, target)
         return helper2(nums, smallest_index, n - 1, target)
 
-        """
-        - One pass: is each half sorted? what determines whether target is in which half?
-        - O(logN), O(1)
-        """
-        def helper(left, right):
-            if left > right:
-                return -1
-            mid = (right + left) // 2
-            if nums[mid] == target:
+"""
+- binary search
+- intuition: figure out which part is strictly increasing by comparing nums[low] with nums[mid], find out which strictly increasing part to exclude
+- O(logN), O(1)
+"""
+class Solution:
+    def search(self, nums: List[int], target: int) -> int:
+
+        low, high = 0, len(nums) - 1
+
+        while low <= high:
+            mid = low + (high - low) // 2
+            if target == nums[mid]:
                 return mid
-            if nums[mid] < nums[right]: # if you do nums[mid] > nums[left], you will fail certain edge cases like ([3,1], 1) will return -1 where it should return 1. Because // 2 will truncate. So either use nums[mid] < nums[right] or nums[mid] >= nums[left] 
-                if nums[mid] < target <= nums[right]:
-                    return helper(mid + 1, right)
+
+            if nums[low] <= nums[mid]:
+                if nums[low] <= target <= nums[mid]: # low - mid is strictly increasing
+                    high = mid - 1
                 else:
-                    return helper(left, mid - 1)
+                    low = mid + 1
             else:
-                if nums[left] <= target < nums[mid]:
-                    return helper(left, mid - 1)
+                if nums[mid] <= target <= nums[high]: # mid - high is strictly increasing
+                    low = mid + 1
                 else:
-                    return helper(mid + 1, right)
-        
-        return helper(0, len(nums) - 1)
+                    high = mid - 1
+
+        return -1

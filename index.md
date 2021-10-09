@@ -128,7 +128,7 @@ while start <= end:
     - binary search + greedy: get the possible range of answer, binary search between range and see if current number can satisfy condition using greedy algorithm
         - eg: 410|774; 778-Swim in Rising Water(graph)|875|1011|1231|1283|1300|1482|1552|1648|1802(complex)|1870;1723-Find Minimum Time to Finish All Jobs(hard, with backtracking); 279-Perfect Squares
     - multiplication/division: 29-Divide Two Integers
-    - merge sorted: 4-Median of Two Sorted Arrays
+    - arrays: 33-Search in Rotated Sorted Array; 4-Median of Two Sorted Arrays
 
 ## Bitwise Operation
 - AND
