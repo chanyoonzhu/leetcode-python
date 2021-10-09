@@ -5,8 +5,8 @@ all, any: 833
 array: 54,56,68,73,122,151,157,186,238,268,349,350,380,381,849,1146,1371,1381,1526,1567,1706
 backtracking: 17,46,47,78,90,301,491,698,996,1088,1593,1239,1307,1681,1718,1723,1774
 bfs: 79,103,116,126,127,133,200,207,210,212,269,279,297,301,399,407,444,505,529,542,743,752,785,787,803,863,919,934,959,971,987,1110,1236,1254,1293,1306,1345,1654,1778
-binary search:4,33,57,222,240,259,268,275,279,295,300,374,410,715,774,875,911,1011,1055,1146,1231,1272,1283,1428,1482,1552,1608,1648,1723,1802,1870
-bitwise operation: 136,137,191,231,268,318,338,342,371,461,473,476,491,693,698,1284,1371,1442,1542,1593,1681
+binary search:4,29,33,57,222,240,259,268,275,279,295,300,374,410,715,774,875,911,1011,1055,1146,1231,1272,1283,1428,1482,1552,1608,1648,1723,1802,1870
+bitwise operation: 29,136,137,191,231,268,318,338,342,371,461,473,476,491,693,698,1284,1371,1442,1542,1593,1681
 binary search tree: 99,230,333,449,450,490,729,1008
 bucket:299
 circular array: 213,1658
@@ -127,7 +127,8 @@ while start <= end:
 - classic problems:
     - binary search + greedy: get the possible range of answer, binary search between range and see if current number can satisfy condition using greedy algorithm
         - eg: 410|774; 778-Swim in Rising Water(graph)|875|1011|1231|1283|1300|1482|1552|1648|1802(complex)|1870;1723-Find Minimum Time to Finish All Jobs(hard, with backtracking); 279-Perfect Squares
-    - 2+ sequences: 4-Median of Two Sorted Arrays
+    - multiplication/division: 29-Divide Two Integers
+    - merge sorted: 4-Median of Two Sorted Arrays
 
 ## Bitwise Operation
 - AND
@@ -146,6 +147,8 @@ while start <= end:
         - Addition: 371-Sum of Two Integers
         - Bit difference/similarity: 461-Hamming Distance; 693-Binary Number with Alternating Bits
         - flip the bit: 476-Number Complement
+- Bit shift
+    - multiplication: 29-Divide Two Integers
 
 
 ## Bit-masking
