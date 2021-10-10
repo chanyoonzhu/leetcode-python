@@ -296,7 +296,7 @@ space can be optimized to O(1) if only need to track constant time of variables 
         - key words: longeest common subsequences, shortest common superseequence, edit distance, ...
         - tip: dp[i][j] result at s1[:i1+1] and s2[:i2+1]
         - eg.
-            - 97-Interleaving String; 1143-Longest Common Subsequence; 1092-Shortest Common Supersequence
+            - 97-Interleaving String; 115-Distinct Subsequences; 1143-Longest Common Subsequence; 1092-Shortest Common Supersequence
             - edit distance: 72-Edit Distance; 583,712,1312,1548-The Most Similar Path in a Graph
     - knapsack: 
         - keyword: combine numbers in array to reach a target
