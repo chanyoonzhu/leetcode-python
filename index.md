@@ -286,12 +286,17 @@ backtracking with memoization; steps: build dp memory, define what dp[i] represe
 space can be optimized to O(1) if only need to track constant time of variables for each update
 - Top down (depth-first-search): recursion using memoization
 - Bottom up: loop using memoization (calculate those won't change first, eg.1143, 1340) - look at the transformation formula from the top-down solution to figure out what needs to be calculated first in the loop. Can use the subproblem size as the outer loop if dp(i, j) need dp(i + 1, j - 1) (eg.312，375, 486, 877, 1312)
-- types:
+- problems:
     - dp[i] depends on dp[i-1]: 
         - eg.70-Climbing Stairs; 198-House Robber|213. House Robber II||740-Delete and Earn; 256-Paint House|265-Paint House II; 276-Paint Fence(a hard medium); 413-Arithmetic Slices; 91-Decode Ways;139-Word Break; 837-New 21 Game; 940-Distinct Subsequences II
     - dp[i] depends on dp[j] where j in [1...i]:
         - eg. 64-Minimum Path Sum; 542-01 Matrix; 221-Maximal Square | 1277-Count Square Submatrices with All Ones; 931-Minimum Falling Path Sum | 1937-Maximum Number of Points with Cost; (revisit above examples!) 940. Distinct Subsequences II; 1105-Filling Bookcase Shelves
     - 3D: 879-Profitable Schemes
+    - two sequences:
+        - key words: longeest common subsequences, shortest common superseequence, edit distance, ...
+        - eg.
+            - 1143-Longest Common Subsequence
+            - edit distance: 72,583,712,1312,1548-The Most Similar Path in a Graph
     - knapsack: 
         - keyword: combine numbers in array to reach a target
         - memo: dp[_sum][i]
