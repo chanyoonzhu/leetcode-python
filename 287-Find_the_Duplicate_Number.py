@@ -1,25 +1,38 @@
-class Solution(object):
-    def findDuplicate(self, nums):
-        """
-        :type nums: List[int]
-        :rtype: int
-        """
-        """
-        - caveat: a number may be duplicated more than once
-        """
+"""
+- binary search
+- O(nlogn), O(1)
+"""
+class Solution:
+    def findDuplicate(self, nums: List[int]) -> int:
         
-        def helper(nums, l, r):
-            if l > r:
-                return r
-            mid = (l + r) // 2
-            smaller = 0
-            for i in nums:
-                if i < mid:
-                    smaller += 1
-            if smaller <= mid - 1:
-                return helper(nums, mid+1, r)
+        lo, hi = 0, len(nums) - 1
+        
+        def get_smaller_count(x):
+            count = 0
+            for n in nums:
+                if n <= x:
+                    count += 1
+            return count
+        
+        
+        while lo < hi:
+            mid = lo + (hi - lo) // 2
+            if get_smaller_count(mid) <= mid:
+                lo = mid + 1
             else:
-                return helper(nums, l, mid-1)
+                hi = mid
+        return lo
+
+"""
+- bitmask
+- O(nlog(n))
+"""
+class Solution:
+    def findDuplicate(self, nums: List[int]) -> int:
         
-        return helper(nums, 1, len(nums)-1)
+        bits = 0
+        for n in nums:
+            if bits >> n & 1:
+                return n
+            bits |= 1 << n 
         
