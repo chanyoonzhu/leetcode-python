@@ -29,21 +29,21 @@ class Solution(object):
         :type word1: str
         :type word2: str
         :rtype: int
-        """
+        """ 
         n1, n2 = len(word1), len(word2)
-        _max_edits = n1 + n2
-        dp = [[_max_edits] * (n2 + 1) for _ in range(n1 + 1)]
-        for i1 in range(n1 + 1):
-            dp[i1][0] = i1
-        for i2 in range(n2 + 1):
-            dp[0][i2] = i2
+        dp = [[float("inf")] * (n2 + 1) for _ in range(n1 + 1)]
         
-        for i2 in range(1, n2 + 1):
-            for i1 in range(1, n1 + 1):
-                if word1[i1 - 1] == word2[i2 - 1]: # match
-                    dp[i1][i2] = min(dp[i1][i2], dp[i1 - 1][i2 - 1])
-                else: # min of delete, replace, or insert
-                    dp[i1][i2] = min(dp[i1 - 1][i2], dp[i1 - 1][i2 - 1], dp[i1][i2 - 1]) + 1
+        for i in range(n1 + 1):
+            for j in range(n2 + 1):
+                if i == 0: # base case
+                    dp[i][j] = j
+                elif j == 0: # base case
+                    dp[i][j] = i
+                else:
+                    if word1[i - 1] == word2[j - 1]: # match
+                        dp[i][j] = dp[i - 1][j - 1]
+                    else: # min of delete, replace, or insert
+                        dp[i][j] = min(dp[i - 1][j], dp[i - 1][j - 1], dp[i][j - 1]) + 1
         return dp[n1][n2]
 
 """
