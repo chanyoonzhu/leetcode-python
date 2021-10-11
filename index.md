@@ -297,7 +297,7 @@ space can be optimized to O(1) if only need to track constant time of variables 
         - tip: dp[i][j] result at s1[:i1+1] and s2[:i2+1]
         - eg.
             - longeest common subsequences/shortest common superseequence: 97-Interleaving String; 115-Distinct Subsequences; 727. Minimum Window Subsequence; 1143-Longest Common Subsequence; 1092-Shortest Common Supersequence
-            - edit distance: 72-Edit Distance; 583-Delete Operation for Two Strings|712. Minimum ASCII Delete Sum for Two Strings; 1216-Valid Palindrome III; 1312,1548-The Most Similar Path in a Graph
+            - edit distance: 72-Edit Distance; 583-Delete Operation for Two Strings|712. Minimum ASCII Delete Sum for Two Strings; 1216-Valid Palindrome III|1312. Minimum Insertion Steps to Make a String Palindrome; 1548-The Most Similar Path in a Graph
         - advanced: ask to track path
             - tip: can store min/max in dp first, then trace the path
             - eg: 727-Minimum Window Subsequence; 1092-Shortest Common Supersequence
