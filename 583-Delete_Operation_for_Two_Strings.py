@@ -6,14 +6,17 @@ class Solution:
     def minDistance(self, word1: str, word2: str) -> int:
         
         @lru_cache(None)
-        def dp(i1, i2, n1, n2):
-            if i1 == n1: return n2 - i2
-            if i2 == n2: return n1 - i1
-            if word1[i1] == word2[i2]:
-                return dp(i1 + 1, i2 + 1, n1, n2)
-            return min(dp(i1 + 1, i2, n1, n2), dp(i1, i2 + 1, n1, n2)) + 1
+        def dp(i, j):
+            if i == -1 and j == -1: return 0
+            if i == -1: return j + 1
+            if j == -1: return i + 1
+            
+            if word1[i] == word2[j]:
+                return dp(i - 1, j - 1)
+            else:
+                return min(dp(i - 1, j), dp(i, j - 1)) + 1
         
-        return dp(0, 0, len(word1), len(word2))
+        return dp(len(word1) - 1, len(word2) - 1)
 
 """
 - dp (bottom-up), dp[i1][i2] - the deletes needed for matching word1[:i1 + 1] to word2[:i2 + 1]
@@ -22,20 +25,20 @@ class Solution:
 class Solution:
     def minDistance(self, word1: str, word2: str) -> int:
 
-        n1, n2 = len(word1), len(word2)
-        dp = [[0] * (n2 + 1) for _ in range(n1 + 1)]
-        for i in range(1, n2 + 1):
-            dp[0][i] = i
-        for i in range(1, n1 + 1):
-            dp[i][0] = i
-            
-        for i1 in range(1, n1 + 1):
-            for i2 in range(1, n2 + 1):
-                if word1[i1 - 1] == word2[i2 - 1]:
-                    dp[i1][i2] = dp[i1 - 1][i2 - 1]
-                else:
-                    dp[i1][i2] = min(dp[i1 - 1][i2], dp[i1][i2 - 1]) + 1
+        N1, N2 = len(word1), len(word2)
+        dp = [[float("inf")] * (N2 + 1) for _ in range(N1 + 1)]
         
+        for i in range(N1 + 1):
+            for j in range(N2 + 1):
+                if i == 0:
+                    dp[i][j] = j
+                elif j == 0:
+                    dp[i][j] = i
+                else:
+                    if word1[i-1] == word2[j-1]:
+                        dp[i][j] = dp[i-1][j-1]
+                    else:
+                        dp[i][j] = min(dp[i][j-1], dp[i-1][j]) + 1
         return dp[-1][-1]
 
 """
