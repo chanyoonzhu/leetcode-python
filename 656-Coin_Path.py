@@ -50,5 +50,37 @@ class Solution:
         return result
 
 """
-- todo: dynamic programming
+- monotonic decreasing queue
+- O(n), O(n)
 """
+class Solution:
+    def cheapestJump(self, coins: List[int], maxJump: int) -> List[int]:
+        
+        if coins[-1] == -1: return []
+        N = len(coins)
+        dp = [None] * N
+        dp[-1] = (coins[-1], N) # cost at i, to
+        window = collections.deque() # monotonically decreasing queue
+        window.append((coins[-1], N - 1)) # total cost, next i
+        
+        i = len(coins) - 2
+        while i >= 0:
+            if not window: break
+            if coins[i] != -1:
+                cost = coins[i] + window[-1][0] # window[-1][0] is the min cost i can reach within maxJump
+                to = window[-1][1]
+                dp[i] = (cost, to)
+                while window and window[0][0] >= cost: # key: = is necessary to replace with smaller i to guarantee lexicographically order
+                    window.popleft()
+                window.appendleft((cost, i))
+            if i + maxJump == window[-1][1]: # out of maxJump boundary, pop out
+                window.pop()
+            i -= 1
+        if not dp[0]:
+            return []
+        i = 0
+        result = []
+        while i != len(coins):
+            result.append(i + 1)
+            i = dp[i][1]
+        return result
