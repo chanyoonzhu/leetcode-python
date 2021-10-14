@@ -124,9 +124,9 @@ while start <= end:
         mid = (start + end) // 2
         ```
 - Examples: 57,911,1146(bisect), 278,374-Guess Number Higher or Lower(basic), 981(strictly increasing, find lower), 315
-- classic problems:
+- problems:
     - binary search the answer: get the possible range of answer, binary search between range and see if current number can satisfy condition using greedy algorithm
-        - eg: 287-Find the Duplicate Number; 410|774; 778-Swim in Rising Water(graph)|875|1011|1231|1283|1300|1482|1552|1648|1802(complex)|1870;1723-Find Minimum Time to Finish All Jobs(hard, with backtracking); 279-Perfect Squares
+        - eg: 287-Find the Duplicate Number; 410-Split Array Largest Sum|774; 778-Swim in Rising Water(graph)|875|1011|1231|1283|1300|1482|1552|1648|1802(complex)|1870;1723-Find Minimum Time to Finish All Jobs(hard, with backtracking); 279-Perfect Squares
     - multiplication/division: 29-Divide Two Integers
     - arrays: 
         - find target:
@@ -292,8 +292,9 @@ space can be optimized to O(1) if only need to track constant time of variables 
     - dp[i] depends on dp[j] where j in [1...i]:
         - eg. 64-Minimum Path Sum; 542-01 Matrix; 221-Maximal Square | 1277-Count Square Submatrices with All Ones; 931-Minimum Falling Path Sum | 1937-Maximum Number of Points with Cost; (revisit above examples!) 940. Distinct Subsequences II; 1105-Filling Bookcase Shelves
     - intervals: sequence needs to be divided into k distinct intervals
+        - key words: split array
         - dp[i][k] depends on dp[j][k-1] where j = [1...i]
-        - eg: 813-Largest Sum of Averages; 1278-Palindrome Partitioning III
+        - eg: 410-Split Array Largest Sum; 813-Largest Sum of Averages; 1278-Palindrome Partitioning III
     - two sequences:
         - key words: longeest common subsequences, shortest common superseequence, edit distance, ...
         - tip: dp[i][j] result at s1[:i1+1] and s2[:i2+1]

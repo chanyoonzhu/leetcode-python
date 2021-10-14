@@ -1,9 +1,9 @@
-class Solution:
     """
     - dynamic programming (top-down)
     - O(n^2*m), O(n^2*m)
     - time limit exceeded
     """
+class Solution:
     def splitArray(self, nums: List[int], m: int) -> int:       
         @lru_cache(None)
         def dfs(l, r, count):
@@ -16,56 +16,55 @@ class Solution:
             
         return dfs(0, len(nums) - 1, m)
     
-    """
-    - dynamic programming (bottom-up)
-    - O(n^2*m), O(n*m)
-    - time limit exceeded
-    """
+"""
+- dynamic programming (bottom-up)
+- O(n^2*m), O(n*m)
+- TLE
+"""
+class Solution:
     def splitArray(self, nums: List[int], m: int) -> int:       
         
-        n = len(nums)
-        sub = [0] * (n + 1)
-        for i in range(n):
-            sub[i + 1] = sub[i] + nums[i]
+        N = len(nums)
         
-        dp = [[float("inf")] * (m + 1) for _ in range(n + 1)]
-        dp[0][0] = 0        
-        for i in range(1, n + 1):
-            for j in range(1, m + 1):
-                for k in range(i):
-                    dp[i][j] = min(dp[i][j], max(dp[k][j - 1], sub[i] - sub[k]))
+        prefixes = [0] * (N + 1)
+        for i in range(N):
+            prefixes[i+1] = prefixes[i] + nums[i]
         
-        return dp[n][m]
+        dp = [[float("inf")] * (N + 1) for _ in range(m)]
+        dp[0] = prefixes
+        
+        for mi in range(1, m):
+            for ni in range(1, N + 1):
+                for nj in range(1, ni + 1):
+                    dp[mi][ni] = min(dp[mi][ni], max(dp[mi-1][nj-1], prefixes[ni] - prefixes[nj-1]))
+        
+        return dp[m-1][N]
     
-    """
-    - binary search + greedy
-    - O(nlogk) - k is the sum of array, O(1)
-    """
+"""
+- binary search + greedy
+- O(nlogk) - k is the sum of array, O(1)
+"""
+class Solution:
     def splitArray(self, nums: List[int], m: int) -> int:       
         
-        _sum = sum(nums)
+        lo, hi = 0, sum(nums)
         
-        def binary_search(l, r):
-            if l == r:
-                return l
-            mid = l + (r - l) // 2
-            if canSplit(mid):
-                return binary_search(l, mid)
-            else:
-                return binary_search(mid + 1, r)          
-        
-        def canSplit(subsum):
-            curr_subsum = 0
-            splitted = 0
-            for num in nums:
-                if num > subsum:
-                    return False
-                curr_subsum += num
-                if curr_subsum > subsum:
-                    splitted += 1
-                    curr_subsum = num
-                    if splitted == m:
-                        return False
+        def canSplit(s):
+            cur_sum, groups = 0, 1
+            for n in nums:
+                if n > s: return False # easy to miss
+                if cur_sum + n <= s:
+                    cur_sum += n
+                else:
+                    cur_sum = n
+                    groups += 1
+                    if groups > m: return False
             return True
         
-        return binary_search(0, _sum)
+        while lo < hi:
+            mid = lo + (hi - lo) // 2
+            if canSplit(mid):
+                hi = mid
+            else:
+                lo = mid + 1
+        return lo
