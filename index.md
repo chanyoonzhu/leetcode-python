@@ -12,7 +12,7 @@ bucket:299
 circular array: 213,1658
 divide and conquer: 53,215,241,307,308,312,327,395,973,1000,1039,1547
 dfs: 17,79,91,99,105,106,113,124,129,133,200,207,210,212,230,236,241,261,297,298,301,329,331,333,337,394,399,449,490,529,543,549,652,666,687,690,694,695,743,753,778,785,787,803,863,889,934,947,951,959,975,987,1028,1110,1236,1306,1340,1462,1569,1644,1676,1740,1766,1778
-dynamic programming: 5,10,32,39,45,53,55,64,70,72,91,97,115,139,188,198,213,221,256,265,276,279,300,312,322,375,403,410,413,416,435,464,473,474,486,494,518,542,552,562,583,634,712,727,740,746,805,813,837,877,879,931,940,956,1000,1035,1039,1048,1092,1105,1140,1143,1155,1216,1269,1277,1278,1312,1314,1335,1406,1458,1510,1547,1548,1696,1746,1774,1824,1937,1981
+dynamic programming: 5,10,32,39,45,53,55,64,70,72,91,97,115,139,188,198,213,221,256,265,276,279,300,312,322,375,403,410,413,416,435,464,473,474,486,494,518,542,552,562,583,634,712,727,740,746,805,813,837,877,879,920,931,940,956,1000,1035,1039,1048,1092,1105,1140,1143,1155,1216,1269,1277,1278,1312,1314,1335,1406,1458,1510,1547,1548,1696,1746,1774,1824,1937,1981
 graph: 785,863
 greedy: 45,53,55,135,410,435,455,621,630,678,774,785,843,853,875,877,1011,1231,1353,1383,1402,1419,1428,1482,1520,1537,1552,1567,1648,1665,1718,1746,1775,1802,1824,1851,1870
 hashmap: 1,15,76,106,138,146,149,159,169,229,246,299,327,336,340,359,380,381,392,398,403,432,437,465,496,560,666,792,895,930,974,1000,1055,1371,1442,1525,1542,1577,1590,1644
@@ -328,13 +328,15 @@ space can be optimized to O(1) if only need to track constant time of variables 
     - number of ways:
         - tip: can use dp[i] to store number of ways when ending at element i, then the result is sum(dp) (eg.940)
         - eg: 115-Distinct Subsequences; 1155-Number of Dice Rolls With Target Sum; 279-Perfect Squares; 1269-Number of Ways to Stay in the Same Place After Some Steps; 276-Paint Fence(a hard medium); 552-Student Attendance Record II(hard); 940-Distinct Subsequences II (hard)
+        - combination/permutation: 
+            - tip: 分类讨论
+            - 634-Find the Derangement of An Array(hard); 920-Number of Music Playlists(hard)
     - subarray max/min: 
         - can also use greedy
         - eg: 53-Maximum Subarray; 1746-Maximum Subarray Sum After One Operation
     - subsequence:
         - eg: 300-Longest Increasing Subsequence
     - others:
-        - math: 634-Find the Derangement of An Array(hard)
         - eg: 188-Best Time to Buy and Sell Stock IV      
 
 ## Graph
