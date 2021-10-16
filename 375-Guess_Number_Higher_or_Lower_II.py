@@ -18,12 +18,14 @@ class Solution:
 """
 class Solution:
     def getMoneyAmount(self, n: int) -> int:
-        dp = [[0] * n for _ in range(n)]
-        
-        for diff in range(1, n + 1):
-            for l in range(n - diff):
-                h = l + diff
-                dp[l][h] = float("inf")
-                for x in range(l, h + 1):
-                    dp[l][h] = min(dp[l][h], x + 1 + max(dp[l][max(l, x - 1)], dp[min(h, x + 1)][h])) # easy to miss: x - 1, x + 1 can fall out of dp's index range
-        return dp[0][n - 1]
+        dp = [[float("inf")] * n for _ in range(n)]
+    
+        for diff in range(n):
+            for left in range(n - diff):
+                if diff == 0: 
+                    dp[left][left] = 0
+                else:
+                    right = left + diff
+                    for k in range(left, right + 1):
+                        dp[left][right] = min(dp[left][right], (k + 1) + max(dp[left][k-1] if k > 0 else 0, dp[k+1][right] if k < n-1 else 0))
+        return dp[0][n-1]
