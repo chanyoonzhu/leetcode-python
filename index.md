@@ -293,7 +293,7 @@ space can be optimized to O(1) if only need to track constant time of variables 
         - eg. 64-Minimum Path Sum; 542-01 Matrix; 221-Maximal Square | 1277-Count Square Submatrices with All Ones; 931-Minimum Falling Path Sum | 1937-Maximum Number of Points with Cost; (revisit above examples!) 940. Distinct Subsequences II; 1105-Filling Bookcase Shelves
     - dp[i][j] depends on dp[i+1][j-1]:
         - tip: use subproblem size (diff between i and j) as the outer loop
-        - eg: 312-Burst Balloons(hard)，375-Guess Number Higher or Lower II; 486, 516-Longest Palindromic Subsequence, 877, 1312
+        - eg: 312-Burst Balloons(hard)，375-Guess Number Higher or Lower II; 486, 516-Longest Palindromic Subsequence, 877, 1246-Palindrome Removal(hard); 1312
     - intervals: sequence needs to be divided into k distinct intervals
         - key words: split array
         - dp[i][k] depends on dp[j][k-1] where j = [1...i]
@@ -302,7 +302,7 @@ space can be optimized to O(1) if only need to track constant time of variables 
         - key words: longeest common subsequences, shortest common superseequence, edit distance, ...
         - tip: dp[i][j] result at s1[:i1+1] and s2[:i2+1]
         - eg.
-            - longeest common subsequences/shortest common superseequence: 97-Interleaving String; 115-Distinct Subsequences; 727. Minimum Window Subsequence; 1143-Longest Common Subsequence; 1092-Shortest Common Supersequence
+            - longest common subsequences/shortest common superseequence: 97-Interleaving String; 115-Distinct Subsequences; 727. Minimum Window Subsequence; 1143-Longest Common Subsequence; 1092-Shortest Common Supersequence
             - edit distance: 72-Edit Distance; 583-Delete Operation for Two Strings|712. Minimum ASCII Delete Sum for Two Strings; 1216-Valid Palindrome III|1312. Minimum Insertion Steps to Make a String Palindrome; 1548-The Most Similar Path in a Graph
             - palindrome: 516-Longest Palindromic Subsequence, 1216-Valid Palindrome III|1312. Minimum Insertion Steps to Make a String Palindrome
         - advanced: ask to track path
