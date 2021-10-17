@@ -21,40 +21,42 @@ class Solution:
         return dp(len(profitGroupPairs) - 1, 0, 0)
 
 """
-- knapsack (2D)
+- knapsack (2 bags)
+- dp[i][j]: with i members and j profit, what is total schemes can be chosen.
 - TLE
 """
 class Solution:
     def profitableSchemes(self, n: int, minProfit: int, group: List[int], profit: List[int]) -> int:
-    
-        sum_p = sum(profit)
-        sum_n = sum(group)
-        prev_dp = [[0] * (sum_n + 1) for _ in range(sum_p + 1)]
-        prev_dp[0][0] = 1
-        for g, p in zip(group, profit):
-            dp = [[0] * (sum_n + 1) for _ in range(sum_p + 1)]
-            for i in range(sum_p + 1 - p):
-                for j in range(sum_n + 1 - g):
-                    if prev_dp[i][j]:
-                        dp[i][j] += prev_dp[i][j] # not use current scheme
-                        dp[i + p][j + g] += prev_dp[i][j] # use current scheme
-            prev_dp = dp
+
+        profit_max = sum(profit)
+        profitGroupPairs = list(zip(profit, group))
+        N = len(profitGroupPairs)
+        MOD = 10**9 + 7
         
-        return sum([prev_dp[i][j] for i in range(len(prev_dp)) for j in range(len(prev_dp[i])) if i >= minProfit and j <= n]) % (10**9 + 7)
+        dp = [[0] * (n + 1) for _ in range(profit_max + 1)]
+        dp[0][0] = 1
+        for cur_p, cur_g in profitGroupPairs:
+            for p in range(profit_max - cur_p, -1, -1):
+                for g in range(n - cur_g, -1, -1):
+                    dp[p + cur_p][g + cur_g] = (dp[p + cur_p][g + cur_g] + dp[p][g]) % MOD
+        return sum([sum(dp[p]) for p in range(profit_max + 1) if p >= minProfit]) % MOD
 
 """
-- knapsack (2D)
+- knapsack (2 bags)
 - dp[i][j] means with i members and at least j profit, what is total schemes can be chosen.
 - TLE
 """
 class Solution:
     def profitableSchemes(self, n: int, minProfit: int, group: List[int], profit: List[int]) -> int:
     
+        profitGroupPairs = list(zip(profit, group))
+        N = len(profitGroupPairs)
+        MOD = 10**9 + 7
+        
         dp = [[0] * (n + 1) for _ in range(minProfit + 1)]
         dp[0][0] = 1
-        for g, p in zip(group, profit):
-            for i in range(minProfit, -1, -1): # caveat: decrease to avoid over counting? 
-                for j in range(n - g, -1, -1): # easy to miss: bound to n - g
-                    dp[min(i + p, minProfit)][j + g] = (dp[min(i + p, minProfit)][j + g] + dp[i][j]) % (10**9 + 7) # smart use of min here!
-        
-        return sum(dp[minProfit]) % (10**9 + 7)
+        for cur_p, cur_g in profitGroupPairs:
+            for p in range(minProfit, -1, -1):
+                for g in range(n - cur_g, -1, -1):
+                    dp[min(minProfit, p + cur_p)][g + cur_g] = (dp[min(minProfit, p + cur_p)][g + cur_g] + dp[p][g]) % MOD # key: min
+        return sum(dp[minProfit]) % MOD
