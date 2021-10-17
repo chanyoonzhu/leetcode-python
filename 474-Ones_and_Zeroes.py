@@ -5,35 +5,33 @@
 class Solution:
     def findMaxForm(self, strs: List[str], m: int, n: int) -> int:
         
-        str_len = len(strs)
+        N = len(strs)
         counts = [[s.count("0"), s.count("1")] for s in strs]
-              
+        
         @lru_cache(None)
         def dp(i, m, n):
             if m < 0 or n < 0: return float("-inf")
-            if i == len(strs):
-                return 0
-            else:
-                m_cost, n_cost = counts[i]
-                return max(dp(i + 1, m - m_cost, n - n_cost) + 1, dp(i + 1, m, n))
-                
-        return dp(0, m, n)
+            if i == -1: return 0
+            count0, count1 = counts[i]
+            return max(dp(i - 1, m, n), dp(i - 1, m - count0, n - count1) + 1)
+        
+        return dp(N - 1, m, n)
 
 """
-- dynamic programming (bottom-up with space optimized): knapsack
+- dynamic programming (bottom-up with space optimized): knapsack (0/1)
 - O(l*m*n), O(l*m*n)
 """
 class Solution:
     def findMaxForm(self, strs: List[str], m: int, n: int) -> int:
         
-        dp = [[0] * (n + 1) for _ in range(m + 1)] # only need previous strs to calculate the dp for current str
+        N = len(strs)
+        counts = [[s.count("0"), s.count("1")] for s in strs]
         
-        for s in strs:
-            count = Counter(s)
-            zeros, ones = count['0'], count['1']
-
-            for i in range(m, zeros - 1, -1): # need to iterate from right to left because state function needs value with smaller indexes
-                for j in range(n, ones - 1, -1): # need to iterate from right to left
-                    dp[i][j] = max(1 + dp[i - zeros][j - ones], dp[i][j])
-
+        dp = [[0] * (n + 1) for _ in range(m + 1)]
+        
+        for i in range(N):
+            count0, count1 = counts[i]
+            for mi in range(m, count0 - 1, -1):
+                for ni in range(n, count1 - 1, -1):
+                    dp[mi][ni] = max(dp[mi][ni], dp[mi - count0][ni - count1] + 1)
         return dp[m][n]

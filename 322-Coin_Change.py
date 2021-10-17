@@ -1,53 +1,29 @@
 """
-- dp (bottom-up)
+- dp (top-down) - knapsack (0/n)
 - O(S*n), O(S)
 """
 class Solution:
     def coinChange(self, coins: List[int], amount: int) -> int:
-        dp = [0] + [float("inf")] * amount
         
-        for c in coins:
-            for i in range(amount + 1 - c):
-                dp[i + c] = min(dp[i] + 1, dp[i + c])
-        return dp[-1] if dp[-1] < float("inf") else -1
+        @lru_cache(None)
+        def dp(total):
+            if total == 0: return 0
+            if total < 0: return float("inf") # easy to miss: need to match exact total
+            return min([1 + dp(total - n) for n in coins])
         
-"""
-- dp (top-down)
-- O(S*n), O(S)
-- time limit exceeded
-"""
-class Solution:
-    def coinChange(self, coins: List[int], amount: int) -> int:
-        dp = [0] + [float("inf")] * amount
-        
-        def dfs(dp, total):
-            if dp[total] != float("inf"):
-                return dp[total]
-            min_coin = min([dfs(dp, total - coin) + 1 for coin in coins if total - coin >= 0] + [dp[total]])
-            dp[total] = min_coin
-            return min_coin
-        
-        dfs(dp, amount)
-        
-        return dp[-1] if dp[-1] != float("inf") else -1
+        result = dp(amount)
+        return result if result < float("inf") else -1
 
 """
-- dp (top-down) - with cache
+- dp (bottom-up) - knapsack (0/n)
 - O(S*n), O(S)
 """
 class Solution:
-    def coinChange(self, coins, amount):
-        INF = float("inf")
-        @lru_cache(None)
-        def dp(n):
-            if n < 0:
-                return -1
-            if n == 0:
-                return 0
-            ans = INF
-            for m in coins:
-                if dp(n-m) >= 0:
-                    ans = min(ans, 1 + dp(n-m))
-            return ans
-        
-        return dp(amount) if dp(amount) < INF else -1
+    def coinChange(self, coins: List[int], amount: int) -> int:
+        dp = [0] + [float("inf")] * amount
+        for total in range(1, amount + 1):
+            for c in coins:
+                if total >= c: # easy to miss
+                    dp[total] = min(dp[total], dp[total-c] + 1)
+        result = dp[-1]
+        return result if result < float("inf") else -1
