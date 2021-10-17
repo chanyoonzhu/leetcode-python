@@ -317,8 +317,8 @@ space can be optimized to O(1) if only need to track constant time of variables 
                 - eg: 416-Partition Equal Subset Sum|956-Tallest Billboard(hard, need max);474-Ones and Zeroes(two bags)|879-Profitable Schemes;1981-Minimize the Difference Between Target and Chosen Elements;805-Split Array With Same Average;
             - 0/n knapsack: each element can be used 0 or infinite amount of times
                 - eg: 322-Coin Change; 1449-Form Largest Integer With Digits That Add up to Target
-            - pos/neg knapsack: 494-Target Sum;1049-Last Stone Weight II
-            - two bags: 474-Ones and Zeroes(two bags)|879-Profitable Schemes
+            - pos/neg knapsack: 494-Target Sum; 956-Tallest Billboard; 1049-Last Stone Weight II
+            - two bags: 474-Ones and Zeroes(two bags)|879-Profitable Schemes; 956-Tallest Billboard(can be resolved with one bag)
         - eg: 630-Course Schedule III; 1774-Closest Dessert Cost
     - length in matrix: 562
     - reachable problem: 45,55
