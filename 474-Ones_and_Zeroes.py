@@ -31,7 +31,7 @@ class Solution:
         
         for i in range(N):
             count0, count1 = counts[i]
-            for mi in range(m, count0 - 1, -1):
-                for ni in range(n, count1 - 1, -1):
-                    dp[mi][ni] = max(dp[mi][ni], dp[mi - count0][ni - count1] + 1)
+            for mi in range(m - count0, - 1, -1):
+                for ni in range(n - count1, - 1, -1):
+                    dp[mi+count0][ni+count1] = max(dp[mi+count0][ni+count1], dp[mi][ni] + 1)
         return dp[m][n]

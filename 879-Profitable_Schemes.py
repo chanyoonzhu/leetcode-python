@@ -1,4 +1,26 @@
 """
+- dynamic programming (top-down)
+- (len(group)*n*minProfit)
+- TLE
+"""
+class Solution:
+    def profitableSchemes(self, n: int, minProfit: int, group: List[int], profit: List[int]) -> int:
+        
+        profitGroupPairs = list(zip(profit, group))
+        
+        @lru_cache(None)
+        def dp(i, p, g):
+            if g > n:
+                return 0
+            if p < minProfit and i < 0: return 0 # or if minProfit - p > profit_sums[i+1]: return 0
+            if i < 0:
+                return 1
+            cur_p, cur_g = profitGroupPairs[i]
+            return dp(i - 1, p + cur_p, g + cur_g) + dp(i - 1, p, g) # either choose crime i or not
+        
+        return dp(len(profitGroupPairs) - 1, 0, 0)
+
+"""
 - knapsack (2D)
 - TLE
 """

@@ -314,7 +314,7 @@ space can be optimized to O(1) if only need to track constant time of variables 
         - tip: for 0/1 knapsack: decrease i to avoid over counting; for 0/n knapsack: increase i to allow counting more than 1 time
         - problems:
             - 0/1 knapsack: each element can be used 0 or 1 time
-                - eg: 416-Partition Equal Subset Sum|956-Tallest Billboard(hard, need max);474-Ones and Zeroes(two bags);1981-Minimize the Difference Between Target and Chosen Elements;805-Split Array With Same Average;879-Profitable Schemes(hard 3D);
+                - eg: 416-Partition Equal Subset Sum|956-Tallest Billboard(hard, need max);474-Ones and Zeroes(two bags)|879-Profitable Schemes;1981-Minimize the Difference Between Target and Chosen Elements;805-Split Array With Same Average;
             - 0/n knapsack: each element can be used 0 or infinite amount of times
                 - eg: 322-Coin Change; 1449-Form Largest Integer With Digits That Add up to Target
             - pos/neg knapsack: 494-Target Sum;1049-Last Stone Weight II
@@ -331,7 +331,7 @@ space can be optimized to O(1) if only need to track constant time of variables 
     - string/serialized list or set as memoization key: 464-Can I Win; 1048-Longest String Chain
     - number of ways:
         - tip: can use dp[i] to store number of ways when ending at element i, then the result is sum(dp) (eg.940)
-        - eg: 115-Distinct Subsequences; 1155-Number of Dice Rolls With Target Sum; 279-Perfect Squares; 1269-Number of Ways to Stay in the Same Place After Some Steps; 276-Paint Fence(a hard medium); 552-Student Attendance Record II(hard); 940-Distinct Subsequences II (hard)
+        - eg: 115-Distinct Subsequences; 1155-Number of Dice Rolls With Target Sum; 279-Perfect Squares; 1269-Number of Ways to Stay in the Same Place After Some Steps; 276-Paint Fence(a hard medium); 552-Student Attendance Record II(hard); 879-Profitable Schemes(hard); 940-Distinct Subsequences II (hard)
         - combination/permutation: 
             - tip: 分类讨论
             - 634-Find the Derangement of An Array(hard); 920-Number of Music Playlists(hard)
