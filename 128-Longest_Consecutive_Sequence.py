@@ -1,29 +1,20 @@
 """
 - set
+- intuition: only start to traverse sequence when n is the lowest number in sequence
 - O(n), O(n)
-- TLE
 """
 class Solution:
     def longestConsecutive(self, nums: List[int]) -> int:
-        nums_set = set()
-        minn, maxx = float("inf"), float("-inf")
-        
-        for n in nums:
-            nums_set.add(n)
-            minn = min(minn, n)
-            maxx = max(maxx, n)
-        
+        nums_set = set(nums)
         result = 0
-        curr = 0
-        i = minn
-        while i < maxx + 1:
-            while i < maxx + 1 and i in nums_set:
-                curr += 1
-                i += 1
-            result = max(result, curr)
-            curr = 0
-            i += 1
-        
+        for n in nums:
+            cur_seqlen = 1
+            next_n = n + 1
+            if n - 1 not in nums_set:
+                while next_n in nums_set:
+                    cur_seqlen += 1
+                    next_n += 1
+                result = max(result, cur_seqlen)
         return result
 
 """
