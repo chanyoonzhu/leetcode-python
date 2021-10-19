@@ -371,6 +371,8 @@ Iterate over the array and update at each step the standard set for such problem
     - problems:
         - strings:
             - eg: 49-Group Anagrams
+        - coordinates:
+            - eg: 149-Max Points on a Line
 
 ## Hashset
 - problems:
@@ -430,6 +432,9 @@ heapify time complexity: O(n), heap push/pop time complexity: O(logn)
     - radian
         - def: radians (0 degree - 0, 90 - 1.57, 180 - pi, 270 - -1.57, 360 - 0); radian of a line (defined by two points (a, b)) to positive x axis: math.atan2(b[1] - a[1], b[0] - a[0])
         - eg: 1610-Maximum Number of Visible Points
+- Algebra:
+    - line formula:
+        - eg: 149-Max Points on a Line
 
 ## Pre-computing:
 - problems:
