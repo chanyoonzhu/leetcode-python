@@ -23,7 +23,7 @@ merge sort: 315,1574
 misc:169,229(moore voting)
 preorder: 105,106,113,331,437,449,545,652,666,889,971,987,1008,1028,1569
 priority queue: 23,215,218,239,253,295,347,373,404,621,630,632,759,778,973,1229,1353,1383,1438,1439,1499,1675,1696,1834,1851,1882
-queue:232,239,656,1438,1499,1696
+queue:232,239,656,1425,1438,1499,1696
 range sum: 307,308,327,1314,930,1442
 recursive: 2,116,241,247,273,450,772,1106
 segment tree: 307,308,327,850
@@ -481,7 +481,7 @@ heapify time complexity: O(n), heap push/pop time complexity: O(logn)
             - after popleft() indexes out of range, q[0] is the next smallest/largest in eligible window
             - after pop() indexes i with nums[i] >(<) nums[curr_i], append curr_i to q as next candidate.
         - complexity: O(n), O(n) - each item queued and popped exactly once
-        - eg. 239-Sliding Window Maximum; 656. Coin Path(hard); 862-Shortest Subarray with Sum at Least K; 1438-Longest Continuous Subarray With Absolute Diff Less Than or Equal to Limit(two queues); 1499-Max Value of Equation; 1696-Jump Game VI
+        - eg. 239-Sliding Window Maximum; 656. Coin Path(hard); 862-Shortest Subarray with Sum at Least K; 1425-Constrained Subsequence Sum; 1438-Longest Continuous Subarray With Absolute Diff Less Than or Equal to Limit(two queues); 1499-Max Value of Equation; 1696-Jump Game VI
 
 ## Sorting
 - quick sort 
