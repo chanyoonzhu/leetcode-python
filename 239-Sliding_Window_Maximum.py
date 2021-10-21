@@ -38,18 +38,18 @@ class Solution:
 """
 class Solution:
     def maxSlidingWindow(self, nums: List[int], k: int) -> List[int]:
-        q = collections.deque()
+        
+        q = deque()
         result = []
-        for i, num in enumerate(nums):
-            
-            while q and num >= nums[q[-1]]:
+        
+        for i in range(len(nums)):
+            while q and nums[i] >= nums[q[-1]]:
                 q.pop()
             q.append(i)
-            
-            if i >= k - 1:
-                while q[0] < i - k + 1:
-                    q.popleft()
-                result.append(nums[q[0]])
+            if i < k - 1: continue
+            while q and q[0] <= i - k:
+                q.popleft()
+            result.append(nums[q[0]])
         return result
 
 s = Solution()

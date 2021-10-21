@@ -478,7 +478,7 @@ heapify time complexity: O(n), heap push/pop time complexity: O(logn)
     - monotonic queue: 
         - intuition: keep track of the max/min in window when window size is large; can be more effiecient than the solution using a priority queue which has a complexity of O(nlogk) where k is the window size (eg.1499).
         - algorithm: 
-            - after popleft() indexes out of range, q[0] is the next smallest/largest
+            - after popleft() indexes out of range, q[0] is the next smallest/largest in eligible window
             - after pop() indexes i with nums[i] >(<) nums[curr_i], append curr_i to q as next candidate.
         - complexity: O(n), O(n) - each item queued and popped exactly once
         - eg. 239-Sliding Window Maximum; 656. Coin Path(hard); 862-Shortest Subarray with Sum at Least K; 1438-Longest Continuous Subarray With Absolute Diff Less Than or Equal to Limit(two queues); 1499-Max Value of Equation; 1696-Jump Game VI
