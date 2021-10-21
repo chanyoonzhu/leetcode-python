@@ -371,7 +371,7 @@ Iterate over the array and update at each step the standard set for such problem
         - numbers:
             - eg. 166-Fraction to Recurring Decimal
         - strings:
-            - eg: 49-Group Anagrams
+            - eg: 49-Group Anagrams; 392-Is_Subsequence
         - coordinates:
             - eg: 149-Max Points on a Line
 
@@ -573,7 +573,7 @@ eg: 56, 57, 218, 252, 253, 435, 452, 986-Interval List Intersections, 1229-Meeti
 ## Two pointers:
 - problems:
     - palindrom: 680-Valid Palindrome II; 246-Strobogrammatic Number
-    - two arrays: 1537-Get the Maximum Score; 1868-Product of Two Run-Length Encoded Arrays
+    - two sequences: 392-Is_Subsequence; 1537-Get the Maximum Score; 1868-Product of Two Run-Length Encoded Arrays
     - sliding window (see "## sliding window")
 
 ## Tree - Recursion can usually be used. 
