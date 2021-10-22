@@ -30,7 +30,7 @@ segment tree: 307,308,327,850
 sliding window: 3,76,159,209,239,340,395,837,862,904,930,992,1004,1052,1234,1358,1371,1423,1498,1509,1537,1574,1577,1610,1658,1696,1793,1839
 sort: 56,99,164,179,252,280,315,524,581,593,L391,1300,1509,1608,1610
 stack: 20,32,42,71,84,155,224,227,232,331,394,402,456,496,503,581,636,678,735,739,772,856,901,907,946,962,975,1019,1028,1063,1106,1124,1130,1209,1249,1381,1541,1597,1673,1776,1856
-string: 151,157,165,418,722,833,929,1520
+string: 151,157,165,418,722,833,929,1087,1520
 topological sort: 207,210,269,329,444.1462
 tree: 116,222,235,236,298,333,337,426,450,543,549,652,687,729,919,1644,1650,1676,1740
 trie: 208,211,212,336
@@ -285,7 +285,7 @@ space can be optimized to O(1) if only need to track constant time of variables 
 - Bottom up: loop using memoization (calculate those won't change first, eg.1143, 1340) - look at the transformation formula from the top-down solution to figure out what needs to be calculated first in the loop. Can use the subproblem size as the outer loop if dp(i, j) need dp(i + 1, j - 1) (eg.312，375, 486, 877, 1312)
 - problems:
     - dp[i] depends on dp[i-1]: 
-        - eg.70-Climbing Stairs; 198-House Robber|213. House Robber II||740-Delete and Earn; 256-Paint House|265-Paint House II; 276-Paint Fence(a hard medium); 413-Arithmetic Slices; 91-Decode Ways;139-Word Break; 837-New 21 Game; 940-Distinct Subsequences II
+        - eg.70-Climbing Stairs; 198-House Robber|213. House Robber II||740-Delete and Earn; 256-Paint House|265-Paint House II; 276-Paint Fence(a hard medium); 413-Arithmetic Slices; 91-Decode Ways;139-Word Break; 837-New 21 Game;
     - dp[i] depends on dp[j] where j in [1...i]:
         - eg. 64-Minimum Path Sum; 542-01 Matrix; 221-Maximal Square | 1277-Count Square Submatrices with All Ones; 446-Arithmetic Slices II - Subsequence|1027-Longest Arithmetic Subsequence;931-Minimum Falling Path Sum | 1937-Maximum Number of Points with Cost; (revisit above examples!) 940. Distinct Subsequences II; 1105-Filling Bookcase Shelves
     - dp[i][j] depends on dp[i+1][j-1]:
@@ -516,7 +516,7 @@ heapify time complexity: O(n), heap push/pop time complexity: O(logn)
     - straight forward stack:
         - eg: 071-Simplify_Path; 636-Exclusive Time of Functions; 735-Asteroid Collision; 1209-Remove All Adjacent Duplicates in String II
     - parenthesis: 
-        - eg. 32, 394-Decode String; 678, 856, 1249, 1541; 772-Basic Calculator III
+        - eg. 32, 394-Decode String; 678, 856, 1087-Brace Expansion(no stack); 1249, 1541; 772-Basic Calculator III
         - can also use two passes: 32
     - calculator:
         - tip: can use either a stack or a recursive solution
