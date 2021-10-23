@@ -22,7 +22,7 @@ math:12,149,166,168,204,268,279,391,470,621,794,836,837,952,1041,1344,1569,1610,
 merge sort: 315,1574
 misc:169,229(moore voting)
 preorder: 105,106,113,331,437,449,545,652,666,889,971,987,1008,1028,1569
-priority queue: 23,215,218,239,253,295,347,373,404,621,630,632,759,778,973,1229,1353,1383,1438,1439,1499,1675,1696,1834,1851,1882
+priority queue: 23,215,218,239,253,295,347,373,404,621,630,632,642,759,778,973,1229,1353,1383,1438,1439,1499,1675,1696,1834,1851,1882
 queue:232,239,656,1425,1438,1499,1696
 range sum: 307,308,327,1314,930,1442
 recursive: 2,116,241,247,273,450,772,1106
@@ -33,7 +33,7 @@ stack: 20,32,42,71,84,155,224,227,232,331,394,402,456,496,503,581,636,678,735,73
 string: 151,157,165,418,722,833,929,1087,1520
 topological sort: 207,210,269,329,444.1462
 tree: 116,222,235,236,298,333,337,426,450,543,549,652,687,729,919,1644,1650,1676,1740
-trie: 208,211,212,336
+trie: 208,211,212,336,642
 two pointers: 15,42,76,86,121,159,167,209,246,253,259,392,524,581,680,904,986,1055,1229,1248,1537,1574,1577,1658,1775,1868
 union find: 128,305,323,778,947,952,1562,1627,1722,1970,1998
 zip: 833
@@ -459,7 +459,7 @@ heapify time complexity: O(n), heap push/pop time complexity: O(logn)
 - problems:
     - queue with conditions: 1882-Process Tasks Using Servers
     - sorting:
-        - eg: 23-Merge k Sorted Lists; 373-Find K Pairs with Smallest Sums|1439-Find the Kth Smallest Sum of a Matrix With Sorted Rows; 632-Smallest Range Covering Elements from K Lists; 778-Swim in Rising Water; 1675-Minimize Deviation in Array
+        - eg: 23-Merge k Sorted Lists; 373-Find K Pairs with Smallest Sums|1439-Find the Kth Smallest Sum of a Matrix With Sorted Rows; 632-Smallest Range Covering Elements from K Lists; 642-Design Search Autocomplete System; 778-Swim in Rising Water; 1675-Minimize Deviation in Array
     - greedy:
         - eg: 1353-Maximum Number of Events That Can Be Attended; 502-IPO, 630-Course Schedule III(greedy * 2)|1383-Maximum Performance of a Team; 1499-Max Value of Equation; 1851-Minimum Interval to Include Each Query; 
     - Dijkstra's Algorithm (see "## BFS")
@@ -602,7 +602,7 @@ class TrieNode:
         self.isWord = False # mark word end
         self.children = collections.defaultdict(TrieNode)
 ```
-- eg: 211-Design Add and Search Words Data Structure(basic)
+- eg: 211-Design Add and Search Words Data Structure(basic); 642-Design Search Autocomplete System
 
 ## Union Find
 - key word: connected group in a graph

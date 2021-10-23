@@ -1,81 +1,62 @@
-import heapq
-
-class TrieNode(object):
-    
+"""
+- Trie + heap
+"""
+class TrieNode:
     def __init__(self):
-    
-        self.occurrences = 0 
-        self.data = "" # stores input sentence as string
-        self.children = {}
+        self.next = dict()
+        self.word = None # stores word at end node to save compute time
+        self.rank = 0
 
-class AutocompleteSystem(object):
+class AutocompleteSystem:
 
-    def __init__(self, sentences, times):
-        """
-        :type sentences: List[str]
-        :type times: List[int]
-        """
-        
-        self.trie = TrieNode()
-        self.currSearch = self.trie # for search based on previous result
-        self.noMatch = False # for search based on previous result
-        self.matchedStr = "" # for add sentence based on previous result
-        self.outStr = "" # for add sentence based on previous result
-        
-        for i, sentence in enumerate(sentences):
-            occurrences = times[i]
-            self.addSentence(self.trie, sentence, occurrences)
-    
-    def addSentence(self, root, sentence, n):
-        
-        curr = root
-        for c in sentence:
-            if c not in curr.children:
-                curr.children[c] = TrieNode()
-            curr = curr.children[c]
-        curr.occurrences += n
-        curr.data = (self.matchedStr + sentence)
-
-        
-    def input(self, c):
-        """
-        :type c: str
-        :rtype: List[str]
-        """
-        heap, res = [], []
-        
+    def __init__(self, sentences: List[str], times: List[int]):
+        self.root = TrieNode()
+        self.keyword = ''
+        for s, t in zip(sentences, times):
+            self._add_sentence(s, t)
+            
+    def _add_sentence(self, sentence, rank):
+        node = self.root
+        for ch in sentence:
+            if ch not in node.next:
+                node.next[ch] = TrieNode()
+            node = node.next[ch]
+        node.word = sentence
+        node.rank -= rank # stores negative of rank to sort by descent order in heap
+            
+    def input(self, c: str) -> List[str]:
+        res = []
         if c != '#':
-            # search
-            if self.noMatch or c not in self.currSearch.children:
-                self.noMatch = True
-                self.outStr += c
-                return []
-            else:
-                self.matchedStr += c
-                self.currSearch = self.currSearch.children[c]
-                self.dfs(self.currSearch, heap)        
-                        
+            self.keyword += c
+            res = self._search(self.keyword)
         else:
-            # add sentence, clear input and currSearch
-            self.addSentence(self.currSearch, self.outStr, 1)
-            self.currSearch = self.trie
-            self.noMatch = False
-            self.outStr = ""
-            self.matchedStr = ""
-            return []
-        
-        for _ in range(min(len(heap), 3)):
-            res.append(heapq.heappop(heap)[1])
-        
-        return res
-            
-            
+            self._add_sentence(self.keyword, 1)
+            self.keyword = ''
+        return [word for _, word in heapq.nsmallest(3, res)]
     
-    def dfs(self, node, heap):
-        if node.data:
-            heapq.heappush(heap, (-node.occurrences, node.data))
-        for char, node in node.children.items(): # mistake: don't use else! search results can have tails that make them other results!
-            self.dfs(node, heap)
+    def _dfs_helper(self, node):
+        res = []
+        if node:
+            if node.word:
+                res.append((node.rank, node.word))
+            for nextNode in node.next.values():
+                res += self._dfs_helper(nextNode)
+        return res
+    
+    def _search(self, sentence):
+        node = self.root
+        for ch in sentence:
+            if ch not in node.next:
+                return []
+            node = node.next[ch]
+        return self._dfs_helper(node)
+            
+        
+
+
+# Your AutocompleteSystem object will be instantiated and called as such:
+# obj = AutocompleteSystem(sentences, times)
+# param_1 = obj.input(c)
         
 
 
