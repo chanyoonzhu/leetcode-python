@@ -1,4 +1,23 @@
 """
+- greedy
+- intuition: greedily put most common chars in the odd index, then fill up even index with the rest chars
+"""
+class Solution:
+    def reorganizeString(self, s: str) -> str:
+        N = len(s)
+        res, counter = [''] * N, Counter(s)
+        sorted_s = ''.join([c * count for c, count in counter.most_common()])
+        s_i = 0
+        for i in range(0, N, 2): # fill odd index
+            res[i] = sorted_s[s_i]
+            s_i += 1
+        for i in range(1, N, 2): # fill even index
+            res[i] = sorted_s[s_i]
+            if res[i] == res[i-1]: return "" # consecutive chars can't be the same
+            s_i += 1
+        return "".join(res)
+
+"""
 - hashmap + priority queue
 - intuition: greedily uses letter with most count (count maintained in a heap), push back to heap in the next round to avoid using the same char again
 - O(nlogn, O(n))
