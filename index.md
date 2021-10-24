@@ -366,7 +366,8 @@ Iterate over the array and update at each step the standard set for such problem
     - minimum state change: 1824-Minimum Sideway Jumps
     - game theory: 464-Can I Win; 486-Predict the Winner; 843-Guess the Word; 877-Stone Game | 1140-Stone Game II|1406-Stone Game III|1510-Stone Game IV
     - rearrange with k stride: 
-        - eg. 358-Rearrange String k Distance Apart(hard); 767-Reorganize-String
+        - tip: greedily fill chars with more counts first
+        - eg. 358-Rearrange String k Distance Apart(hard, classic); 767-Reorganize-String
 
 ## Hashmap
     - problems:
@@ -463,7 +464,7 @@ heapify time complexity: O(n), heap push/pop time complexity: O(logn)
     - sorting:
         - eg: 23-Merge k Sorted Lists; 373-Find K Pairs with Smallest Sums|1439-Find the Kth Smallest Sum of a Matrix With Sorted Rows; 632-Smallest Range Covering Elements from K Lists; 642-Design Search Autocomplete System; 778-Swim in Rising Water; 1675-Minimize Deviation in Array
     - greedy:
-        - eg: 1353-Maximum Number of Events That Can Be Attended; 502-IPO, 630-Course Schedule III(greedy * 2)|1383-Maximum Performance of a Team; 767-Reorganize String|358-Rearrange String k Distance Apart(hard); 1499-Max Value of Equation; 1851-Minimum Interval to Include Each Query; 
+        - eg: 1353-Maximum Number of Events That Can Be Attended; 502-IPO, 630-Course Schedule III(greedy * 2)|1383-Maximum Performance of a Team; 767-Reorganize String|358-Rearrange String k Distance Apart(hard); 1499-Max Value of Equation; 1851-Minimum Interval to Include Each Query;
     - Dijkstra's Algorithm (see "## BFS")
 
 ## Sliding window -
