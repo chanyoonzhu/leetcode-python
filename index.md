@@ -11,7 +11,7 @@ divide and conquer: 53,215,241,307,308,312,327,395,973,1000,1039,1547
 dfs: 17,79,91,99,105,106,113,124,129,133,200,207,210,212,230,236,241,261,297,298,301,329,331,333,337,394,399,449,490,529,543,549,652,666,687,690,694,695,743,753,778,785,787,803,863,889,934,947,951,959,975,987,1028,1110,1236,1306,1340,1462,1569,1644,1676,1740,1766,1778
 dynamic programming: 5,10,32,39,45,53,55,64,70,72,91,97,115,139,188,198,213,221,256,265,276,279,300,312,322,375,403,410,413,416,435,446,464,473,474,486,494,516,518,542,552,562,583,634,712,727,740,746,805,813,837,877,879,887,920,931,940,956,1000,1027,1035,1039,1048,1092,1105,1140,1143,1155,1216,1269,1277,1278,1312,1314,1335,1406,1458,1510,1547,1548,1696,1746,1774,1824,1937,1981
 graph: 785,863
-greedy: 45,53,55,135,410,435,455,621,630,678,767,774,785,843,853,875,877,1011,1231,1353,1383,1402,1419,1428,1482,1520,1537,1552,1567,1648,1665,1718,1746,1775,1802,1824,1851,1870
+greedy: 45,53,55,135,358,410,435,455,621,630,678,767,774,785,843,853,875,877,1011,1231,1353,1383,1402,1419,1428,1482,1520,1537,1552,1567,1648,1665,1718,1746,1775,1802,1824,1851,1870
 hashmap: 1,15,49,76,106,138,146,149,159,166,169,170,229,246,299,327,336,340,359,380,381,392,398,403,432,437,465,496,560,666,792,895,930,974,1000,1055,1371,1442,1525,1542,1577,1590,1644
 hashset: 1,128,381,432,694,1239,1452,1774
 ino166-Fraction_to_Recurring_Decimalrder: 99,105,230,333,426
@@ -22,7 +22,7 @@ math:12,149,166,168,204,268,279,391,470,621,794,836,837,952,1041,1344,1569,1610,
 merge sort: 315,1574
 misc:169,229(moore voting)
 preorder: 105,106,113,331,437,449,545,652,666,889,971,987,1008,1028,1569
-priority queue: 23,215,218,239,253,295,347,373,404,621,630,632,642,759,767,778,973,1229,1353,1383,1438,1439,1499,1675,1696,1834,1851,1882
+priority queue: 23,215,218,239,253,295,347,358,373,404,621,630,632,642,759,767,778,973,1229,1353,1383,1438,1439,1499,1675,1696,1834,1851,1882
 queue:232,239,656,1425,1438,1499,1696
 range sum: 307,308,327,1314,930,1442
 recursive: 2,116,241,247,273,450,772,1106
@@ -365,8 +365,8 @@ Iterate over the array and update at each step the standard set for such problem
     - maximum subarray: 53-Maximum Subarray; 1746. Maximum Subarray Sum After One Operation
     - minimum state change: 1824-Minimum Sideway Jumps
     - game theory: 464-Can I Win; 486-Predict the Winner; 843-Guess the Word; 877-Stone Game | 1140-Stone Game II|1406-Stone Game III|1510-Stone Game IV
-    - rearrange without repetition: 
-        - eg. 767-Reorganize-String
+    - rearrange with k stride: 
+        - eg. 358-Rearrange String k Distance Apart(hard); 767-Reorganize-String
 
 ## Hashmap
     - problems:
@@ -463,7 +463,7 @@ heapify time complexity: O(n), heap push/pop time complexity: O(logn)
     - sorting:
         - eg: 23-Merge k Sorted Lists; 373-Find K Pairs with Smallest Sums|1439-Find the Kth Smallest Sum of a Matrix With Sorted Rows; 632-Smallest Range Covering Elements from K Lists; 642-Design Search Autocomplete System; 778-Swim in Rising Water; 1675-Minimize Deviation in Array
     - greedy:
-        - eg: 1353-Maximum Number of Events That Can Be Attended; 502-IPO, 630-Course Schedule III(greedy * 2)|1383-Maximum Performance of a Team; 767-Reorganize String; 1499-Max Value of Equation; 1851-Minimum Interval to Include Each Query; 
+        - eg: 1353-Maximum Number of Events That Can Be Attended; 502-IPO, 630-Course Schedule III(greedy * 2)|1383-Maximum Performance of a Team; 767-Reorganize String|358-Rearrange String k Distance Apart(hard); 1499-Max Value of Equation; 1851-Minimum Interval to Include Each Query; 
     - Dijkstra's Algorithm (see "## BFS")
 
 ## Sliding window -
