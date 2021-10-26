@@ -28,22 +28,22 @@ class Solution:
 - O(n^2, n^2)
 """
 class Solution:
-    def swimInWater(self, grid: List[List[int]]) -> int: 
-
-        n = len(grid)
+    def swimInWater(self, grid: List[List[int]]) -> int:
         
-        visited = {(0, 0)}
-        q = [(grid[0][0], 0, 0)]
-        result = 0
-        while q:
-            t, i, j = heapq.heappop(q)
-            result = max(result, t)
-            if i == j == n - 1:
-                return result
-            for i_next, j_next in [(i + 1, j), (i - 1, j), (i, j + 1), (i, j - 1)]:
-                if 0 <= i_next < n and 0 <= j_next < n and (i_next, j_next) not in visited:
-                    heapq.heappush(q, (grid[i_next][j_next], i_next, j_next))
-                    visited.add((i_next, j_next))
+        M, N = len(grid), len(grid[0])
+        
+        pq = [(grid[0][0], 0, 0)] # height, i, j
+        visited = set()
+        visited.add((0, 0))
+        
+        while pq:
+            h, i, j = heapq.heappop(pq)
+            if (i, j) == (M - 1, N - 1):
+                return h
+            for ii, jj in [(i + 1, j), (i - 1, j), (i, j + 1), (i, j - 1)]:
+                if 0 <= ii < M and 0 <= jj < N and (ii, jj) not in visited:
+                    heapq.heappush(pq, (max(h, grid[ii][jj]), ii, jj))
+                    visited.add((ii, jj))
 
 """
 - binary search and dfs
