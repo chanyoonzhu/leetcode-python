@@ -35,7 +35,7 @@ topological sort: 207,210,269,329,444.1462
 tree: 116,222,235,236,298,333,337,426,450,543,549,652,687,729,919,1644,1650,1676,1740
 trie: 208,211,212,336,642,745
 two pointers: 15,42,76,86,121,159,167,209,246,253,259,392,524,581,680,904,986,1055,1229,1248,1537,1574,1577,1658,1775,1868
-union find: 128,305,323,684,778,947,952,1562,1627,1722,1970,1998
+union find: 128,261,305,323,684,778,947,952,1562,1627,1722,1970,1998
 zip: 833
 
 
@@ -352,7 +352,9 @@ space can be optimized to O(1) if only need to track constant time of variables 
     - space: O(N)
 - Algorithms: DFS and BFS
 - Problems:
-    - 684-Redundant Connection; eg: 785-Is Graph Bipartite?;
+    - detect cycle:
+        - eg: 261-Graph Valid Tree; 684-Redundant Connection;
+    - eg: 785-Is Graph Bipartite?;
     - minimum cost path: Dijkstra Algorithm (see "## BFS")
 
 ## Greedy -
@@ -635,7 +637,7 @@ def isXandYConnected(n):
 ```
 - problem:
     - find connected groups: 128-Longest Consecutive Sequence; 305-Number of Islands II(hard); 323-Number of Connected Components in an Undirected Graph; 803-Bricks Falling When Hit (hard); 1722-Minimize Hamming Distance After Swap Operations (implicit); 952-Largest Component Size by Common Factor; 1562-Find Latest Group of Size M(hard); 1627-Graph Connectivity With Threshold | 1970-Last Day Where You Can Still Cross; 1998-GCD Sort of an Array
-    - cycle in graph: 684-Redundant Connection
+    - cycle in graph: 261-Graph Valid Tree; 684-Redundant Connection
     - operation chaining: 399-Evaluate Division
 
 ## Other
