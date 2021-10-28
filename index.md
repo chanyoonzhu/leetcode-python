@@ -32,7 +32,7 @@ sort: 56,99,164,179,252,280,315,524,581,593,L391,1300,1509,1608,1610
 stack: 20,32,42,71,84,155,224,227,232,331,394,402,456,496,503,581,636,678,735,739,772,856,901,907,946,962,975,1019,1028,1063,1106,1124,1130,1209,1249,1381,1541,1597,1673,1776,1856
 string: 151,157,165,418,722,833,929,1087,1520
 topological sort: 207,210,269,329,444.1462
-tree: 116,222,235,236,298,333,337,426,450,543,549,652,687,729,919,1644,1650,1676,1740
+tree: 116,222,235,236,298,333,337,366,426,450,543,549,652,687,729,919,1644,1650,1676,1740
 trie: 208,211,212,336,642,745
 two pointers: 15,42,76,86,121,159,167,209,246,253,259,392,524,581,680,904,986,1055,1229,1248,1537,1574,1577,1658,1775,1868
 union find: 128,261,305,323,684,778,947,952,1562,1627,1722,1970,1998
@@ -588,7 +588,7 @@ eg: 56, 57, 218, 252, 253, 435, 452, 986-Interval List Intersections, 1229-Meeti
 If using bfs, usually uses a FIFO queue to store nodes to be visited. 
 - Problems:
     - pre-order: 297-Serialize and Deserialize Binary Tree; 449. Serialize and Deserialize BST; 951-Flip Equivalent Binary Trees; 1008-Construct Binary Search Tree from Preorder Traversal; 1110-Delete Nodes And Return Forest;
-    - in-order traversal: 426-Convert Binary Search Tree to Sorted Doubly Linked List
+    - in-order traversal: 366-Find Leaves of Binary Tree; 426-Convert Binary Search Tree to Sorted Doubly Linked List
     - post-order traversal: 543-Diameter of Binary Tree
     - traversal combinations: 105-Construct Binary Tree from Preorder and Inorder Traversal; 106-Construct Binary Tree from Inorder and Postorder Traversal; 889-Construct Binary Tree from Preorder and Postorder Traversal
     - BST(Binary Search Tree) Problems: 450-Delete Node in a BST; 1008-Construct Binary Search Tree from Preorder Traversal
@@ -597,6 +597,7 @@ If using bfs, usually uses a FIFO queue to store nodes to be visited.
         - complete binary tree
             - eg: 919-Complete Binary Tree Inserter
     - Subtree hashing: 652-Find Duplicate Subtrees
+    - Tree height: 366-Find Leaves of Binary Tree
 
 ## Trie
 - when to use: Trie could use less space compared to hashmap when storing many keys with the same prefix (word search, spell checker, etc.)
