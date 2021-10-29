@@ -18,7 +18,7 @@ ino166-Fraction_to_Recurring_Decimalrder: 99,105,230,333,426
 linked list: 2,21,24,25,86,138,146,382,432,445,587,705,706,1650
 logic deduction: 444 
 map: 205
-math:12,149,166,168,204,268,279,391,470,621,794,836,837,952,1041,1344,1569,1610,1627,1998
+math:12,149,166,168,204,268,279,384,391,470,621,794,836,837,952,1041,1344,1569,1610,1627,1998
 merge sort: 315,1574
 misc:169,229(moore voting)
 preorder: 105,106,113,331,437,449,545,652,666,889,971,987,1008,1028,1569
@@ -431,7 +431,7 @@ heapify time complexity: O(n), heap push/pop time complexity: O(logn)
 - Bachet's conjecture:
     - eg: 279-Perfect Squares
 - Probability:
-    - eg: 837-New 21 Game
+    - eg: 384-Shuffle an Array; 837-New 21 Game
 - Factorization:
     - eg: 952-Largest Component Size by Common Factor; 1998-GCD Sort of an Array
 - Primes:
