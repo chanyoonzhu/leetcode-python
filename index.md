@@ -29,7 +29,7 @@ recursive: 2,116,241,247,273,450,772,1106
 segment tree: 307,308,327,850
 sliding window: 3,76,159,209,239,340,395,837,862,904,930,992,1004,1052,1234,1358,1371,1423,1498,1509,1537,1574,1577,1610,1658,1696,1793,1839
 sort: 56,99,164,179,252,280,315,524,581,593,L391,1300,1509,1608,1610
-stack: 20,32,42,71,84,155,224,227,232,331,388,394,402,456,496,503,581,636,678,735,739,772,856,901,907,946,962,975,1019,1028,1063,1106,1124,1130,1209,1249,1381,1541,1597,1673,1776,1856
+stack: 20,32,42,71,84,155,224,227,232,331,388,394,402,456,496,503,581,636,678,735,739,772,856,901,907,946,962,975,1019,1028,1063,1106,1124,1130,1209,1249,1381,1541,1597,1673,1762,1776,1856
 string: 151,157,165,418,722,833,929,1087,1520
 topological sort: 207,210,269,329,444.1462
 tree: 116,222,235,236,298,333,337,366,426,450,543,549,652,687,729,919,1644,1650,1676,1740
@@ -532,7 +532,7 @@ heapify time complexity: O(n), heap push/pop time complexity: O(logn)
         - eg. 224-Basic Calculator|227-Basic Calculator II|772-Basic Calculator III; 1106-Parsing A Boolean Expression
     - monotonically increasing/decreasing stack
         - comparison:
-            - eg: 496,503-Next Greater Element I/II; 1063-Number of Valid Subarrays; 739-Daily Temperatures; 901-Online Stock Span; 456-132 Pattern; 1019-Next Greater Node In Linked List, 1130-Minimum Cost Tree From Leaf Values; 
+            - eg: 1762-Buildings With an Ocean View(easy); 496,503-Next Greater Element I/II; 1063-Number of Valid Subarrays; 739-Daily Temperatures; 901-Online Stock Span; 456-132 Pattern; 1019-Next Greater Node In Linked List, 1130-Minimum Cost Tree From Leaf Values; 
         - smallest/largest number formed by subsequence:
             -eg. 1673-Find the Most Competitive Subsequence; 402-Remove K Digits
         - window max/min (with monotonically increasing/decreasing stack)
