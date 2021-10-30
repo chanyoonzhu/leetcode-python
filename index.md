@@ -174,6 +174,7 @@ while start <= end:
     - String: 752-Open the Lock
     - Dijkstra's Algorithm:
         - key words: minimal cost of paths (unlike regular shortest path where cost is always 1, each connection can have various cost)
+        - easy to miss: visited.add() happens at node pop, not node push, since shortest cost is found when node with smallest cost pops, when pushing a node we could pushing one with cost larger than smallest cost
         - intuition: similar as bfs, difference is that instead of using a queue and always pop left (which is by default the minimal cost), use a heap to store tuple (total_cost, node) to always pop the smallest cost; also need an array/map to memoize smallest cost to each node
         - eg. 743-Network Delay Time (classic); 505-The Maze II; 787-Cheapest Flights Within K Stops; 407-Trapping Rain Water II (implicit); 656-Coin Path(hard, TLE); 1368-Minimum Cost to Make at Least One Valid Path in a Grid(have better solutions using dfs)
     - tree traversal: see "## Tree"

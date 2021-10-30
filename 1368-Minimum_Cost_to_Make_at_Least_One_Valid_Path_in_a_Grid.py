@@ -1,5 +1,5 @@
 """
-- dynamic programming + dfs
+- dfs
 - TLE: can visit a cell multiple times
 """
 class Solution:
@@ -8,25 +8,25 @@ class Solution:
         DIR = [(0, 1), (0, -1), (1, 0), (-1, 0)]
         M, N = len(grid), len(grid[0])
         
-        dp = [[float("inf")] * N for _ in range(M)]
-        dp[0][0] = 0
+        cost = [[float("inf")] * N for _ in range(M)]
+        cost[0][0] = 0
         
         def dfs(r, c):
-            prev_cost = dp[r][c]
+            prev_cost = cost[r][c]
             for i, j in DIR:
                 rr, cc = r + i, c + j
                 if 0 <= rr < M and 0 <= cc < N:
                     if (i, j) == DIR[grid[r][c]-1]:
-                        if prev_cost < dp[rr][cc]: # no need to turn
-                            dp[rr][cc] = prev_cost
+                        if prev_cost < cost[rr][cc]: # no need to turn
+                            cost[rr][cc] = prev_cost
                             dfs(rr, cc)
                     else: # need to turn
-                        if prev_cost + 1 < dp[rr][cc]:
-                            dp[rr][cc] = prev_cost + 1
+                        if prev_cost + 1 < cost[rr][cc]:
+                            cost[rr][cc] = prev_cost + 1
                             dfs(rr, cc)
         
         dfs(0, 0)
-        return dp[M-1][N-1]
+        return cost[M-1][N-1]
 
 """
 - bfs + heap (dijkstra)
@@ -35,26 +35,30 @@ class Solution:
 class Solution:
     def minCost(self, grid: List[List[int]]) -> int:
         
-        DIR = [(0, 1), (0, -1), (1, 0), (-1, 0)]
         M, N = len(grid), len(grid[0])
+        DIR = [(0, 1), (0, -1), (1, 0), (-1, 0)]
         
-        h = []
-        h.append((0, 0, 0)) # cost, i, j
-        visited = {}
-        visited[(0, 0)] = 0
+        pq = [(0, 0, 0)]
+        visited = set((0, 0))
         
-        while h:
-            cost, r, c = heapq.heappop(h)
-            if (r, c) == (M-1, N-1): return cost
-            for i, j in DIR:
-                rr, cc, next_cost = r + i, c + j, cost
-                if (i, j) != DIR[grid[r][c] - 1]: next_cost += 1 
-                if 0 <= rr < M and 0 <= cc < N and ((rr, cc) not in visited or visited[(rr, cc)] > next_cost):
-                    heapq.heappush(h, (next_cost, rr, cc))
-                    visited[(rr, cc)] = next_cost
+        while pq:
+            cost, r, c = heapq.heappop(pq)
+            if (r, c) == (M - 1, N - 1): return cost
+			
+            if (r, c) in visited:
+                continue
+            visited.add((r, c))
+			
+            for d, (i, j) in enumerate(DIR, 1):
+                nr, nc = r + i, c + j
+                if 0 <= nr < M and 0 <= nc < N and (nr, nc) not in visited:
+                    if d == grid[r][c]:
+                        heapq.heappush(pq, (cost, nr, nc))
+                    else:
+                        heapq.heappush(pq, (cost + 1, nr, nc))
 
 """
-- bfs + dfs
+- bfs
 - O(mn), O(mn)
 - a cell is only visited one time
 """
