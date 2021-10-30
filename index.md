@@ -1,14 +1,14 @@
 all, any: 833
 array: 54,56,68,73,122,151,157,186,204,238,268,349,350,380,381,849,1146,1371,1381,1526,1567,1706
 backtracking: 17,46,47,78,90,301,491,698,996,1088,1593,1239,1307,1681,1718,1723,1774
-bfs: 79,103,116,126,127,133,200,207,210,212,269,279,297,301,399,407,444,505,529,542,743,752,785,787,803,863,919,934,959,971,987,1110,1236,1254,1293,1306,1345,1654,1778
+bfs: 79,103,116,126,127,133,200,207,210,212,269,279,297,301,399,407,444,505,529,542,743,752,785,787,803,863,919,934,959,971,987,1110,1236,1254,1293,1306,1345,1368,1654,1778
 binary search:4,29,33,34,57,81,153,154,162,222,240,259,268,275,279,287,295,300,374,410,715,774,875,911,1011,1055,1146,1231,1272,1283,1428,1482,1552,1608,1648,1723,1802,1870
 bitwise operation: 29,136,137,191,231,268,318,338,342,371,461,473,476,491,693,698,1284,1371,1442,1542,1593,1681
 binary search tree: 99,230,333,449,450,490,729,1008
 bucket:299
 circular array: 213,1658
 divide and conquer: 53,215,241,307,308,312,327,395,973,1000,1039,1547
-dfs: 17,79,91,99,105,106,113,124,129,133,200,207,210,212,230,236,241,261,297,298,301,329,331,333,337,394,399,449,490,529,543,549,652,666,684,687,690,694,695,743,753,778,785,787,803,863,889,934,947,951,959,975,987,1028,1110,1236,1306,1340,1462,1569,1644,1676,1740,1766,1778
+dfs: 17,79,91,99,105,106,113,124,129,133,200,207,210,212,230,236,241,261,297,298,301,329,331,333,337,394,399,449,490,529,543,549,652,666,684,687,690,694,695,743,753,778,785,787,803,863,889,934,947,951,959,975,987,1028,1110,1236,1306,1340,1368,1462,1569,1644,1676,1740,1766,1778
 dynamic programming: 5,10,32,39,45,53,55,64,70,72,91,97,115,139,188,198,213,221,256,265,276,279,300,312,322,375,403,410,413,416,435,446,464,473,474,486,494,516,518,542,552,562,583,634,673,712,727,740,746,805,813,837,877,879,887,920,931,940,956,1000,1027,1035,1039,1048,1092,1105,1140,1143,1155,1216,1269,1277,1278,1312,1314,1335,1406,1458,1510,1547,1548,1696,1746,1774,1824,1937,1981
 graph: 785,863
 greedy: 45,53,55,135,358,410,435,455,621,630,678,767,774,785,843,853,875,877,954,1011,1231,1353,1383,1402,1419,1428,1482,1520,1537,1552,1567,1648,1665,1718,1746,1775,1802,1824,1851,1870,1877,2007
@@ -175,7 +175,7 @@ while start <= end:
     - Dijkstra's Algorithm:
         - key words: minimal cost of paths (unlike regular shortest path where cost is always 1, each connection can have various cost)
         - intuition: similar as bfs, difference is that instead of using a queue and always pop left (which is by default the minimal cost), use a heap to store tuple (total_cost, node) to always pop the smallest cost; also need an array/map to memoize smallest cost to each node
-        - eg. 743-Network Delay Time (classic); 505-The Maze II; 787-Cheapest Flights Within K Stops; 407-Trapping Rain Water II (implicit); 656-Coin Path(hard, TLE)
+        - eg. 743-Network Delay Time (classic); 505-The Maze II; 787-Cheapest Flights Within K Stops; 407-Trapping Rain Water II (implicit); 656-Coin Path(hard, TLE); 1368-Minimum Cost to Make at Least One Valid Path in a Grid(have better solutions using dfs)
     - tree traversal: see "## Tree"
     - construct sequence with topological sort (see "## Topological Sort")
     - bidrectional dfs
@@ -274,6 +274,7 @@ or
         - eg: 1778-Shortest Path in a Hidden Grid; 1810-Minimum Path Cost in a Hidden Grid
     - find contiguous "islands"
         - eg: 200-Number of Islands | 694-Number of Distinct Islands | 1254-Number of Closed Islands | 934-Shortest Bridge (bfs + dfs); 959-Regions Cut By Slashes (need pixelating); 803-Bricks Falling When Hit (hard)
+    - min cost: see ## BFS
     - operation chaining:
         - eg: 399-Evaluate Division
     - other: 1766-Tree of Coprimes (hard)
