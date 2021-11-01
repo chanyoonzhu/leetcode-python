@@ -13,7 +13,7 @@ dynamic programming: 5,10,32,39,45,53,55,64,70,72,91,97,115,139,188,198,213,221,
 graph: 785,863
 greedy: 45,53,55,135,358,410,435,455,621,630,678,767,774,785,843,853,875,877,954,1011,1231,1353,1383,1402,1419,1428,1482,1520,1537,1552,1567,1648,1665,1718,1746,1775,1802,1824,1851,1870,1877,2007
 hashmap: 1,15,49,76,106,138,146,149,159,166,169,170,229,246,299,327,336,340,359,380,381,388,392,398,403,432,437,465,496,560,666,792,895,930,953,954,974,1000,1055,1371,1442,1525,1542,1570,1577,1590,1644,2007
-hashset: 1,128,381,432,694,1239,1452,1774
+hashset: 1,128,381,432,694,721,1239,1452,1774
 ino166-Fraction_to_Recurring_Decimalrder: 99,105,230,333,426
 linked list: 2,21,24,25,86,138,146,382,432,445,587,705,706,1650
 logic deduction: 444 
@@ -35,7 +35,7 @@ topological sort: 207,210,269,329,444.1462
 tree: 116,222,235,236,298,333,337,366,426,450,543,549,652,687,729,919,1644,1650,1676,1740
 trie: 208,211,212,336,642,745
 two pointers: 15,42,76,86,121,159,167,209,246,253,259,392,524,581,680,904,986,1055,1229,1248,1537,1574,1577,1658,1775,1868
-union find: 128,261,305,323,684,778,947,952,1562,1627,1722,1970,1998
+union find: 128,261,305,323,684,721,778,947,952,1562,1627,1722,1970,1998
 zip: 833
 
 
@@ -643,7 +643,7 @@ def isXandYConnected(n):
 
 ```
 - problem:
-    - find connected groups: 128-Longest Consecutive Sequence; 305-Number of Islands II(hard); 323-Number of Connected Components in an Undirected Graph; 803-Bricks Falling When Hit (hard); 1722-Minimize Hamming Distance After Swap Operations (implicit); 952-Largest Component Size by Common Factor; 1562-Find Latest Group of Size M(hard); 1627-Graph Connectivity With Threshold | 1970-Last Day Where You Can Still Cross; 1998-GCD Sort of an Array
+    - find connected groups: 128-Longest Consecutive Sequence; 305-Number of Islands II(hard); 323-Number of Connected Components in an Undirected Graph; 721-Accounts Merge; 803-Bricks Falling When Hit (hard); 1722-Minimize Hamming Distance After Swap Operations (implicit); 952-Largest Component Size by Common Factor; 1562-Find Latest Group of Size M(hard); 1627-Graph Connectivity With Threshold | 1970-Last Day Where You Can Still Cross; 1998-GCD Sort of an Array
     - cycle in graph: 261-Graph Valid Tree; 684-Redundant Connection
     - operation chaining: 399-Evaluate Division
 
