@@ -20,3 +20,18 @@ class Solution:
                 dp[c] = min(prev_dp[c], prev_dp[c-1] if c > 0 else float("inf"), prev_dp[c+1] if c < N - 1 else float("inf")) + matrix[r][c]
             prev_dp = dp
         return min(prev_dp)
+
+
+"""
+- dynamic problem (bottom-up: in-place)
+- O(m*n), O(n)
+"""
+class Solution:
+    def minFallingPathSum(self, matrix: List[List[int]]) -> int:
+        
+        M, N = len(matrix), len(matrix[0])
+        
+        for row in range(1, M):
+            for col in range(N):
+                matrix[row][col] = min(matrix[row-1][col], matrix[row-1][col-1] if col > 0 else float("inf"), matrix[row-1][col+1] if col < N - 1 else float("inf")) + matrix[row][col]
+        return min(matrix[-1])
