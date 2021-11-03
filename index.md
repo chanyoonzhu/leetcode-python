@@ -292,7 +292,7 @@ space can be optimized to O(1) if only need to track constant time of variables 
         - eg. 64-Minimum Path Sum; 542-01 Matrix; 221-Maximal Square | 1277-Count Square Submatrices with All Ones; 446-Arithmetic Slices II - Subsequence|1027-Longest Arithmetic Subsequence;673-Number of Longest Increasing Subsequence; 931-Minimum Falling Path Sum | 1937-Maximum Number of Points with Cost; (revisit above examples!) 940. Distinct Subsequences II; 1105-Filling Bookcase Shelves
     - dp[i][j] depends on dp[i+1][j-1]:
         - tip: use subproblem size (diff between i and j) as the outer loop
-        - eg: 312-Burst Balloons(hard)|1039-Minimum Score Triangulation of Polygon; 375-Guess Number Higher or Lower II; 486, 516-Longest Palindromic Subsequence, 877, 1246-Palindrome Removal(hard); 1312
+        - eg: 312-Burst Balloons(hard)|1039-Minimum Score Triangulation of Polygon; 375-Guess Number Higher or Lower II; 486, 516-Longest Palindromic Subsequence, 877, 1246-Palindrome Removal(hard); 1312; 1959-Minimum Total Space Wasted With K Resizing Operations
     - intervals: sequence needs to be divided into k distinct intervals
         - key words: split array
         - dp[i][k] depends on dp[j][k-1] where j = [1...i]
