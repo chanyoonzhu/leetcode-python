@@ -387,6 +387,7 @@ Iterate over the array and update at each step the standard set for such problem
             - eg: 49-Group Anagrams; 392-Is_Subsequence
         - coordinates:
             - eg: 149-Max Points on a Line
+        - prefix sum (see "## Prefix sum")
 
 ## Hashset
 - problems:
@@ -462,7 +463,12 @@ heapify time complexity: O(n), heap push/pop time complexity: O(logn)
 ## Prefix sum:
 - key words: sum of subarray 
 - tip: usually solved with O(n) time using hashmap 
-- eg.303-Range Sum Query - Immutable; 560-Subarray Sum Equals K,325-Maximum Size Subarray Sum Equals k; 930,974|1590(division),1371-Find the Longest Substring Containing Vowels in Even Counts;1442,437(tree version), 1124, 528-Random Pick with Weight; 1248-Count Number of Nice Subarrays1525-Number of Good Ways to Split a String
+- Problems:
+    - prefix-sum
+        - eg.303-Range Sum Query - Immutable; 560-Subarray Sum Equals K,325-Maximum Size Subarray Sum Equals k; 930,974|1590(division),1371-Find the Longest Substring Containing Vowels in Even Counts;1442,437(tree version), 1124, 528-Random Pick with Weight; 1248-Count Number of Nice Subarrays1525-Number of Good Ways to Split a String
+    - prefix-sum % k as key:
+        - eg: 523-Continuous Subarray Sum
+
 
 ## Priority Queue (Heap):
 - tip: stores tuples in queues, a tuple is comprised of number (a group of numbers) needs to be sorted and the information need to pass when that number is popped from the heap
