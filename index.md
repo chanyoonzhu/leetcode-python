@@ -11,8 +11,8 @@ divide and conquer: 53,215,241,307,308,312,327,395,973,1000,1547
 dfs: 17,79,91,99,105,106,113,124,129,133,200,207,210,212,230,236,241,261,297,298,301,329,331,333,337,394,399,449,490,529,543,549,652,666,684,687,690,694,695,743,753,778,785,787,803,827,863,889,934,947,951,959,975,987,1028,1110,1236,1306,1340,1368,1462,1569,1644,1676,1740,1766,1778
 dynamic programming: 5,10,32,39,45,53,55,64,70,72,91,97,115,139,188,198,213,221,256,265,276,279,300,312,322,375,403,410,413,416,435,446,464,473,474,486,494,516,518,542,552,562,576,583,634,673,712,727,740,746,805,813,837,877,879,887,920,931,940,956,1000,1027,1035,1039,1048,1092,1105,1140,1143,1155,1216,1269,1277,1278,1301,1312,1314,1335,1406,1458,1510,1547,1548,1594,1696,1746,1774,1824,1937,1981
 graph: 785,863
-greedy: 45,53,55,135,358,410,435,455,621,630,678,767,774,785,843,853,875,877,954,1011,1231,1353,1383,1402,1419,1428,1482,1520,1537,1552,1567,1648,1665,1718,1746,1775,1802,1824,1851,1870,1877,2007
-hashmap: 1,15,49,76,106,138,146,149,159,166,169,170,229,246,299,327,336,340,359,380,381,388,392,398,403,432,437,465,496,560,666,792,895,930,953,954,974,1000,1055,1371,1442,1525,1542,1570,1577,1590,1644,2007
+greedy: 45,53,55,135,358,410,435,455,621,630,678,767,774,785,843,853,875,877,954,1011,1231,1353,1383,1402,1419,1428,1482,1520,1537,1546,1552,1567,1648,1665,1718,1746,1775,1802,1824,1851,1870,1877,2007
+hashmap: 1,15,49,76,106,138,146,149,159,166,169,170,229,246,299,327,336,340,359,380,381,388,392,398,403,432,437,465,496,523,560,666,792,895,930,953,954,974,1000,1055,1371,1442,1525,1542,1546,1570,1577,1590,1644,2007
 hashset: 1,128,381,432,694,721,1239,1452,1774
 ino166-Fraction_to_Recurring_Decimalrder: 99,105,230,333,426
 linked list: 2,21,24,25,86,138,146,382,432,445,587,705,706,1650
@@ -369,6 +369,7 @@ Iterate over the array and update at each step the standard set for such problem
 - problems:
     - greedy with sort: 853-Car Fleet; 1775-Equal Sum Arrays With Minimum Number of Operations; 1537-Get the Maximum Score; 954-Array of Doubled Pairs|2007-Find Original Array From Doubled Array; 1877-Minimize Maximum Pair Sum in Array
     - maximum subarray: 53-Maximum Subarray; 1746. Maximum Subarray Sum After One Operation
+    - shortest subarray: 1546-Maximum Number of Non-Overlapping Subarrays With Sum Equals Target
     - minimum state change: 1824-Minimum Sideway Jumps
     - game theory: 464-Can I Win; 486-Predict the Winner; 843-Guess the Word; 877-Stone Game | 1140-Stone Game II|1406-Stone Game III|1510-Stone Game IV
     - rearrange with k stride: 
@@ -465,7 +466,7 @@ heapify time complexity: O(n), heap push/pop time complexity: O(logn)
 - tip: usually solved with O(n) time using hashmap 
 - Problems:
     - prefix-sum
-        - eg.303-Range Sum Query - Immutable; 560-Subarray Sum Equals K,325-Maximum Size Subarray Sum Equals k; 930,974|1590(division),1371-Find the Longest Substring Containing Vowels in Even Counts;1442,437(tree version), 1124, 528-Random Pick with Weight; 1248-Count Number of Nice Subarrays1525-Number of Good Ways to Split a String
+        - eg.303-Range Sum Query - Immutable; 560-Subarray Sum Equals K,325-Maximum Size Subarray Sum Equals k; 930,974|1590(division),1371-Find the Longest Substring Containing Vowels in Even Counts;1442,437(tree version), 1124, 528-Random Pick with Weight; 1248-Count Number of Nice Subarrays; 1525-Number of Good Ways to Split a String; 1546-Maximum Number of Non-Overlapping Subarrays With Sum Equals Target;
     - prefix-sum % k as key:
         - eg: 523-Continuous Subarray Sum
 
