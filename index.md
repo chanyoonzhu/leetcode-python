@@ -33,7 +33,7 @@ stack: 20,32,42,71,84,155,224,227,232,331,388,394,402,456,496,503,581,636,678,73
 string: 151,157,165,418,722,833,929,1087,1520
 topological sort: 207,210,269,329,444.1462
 tree: 116,222,235,236,298,333,337,366,426,450,543,549,652,687,729,919,1644,1650,1676,1740
-trie: 208,211,212,336,642,745
+trie: 139,208,211,212,336,642,745
 two pointers: 15,42,76,86,121,159,167,209,246,253,259,392,524,581,680,904,986,1055,1229,1248,1537,1574,1577,1658,1775,1868
 union find: 128,261,305,323,684,721,778,947,952,1562,1627,1722,1970,1998
 zip: 833
@@ -625,7 +625,7 @@ class TrieNode:
         self.isWord = False # mark word end
         self.children = collections.defaultdict(TrieNode)
 ```
-- eg: 211-Design Add and Search Words Data Structure(basic); 642-Design Search Autocomplete System; 745-Prefix and Suffix Search(2 Tries);
+- eg: 211-Design Add and Search Words Data Structure(basic); 139-Word Break; 642-Design Search Autocomplete System; 745-Prefix and Suffix Search(2 Tries);
 
 ## Union Find
 - key word: connected group in a graph
