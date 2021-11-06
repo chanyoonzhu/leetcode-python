@@ -9,7 +9,7 @@ bucket:299
 circular array: 213,1658
 divide and conquer: 53,215,241,307,308,312,327,395,973,1000,1547
 dfs: 17,79,91,99,105,106,113,124,129,133,200,207,210,212,230,236,241,261,297,298,301,329,331,333,337,394,399,449,490,529,543,549,652,666,684,687,690,694,695,743,753,778,785,787,803,827,863,889,934,947,951,959,975,987,1028,1110,1236,1306,1340,1368,1462,1569,1644,1676,1740,1766,1778
-dynamic programming: 5,10,32,39,45,53,55,64,70,72,91,97,115,139,188,198,213,221,256,265,276,279,300,312,322,375,403,410,413,416,435,446,464,473,474,486,494,516,518,542,552,562,576,583,634,673,712,727,740,746,805,813,837,877,879,887,920,931,940,956,1000,1027,1035,1039,1048,1092,1105,1140,1143,1155,1216,1269,1277,1278,1301,1312,1314,1335,1406,1458,1510,1547,1548,1594,1696,1746,1774,1824,1937,1981
+dynamic programming: 5,10,32,39,45,53,55,64,70,72,91,97,115,139,188,198,213,221,256,265,276,279,300,312,322,375,403,410,413,416,435,446,464,473,474,486,494,516,518,542,552,562,576,583,634,673,712,727,740,746,805,813,837,877,879,887,920,931,940,956,1000,1027,1035,1039,1048,1092,1105,1140,1143,1155,1216,1269,1277,1278,1301,1312,1314,1335,1406,1458,1510,1547,1548,1594,1643,1696,1746,1774,1824,1937,1981
 graph: 785,863
 greedy: 45,53,55,135,358,410,435,455,621,630,678,767,774,785,843,853,875,877,954,1011,1231,1353,1383,1402,1419,1428,1482,1520,1537,1546,1552,1567,1648,1665,1718,1746,1775,1802,1824,1851,1870,1877,2007
 hashmap: 1,15,49,76,106,138,146,149,159,166,169,170,229,246,299,327,336,340,359,380,381,388,392,398,403,432,437,465,496,523,560,666,670,792,895,930,953,954,974,1000,1055,1371,1442,1525,1542,1546,1570,1577,1590,1644,2007
@@ -18,7 +18,7 @@ ino166-Fraction_to_Recurring_Decimalrder: 99,105,230,333,426
 linked list: 2,21,24,25,86,138,146,382,432,445,587,705,706,1650
 logic deduction: 444 
 map: 205
-math:12,149,166,168,204,268,279,384,391,470,621,794,836,837,952,1041,1344,1569,1610,1627,1998
+math:12,149,166,168,204,268,279,384,391,470,621,794,836,837,952,1041,1344,1569,1610,1627,1643,1998
 merge sort: 315,1574
 misc:169,229(moore voting)
 preorder: 105,106,113,331,437,449,545,652,666,889,971,987,1008,1028,1569
@@ -42,7 +42,7 @@ zip: 833
 ## Array
 - Problems:
     - print screen: 68-Text Justification; 418-Sentence Screen Fitting
-    - 1D array: 31-Next Permutation; 1562-Find Latest Group of Size M(hard)
+    - 1D array: 31-Next Permutation|1643-Kth Smallest Instructions(has better solution); 1562-Find Latest Group of Size M(hard)
     - 2D array: 1706-Where Will the Ball Fall
 
 ## backtracking 
@@ -323,7 +323,7 @@ space can be optimized to O(1) if only need to track constant time of variables 
         - bits:
             - eg: 691-Stickers to Spell Word(0/n); 1125-Smallest Sufficient Team(0/1);
     - 2D m*n:
-        - eg: 576-Out of Boundary Paths; 931-Minimum Falling Path Sum; 1301-Number of Paths with Max Score; 1594-Maximum Non Negative Product in a Matrix;
+        - eg: 576-Out of Boundary Paths; 931-Minimum Falling Path Sum; 1301-Number of Paths with Max Score; 1594-Maximum Non Negative Product in a Matrix; 1643-Kth Smallest Instructions
     - length in matrix: 562
     - reachable problem: 45,55
     - merge: divide and conquer: 241
@@ -421,7 +421,7 @@ heapify time complexity: O(n), heap push/pop time complexity: O(logn)
 ## Math
 - permutation and combination
     - formula: P(n, r) = n! / (n - r)!   C(n, r) = n! / (r! * (n - r)!)
-    - eg. 1569
+    - eg. 1569; 1643-Kth Smallest Instructions
 - Gauss sum:
     - n + (n + 1) + ... + (n + k) = (n + n + k) * (k + 1) // 2
     - eg. 268-Missing Number; 1648, 1802
