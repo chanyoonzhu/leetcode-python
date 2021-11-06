@@ -287,7 +287,7 @@ space can be optimized to O(1) if only need to track constant time of variables 
 - Bottom up: loop using memoization (calculate those won't change first, eg.1143, 1340) - look at the transformation formula from the top-down solution to figure out what needs to be calculated first in the loop. Can use the subproblem size as the outer loop if dp(i, j) need dp(i + 1, j - 1) (eg.312，375, 486, 877, 1312)
 - problems:
     - dp[i] depends on dp[i-1]: 
-        - eg.70-Climbing Stairs; 198-House Robber|213. House Robber II||740-Delete and Earn; 256-Paint House|265-Paint House II; 276-Paint Fence(a hard medium); 413-Arithmetic Slices; 91-Decode Ways;139-Word Break; 837-New 21 Game; 931-Minimum Falling Path Sum;
+        - eg.70-Climbing Stairs; 198-House Robber|213. House Robber II||740-Delete and Earn; 256-Paint House|265-Paint House II; 276-Paint Fence(a hard medium); 413-Arithmetic Slices; 91-Decode Ways;139-Word Break|140-Word Break II; 837-New 21 Game; 931-Minimum Falling Path Sum;
     - dp[i] depends on dp[j] where j in [1...i]:
         - eg. 64-Minimum Path Sum; 542-01 Matrix; 221-Maximal Square | 1277-Count Square Submatrices with All Ones; 446-Arithmetic Slices II - Subsequence|1027-Longest Arithmetic Subsequence;673-Number of Longest Increasing Subsequence; 931-Minimum Falling Path Sum | 1937-Maximum Number of Points with Cost; (revisit above examples!) 940. Distinct Subsequences II; 1105-Filling Bookcase Shelves
     - dp[i][j] depends on dp[i+1][j-1]:
@@ -625,7 +625,7 @@ class TrieNode:
         self.isWord = False # mark word end
         self.children = collections.defaultdict(TrieNode)
 ```
-- eg: 211-Design Add and Search Words Data Structure(basic); 139-Word Break; 642-Design Search Autocomplete System; 745-Prefix and Suffix Search(2 Tries);
+- eg: 211-Design Add and Search Words Data Structure(basic); 139-Word Break|140-Word Break II; 642-Design Search Autocomplete System; 745-Prefix and Suffix Search(2 Tries);
 
 ## Union Find
 - key word: connected group in a graph
