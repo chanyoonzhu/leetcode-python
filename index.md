@@ -4,7 +4,7 @@ backtracking: 17,46,47,78,90,282,301,491,698,996,1088,1593,1239,1307,1681,1718,1
 bfs: 79,103,116,126,127,133,199,200,207,210,212,269,279,297,301,314,317,339,399,407,444,505,529,542,743,752,785,787,803,863,919,934,959,971,987,1110,1236,1254,1293,1306,1345,1368,1654,1778
 binary search:4,29,33,34,57,81,153,154,162,222,240,259,268,275,279,287,295,300,374,410,715,774,875,911,1011,1055,1146,1231,1272,1283,1428,1482,1552,1608,1648,1723,1802,1870
 bitwise operation: 29,136,137,191,231,268,318,338,342,371,461,473,476,491,693,698,1284,1371,1442,1542,1593,1681
-binary search tree: 99,230,333,449,450,490,729,938,1008
+binary search tree: 99,230,333,449,450,490,729,938,1008,1382
 bucket:299
 circular array: 213,1658
 Deterministic Finite Automaton: 65
@@ -616,13 +616,14 @@ If using bfs, usually uses a FIFO queue to store nodes to be visited.
     - in-order traversal: 366-Find Leaves of Binary Tree; 426-Convert Binary Search Tree to Sorted Doubly Linked List
     - post-order traversal: 543-Diameter of Binary Tree
     - traversal combinations: 105-Construct Binary Tree from Preorder and Inorder Traversal; 106-Construct Binary Tree from Inorder and Postorder Traversal; 889-Construct Binary Tree from Preorder and Postorder Traversal
-    - BST(Binary Search Tree) Problems: 938. Range Sum of BST(easy); 450-Delete Node in a BST; 1008-Construct Binary Search Tree from Preorder Traversal
+    - BST(Binary Search Tree) Problems: 938. Range Sum of BST(easy); 450-Delete Node in a BST; 1008-Construct Binary Search Tree from Preorder Traversal; 1382-Balance a Binary Search Tree;
     - Breath-first search(BFS): 
         - eg: 199-Binary Tree Right Side View; 297-Serialize and Deserialize Binary Tree; 314-Binary Tree Vertical Order Traversal; 339-Nested List Weight Sum; 1110-Delete Nodes And Return Forest;
         - complete binary tree
             - eg: 919-Complete Binary Tree Inserter
     - Subtree hashing: 652-Find Duplicate Subtrees
     - Tree height: 199-Binary Tree Right Side View; 366-Find Leaves of Binary Tree
+    - Tree balancing: 1382-Balance a Binary Search Tree (with sorting)
 
 ## Trie
 - when to use: Trie could use less space compared to hashmap when storing many keys with the same prefix (word search, spell checker, etc.)
