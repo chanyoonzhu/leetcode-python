@@ -1,7 +1,7 @@
 all, any: 833
 array: 31,54,56,68,73,122,151,157,186,204,238,268,349,350,380,381,498,849,1146,1371,1381,1526,1567,1706
 backtracking: 17,46,47,78,90,282,301,491,698,996,1088,1593,1239,1307,1681,1718,1723,1774
-bfs: 79,103,116,126,127,133,199,200,207,210,212,269,279,297,301,314,317,339,399,407,444,505,529,542,743,752,785,787,803,863,919,934,959,971,987,1110,1236,1254,1293,1306,1345,1368,1654,1778
+bfs: 79,103,116,126,127,133,199,200,207,210,212,269,279,297,301,314,317,339,399,407,444,505,515,529,542,743,752,785,787,803,863,919,934,959,971,987,1110,1236,1254,1293,1306,1345,1368,1654,1778
 binary search:4,29,33,34,57,81,153,154,162,222,240,259,268,275,279,287,295,300,374,410,715,774,875,911,1011,1055,1146,1231,1272,1283,1428,1482,1552,1608,1648,1723,1802,1870
 bitwise operation: 29,136,137,191,231,268,318,338,342,371,461,473,476,491,693,698,1284,1371,1442,1542,1593,1681
 binary search tree: 99,230,333,449,450,490,729,938,1008,1382
@@ -33,7 +33,7 @@ sort: 56,99,164,179,252,280,315,524,581,593,L391,1300,1509,1608,1610
 stack: 20,32,42,71,84,155,224,227,232,331,388,394,402,456,496,503,536,581,636,678,735,739,772,856,901,907,921,946,962,975,1019,1028,1063,1106,1124,1130,1209,1249,1381,1541,1597,1673,1762,1776,1856
 string: 65,151,157,165,418,722,833,929,1087,1520
 topological sort: 207,210,269,329,444.1462
-tree: 116,222,235,236,298,333,337,339,366,426,450,543,549,652,687,729,919,1644,1650,1676,1740
+tree: 116,222,235,236,298,333,337,339,366,426,450,515,543,549,652,687,729,919,1644,1650,1676,1740
 trie: 139,208,211,212,336,642,745
 two pointers: 15,42,76,86,121,159,167,209,246,253,259,392,524,581,680,904,986,1055,1229,1248,1537,1574,1577,1658,1775,1868
 union find: 128,261,305,323,684,721,778,947,952,1562,1627,1722,1970,1998
@@ -618,7 +618,7 @@ If using bfs, usually uses a FIFO queue to store nodes to be visited.
     - traversal combinations: 105-Construct Binary Tree from Preorder and Inorder Traversal; 106-Construct Binary Tree from Inorder and Postorder Traversal; 889-Construct Binary Tree from Preorder and Postorder Traversal
     - BST(Binary Search Tree) Problems: 938. Range Sum of BST(easy); 450-Delete Node in a BST; 1008-Construct Binary Search Tree from Preorder Traversal; 1382-Balance a Binary Search Tree;
     - Breath-first search(BFS): 
-        - eg: 199-Binary Tree Right Side View; 297-Serialize and Deserialize Binary Tree; 314-Binary Tree Vertical Order Traversal; 339-Nested List Weight Sum; 1110-Delete Nodes And Return Forest;
+        - eg: 199-Binary Tree Right Side View; 297-Serialize and Deserialize Binary Tree; 314-Binary Tree Vertical Order Traversal; 339-Nested List Weight Sum; 515-Find Largest Value in Each Tree Row; 1110-Delete Nodes And Return Forest;
         - complete binary tree
             - eg: 919-Complete Binary Tree Inserter
     - Subtree hashing: 652-Find Duplicate Subtrees
