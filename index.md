@@ -10,7 +10,7 @@ circular array: 213,1658
 Deterministic Finite Automaton: 65
 divide and conquer: 53,215,241,307,308,312,327,395,973,1000,1547
 dfs: 17,79,91,99,105,106,113,124,129,133,200,207,210,212,230,236,241,261,297,298,301,329,331,333,337,394,399,449,490,529,536,543,549,652,666,684,687,690,694,695,743,753,778,785,787,803,827,863,889,934,947,951,959,975,987,1028,1110,1236,1306,1340,1368,1462,1569,1644,1676,1740,1766,1778
-dynamic programming: 5,10,32,39,45,53,55,64,70,72,91,96,97,115,139,188,198,213,221,256,265,276,279,300,312,322,375,403,410,413,416,435,446,464,473,474,486,494,516,518,542,552,562,576,583,634,673,712,727,740,746,805,813,837,877,879,887,920,931,940,956,1000,1027,1035,1039,1048,1066,1092,1105,1140,1143,1155,1216,1269,1277,1278,1301,1312,1314,1335,1406,1458,1510,1547,1548,1594,1643,1696,1746,1774,1824,1937,1947,1981
+dynamic programming: 5,10,32,39,45,53,55,64,70,72,91,96,97,115,139,188,198,213,221,256,265,276,279,300,312,322,375,403,410,413,416,435,446,464,473,474,486,494,516,518,542,552,562,576,583,634,673,712,727,740,746,805,813,837,877,879,887,920,931,940,956,983,1000,1027,1035,1039,1048,1066,1092,1105,1140,1143,1155,1216,1269,1277,1278,1301,1312,1314,1335,1406,1458,1510,1547,1548,1594,1643,1696,1746,1774,1824,1937,1947,1981
 graph: 785,863
 greedy: 45,53,55,135,358,410,435,455,621,630,678,767,774,785,843,853,875,877,954,1011,1231,1353,1383,1402,1419,1428,1482,1520,1537,1546,1552,1567,1648,1665,1718,1746,1775,1802,1824,1851,1870,1877,2007
 hashmap: 1,15,49,76,106,138,146,149,159,166,169,170,229,246,249,299,327,336,340,359,380,381,388,392,398,403,432,437,465,496,498,523,560,666,670,791,792,895,930,953,954,974,1000,1055,1371,1442,1525,1542,1546,1570,1577,1590,1644,2007
@@ -308,7 +308,8 @@ space can be optimized to O(1) if only need to track constant time of variables 
         - advanced: ask to track path
             - tip: can store min/max in dp first, then trace the path
             - eg: 727-Minimum Window Subsequence; 1092-Shortest Common Supersequence
-    - knapsack: 
+    - knapsack:
+        - dp[i] depends on dp[i-k] where k is the item cost/size in an array of n items
         - keyword: combine numbers in array to reach a target
         - memo: dp[_sum][i]
         - tip: for 0/1 knapsack: decrease i to avoid over counting; for 0/n knapsack: increase i to allow counting more than 1 time
@@ -316,7 +317,7 @@ space can be optimized to O(1) if only need to track constant time of variables 
             - 0/1 knapsack: each element can be used 0 or 1 time
                 - eg: 416-Partition Equal Subset Sum|956-Tallest Billboard(hard, need max);474-Ones and Zeroes(two bags)|879-Profitable Schemes;1981-Minimize the Difference Between Target and Chosen Elements;805-Split Array With Same Average;
             - 0/n knapsack: each element can be used 0 or infinite amount of times
-                - eg: 322-Coin Change|691-Stickers to Spell Word(hard, with state compression)|1125-Smallest Sufficient Team; 1449-Form Largest Integer With Digits That Add up to Target
+                - eg: 322-Coin Change|691-Stickers to Spell Word(hard, with state compression)|1125-Smallest Sufficient Team; 983-Minimum Cost For Tickets; 1449-Form Largest Integer With Digits That Add up to Target
             - pos/neg knapsack: 494-Target Sum; 956-Tallest Billboard; 1049-Last Stone Weight II
             - two bags: 474-Ones and Zeroes(two bags)|879-Profitable Schemes; 956-Tallest Billboard(can be resolved with one bag)
         - eg: 630-Course Schedule III; 1774-Closest Dessert Cost
