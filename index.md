@@ -1,6 +1,6 @@
 all, any: 833
 array: 31,54,56,68,73,122,151,157,186,204,238,268,349,350,380,381,498,849,1146,1371,1381,1526,1567,1706
-backtracking: 17,46,47,78,90,282,301,491,698,996,1088,1593,1239,1307,1681,1718,1723,1774
+backtracking: 17,39,46,47,78,90,282,301,491,698,996,1088,1593,1239,1307,1681,1718,1723,1774
 bfs: 79,103,116,126,127,133,199,200,207,210,212,269,279,297,301,314,317,339,399,407,444,505,515,529,542,743,752,785,787,803,863,919,934,959,971,987,1110,1236,1254,1293,1306,1345,1368,1654,1778
 binary search:4,29,33,34,57,81,153,154,162,222,240,259,268,275,279,287,295,300,374,410,715,774,875,911,1011,1055,1146,1231,1272,1283,1428,1482,1552,1608,1648,1723,1802,1870,1891
 bitwise operation: 29,136,137,191,231,268,318,338,342,371,461,473,476,491,693,698,1284,1371,1442,1542,1593,1681
@@ -47,7 +47,7 @@ zip: 833
     - 2D array: 1706-Where Will the Ball Fall
 
 ## backtracking 
-    - eg: 17-Letter Combinations of a Phone Number; 78-Subsets(classic)|90-Subsets II|46-Permutations|47-Permutations II; 282-Expression Add Operators; 491-Increasing Subsequences; 996-Number of Squareful Arrays; 1239-Maximum Length of a Concatenated String with Unique Characters; 698-Partition to K Equal Sum Subsets; 1088-Confusing Number II; 1593-Split a String Into the Max Number of Unique Substrings; 1681-Minimum Incompatibility; 1307-Verbal Arithmetic Puzzle(hard); 1718-Construct the Lexicographically Largest Valid Sequence (with greedy); 1723-Find Minimum Time to Finish All Jobs(hard, with binary search); 1774-Closest Dessert Cost；465-Optimal Account Balancing (hard)
+    - eg: 17-Letter Combinations of a Phone Number; 39-Combination Sum; 78-Subsets(classic)|90-Subsets II|46-Permutations|47-Permutations II; 282-Expression Add Operators; 491-Increasing Subsequences; 996-Number of Squareful Arrays; 1239-Maximum Length of a Concatenated String with Unique Characters; 698-Partition to K Equal Sum Subsets; 1088-Confusing Number II; 1593-Split a String Into the Max Number of Unique Substrings; 1681-Minimum Incompatibility; 1307-Verbal Arithmetic Puzzle(hard); 1718-Construct the Lexicographically Largest Valid Sequence (with greedy); 1723-Find Minimum Time to Finish All Jobs(hard, with binary search); 1774-Closest Dessert Cost；465-Optimal Account Balancing (hard)
 
 ## binary search
 - Key words:
@@ -317,7 +317,7 @@ space can be optimized to O(1) if only need to track constant time of variables 
             - 0/1 knapsack: each element can be used 0 or 1 time
                 - eg: 416-Partition Equal Subset Sum|956-Tallest Billboard(hard, need max);474-Ones and Zeroes(two bags)|879-Profitable Schemes;1981-Minimize the Difference Between Target and Chosen Elements;805-Split Array With Same Average;
             - 0/n knapsack: each element can be used 0 or infinite amount of times
-                - eg: 322-Coin Change|691-Stickers to Spell Word(hard, with state compression)|1125-Smallest Sufficient Team; 983-Minimum Cost For Tickets; 1449-Form Largest Integer With Digits That Add up to Target
+                - eg: 039-Combination Sum; 322-Coin Change|691-Stickers to Spell Word(hard, with state compression)|1125-Smallest Sufficient Team; 983-Minimum Cost For Tickets; 1449-Form Largest Integer With Digits That Add up to Target
             - pos/neg knapsack: 494-Target Sum; 956-Tallest Billboard; 1049-Last Stone Weight II
             - two bags: 474-Ones and Zeroes(two bags)|879-Profitable Schemes; 956-Tallest Billboard(can be resolved with one bag)
         - eg: 630-Course Schedule III; 1774-Closest Dessert Cost
