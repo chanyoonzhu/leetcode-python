@@ -531,7 +531,9 @@ heapify time complexity: O(n), heap push/pop time complexity: O(logn)
         O(nlogn) on average; O(n^2) worst case
         O(1) space (in-place sorting)
     - variations:
-        quick select: eg.215, 973 O(n) on average since only sorting one partition; O(n^2) worst case
+        quick select: 
+            - complexity: O(n) on average since only sorting one partition; O(n^2) worst case
+            - eg.215-Kth_Largest_Element_in_an_Array, 973 
 - merge sort: 
     - algorithm:
         1. recursively call merge_sort on left half, then on right half
