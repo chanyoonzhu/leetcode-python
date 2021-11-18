@@ -10,9 +10,9 @@ circular array: 213,1658
 Deterministic Finite Automaton: 65
 divide and conquer: 53,215,241,307,308,312,327,395,973,1000,1547
 dfs: 17,79,91,99,105,106,113,124,129,133,200,207,210,212,230,236,241,261,297,298,301,329,331,333,337,394,399,449,490,529,536,543,549,637,652,666,684,687,690,694,695,743,753,778,785,787,803,827,863,889,934,947,951,959,975,987,1028,1110,1236,1306,1340,1368,1462,1569,1644,1676,1740,1766,1778
-dynamic programming: 5,10,32,39,45,53,55,64,70,72,91,96,97,115,139,188,198,213,221,256,265,276,279,300,312,322,375,403,410,413,416,435,446,464,473,474,486,494,516,518,542,552,562,576,583,629,634,673,712,727,740,746,805,813,837,877,879,887,920,931,935,940,956,983,1000,1027,1035,1039,1048,1066,1092,1105,1140,1143,1155,1216,1259,1269,1277,1278,1301,1312,1314,1335,1406,1458,1510,1547,1548,1594,1643,1696,1746,1774,1824,1879,1937,1947,1981
+dynamic programming: 5,10,32,39,45,53,55,64,70,72,91,96,97,115,139,188,198,213,221,256,265,276,279,300,312,322,375,403,410,413,416,435,446,464,473,474,486,494,516,518,542,552,562,576,583,629,634,673,712,727,740,746,805,813,837,871,877,879,887,920,931,935,940,956,983,1000,1027,1035,1039,1048,1066,1092,1105,1140,1143,1155,1216,1259,1269,1277,1278,1301,1312,1314,1335,1406,1458,1510,1547,1548,1594,1643,1696,1746,1774,1824,1879,1937,1947,1981
 graph: 785,863
-greedy: 45,53,55,135,358,410,435,455,621,630,678,767,774,785,843,853,875,877,954,1011,1231,1353,1383,1402,1419,1428,1482,1520,1537,1546,1552,1567,1648,1665,1718,1746,1775,1802,1824,1851,1870,1877,2007
+greedy: 45,53,55,135,358,410,435,455,621,630,678,767,774,785,843,853,871,875,877,954,1011,1231,1353,1383,1402,1419,1428,1482,1520,1537,1546,1552,1567,1648,1665,1718,1746,1775,1802,1824,1851,1870,1877,2007
 hashmap: 1,15,49,76,106,138,146,149,159,166,169,170,219,229,246,249,299,327,336,340,359,380,381,388,392,398,403,432,437,465,496,498,523,560,666,670,791,792,895,930,953,954,974,1000,1055,1218,1371,1442,1525,1542,1546,1570,1577,1590,1644,2007,2013
 hashset: 1,128,381,432,694,721,1239,1452,1774
 ino166-Fraction_to_Recurring_Decimalrder: 99,105,230,333,426
@@ -317,7 +317,7 @@ space can be optimized to O(1) if only need to track constant time of variables 
         - tip: for 0/1 knapsack: decrease i to avoid over counting; for 0/n knapsack: increase i to allow counting more than 1 time
         - problems:
             - 0/1 knapsack: each element can be used 0 or 1 time
-                - eg: 416-Partition Equal Subset Sum|956-Tallest Billboard(hard, need max);474-Ones and Zeroes(two bags)|879-Profitable Schemes;1981-Minimize the Difference Between Target and Chosen Elements;805-Split Array With Same Average;
+                - eg: 416-Partition Equal Subset Sum|956-Tallest Billboard(hard, need max);474-Ones and Zeroes(two bags)|879-Profitable Schemes; 871-Minimum Number of Refueling Stops(hard, todo); 1981-Minimize the Difference Between Target and Chosen Elements;805-Split Array With Same Average;
             - 0/n knapsack: each element can be used 0 or infinite amount of times
                 - eg: 039-Combination Sum; 322-Coin Change|691-Stickers to Spell Word(hard, with state compression)|1125-Smallest Sufficient Team; 983-Minimum Cost For Tickets; 1449-Form Largest Integer With Digits That Add up to Target
             - pos/neg knapsack: 494-Target Sum; 956-Tallest Billboard; 1049-Last Stone Weight II
@@ -376,6 +376,9 @@ Iterate over the array and update at each step the standard set for such problem
     - eg: 1402,1520,1665
 - problems:
     - greedy with sort: 853-Car Fleet; 1775-Equal Sum Arrays With Minimum Number of Operations; 1537-Get the Maximum Score; 954-Array of Doubled Pairs|2007-Find Original Array From Doubled Array; 1877-Minimize Maximum Pair Sum in Array
+    - violate rule first, greedily remediate after: 
+        - tip: using heap to greedily pick the largest item to remediate
+        - eg. 871-Minimum Number of Refueling Stops
     - maximum subarray: 53-Maximum Subarray; 1746. Maximum Subarray Sum After One Operation
     - shortest subarray: 1546-Maximum Number of Non-Overlapping Subarrays With Sum Equals Target
     - minimum state change: 1824-Minimum Sideway Jumps
