@@ -1,3 +1,13 @@
+# String
+- find start index of substring
+```
+s = "abcdabcd"
+s.find("bcd") # 1
+# start at/after index 2
+s.find("bcd", 2) # 5 
+s.find("xyz") # -1
+```
+
 # Numbers
 - define largest/smallest int: 
 ```
@@ -91,6 +101,13 @@ s = "ABCCD"
 counter = Counter(s)
 counter # {"A": 1, "B": 1, "C": 2, "D": 1}
 counter.most_common(3) # [('C', 2), ('A', 1), ('B', 1)]
+```
+
+char counts in str
+```
+s = "100001"
+s.count('1') # 2
+s.count('0') # 4
 ```
 
 # Set
