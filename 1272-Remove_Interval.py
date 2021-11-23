@@ -1,8 +1,8 @@
+"""
+- Sweep Lines
+- O(n), O(n)
+"""
 class Solution(object):
-    """
-    - Sweep Lines
-    - O(n), O(n)
-    """
     def removeInterval(self, intervals, toBeRemoved):
         """
         :type intervals: List[List[int]]
@@ -20,23 +20,27 @@ class Solution(object):
                     res.append([toBeRemoved[1], end])
         return res
     
-    """
-    - binary search (with bisect)
-    - O(logn), O(n)
-    """
+"""
+- binary search (with bisect)
+- O(logn), O(n)
+"""
+class Solution:
     def removeInterval(self, intervals: List[List[int]], toBeRemoved: List[int]) -> List[List[int]]:
-        result = []
-        left = bisect.bisect_left([interval[0] for interval in intervals], toBeRemoved[0])
-        right = bisect.bisect_right([interval[1] for interval in intervals], toBeRemoved[1])
         
-        if left > 0:
-            for i in range(left):
-                result.append([intervals[i][0], intervals[i][1]])
-            if intervals[left-1][1] > toBeRemoved[0]:
-                result[left-1][1] = toBeRemoved[0]
-        if right < len(intervals):
-            for i in range(right, len(intervals)):
-                result.append([intervals[i][0], intervals[i][1]])
-            if intervals[right][0] < toBeRemoved[1]:
-                result[left][0] = toBeRemoved[1]
-        return result
+        i = bisect.bisect_right([end for _, end in intervals], toBeRemoved[0])
+        j = bisect.bisect_left([start for start, _ in intervals], toBeRemoved[1])
+        
+        if i == j: # easy to miss, no overlap
+            return intervals
+        
+        res = intervals[:i]
+        # intervals [i+1:j-1] are guaranteed to be removed, so only need to handle to [i] and [j-1], use set to dedup if i == j-1
+        for k in set([i, j-1]):
+            start, end = intervals[k]
+            if start < toBeRemoved[0]:
+                res.append([start, toBeRemoved[0]])
+            if end > toBeRemoved[1]:
+                res.append([toBeRemoved[1], end])
+        res.extend(intervals[j:])
+        
+        return res

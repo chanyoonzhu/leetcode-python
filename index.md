@@ -134,6 +134,7 @@ while start <= end:
             - eg. 153-Find Minimum in Rotated Sorted Array|154. Find Minimum in Rotated Sorted Array II|33-Search in Rotated Sorted Array|81-Search in Rotated Sorted Array II; 
         - merge arrays:
             - eg. 4-Median of Two Sorted Arrays
+    - merge intervals: see "## sweep line"
 
 ## Bitwise Operation
 - AND
@@ -593,7 +594,8 @@ intervals
 Q: Are intervals mutually exclusive? A: Yes
 - Algorithm pattern: 
     - Sort and scan 
-    - priority queue/greedy  
+    - priority queue/greedy 
+    - binary search 
 - Data structures:
 - Complexity:
 O(n), O(n)
@@ -601,7 +603,7 @@ O(n), O(n)
     - streaming intervals (can usually solve using bisect), eg: 715. Range Module; 729, 731, 732, 57
     - greedy with priority queue: 1353-Maximum Number of Events That Can Be Attended; 1834-Single-Threaded CPU
 - Examples:
-eg: 56, 57, 218, 252, 253, 435, 452, 616-Add Bold Tag in String; 986-Interval List Intersections, 1229-Meeting Scheduler, 1272, 1288, Lint391; hard-352, 391(2D), 759, 850(2D)
+eg: 56, 57, 218, 252, 253, 435, 452, 616-Add Bold Tag in String; 986-Interval List Intersections, 1229-Meeting Scheduler, 1272-Remove Interval, 1288, Lint391; hard-352, 391(2D), 759, 850(2D)
 
 ## Sums:
 - Key words: 2 sum, 3 sum equal/smaller/closest to the target
