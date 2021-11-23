@@ -34,7 +34,7 @@ stack: 20,32,42,71,84,155,224,227,232,331,388,394,402,456,496,503,536,581,636,67
 string: 65,151,157,165,408,418,722,833,929,1087,1520
 topological sort: 207,210,269,329,444.1462
 tree: 114,116,222,235,236,298,333,337,339,366,426,450,515,543,549,652,687,729,919,1644,1650,1676,1740
-trie: 139,208,211,212,336,642,745
+trie: 139,208,211,212,336,616,642,745
 two pointers: 15,42,76,86,121,159,167,209,246,253,259,392,524,581,680,904,977,986,1055,1229,1248,1537,1574,1577,1658,1775,1868
 union find: 128,261,305,323,684,721,778,947,952,1562,1627,1722,1970,1998
 zip: 833
@@ -601,7 +601,7 @@ O(n), O(n)
     - streaming intervals (can usually solve using bisect), eg: 715. Range Module; 729, 731, 732, 57
     - greedy with priority queue: 1353-Maximum Number of Events That Can Be Attended; 1834-Single-Threaded CPU
 - Examples:
-eg: 56, 57, 218, 252, 253, 435, 452, 986-Interval List Intersections, 1229-Meeting Scheduler, 1272, 1288, Lint391; hard-352, 391(2D), 759, 850(2D)
+eg: 56, 57, 218, 252, 253, 435, 452, 616-Add Bold Tag in String; 986-Interval List Intersections, 1229-Meeting Scheduler, 1272, 1288, Lint391; hard-352, 391(2D), 759, 850(2D)
 
 ## Sums:
 - Key words: 2 sum, 3 sum equal/smaller/closest to the target
@@ -654,7 +654,7 @@ class TrieNode:
         self.isWord = False # mark word end
         self.children = collections.defaultdict(TrieNode)
 ```
-- eg: 211-Design Add and Search Words Data Structure(basic); 139-Word Break|140-Word Break II; 642-Design Search Autocomplete System; 745-Prefix and Suffix Search(2 Tries);
+- eg: 211-Design Add and Search Words Data Structure(basic); 139-Word Break|140-Word Break II; 616-Add Bold Tag in String; 642-Design Search Autocomplete System; 745-Prefix and Suffix Search(2 Tries);
 
 ## Union Find
 - key word: connected group in a graph
