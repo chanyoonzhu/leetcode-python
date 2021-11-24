@@ -1,39 +1,31 @@
 # Definition for a binary tree node.
-# class TreeNode(object):
-#     def __init__(self, x):
-#         self.val = x
-#         self.left = None
-#         self.right = None
+# class TreeNode:
+#     def __init__(self, val=0, left=None, right=None):
+#         self.val = val
+#         self.left = left
+#         self.right = right
 
-class Solution(object):
-    def maxPathSum(self, root):
-        """
-        :type root: TreeNode
-        :rtype: int
-        """
-
-        """
-        - recursion
-        - http://www.cnblogs.com/grandyang/p/4280120.html
-        """
+"""
+- dfs
+- clarification: definition of path is tricky: path with no fork, does not need to go through root nor leaf
+- O(n), O(n)
+"""
+class Solution:
+    def maxPathSum(self, root: Optional[TreeNode]) -> int:
+        self.max_sum = float('-inf')
+        self.dfs(root)
+        return self.max_sum
+    
+    def dfs(self, node: Optional[TreeNode]) -> int:
         
-        return max(self.helper(root))
+        if not node: return 0
         
-    def helper(self, root):
+        left_side_max = max(0, self.dfs(node.left)) # only use when positive
+        right_side_max = max(0, self.dfs(node.right))
         
-        if not root:
-            return (0, 0)
+        self.max_sum = max(self.max_sum, left_side_max + right_side_max + node.val)
         
-        leftHalfMax, leftMax = self.helper(root.left)
-        
-        rightHalfMax, rightMax = self.helper(root.right)
-            
-        halfMax = max(root.val + leftHalfMax, root.val + rightHalfMax, root.val) # incase needs to connect to root's parent, can only choose either connecting to the left/right of its child
-        fullMax = max(leftHalfMax + root.val + rightHalfMax, halfMax) # in case does not need to connect parent, largest sum path already appeared
-        if root.left: fullMax = max(leftMax, fullMax) # don't include leftMax when left is None
-        if root.right: fullMax = max(rightMax, fullMax)
-        
-        return (halfMax, fullMax)
+        return max(left_side_max, right_side_max) + node.val
 
 n1 = TreeNode(-2)
 n1.left = TreeNode(6)
