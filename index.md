@@ -636,16 +636,16 @@ eg: 56, 57, 218, 252, 253-Meeting Rooms II, 435, 452, 616-Add Bold Tag in String
 - If using dfs, has to decide which to use: in-order traversal (aka. dfs), post-order traversal (549,1740), and pre-order traversal (298, search tree). Time complexity is O(n): every node is visited once. Space complexity is O(n) in worst case and O(log(n)) in average case: The extra space comes from implicit stack space due to recursion. For a skewed binary tree, the recursion could go up to n levels deep. 
 If using bfs, usually uses a FIFO queue to store nodes to be visited. 
 - Problems:
-    - pre-order: 114-Flatten Binary Tree to Linked List(recursive/iterative); 297-Serialize and Deserialize Binary Tree; 449. Serialize and Deserialize BST; 536-Construct Binary Tree from String; 687-Longest Univalue Path; 951-Flip Equivalent Binary Trees; 1008-Construct Binary Search Tree from Preorder Traversal; 1110-Delete Nodes And Return Forest; 2049-Count Nodes With the Highest Score;
+    - pre-order: 114-Flatten Binary Tree to Linked List(recursive/iterative); 297-Serialize and Deserialize Binary Tree; 449. Serialize and Deserialize BST; 536-Construct Binary Tree from String; 652-Find Duplicate Subtrees; 687-Longest Univalue Path; 951-Flip Equivalent Binary Trees; 1008-Construct Binary Search Tree from Preorder Traversal; 1110-Delete Nodes And Return Forest; 2049-Count Nodes With the Highest Score;
     - in-order traversal: 366-Find Leaves of Binary Tree; 426-Convert Binary Search Tree to Sorted Doubly Linked List
-    - post-order traversal: 124-Binary Tree Maximum Path Sum; 543-Diameter of Binary Tree;
+    - post-order traversal: 124-Binary Tree Maximum Path Sum; 543-Diameter of Binary Tree; 652-Find Duplicate Subtrees;
     - traversal combinations: 105-Construct Binary Tree from Preorder and Inorder Traversal; 106-Construct Binary Tree from Inorder and Postorder Traversal; 889-Construct Binary Tree from Preorder and Postorder Traversal
     - BST(Binary Search Tree) Problems: 938. Range Sum of BST(easy); 450-Delete Node in a BST; 1008-Construct Binary Search Tree from Preorder Traversal; 1382-Balance a Binary Search Tree;
     - Breath-first search(BFS): 
         - eg: 199-Binary Tree Right Side View; 297-Serialize and Deserialize Binary Tree; 314-Binary Tree Vertical Order Traversal; 339-Nested List Weight Sum; 515-Find Largest Value in Each Tree Row; 1110-Delete Nodes And Return Forest;
         - complete binary tree
             - eg: 919-Complete Binary Tree Inserter
-    - Subtree hashing: 652-Find Duplicate Subtrees
+    - Tree serialization: 652-Find Duplicate Subtrees
     - Tree height: 199-Binary Tree Right Side View; 366-Find Leaves of Binary Tree; 637-Average of Levels in Binary Tree(bfs and dfs); 1161-Maximum Level Sum of a Binary Tree
     - Tree balancing: 1382-Balance a Binary Search Tree (with sorting)
     - Tree path: 124-Binary Tree Maximum Path Sum; 543-Diameter of Binary Tree; 687-Longest Univalue Path
