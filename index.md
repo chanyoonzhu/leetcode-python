@@ -9,7 +9,7 @@ bucket:220,299
 circular array: 213,1658
 Deterministic Finite Automaton: 65
 divide and conquer: 53,215,241,307,308,312,327,395,973,1000,1547
-dfs: 17,79,91,99,105,106,113,124,129,133,200,207,210,212,230,236,241,261,297,298,301,329,331,333,337,394,399,449,490,529,536,543,549,637,652,666,684,687,690,694,695,743,753,778,785,787,803,827,863,889,934,947,951,959,975,987,1028,1110,1161,1236,1306,1340,1368,1462,1569,1644,1676,1740,1766,1778
+dfs: 17,79,91,99,105,106,113,124,129,133,200,207,210,212,230,236,241,261,297,298,301,329,331,333,337,394,399,449,490,529,536,543,549,637,652,666,684,687,690,694,695,743,753,778,785,787,803,827,863,889,934,947,951,959,975,987,1028,1110,1161,1236,1306,1340,1368,1462,1569,1644,1676,1740,1766,1778,2049
 dynamic programming: 5,10,32,39,45,53,55,64,70,72,91,96,97,115,139,188,198,213,221,256,265,276,279,300,312,322,375,403,410,413,416,435,446,464,473,474,486,494,516,518,542,552,562,576,583,629,634,673,712,727,740,746,805,813,837,871,877,879,887,920,931,935,940,956,983,1000,1027,1035,1039,1048,1066,1092,1105,1140,1143,1155,1216,1259,1269,1277,1278,1301,1312,1314,1335,1406,1458,1510,1547,1548,1594,1643,1696,1746,1774,1824,1879,1937,1947,1981
 graph: 785,863
 greedy: 45,53,55,135,253,358,410,435,455,621,630,678,767,774,785,843,853,871,875,877,954,1011,1231,1353,1383,1402,1419,1428,1482,1520,1537,1546,1552,1567,1648,1665,1718,1746,1775,1802,1824,1851,1870,1877,2007
@@ -33,7 +33,7 @@ sort: 56,99,164,179,220,252,280,315,524,581,593,L391,973,1300,1509,1608,1610
 stack: 20,32,42,71,84,155,224,227,232,331,388,394,402,456,496,503,536,581,636,678,735,739,772,856,901,907,921,946,962,975,1019,1028,1047,1063,1106,1124,1130,1209,1249,1381,1541,1597,1673,1762,1776,1856
 string: 65,151,157,165,408,418,722,824,833,929,1087,1520
 topological sort: 207,210,269,329,444.1462
-tree: 114,116,222,235,236,298,333,337,339,366,426,450,515,543,549,652,687,729,919,1644,1650,1676,1740
+tree: 114,116,222,235,236,298,333,337,339,366,426,450,515,543,549,652,687,729,919,1644,1650,1676,1740,2049
 trie: 139,208,211,212,336,616,642,745
 two pointers: 15,42,76,86,121,159,167,209,246,253,259,392,524,581,680,904,977,986,1055,1229,1248,1537,1574,1577,1658,1775,1868
 union find: 128,261,305,323,684,721,778,947,952,1562,1627,1722,1970,1998
@@ -636,7 +636,7 @@ eg: 56, 57, 218, 252, 253-Meeting Rooms II, 435, 452, 616-Add Bold Tag in String
 - If using dfs, has to decide which to use: in-order traversal (aka. dfs), post-order traversal (549,1740), and pre-order traversal (298, search tree). Time complexity is O(n): every node is visited once. Space complexity is O(n) in worst case and O(log(n)) in average case: The extra space comes from implicit stack space due to recursion. For a skewed binary tree, the recursion could go up to n levels deep. 
 If using bfs, usually uses a FIFO queue to store nodes to be visited. 
 - Problems:
-    - pre-order: 114-Flatten Binary Tree to Linked List(recursive/iterative); 297-Serialize and Deserialize Binary Tree; 449. Serialize and Deserialize BST; 536-Construct Binary Tree from String; 687-Longest Univalue Path; 951-Flip Equivalent Binary Trees; 1008-Construct Binary Search Tree from Preorder Traversal; 1110-Delete Nodes And Return Forest;
+    - pre-order: 114-Flatten Binary Tree to Linked List(recursive/iterative); 297-Serialize and Deserialize Binary Tree; 449. Serialize and Deserialize BST; 536-Construct Binary Tree from String; 687-Longest Univalue Path; 951-Flip Equivalent Binary Trees; 1008-Construct Binary Search Tree from Preorder Traversal; 1110-Delete Nodes And Return Forest; 2049-Count Nodes With the Highest Score;
     - in-order traversal: 366-Find Leaves of Binary Tree; 426-Convert Binary Search Tree to Sorted Doubly Linked List
     - post-order traversal: 124-Binary Tree Maximum Path Sum; 543-Diameter of Binary Tree;
     - traversal combinations: 105-Construct Binary Tree from Preorder and Inorder Traversal; 106-Construct Binary Tree from Inorder and Postorder Traversal; 889-Construct Binary Tree from Preorder and Postorder Traversal
