@@ -488,7 +488,7 @@ heapify time complexity: O(n), heap push/pop time complexity: O(logn)
 - tip: usually solved with O(n) time using hashmap 
 - Problems:
     - prefix-sum
-        - eg.303-Range Sum Query - Immutable; 560-Subarray Sum Equals K,325-Maximum Size Subarray Sum Equals k; 930,974|1590(division),1371-Find the Longest Substring Containing Vowels in Even Counts;1442,437(tree version), 1124, 528-Random Pick with Weight; 1248-Count Number of Nice Subarrays; 1525-Number of Good Ways to Split a String; 1546-Maximum Number of Non-Overlapping Subarrays With Sum Equals Target;
+        - eg.303-Range Sum Query - Immutable|304-Range Sum Query 2D - Immutable; 560-Subarray Sum Equals K,325-Maximum Size Subarray Sum Equals k; 930,974|1590(division),1371-Find the Longest Substring Containing Vowels in Even Counts;1442,437(tree version), 1124, 528-Random Pick with Weight; 1248-Count Number of Nice Subarrays; 1525-Number of Good Ways to Split a String; 1546-Maximum Number of Non-Overlapping Subarrays With Sum Equals Target;
     - prefix-sum % k as key:
         - eg: 523-Continuous Subarray Sum
 
