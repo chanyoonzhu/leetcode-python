@@ -57,6 +57,13 @@ class Codec:
 - dfs (preorder)
 - O(n), O(n)
 """
+# Definition for a binary tree node.
+# class TreeNode(object):
+#     def __init__(self, x):
+#         self.val = x
+#         self.left = None
+#         self.right = None
+
 class Codec:
 
     def serialize(self, root):
@@ -65,31 +72,10 @@ class Codec:
         :type root: TreeNode
         :rtype: str
         """
-        result = []
-        # recursive
-        self.preorder(root, result)
-        # iterative
-        """
-        stack = []
-        node = root
-        while stack or node:
-            if node:
-                stack.append(node)
-                result.append(str(node.val))
-                node = node.left
-            else:
-                result.append("#")
-                node = stack.pop().right
-        """
-        return ','.join(result)
-    
-    def preorder(self, node, ser):
-        if not node:
-            ser.append("#")
-        else:
-            ser.append(str(node.val)) # remember to str()
-            self.preorder(node.left, ser)
-            self.preorder(node.right, ser) 
+        if not root:
+            return " "
+        return f"{str(root.val)}#{self.serialize(root.left)}#{self.serialize(root.right)}"
+        
 
     def deserialize(self, data):
         """Decodes your encoded data to tree.
@@ -97,18 +83,18 @@ class Codec:
         :type data: str
         :rtype: TreeNode
         """
-        der = data.split(",")
-        return self.dfs(der)
+        data_list = data.split("#") # convert to a list to make computation easier
+        return self.derHelper(data_list)
     
-    def dfs(self, der):
-        if not der: return None
-        val = der.pop(0)
-        if val == "#": 
+    def derHelper(self, data_list):
+        if data_list[0] == " ":
+            data_list.pop(0)
             return None
-        node = TreeNode(int(val))
-        node.left = self.dfs(der)
-        node.right = self.dfs(der)
-        return node
+        root = TreeNode(str(data_list[0]))
+        data_list.pop(0)
+        root.left = self.derHelper(data_list)
+        root.right = self.derHelper(data_list)
+        return root
         
 
 # Your Codec object will be instantiated and called as such:

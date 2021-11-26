@@ -645,7 +645,7 @@ If using bfs, usually uses a FIFO queue to store nodes to be visited.
         - eg: 199-Binary Tree Right Side View; 297-Serialize and Deserialize Binary Tree; 314-Binary Tree Vertical Order Traversal; 339-Nested List Weight Sum; 515-Find Largest Value in Each Tree Row; 1110-Delete Nodes And Return Forest;
         - complete binary tree
             - eg: 919-Complete Binary Tree Inserter
-    - Tree serialization: 652-Find Duplicate Subtrees
+    - Tree serialization: 297-Serialize and Deserialize Binary Tree; 652-Find Duplicate Subtrees
     - Tree height: 199-Binary Tree Right Side View; 366-Find Leaves of Binary Tree; 637-Average of Levels in Binary Tree(bfs and dfs); 1161-Maximum Level Sum of a Binary Tree
     - Tree balancing: 1382-Balance a Binary Search Tree (with sorting)
     - Tree path: 124-Binary Tree Maximum Path Sum; 543-Diameter of Binary Tree; 687-Longest Univalue Path
