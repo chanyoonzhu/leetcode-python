@@ -35,7 +35,7 @@ string: 65,151,157,165,408,418,722,824,833,929,1087,1520
 topological sort: 207,210,269,329,444.1462
 tree: 114,116,222,235,236,298,333,337,339,366,426,450,515,543,549,652,687,729,919,1644,1650,1676,1740,2049
 trie: 139,208,211,212,336,616,642,745
-two pointers: 15,42,76,86,121,159,167,209,246,253,259,392,524,581,680,904,977,986,1055,1229,1248,1537,1574,1577,1658,1775,1868
+two pointers: 15,16,42,76,86,121,159,167,209,246,253,259,392,524,581,680,904,977,986,1055,1229,1248,1537,1574,1577,1658,1775,1868
 union find: 128,261,305,323,684,721,778,947,952,1562,1627,1722,1970,1998
 zip: 833
 
@@ -628,7 +628,9 @@ eg: 56, 57, 218, 252, 253-Meeting Rooms II, 435, 452, 616-Add Bold Tag in String
 
 ## Two pointers:
 - problems:
-    - array: 977-Squares of a Sorted Array
+    - array: 
+        - eg: 977-Squares of a Sorted Array;
+        - n sums: 15-3Sum|16-3Sum Closest;
     - palindrom: 680-Valid Palindrome II; 246-Strobogrammatic Number
     - two sequences: 392-Is_Subsequence; 1537-Get the Maximum Score; 1868-Product of Two Run-Length Encoded Arrays
     - sliding window (see "## sliding window")
