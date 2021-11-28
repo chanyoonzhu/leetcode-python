@@ -1,7 +1,7 @@
 all, any: 833
 array: 31,54,56,68,73,122,151,157,163,186,204,238,268,349,350,380,381,498,556,766,849,1146,1371,1381,1526,1567,1706
 backtracking: 17,39,46,47,78,90,282,301,491,698,996,1088,1593,1239,1307,1681,1718,1723,1774
-bfs: 79,103,116,126,127,133,199,200,207,210,212,269,279,297,301,314,317,339,399,407,444,505,515,529,542,637,743,752,785,787,803,863,919,934,959,971,987,1091,1110,1161,1236,1254,1293,1306,1345,1368,1654,1778
+bfs: 79,103,116,126,127,133,199,200,207,210,212,269,279,297,301,314,317,339,399,407,444,505,515,529,542,637,743,752,785,787,803,863,909,919,934,959,971,987,1091,1110,1161,1236,1254,1293,1306,1345,1368,1654,1778
 binary search:4,29,33,34,57,81,153,154,162,222,240,259,268,275,279,287,295,300,374,410,715,774,875,911,1011,1055,1060,1146,1231,1272,1283,1428,1482,1552,1608,1648,1723,1802,1870,1891
 bitwise operation: 29,136,137,191,231,268,318,338,342,371,461,473,476,491,693,698,1284,1371,1442,1542,1593,1681
 binary search tree: 99,230,333,449,450,490,729,938,1008,1382
@@ -173,7 +173,7 @@ while start <= end:
 - problems:
     - all shortest paths: 301
     - 1D (array): 1654-Minimum Jumps to Reach Home; 279-Perfect Squares
-    - 2D shortest paths: 505-The Maze II;542-01 Matrix; 317-Shortest Distance from All Buildings(hard); 1091-Shortest Path in Binary Matrix; 1284-Minimum Number of Flips to Convert Binary Matrix to Zero Matrix (hard); 1293-Shortest Path in a Grid with Obstacles Elimination (hard)
+    - 2D shortest paths: 505-The Maze II;542-01 Matrix; 317-Shortest Distance from All Buildings(hard); 909-Snakes and Ladders(1d conversion); 1091-Shortest Path in Binary Matrix; 1284-Minimum Number of Flips to Convert Binary Matrix to Zero Matrix (hard); 1293-Shortest Path in a Grid with Obstacles Elimination (hard)
     - String: 752-Open the Lock
     - Dijkstra's Algorithm:
         - key words: minimal cost of paths (unlike regular shortest path where cost is always 1, each connection can have various cost)

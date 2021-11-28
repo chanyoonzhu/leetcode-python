@@ -1,3 +1,49 @@
+"""
+- bfs
+- O(n^2), O(n^2)
+"""
+class Solution:
+    def snakesAndLadders(self, board: List[List[int]]) -> int:
+        
+        board_1d = self.convertBoard(board)
+        N = len(board_1d)
+        
+        queue = deque()
+        queue.append((1, 0)) # number, step
+        visited = set()
+        visited.add(1)
+            
+        while queue:
+            cell, step = queue.popleft()
+            if cell == N - 1:
+                return step
+            
+            for i in range(1, 7):
+                next_ = cell + i
+                if self.canVisit(next_, visited, N):
+                    visited.add((next_))
+                    if board_1d[next_] != -1:
+                        # if self.canVisit(board_1d[next_], visited, N):
+                        queue.append((board_1d[next_], step + 1))
+                        # visited.add(board_1d[next_]) # easy to be wrong: cannot add to visited now! Having this line prevents traversing the ladder when there's one starting at board_1d[next_]
+                    else:
+                        queue.append((next_, step + 1))
+        return -1
+                    
+    def convertBoard(self, board):
+        n = len(board)
+        board_1d = [0] * (n ** 2 + 1)
+        for r in range(n):
+            for c in range(n):
+                idx = (n-1-r)*n+c+1 if (n-1-r) % 2 == 0 else (n-1-r)*n+(n-1-c)+1 # easy to be wrong: zigzag
+                board_1d[idx] = board[r][c]
+        return board_1d
+    
+    def canVisit(self, cell, visited, size):
+        if cell >= size:
+            return False
+        return cell not in visited
+
 class Solution(object):
     def snakesAndLadders(self, board):
         """
@@ -38,43 +84,6 @@ class Solution(object):
         i = n - 1 - (squareNo - 1) // n
         j = (squareNo - 1) % n if i % 2 != n % 2 else n - 1 - (squareNo - 1) % n
         return (i, j)
-
-        """
-        dp - not a good idea, does not work, why?
-
-        n = len(board)
-        dp = [[n+1] * n for _ in range(n)] 
-        dp[n-1][0] = 0
-        for k in range(2, n*n+1):
-            steps = (k - 2) // 6 + 1
-            i, j = self.idxConversion(k, board)
-            dp[i][j] = min(dp[i][j], steps)
-            jumpTo = board[i][j]
-            if jumpTo > 0:
-                iJump, jJump = self.idxConversion(jumpTo, board)
-                dp[iJump][jJump] = dp[i][j]
-                self.updateSquaresBehind(jumpTo, dp, board)
-            self.updateSquaresBehind(k, dp, board)
-        
-        return dp[0][-1]
-    
-    def updateSquaresBehind(self, squareNo, dp, board):
-        n = len(dp)
-        i, j = self.idxConversion(squareNo, board)
-        initialStep = dp[i][j]
-        for p in range(squareNo+1, n*n+1):
-            iNext, jNext = self.idxConversion(p, board)
-            stepsNext = initialStep + (p - squareNo - 1) // 6 + 1
-            if stepsNext > dp[iNext][jNext]:
-                break
-            else:
-                dp[iNext][jNext] = min(dp[iNext][jNext], stepsNext)
-            
-    def idxConversion(self, squareNo, board):
-        i = len(board) - 1 - (squareNo - 1) // len(board)
-        j = (squareNo - 1) % len(board) 
-        return (i, j)
-        """
         
 
 # print(Solution().snakesAndLadders([
