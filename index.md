@@ -3,7 +3,7 @@ array: 31,54,56,68,73,122,151,157,163,186,204,238,268,349,350,380,381,498,556,60
 backtracking: 17,39,46,47,78,90,282,301,491,698,996,1088,1593,1239,1307,1681,1718,1723,1774
 bfs: 79,103,116,126,127,133,199,200,207,210,212,269,279,297,301,314,317,339,399,407,444,505,515,529,542,637,743,752,785,787,803,863,909,919,934,959,971,987,1091,1110,1161,1236,1254,1293,1306,1345,1368,1654,1778
 binary search:4,29,33,34,57,81,153,154,162,222,240,259,268,275,279,287,295,300,374,410,715,774,875,911,1011,1055,1060,1146,1231,1272,1283,1428,1482,1552,1608,1648,1723,1802,1870,1891
-bitwise operation: 29,136,137,191,231,268,318,338,342,371,461,473,476,491,693,698,1284,1371,1442,1542,1593,1681
+bitwise operation: 29,136,137,191,231,268,318,338,342,371,461,473,476,491,693,698,1284,1371,1442,1542,1593,1680,1681
 binary search tree: 99,230,333,449,450,490,729,938,1008,1382
 bucket:220,299
 circular array: 213,1658
@@ -142,6 +142,7 @@ while start <= end:
     - tricks:
         - x & 1: get the rightmost bit
         - x & (x - 1): remove rightmost 1
+        - x & (x - 1) == 0: tests if x is the power of two
     - eg. 190-Reverse Bits; 191-Number of 1 Bits; 231-Power of Two; 342-Power of Four; 338-Counting Bits
 - XOR
     - definition - same: 0, different: 1
@@ -151,7 +152,7 @@ while start <= end:
             - tips: memoize the state of all prefixes in a hashmap, compute state using XOR
             - eg: 1371(even/odd),1542
         - Pure XOR: 1442,
-        - Addition: 371-Sum of Two Integers
+        - Addition: 371-Sum of Two Integers; 1680-Concatenation of Consecutive Binary Numbers
         - Bit difference/similarity: 461-Hamming Distance; 693-Binary Number with Alternating Bits
         - flip the bit: 476-Number Complement
 - Bit shift
