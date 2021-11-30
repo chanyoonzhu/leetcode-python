@@ -5,11 +5,20 @@
 """
 class Solution:
     def validSubarrays(self, nums: List[int]) -> int:
-        n = len(nums)
+        
+        N = len(nums)
+        res = 0
         stack = []
-        next_smaller = [n] * n
-        for i, v in enumerate(nums):
-            while stack and nums[stack[-1]] > v:
-                next_smaller[stack.pop()] = i
+        
+        for i, x in enumerate(nums):
+            while stack and x < nums[stack[-1]]:
+                prev_idx = stack.pop()
+                res += i - prev_idx
             stack.append(i)
-        return sum([next_smaller[i] - i for i in range(n)])
+        
+        # remained in stack are indexes with subarrays all the way to the end of the array
+        while stack:
+            idx = stack.pop()
+            res += N - idx
+        
+        return res
