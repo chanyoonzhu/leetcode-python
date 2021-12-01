@@ -581,7 +581,7 @@ heapify time complexity: O(n), heap push/pop time complexity: O(logn)
             -eg. 1673-Find the Most Competitive Subsequence; 402-Remove K Digits
         - window max/min (with monotonically increasing/decreasing stack)
             - intuition: it is very useful to get "next bigger item", "next smaller item", "previous bigger item", "previous smaller item" and therefore "window max" and "window min"
-            - eg: 42-Trapping Rain Water; 84-Largest Rectangle in Histogram; 907-Sum of Subarray Minimums; 1856-Maximum Subarray Min-Product(similar:907); 962-Maximum Width Ramp; 1124-Longest Well-Performing Interval
+            - eg: 42-Trapping Rain Water; 84-Largest Rectangle in Histogram; 907-Sum of Subarray Minimums; 1856-Maximum Subarray Min-Product(similar:907); 962-Maximum Width Ramp|1124-Longest Well-Performing Interval
         - collision: 1776-Car Fleet II
             
 

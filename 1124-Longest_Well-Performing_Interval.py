@@ -19,5 +19,28 @@ class Solution:
 
 """
 - monotonically increasing/decreasing stack
-- todo
+- intuition: convert to prefix sum array, need to find the longest subarray where i < j and prefix[i] < prefix[j] (number > 8 more than number <= 8)
+- similar: 962-Maximum Width Ramp
+- O(n), O(n)
 """
+class Solution:
+    def longestWPI(self, hours: List[int]) -> int:
+        
+        prefixes = [0]
+        for x in hours:
+            num = 1 if x > 8 else -1
+            prefixes.append(prefixes[-1] + num)
+        
+        stack = []
+        res = 0
+        for i in range(len(prefixes)):
+            if not stack or prefixes[i] < prefixes[stack[-1]]: # only append left boundary candidate to stack
+                stack.append(i)
+                
+        for i in range(len(prefixes) - 1, -1, -1): # greedily search from the right boundary with the largest index
+            while stack and prefixes[i] > prefixes[stack[-1]]:
+                res = max(res, i - stack.pop())
+            if not stack:
+                break
+                
+        return res
