@@ -4,16 +4,18 @@
 """
 class Solution:
     def maxWidthRamp(self, nums: List[int]) -> int:
-        stack = []
         
-        for i, val in enumerate(nums):
-            if not stack or val < nums[stack[-1]]:
-                stack.append(i) # indices that can be left boundary: if there's a value greater to the right, that value can't be the left boundary
+        stack = []
+        res = 0
+        for i, x in enumerate(nums):
+            if not stack or x < nums[stack[-1]]: # greedily stores element that can be left boundary
+                stack.append(i)
                 
-        result = 0
-        for i in range(len(nums) - 1, -1, -1):
-            val = nums[i]
-            while stack and val >= nums[stack[-1]]:
-                result = max(result, i - stack.pop())
-            
-        return result
+        for i in range(len(nums) - 1, -1, -1): # greedily look at right boundary with the largest index
+            x = nums[i]
+            while stack and x >= nums[stack[-1]]:
+                res = max(res, i - stack.pop())
+            if not stack: # for speeding up, can omit
+                break
+        
+        return res
