@@ -38,13 +38,16 @@ class Solution:
 """
 class Solution:
     def mctFromLeafValues(self, arr: List[int]) -> int:
-        result = 0
-        stack = [float('inf')]
+        res = 0
+        stack = [] # left candidate
         for a in arr:
-            while stack[-1] <= a:
-                mid = stack.pop() # regional dip
-                result += mid * min(stack[-1], a) # min of left and right
+            while stack and stack[-1] <= a:
+                mid = stack.pop() # mid is regional dip
+                if not stack:
+                    res += mid * a
+                else:
+                    res += mid * min(stack[-1], a) # min of left and right
             stack.append(a)
-        while len(stack) > 2:
-            result += stack.pop() * stack[-1]
-        return result
+        while len(stack) > 1:
+            res += stack.pop() * stack[-1]
+        return res
