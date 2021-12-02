@@ -10,9 +10,9 @@ circular array: 213,1658
 Deterministic Finite Automaton: 65
 divide and conquer: 53,215,241,307,308,312,327,395,973,1000,1547
 dfs: 17,79,91,99,105,106,113,124,129,133,200,207,210,212,230,236,241,261,297,298,301,329,331,333,337,394,399,449,490,529,536,543,549,637,652,666,684,687,690,694,695,743,753,778,785,787,803,827,863,889,934,947,951,959,975,987,1028,1110,1161,1236,1306,1340,1368,1462,1559,1569,1644,1676,1740,1766,1778,2049
-dynamic programming: 5,10,32,39,45,53,55,64,70,72,91,96,97,115,139,188,198,213,221,256,265,276,279,300,312,322,375,403,410,413,416,435,446,464,473,474,486,494,516,518,542,552,562,576,583,629,634,647,673,712,727,740,746,805,813,837,871,877,879,887,920,931,935,940,956,983,1000,1027,1035,1039,1048,1066,1092,1105,1140,1143,1155,1216,1259,1269,1277,1278,1301,1312,1314,1335,1406,1458,1510,1547,1548,1594,1643,1696,1746,1774,1824,1879,1937,1947,1981
+dynamic programming: 5,10,32,39,45,53,55,64,70,72,91,96,97,115,139,188,198,213,221,256,265,276,279,300,312,322,375,403,410,413,416,435,446,464,473,474,486,494,516,518,542,552,562,576,583,629,634,647,673,712,727,740,746,805,813,837,871,877,879,887,920,931,935,940,956,983,1000,1027,1035,1039,1048,1066,1092,1105,1130,1140,1143,1155,1216,1259,1269,1277,1278,1301,1312,1314,1335,1406,1458,1510,1547,1548,1594,1643,1696,1746,1774,1824,1879,1937,1947,1981
 graph: 785,863
-greedy: 45,53,55,135,253,358,410,435,455,621,630,678,767,774,785,843,853,871,875,877,954,962,1011,1231,1353,1383,1402,1419,1428,1482,1520,1537,1546,1552,1567,1648,1665,1718,1746,1775,1802,1824,1851,1870,1877,2007
+greedy: 45,53,55,135,253,358,410,435,455,621,630,678,767,774,785,843,853,871,875,877,954,962,1011,1130,1231,1353,1383,1402,1419,1428,1482,1520,1537,1546,1552,1567,1648,1665,1718,1746,1775,1802,1824,1851,1870,1877,2007
 hashmap: 1,15,49,76,106,138,146,149,159,166,169,170,219,229,246,249,266,299,327,336,340,359,380,381,388,392,398,403,432,437,465,496,498,523,560,666,670,791,792,895,930,953,954,974,1000,1055,1218,1371,1442,1525,1542,1546,1570,1577,1590,1644,2007,2013
 hashset: 1,128,381,432,694,721,1239,1452,1774
 ino166-Fraction_to_Recurring_Decimalrder: 99,105,230,333,426
@@ -298,7 +298,7 @@ space can be optimized to O(1) if only need to track constant time of variables 
         - eg. 64-Minimum Path Sum; 96-Unique Binary Search Trees; 542-01 Matrix; 221-Maximal Square | 1277-Count Square Submatrices with All Ones; 446-Arithmetic Slices II - Subsequence|1027-Longest Arithmetic Subsequence;673-Number of Longest Increasing Subsequence; 931-Minimum Falling Path Sum | 1937-Maximum Number of Points with Cost; (revisit above examples!) 940. Distinct Subsequences II; 1105-Filling Bookcase Shelves; 1259-Handshakes That Don't Cross
     - dp[i][j] depends on dp[i+1][j-1]:
         - tip: use subproblem size (diff between i and j) as the outer loop
-        - eg: 312-Burst Balloons(hard)|1039-Minimum Score Triangulation of Polygon; 375-Guess Number Higher or Lower II; 486, 516-Longest Palindromic Subsequence, 877, 1246-Palindrome Removal(hard); 1312; 1959-Minimum Total Space Wasted With K Resizing Operations
+        - eg: 312-Burst Balloons(hard)|1039-Minimum Score Triangulation of Polygon|1130-Minimum Cost Tree From Leaf Values; 375-Guess Number Higher or Lower II; 486, 516-Longest Palindromic Subsequence, 877, 1246-Palindrome Removal(hard); 1312; 1959-Minimum Total Space Wasted With K Resizing Operations
     - intervals: sequence needs to be divided into k distinct intervals
         - key words: split array
         - dp[i][k] depends on dp[j][k-1] where j = [1...i]
@@ -576,7 +576,7 @@ heapify time complexity: O(n), heap push/pop time complexity: O(logn)
         - eg. 224-Basic Calculator|227-Basic Calculator II|772-Basic Calculator III; 1106-Parsing A Boolean Expression
     - monotonically increasing/decreasing stack
         - comparison:
-            - eg: 1762-Buildings With an Ocean View(easy); 496,503-Next Greater Element I/II; 1063-Number of Valid Subarrays; 739-Daily Temperatures; 901-Online Stock Span; 456-132 Pattern; 1019-Next Greater Node In Linked List, 1130-Minimum Cost Tree From Leaf Values; 
+            - eg: 1762-Buildings With an Ocean View(easy); 496,503-Next Greater Element I/II; 1063-Number of Valid Subarrays; 739-Daily Temperatures; 901-Online Stock Span; 456-132 Pattern; 1019-Next Greater Node In Linked List; 1130-Minimum Cost Tree From Leaf Values; 
         - smallest/largest number formed by subsequence:
             -eg. 1673-Find the Most Competitive Subsequence; 402-Remove K Digits
         - window max/min (with monotonically increasing/decreasing stack)
