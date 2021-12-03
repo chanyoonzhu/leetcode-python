@@ -1,21 +1,38 @@
 """
+- brute force
+- O(mn), O(1)
+"""
+class Solution:
+    def nextGreaterElement(self, nums1: List[int], nums2: List[int]) -> List[int]:
+        n2 = len(nums2)
+        res = []
+        for num1 in nums1:
+            i = 0
+            while i < n2:
+                if num1 == nums2[i]:
+                    break
+                i += 1
+            i += 1
+            while i < n2 and nums2[i] < num1:
+                i += 1
+            res.append(nums2[i] if i < n2 else -1)
+        return res
+
+"""
 - hashmap with linear search
 - O(mn), O(m)
 """
 class Solution:
     def nextGreaterElement(self, nums1: List[int], nums2: List[int]) -> List[int]:
-        n1, n2 = len(nums1), len(nums2)
-        indexes = {n: i for i, n in enumerate(nums2)}
-        result = [-1] * n1
-        for i1 in range(n1):
-            num1 = nums1[i1]
-            i2 = indexes[num1] + 1
-            while i2 < n2:
-                if nums2[i2] > num1:
-                    result[i1] = nums2[i2]
-                    break
-                i2 += 1
-        return result
+        n2 = len(nums2)
+        res = []
+        num2_to_idx = {x: i for i, x in enumerate(nums2)}
+        for num1 in nums1:
+            i = num2_to_idx[num1] + 1
+            while i < n2 and nums2[i] < num1:
+                i += 1
+            res.append(nums2[i] if i < n2 else -1)
+        return res
 
 """
 - hashmap + monotonically increase stack
@@ -23,14 +40,16 @@ class Solution:
 """
 class Solution:
     def nextGreaterElement(self, nums1: List[int], nums2: List[int]) -> List[int]:
-        greaters = {}
-        mono_increasing_stack = []
-        for n in nums2:
-            while mono_increasing_stack and n > mono_increasing_stack[-1]:
-                greaters[mono_increasing_stack.pop()] = n
-            mono_increasing_stack.append(n)
-            
-        result = []
-        for n in nums1:
-            result.append(greaters.get(n, -1))
-        return result
+        greater = {}
+        res = []
+        stack = [] # mono-decreasing
+        
+        for x in nums2:
+            while stack and x > stack[-1]:
+                greater[stack.pop()] = x
+            stack.append(x)
+        
+        for x in nums1:
+            res.append(greater.get(x, -1))
+        
+        return res
