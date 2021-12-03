@@ -569,7 +569,7 @@ heapify time complexity: O(n), heap push/pop time complexity: O(logn)
     - straight forward stack:
         - eg: 071-Simplify_Path; 388-Longest Absolute File Path; 636-Exclusive Time of Functions; 735-Asteroid Collision; 1047-Remove All Adjacent Duplicates In String; 1209-Remove All Adjacent Duplicates in String II;
     - parenthesis: 
-        - eg. 32, 394-Decode String; 536-Construct Binary Tree from String; 678, 856, 921-Minimum Add to Make Parentheses Valid(basic); 1087-Brace Expansion(no stack); 1249, 1541; 772-Basic Calculator III
+        - eg. 32, 394-Decode String; 536-Construct Binary Tree from String; 678, 856-Score of Parentheses; 921-Minimum Add to Make Parentheses Valid(basic); 1087-Brace Expansion(no stack); 1249, 1541; 772-Basic Calculator III
         - can also use two passes: 32
     - calculator:
         - tip: can use either a stack or a recursive solution

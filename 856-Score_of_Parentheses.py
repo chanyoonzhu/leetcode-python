@@ -11,7 +11,7 @@ class Solution:
             else:
                 opening -= 1
                 if s[i - 1] == '(':
-                    result += 2 ** opening
+                    result += 2 ** opening # score are only calculated when seeing "()" 
         return result
 
 """
