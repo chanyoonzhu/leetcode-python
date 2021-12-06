@@ -1,48 +1,43 @@
-class RandomizedSet(object):
+"""
+- array and hashmap
+- time complexity for all APIs: O(1)
+- intuition: set/hashmap can be used to create the insert/remove api pretty easily, but random needs random access so an array is needed
+- array removal at index i is O(n), can be optimized to O(1) if we remove the last element and switch the last element with the element at index i
+"""
+class RandomizedSet:
 
-    """
-    - array and hashmap
-    - intuition: set/hashmap can be used to create the insert/remove api pretty easily, but random needs random access so an array is needed
-    """
     def __init__(self):
-        """
-        Initialize your data structure here.
-        """
-        self.nums = list()
-        self.pos = dict()
+        self.nums = []
+        self.num_to_idx = {}
         
-
     def insert(self, val: int) -> bool:
-        """
-        Inserts a value to the set. Returns true if the set did not already contain the specified element.
-        """
-        if val in self.pos:
+        if val in self.num_to_idx:
             return False
+        self.num_to_idx[val] = len(self.nums)
         self.nums.append(val)
-        self.pos[val]= len(self.nums) - 1
         return True
 
     def remove(self, val: int) -> bool:
-        """
-        Removes a value from the set. Returns true if the set contained the specified element.
-        """
-        if val not in self.pos:
+        if val not in self.num_to_idx:
             return False
-        index = self.pos[val]
         last_val = self.nums[-1]
-        self.nums[index] = last_val
-        self.pos[last_val] = index # easy to forget
+        remove_idx = self.num_to_idx[val]
+        self.nums[remove_idx] = last_val
+        self.num_to_idx[last_val] = remove_idx
         self.nums.pop()
-        del self.pos[val]
+        del self.num_to_idx[val]
         return True
-        
 
     def getRandom(self) -> int:
-        """
-        Get a random element from the set.
-        """
-        index = random.randint(0, len(self.nums) - 1)
-        return self.nums[index]
+        return self.nums[random.randint(0, len(self.nums) - 1)]
+        
+
+
+# Your RandomizedSet object will be instantiated and called as such:
+# obj = RandomizedSet()
+# param_1 = obj.insert(val)
+# param_2 = obj.remove(val)
+# param_3 = obj.getRandom()
         
 
 
