@@ -401,7 +401,7 @@ Iterate over the array and update at each step the standard set for such problem
         - value to index:
             -eg. 219-Contains Duplicate II; 670-Maximum Swap;
         - counter:
-            - eg: 266-Palindrome Permutation; 791-Custom Sort String; 2013-Detect Squares;
+            - eg: 266-Palindrome Permutation; 340-Longest Substring with At Most K Distinct Characters; 791-Custom Sort String; 2013-Detect Squares;
         - value to subarray/subsequence length:
             - eg: 1218-Longest Arithmetic Subsequence of Given Difference
         - numbers:
@@ -514,7 +514,7 @@ heapify time complexity: O(n), heap push/pop time complexity: O(logn)
         - eg. 1052; 1509-Minimum Difference Between Largest and Smallest Value in Three Moves
     - substring that has given numbers of certain characters: 
         - algorithm: move right pointer to right until satisfies condition, then move left pointer to right to tighten window until condition not satisfied
-        - eg. 3-Longest Substring Without Repeating Characters | 159-Longest Substring with At Most Two Distinct Characters | 340. Longest Substring with At Most K Distinct Characters | 992-Subarrays with K Different Integers | 395. Longest Substring with At Least K Repeating Characters; 76,1234; similar:904;1004-Max Consecutive Ones III;1248-Count Number of Nice Subarrays (loose end); 1358-Number of Substrings Containing All Three Characters; 1371-Find the Longest Substring Containing Vowels in Even Counts; 1438-Longest Continuous Subarray With Absolute Diff Less Than or Equal to Limit;1839-Longest Substring Of All Vowels in Order; 1658-Minimum Operations to Reduce X to Zero
+        - eg. 3-Longest Substring Without Repeating Characters | 159-Longest Substring with At Most Two Distinct Characters | 340-Longest Substring with At Most K Distinct Characters | 992-Subarrays with K Different Integers | 395-Longest Substring with At Least K Repeating Characters; 76,1234; similar:904;1004-Max Consecutive Ones III;1248-Count Number of Nice Subarrays (loose end); 1358-Number of Substrings Containing All Three Characters; 1371-Find the Longest Substring Containing Vowels in Even Counts; 1438-Longest Continuous Subarray With Absolute Diff Less Than or Equal to Limit;1839-Longest Substring Of All Vowels in Order; 1658-Minimum Operations to Reduce X to Zero
     - subarray sum with a target: sliding window with prefix-sum / two pointers
         - eg: 209,930,1658
     - use a sliding window to keep the running sum of last n items: 837-New 21 Game
