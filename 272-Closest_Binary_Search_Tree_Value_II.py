@@ -7,7 +7,7 @@
 
 """
 - bst search + heap
-- O(klogn)
+- O(logn*logk)?
 """
 class Solution:
     def closestKValues(self, root: Optional[TreeNode], target: float, k: int) -> List[int]:
@@ -39,3 +39,36 @@ class Solution:
             
         binary_search(root)
         return [val for _, val in heap]
+
+"""
+- dfs (inorder-traversal)
+- O(logn)?
+"""
+class Solution(object):
+    def closestKValues(self, root, target, k):
+        """
+        :type root: TreeNode
+        :type target: float
+        :type k: int
+        :rtype: List[int]
+        """
+        queue = deque() # inorder traversal guarantees values in queue is increasing
+        
+        def dfs(node):
+            if not node:
+                return
+            dfs(node.left)
+            
+            if len(queue) < k:
+                queue.append(node.val)
+                dfs(node.right)
+            else:
+                if abs(queue[0] - target) > abs(node.val - target):
+                    queue.append(node.val)
+                    queue.popleft()
+                    dfs(node.right)
+                else:
+                    return
+        
+        dfs(root)
+        return queue
