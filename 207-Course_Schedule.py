@@ -29,21 +29,22 @@ class Solution:
 """
 class Solution:
     def canFinish(self, numCourses: int, prerequisites: List[List[int]]) -> bool:
-        edges = collections.defaultdict(list)
-        degrees = [0] * numCourses
+        
+        indegrees = [0] * numCourses
+        graph = defaultdict(set)
         for c, pre in prerequisites:
-            edges[pre].append(c)
-            degrees[c] += 1
-
-        q = [course for course, degree in enumerate(degrees) if not degree]
+            graph[pre].add(c)
+            indegrees[c] += 1
+        
+        q = [c for c in range(numCourses) if not indegrees[c]]
         while q:
-            course = q.pop(0)
-            for next_course in edges[course]:
-                degrees[next_course] -= 1
-                if not degrees[next_course]:
-                    q.append(next_course)
-
-        return not sum(degrees)
+            c = q.pop(0)
+            for nc in graph[c]:
+                indegrees[nc] -= 1
+                if indegrees[nc] == 0:
+                    q.append(nc)
+        
+        return not any(indegrees)
 
 sl = Solution()
 print(sl.canFinish(3, [[1,0],[1,2],[0,1]]))
