@@ -32,43 +32,40 @@ class Solution:
         return smaller_counts
     
 
-    """
-    - merge sort: merge sort the array, for an item j, whenever an element on its right move to its left during merge, increase the count of j by 1
-    - O(nlogn), O(n)
-    """
+"""
+- merge sort: merge sort the array, for an item j, whenever an element on its right move to its left during merge, increase the count of j by 1
+- O(nlogn), O(n)
+"""
+class Solution:
     def countSmaller(self, nums: List[int]) -> List[int]:
+        N = len(nums)
+        res = [0] * N
+        self.merge_sort(nums, [i for i in range(N)],  0, N - 1, res)
+        return res
         
-        indexes = [i for i in range(len(nums))]
-        counts = [0] * (len(nums))
+    def merge(self, nums, indexes, left, mid, right, smallers):
+        p1, p2 = left, mid + 1
+        merged = []
+        while p1 <= mid and p2 <= right:
+            if nums[indexes[p1]] <= nums[indexes[p2]]:
+                merged.append(indexes[p1])
+                smallers[indexes[p1]] += (p2 - (mid + 1)) # p2 - (mid + 1) elements after mid already merged before p1 merges, so p2 - (mid + 1) elements smaller then p1
+                p1 += 1
+            else:
+                merged.append(indexes[p2])
+                p2 += 1
+        while p1 <= mid:
+            merged.append(indexes[p1])
+            smallers[indexes[p1]] += (p2 - (mid + 1)) # easy to miss this step
+            p1 += 1
+        while p2 <= right:
+            merged.append(indexes[p2])
+            p2 += 1
+        indexes[left:right+1] = merged
         
-        def merge(start, mid, end, indexes, counts):
-            i, j = start, mid + 1
-            merged = []
-            while mid >= i and end >= j:
-                if nums[indexes[i]] <= nums[indexes[j]]:
-                    merged.append(indexes[i])
-                    # Whenever we add an item from the left array to the result, 
-					# we must have seen j - (mid + 1) smaller items from the right, which 
-					# have higher index in the original array.
-                    counts[indexes[i]] += (j - (mid + 1)) 
-                    i += 1
-                else:
-                    merged.append(indexes[j])
-                    j += 1
-            if mid >= i:
-                merged.extend(indexes[i:mid + 1])
-                for i in range(i, mid + 1):
-                    counts[indexes[i]] += (j - (mid + 1))
-            if end >= j:
-                merged.extend(indexes[j:end + 1])
-            indexes[start:end + 1] = merged
-                
-        def merge_sort(start, end, indexes, counts):
-            if start < end:
-                mid = start + (end - start) // 2
-                merge_sort(start, mid, indexes, counts)
-                merge_sort(mid + 1, end, indexes, counts)
-                merge(start, mid, end, indexes, counts)
-        
-        merge_sort(0, len(nums) - 1, indexes, counts)
-        return counts
+    def merge_sort(self, nums, indexes, left, right, smallers):
+        if left < right:
+            mid = left + (right - left) // 2
+            self.merge_sort(nums, indexes, left, mid, smallers)
+            self.merge_sort(nums, indexes, mid + 1, right, smallers)
+            self.merge(nums, indexes, left, mid, right, smallers)

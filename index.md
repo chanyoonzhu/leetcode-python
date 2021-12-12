@@ -550,7 +550,7 @@ heapify time complexity: O(n), heap push/pop time complexity: O(logn)
     - Complexity:
         time: O(nlogn)
         space: O(n) - number of nodes in the recursion tree
-    - Examples: 315(hard)
+    - Examples: 315-Count of Smaller Numbers After Self(hard)
 - *sort an almost sorted array where two elements are swapped
     - Examples: 99
 - wiggle sort
