@@ -1,6 +1,6 @@
 all, any: 833
 array: 31,54,56,68,73,122,151,157,163,186,204,238,268,311,349,350,380,381,463,498,556,605,766,849,1146,1371,1381,1526,1567,1706
-backtracking: 17,39,46,47,78,90,282,301,491,698,996,1088,1593,1239,1307,1681,1718,1723,1774
+backtracking: 17,39,46,47,78,90,282,301,491,526,698,996,1088,1593,1239,1307,1681,1718,1723,1774
 bfs: 79,103,116,126,127,133,173,199,200,207,210,212,269,279,297,301,314,317,339,399,407,444,505,515,529,542,637,662,743,752,785,787,803,863,909,919,934,958,959,971,987,1091,1110,1161,1236,1254,1293,1306,1345,1368,1654,1778
 binary search:4,29,33,34,57,81,153,154,162,222,240,259,268,275,279,287,295,300,374,410,715,774,852,875,911,1011,1055,1060,1146,1231,1272,1283,1428,1482,1552,1608,1648,1723,1802,1870,1891
 bitwise operation: 29,136,137,191,231,268,318,338,342,371,461,473,476,491,693,698,1284,1371,1442,1542,1593,1680,1681
@@ -49,7 +49,8 @@ zip: 833
         - matrix: 311-Sparse Matrix Multiplication
 
 ## backtracking 
-    - eg: 17-Letter Combinations of a Phone Number; 39-Combination Sum; 78-Subsets(classic)|90-Subsets II|46-Permutations|47-Permutations II; 282-Expression Add Operators; 491-Increasing Subsequences; 996-Number of Squareful Arrays; 1239-Maximum Length of a Concatenated String with Unique Characters; 698-Partition to K Equal Sum Subsets; 1088-Confusing Number II; 1593-Split a String Into the Max Number of Unique Substrings; 1681-Minimum Incompatibility; 1307-Verbal Arithmetic Puzzle(hard); 1718-Construct the Lexicographically Largest Valid Sequence (with greedy); 1723-Find Minimum Time to Finish All Jobs(hard, with binary search); 1774-Closest Dessert Cost；465-Optimal Account Balancing (hard)
+    - eg: 17-Letter Combinations of a Phone Number; 39-Combination Sum; 78-Subsets(classic)|90-Subsets II|46-Permutations|47-Permutations II; 282-Expression Add Operators; 491-Increasing Subsequences; 526-Beautiful Arrangement; 996-Number of Squareful Arrays; 1239-Maximum Length of a Concatenated String with Unique Characters; 698-Partition to K Equal Sum Subsets; 1088-Confusing Number II; 1593-Split a String Into the Max Number of Unique Substrings; 1681-Minimum Incompatibility; 1307-Verbal Arithmetic Puzzle(hard); 1718-Construct the Lexicographically Largest Valid Sequence (with greedy); 1723-Find Minimum Time to Finish All Jobs(hard, with binary search); 1774-Closest Dessert Cost；465-Optimal Account Balancing (hard)
+    - state compression with bitmasking: see "## Bitmasking"
 
 ## binary search
 - Key words:
@@ -160,12 +161,12 @@ while start <= end:
     - multiplication: 29-Divide Two Integers
 
 
-## Bit-masking
+## Bitmasking
 - problems:
     - compression/serialization:
         - eg: 287-Find the Duplicate Number; 318-Maximum Product of Word Lengths; 1284-Minimum Number of Flips to Convert Binary Matrix to Zero Matrix (bfs)
     - enumeration (can be solved using backtracking):
-        - eg: 90-Subsets II; 491-Increasing Subsequences; 698-Partition to K Equal Sum Subsets; 1593-Split a String Into the Max Number of Unique Substrings; 1681-Minimum Incompatibility
+        - eg: 90-Subsets II; 491-Increasing Subsequences; 526-Beautiful Arrangement; 698-Partition to K Equal Sum Subsets; 1593-Split a String Into the Max Number of Unique Substrings; 1681-Minimum Incompatibility
 
 ## BFS
 - key word: shorted path (eg. 1345); 
