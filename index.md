@@ -30,7 +30,7 @@ recursive: 2,116,241,247,273,450,772,1106
 segment tree: 307,308,327,850
 sliding window: 3,76,159,209,239,340,395,837,862,904,930,992,1004,1052,1234,1358,1371,1423,1498,1509,1537,1574,1577,1610,1658,1696,1793,1839
 sort: 31,56,99,164,179,220,252,280,315,524,556,581,593,L391,973,1300,1509,1608,1610
-stack: 20,32,42,71,84,150,155,224,227,232,331,388,394,402,456,496,503,536,581,636,678,735,739,772,856,901,907,921,946,962,975,1019,1028,1047,1063,1106,1124,1130,1209,1249,1381,1541,1597,1673,1762,1776,1856,1944,1966
+stack: 20,32,42,71,84,150,155,224,227,232,331,388,394,402,456,496,503,536,581,636,678,716,735,739,772,856,901,907,921,946,962,975,1019,1028,1047,1063,1106,1124,1130,1209,1249,1381,1541,1597,1673,1762,1776,1856,1944,1966
 string: 65,151,157,165,408,418,722,824,833,929,1087,1520
 topological sort: 207,210,269,310,329,444.1462
 tree: 114,116,222,235,236,298,333,337,339,366,426,450,515,543,549,652,687,729,919,1522,1644,1650,1676,1740,2049
@@ -573,7 +573,7 @@ heapify time complexity: O(n), heap push/pop time complexity: O(logn)
 ## Stack
 - problems:
     - straight forward stack:
-        - eg: 071-Simplify_Path; 388-Longest Absolute File Path; 636-Exclusive Time of Functions; 735-Asteroid Collision; 1047-Remove All Adjacent Duplicates In String; 1209-Remove All Adjacent Duplicates in String II;
+        - eg: 071-Simplify_Path; 388-Longest Absolute File Path; 636-Exclusive Time of Functions; 716-Max Stack(hard); 735-Asteroid Collision; 1047-Remove All Adjacent Duplicates In String; 1209-Remove All Adjacent Duplicates in String II;
     - parenthesis: 
         - eg. 32, 394-Decode String; 536-Construct Binary Tree from String; 678, 856-Score of Parentheses; 921-Minimum Add to Make Parentheses Valid(basic); 1087-Brace Expansion(no stack); 1249, 1541; 772-Basic Calculator III
         - can also use two passes: 32

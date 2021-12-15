@@ -1,5 +1,7 @@
-import heapq
-
+"""
+- two stacks
+- O(1) - peek, push, pop, O(n) - others
+"""
 class MaxStack(object):
 
     def __init__(self):
@@ -7,7 +9,7 @@ class MaxStack(object):
         initialize your data structure here.
         """
         self.s1 = [] # normal stack
-        self.s2 = [] # max element at each s1 push
+        self.s2 = [] # max element so far
         
 
     def push(self, x):
@@ -54,7 +56,7 @@ class MaxStack(object):
         self.s1.pop() # pop max
         
         while temp:
-            self.push(temp.pop()) 
+            self.push(temp.pop()) # push back
         
         return max_
 

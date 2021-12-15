@@ -7,7 +7,7 @@ class Node:
     def __init__(self, count=0):
         
         self.count = count
-        self.keys = set() # all the keys that has count = self.count
+        self.keys = set() # key: all the keys that has count = self.count
         self.prev = None
         self.next = None
 
@@ -17,11 +17,12 @@ class AllOne:
         """
         Initialize your data structure here.
         """
+        # key: doubly-linkedlist with decreasing value (key counts)
         self.head = Node()
         self.tail = Node()
         self.head.next = self.tail
         self.tail.prev = self.head
-        self.cache = collections.defaultdict(Node)
+        self.cache = collections.defaultdict(Node) # key to node
         
     def _insert_before(self, next, key):
         if next.count + 1 != next.prev.count: # node with target count doesn't exist, need to create a new node
@@ -57,7 +58,7 @@ class AllOne:
             node.keys.remove(key)
             if not node.keys:
                 node.prev.next, node.next.prev = node.next, node.prev
-                node.next = node.prev = None
+                node.next = node.prev = None # del node
         
 
     def dec(self, key: str) -> None:
@@ -79,7 +80,7 @@ class AllOne:
         Returns one of the keys with maximal value.
         """
         if self.head.next.keys:
-            num = self.head.next.keys.pop()
+            num = self.head.next.keys.pop() # get random from set
             self.head.next.keys.add(num)
             return num
         return ""
