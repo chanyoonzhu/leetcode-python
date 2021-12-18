@@ -14,7 +14,7 @@ dynamic programming: 5,10,32,39,45,53,55,64,70,72,91,96,97,115,139,188,198,213,2
 graph: 785,863
 greedy: 45,53,55,135,253,358,410,435,455,621,630,678,767,774,785,843,853,871,875,877,954,962,1011,1130,1231,1353,1383,1402,1419,1428,1482,1520,1537,1546,1552,1567,1648,1665,1718,1746,1775,1802,1824,1851,1870,1877,2007
 hashmap: 1,15,49,76,106,138,146,149,159,166,169,170,219,229,246,249,266,299,327,336,340,359,380,381,388,392,398,403,432,437,465,496,498,523,560,666,670,791,792,852,895,930,953,954,974,1000,1055,1218,1371,1442,1525,1542,1546,1570,1577,1590,1644,2007,2013
-hashset: 1,128,381,432,694,721,1239,1452,1774
+hashset: 1,128,187,381,432,694,721,1239,1452,1774
 ino166-Fraction_to_Recurring_Decimalrder: 99,105,230,333,426
 linked list: 2,21,24,25,86,138,146,382,432,445,587,705,706,1650
 logic deduction: 444 
@@ -165,7 +165,7 @@ while start <= end:
 ## Bitmasking
 - problems:
     - compression/serialization:
-        - eg: 287-Find the Duplicate Number; 318-Maximum Product of Word Lengths; 1284-Minimum Number of Flips to Convert Binary Matrix to Zero Matrix (bfs)
+        - eg: 187-Repeated DNA Sequences; 287-Find the Duplicate Number; 318-Maximum Product of Word Lengths; 1284-Minimum Number of Flips to Convert Binary Matrix to Zero Matrix (bfs)
     - enumeration (can be solved using backtracking):
         - eg: 90-Subsets II; 491-Increasing Subsequences; 526-Beautiful Arrangement; 698-Partition to K Equal Sum Subsets; 1593-Split a String Into the Max Number of Unique Substrings; 1681-Minimum Incompatibility
 
@@ -420,6 +420,7 @@ Iterate over the array and update at each step the standard set for such problem
 ## Hashset
 - problems:
     - set operation: 1452-People Whose List of Favorite Companies Is Not a Subset of Another List
+    - dedup: 187-Repeated DNA Sequences
     - Storing states: 1774-Closest Dessert Cost
     - consecutive numbers: 128-Longest Consecutive Sequence
 
