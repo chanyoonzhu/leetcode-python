@@ -30,7 +30,7 @@ recursive: 2,116,241,247,273,450,772,1106
 segment tree: 307,308,327,850
 sliding window: 3,76,159,209,239,340,395,837,862,904,930,992,1004,1052,1234,1358,1371,1423,1498,1509,1537,1574,1577,1610,1658,1696,1793,1839
 sort: 31,56,99,164,179,220,252,280,315,524,556,581,593,L391,973,1300,1509,1608,1610
-stack: 20,32,42,71,84,150,155,224,227,232,331,388,394,402,456,496,503,536,581,636,678,716,735,739,772,856,901,907,921,946,962,975,1019,1028,1047,1063,1106,1124,1130,1209,1249,1381,1541,1597,1673,1762,1776,1856,1944,1966
+stack: 20,32,42,71,84,150,155,224,227,232,331,341,388,394,402,456,496,503,536,581,636,678,716,735,739,772,856,901,907,921,946,962,975,1019,1028,1047,1063,1106,1124,1130,1209,1249,1381,1541,1597,1673,1762,1776,1856,1944,1966
 string: 65,151,157,165,408,418,722,824,833,929,1087,1520
 topological sort: 207,210,269,310,329,444.1462
 tree: 114,116,222,235,236,298,333,337,339,366,426,450,515,543,549,652,687,729,919,1522,1644,1650,1676,1740,2049
@@ -276,7 +276,9 @@ or
 - Complexity: 
     - Time: O(n) - one visit each node
     - Space: O(n) - n stacks for skewed tree
-- example: 230, 254-Factor Combinations; 337; 690-Employee Importance; 778-Swim in Rising Water
+- example: 
+    - 230, 254-Factor Combinations; 337; 690-Employee Importance; 778-Swim in Rising Water
+    - nested list: 339-Nested List Weight Sum(also bfs); 341-Flatten Nested List Iterator(stack); 364-Nested List Weight Sum II
 
 ## 2D DFS/BFS
 - problems:
@@ -582,6 +584,9 @@ heapify time complexity: O(n), heap push/pop time complexity: O(logn)
     - math evaluation:
         - tip: can use either a stack or a recursive solution
         - eg. 150-Evaluate Reverse Polish Notation; 224-Basic Calculator|227-Basic Calculator II|772-Basic Calculator III; 1106-Parsing A Boolean Expression
+    - dfs:
+        - graph traversal: see "## DFS"
+        - other: 341-Flatten Nested List Iterator 
     - monotonically increasing/decreasing stack
         - comparison:
             - eg: 1762-Buildings With an Ocean View(easy); 496,503-Next Greater Element I/II|1944-Number of Visible People in a Queue|1966-Binary Searchable Numbers in an Unsorted Array; 1063-Number of Valid Subarrays; 739-Daily Temperatures; 901-Online Stock Span; 456-132 Pattern; 1019-Next Greater Node In Linked List; 1130-Minimum Cost Tree From Leaf Values; 
@@ -654,7 +659,6 @@ If using bfs, usually uses a FIFO queue to store nodes to be visited.
         - pre-order: 114-Flatten Binary Tree to Linked List(recursive/iterative); 156-Binary Tree Upside Down; 297-Serialize and Deserialize Binary Tree; 449. Serialize and Deserialize BST; 536-Construct Binary Tree from String; 652-Find Duplicate Subtrees; 655-Print Binary Tree; 662-Maximum Width of Binary Tree; 671-Second Minimum Node In a Binary Tree; 687-Longest Univalue Path; 951-Flip Equivalent Binary Trees; 545-Boundary of Binary Tree; 1008-Construct Binary Search Tree from Preorder Traversal; 1110-Delete Nodes And Return Forest; 2049-Count Nodes With the Highest Score;
         - in-order traversal: 272-Closest Binary Search Tree Value II(hard); 366-Find Leaves of Binary Tree; 426-Convert Binary Search Tree to Sorted Doubly Linked List
         - post-order traversal: 124-Binary Tree Maximum Path Sum; 543-Diameter of Binary Tree; 652-Find Duplicate Subtrees;
-        - general dfs: 364-Nested List Weight Sum II
     - traversal combinations: 105-Construct Binary Tree from Preorder and Inorder Traversal; 106-Construct Binary Tree from Inorder and Postorder Traversal; 889-Construct Binary Tree from Preorder and Postorder Traversal
     - BST(Binary Search Tree) Problems: 173-Binary Search Tree Iterator(iterative); 272-Closest Binary Search Tree Value II(hard); 938. Range Sum of BST(easy); 450-Delete Node in a BST; 1008-Construct Binary Search Tree from Preorder Traversal; 1382-Balance a Binary Search Tree;
     - Breath-first search(BFS): 
