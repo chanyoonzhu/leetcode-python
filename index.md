@@ -524,7 +524,7 @@ heapify time complexity: O(n), heap push/pop time complexity: O(logn)
         - algorithm: move right pointer to right until satisfies condition, then move left pointer to right to tighten window until condition not satisfied
         - eg. 3-Longest Substring Without Repeating Characters | 159-Longest Substring with At Most Two Distinct Characters | 340-Longest Substring with At Most K Distinct Characters | 992-Subarrays with K Different Integers | 395-Longest Substring with At Least K Repeating Characters; 76,1234; similar:904;1004-Max Consecutive Ones III;1248-Count Number of Nice Subarrays (loose end); 1358-Number of Substrings Containing All Three Characters; 1371-Find the Longest Substring Containing Vowels in Even Counts; 1438-Longest Continuous Subarray With Absolute Diff Less Than or Equal to Limit;1839-Longest Substring Of All Vowels in Order; 1658-Minimum Operations to Reduce X to Zero
     - subarray sum with a target: sliding window with prefix-sum / two pointers
-        - eg: 209,930,1658
+        - eg: 209-Minimum Size Subarray Sum; 713-Subarray Product Less Than K; 930-Binary Subarrays With Sum; 1658-Minimum Operations to Reduce X to Zero
     - use a sliding window to keep the running sum of last n items: 837-New 21 Game
     - largest size of subsequence with in target diff: 
         - tip: sort first
