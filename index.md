@@ -2,7 +2,7 @@ all, any: 833
 array: 31,54,56,68,73,122,151,157,163,186,204,238,268,311,349,350,380,381,463,498,556,605,766,849,1146,1371,1381,1526,1567,1706
 backtracking: 17,39,46,47,78,90,254,282,301,491,526,698,996,1088,1593,1239,1307,1681,1718,1723,1774
 bfs: 79,103,116,126,127,133,173,199,200,207,210,212,269,279,297,301,314,317,339,399,407,444,505,515,529,542,637,662,743,752,785,787,803,863,909,919,934,958,959,971,987,1091,1110,1161,1236,1254,1293,1306,1345,1368,1654,1778
-binary search:4,29,33,34,57,81,153,154,162,222,240,259,268,275,279,287,295,300,374,410,715,744,774,852,875,911,1011,1055,1060,1146,1231,1272,1283,1428,1482,1552,1608,1648,1723,1802,1870,1891
+binary search:4,29,33,34,57,81,153,154,162,222,240,259,268,275,279,287,295,300,367,374,410,715,744,774,852,875,911,1011,1055,1060,1146,1231,1272,1283,1428,1482,1552,1608,1648,1723,1802,1870,1891
 bitwise operation: 29,136,137,191,231,268,318,338,342,371,461,473,476,491,693,698,1284,1371,1442,1542,1593,1680,1681
 binary search tree: 99,173,272,333,449,450,490,729,938,1008,1382
 bucket:220,299
@@ -128,7 +128,7 @@ while start <= end:
 - problems:
     - binary search the answer: get the possible range of answer, binary search between range and see if current number can satisfy condition using greedy algorithm
         - eg: 287-Find the Duplicate Number; 410-Split Array Largest Sum|774; 778-Swim in Rising Water(graph)|875|1011|1231|1283|1300|1482|1552|1648|1802(complex)|1870; 1891-Cutting Ribbons;1723-Find Minimum Time to Finish All Jobs(hard, with backtracking); 279-Perfect Squares
-    - multiplication/division: 29-Divide Two Integers
+    - multiplication/division: 29-Divide Two Integers; 367-Valid Perfect Square; 
     - arrays: 
         - find target:
             eg. 34-Find First and Last Position of Element in Sorted Array; 162-Find Peak Element (unsorted); 825-Friends Of Appropriate Ages; 1060-Missing Element in Sorted Array
