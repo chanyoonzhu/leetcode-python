@@ -4,7 +4,7 @@ backtracking: 17,39,46,47,78,90,254,282,301,491,526,698,996,1088,1593,1239,1307,
 bfs: 79,103,116,126,127,133,173,199,200,207,210,212,269,279,297,301,314,317,339,399,407,444,505,515,529,542,637,662,743,752,785,787,803,863,909,919,934,958,959,971,987,1091,1110,1161,1197,1236,1254,1293,1306,1345,1368,1654,1778
 binary search:4,29,33,34,57,81,153,154,162,222,240,259,268,275,279,287,295,300,367,374,410,715,744,774,852,875,911,1011,1055,1060,1146,1231,1272,1283,1428,1482,1552,1608,1648,1723,1802,1870,1891
 bitwise operation: 29,136,137,191,231,268,318,338,342,371,461,473,476,491,693,698,1284,1371,1442,1542,1593,1680,1681
-binary search tree: 99,173,272,333,449,450,490,653,729,938,1008,1382
+binary search tree: 99,173,272,333,449,450,490,653,701,729,938,1008,1382
 bucket:220,299
 circular array: 213,1658
 Deterministic Finite Automaton: 65
@@ -26,7 +26,7 @@ preorder: 105,106,113,331,437,449,545,652,666,889,971,987,1008,1028,1569
 priority queue: 23,215,218,239,253,295,347,358,373,404,621,630,632,642,759,767,778,973,1229,1353,1383,1438,1439,1499,1675,1696,1834,1851,1882
 queue:232,239,656,1425,1438,1499,1696
 range sum: 307,308,327,1314,930,1442
-recursive: 2,116,241,247,273,450,772,1106
+recursive: 2,116,241,247,273,450,701,772,1106
 segment tree: 307,308,327,850
 sliding window: 3,76,159,209,239,340,395,837,862,904,930,992,1004,1052,1234,1358,1371,1423,1498,1509,1537,1574,1577,1610,1658,1696,1793,1839
 sort: 31,56,99,164,179,220,252,280,315,524,556,581,593,L391,611,973,1300,1509,1608,1610
@@ -658,7 +658,7 @@ If using bfs, usually uses a FIFO queue to store nodes to be visited.
     - traversal combinations: 105-Construct Binary Tree from Preorder and Inorder Traversal; 106-Construct Binary Tree from Inorder and Postorder Traversal; 889-Construct Binary Tree from Preorder and Postorder Traversal
     - BST(Binary Search Tree): 
         - tip: inorder traversal yields a sorted list
-        - eg.173-Binary Search Tree Iterator(iterative); 272-Closest Binary Search Tree Value II(hard); 653-Two Sum IV - Input is a BST; 938. Range Sum of BST(easy); 450-Delete Node in a BST; 1008-Construct Binary Search Tree from Preorder Traversal; 1382-Balance a Binary Search Tree;
+        - eg.173-Binary Search Tree Iterator(iterative); 272-Closest Binary Search Tree Value II(hard); 653-Two Sum IV - Input is a BST; 938. Range Sum of BST(easy); 450-Delete Node in a BST; 701-Insert into a Binary Search Tree; 1008-Construct Binary Search Tree from Preorder Traversal; 1382-Balance a Binary Search Tree;
     - Breath-first search(BFS): 
         - eg: 199-Binary Tree Right Side View; 297-Serialize and Deserialize Binary Tree; 314-Binary Tree Vertical Order Traversal; 339-Nested List Weight Sum; 515-Find Largest Value in Each Tree Row; 662-Maximum Width of Binary Tree; 1110-Delete Nodes And Return Forest;
         - complete binary tree
