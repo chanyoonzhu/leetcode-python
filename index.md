@@ -16,7 +16,7 @@ greedy: 45,53,55,135,253,358,410,435,455,621,630,678,767,774,785,843,853,871,875
 hashmap: 1,15,49,76,106,138,146,149,159,166,169,170,219,229,246,249,266,299,327,336,340,359,380,381,388,392,398,403,432,437,465,496,498,523,560,666,670,791,792,852,895,930,953,954,974,1000,1055,1218,1371,1442,1525,1542,1546,1570,1577,1590,1644,2007,2013
 hashset: 1,128,187,381,432,694,721,1239,1452,1774
 ino166-Fraction_to_Recurring_Decimalrder: 99,105,230,333,426
-linked list: 2,21,24,25,86,138,146,382,432,445,587,705,706,1650
+linked list: 2,21,24,25,61,86,138,146,382,432,445,587,705,706,1650
 logic deduction: 444 
 map: 205
 math:12,149,166,168,204,268,279,296,360,384,391,470,621,794,836,837,952,1041,1344,1569,1610,1627,1643,1998
@@ -35,7 +35,7 @@ string: 65,151,157,165,408,418,722,824,833,929,1087,1520
 topological sort: 207,210,269,310,329,444.1462
 tree: 114,116,222,235,236,298,333,337,339,366,426,450,515,543,549,652,687,729,919,1522,1644,1650,1676,1740,2049
 trie: 139,208,211,212,336,616,642,745
-two pointers: 15,16,42,76,86,121,159,167,209,244,246,253,259,360,392,524,581,611,680,904,977,986,1055,1229,1248,1537,1574,1577,1658,1775,1868
+two pointers: 15,16,42,61,76,86,121,159,167,209,244,246,253,259,360,392,524,581,611,680,904,977,986,1055,1229,1248,1537,1574,1577,1658,1775,1868
 union find: 128,261,305,323,684,721,778,947,952,1562,1627,1722,1970,1998
 zip: 833
 
@@ -440,6 +440,8 @@ heapify time complexity: O(n), heap push/pop time complexity: O(logn)
         - eg: 143-Reorder List
     - reverse a linkedlist:
         - eg: 143-Reorder List; 25-Reverse Nodes in k-Group
+    - link cycle
+        - two pointers: 61-Rotate List
 
 ## Fenwick Tree (or binary index tree):
 - used to solve numerous RANGE QUERY problems like finding minimum, maximum, sum, greatest common divisor, least common denominator in array in logarithmic time.
@@ -650,6 +652,7 @@ eg: 56, 57, 218, 252, 253-Meeting Rooms II, 435, 452, 616-Add Bold Tag in String
     - palindrom: 680-Valid Palindrome II; 246-Strobogrammatic Number
     - two sequences: 392-Is_Subsequence; 1537-Get the Maximum Score; 1868-Product of Two Run-Length Encoded Arrays
     - sliding window (see "## sliding window")
+    - linked list cycle (see "## Linked List")
 
 ## Tree - Recursion can usually be used. 
 - If using dfs, has to decide which to use: in-order traversal (aka. dfs), post-order traversal (549,1740), and pre-order traversal (298, search tree). Time complexity is O(n): every node is visited once. Space complexity is O(n) in worst case and O(log(n)) in average case: The extra space comes from implicit stack space due to recursion. For a skewed binary tree, the recursion could go up to n levels deep. 
