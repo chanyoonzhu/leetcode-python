@@ -19,7 +19,7 @@ ino166-Fraction_to_Recurring_Decimalrder: 99,105,230,333,426
 linked list: 2,21,24,25,61,86,138,146,382,432,445,587,705,706,1650
 logic deduction: 444 
 map: 205
-math:12,149,166,168,204,268,277,279,296,319,360,384,391,470,621,794,836,837,952,1041,1344,1569,1610,1627,1643,1998
+math:12,50,149,166,168,204,268,277,279,296,319,360,384,391,470,621,794,836,837,952,1041,1344,1569,1610,1627,1643,1998
 merge sort: 315,1574
 misc:169,229(moore voting)
 preorder: 105,106,113,331,437,449,545,652,666,889,971,987,1008,1028,1569
@@ -481,6 +481,7 @@ heapify time complexity: O(n), heap push/pop time complexity: O(logn)
         - def: radians (0 degree - 0, 90 - 1.57, 180 - pi, 270 - -1.57, 360 - 0); radian of a line (defined by two points (a, b)) to positive x axis: math.atan2(b[1] - a[1], b[0] - a[0])
         - eg: 1610-Maximum Number of Visible Points
 - Algebra:
+    - power: 50-Pow(x, n)
     - long division:
         - eg: 166-Fraction to Recurring Decimal
     - line formula:
