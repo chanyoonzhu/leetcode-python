@@ -1,5 +1,24 @@
 """
-- Math - my solution
+- Math - recursive
+- O（logn), O(n)
+"""
+class Solution:
+    def myPow(self, x: float, n: int) -> float:
+        if n < 0:
+            n = -n
+            x = 1 / x
+        return self.helper(x, n)
+        
+    def helper(self, x: float, n: int) -> float:
+        if not n:
+            return 1
+        if n == 1:
+            return x
+        div, mod = divmod(n, 2)
+        return self.myPow(x, div) ** 2 * self.myPow(x, mod)
+
+"""
+- Math - iterative
 - O（logn), O(n)
 """
 class Solution:
