@@ -1,5 +1,5 @@
 all, any: 833
-array: 6,31,54,56,68,73,122,151,157,163,186,204,238,268,311,349,350,380,381,463,498,556,605,766,849,1146,1371,1381,1526,1567,1706
+array: 6,31,41,54,56,68,73,122,151,157,163,186,204,238,268,311,349,350,380,381,463,498,556,605,766,849,1146,1371,1381,1526,1567,1706
 backtracking: 17,39,40,46,47,78,90,254,282,301,491,526,698,996,1088,1593,1239,1307,1681,1718,1723,1774
 bfs: 79,103,116,126,127,133,173,199,200,207,210,212,269,279,297,301,314,317,339,399,407,444,505,515,529,542,637,662,743,752,785,787,803,863,909,919,934,958,959,971,987,1091,1110,1161,1197,1236,1254,1293,1306,1345,1368,1654,1778
 binary search:4,29,33,34,57,81,153,154,162,222,240,259,268,275,279,287,295,300,367,374,410,715,744,774,852,875,911,1011,1055,1060,1146,1231,1272,1283,1428,1482,1552,1608,1648,1723,1802,1870,1891
@@ -14,7 +14,7 @@ dynamic programming: 5,10,32,39,45,53,55,64,70,72,91,96,97,115,139,152,188,198,2
 graph: 785,863
 greedy: 45,53,55,135,253,358,410,435,455,621,630,678,767,774,785,843,853,871,875,877,954,962,1011,1130,1231,1353,1383,1402,1419,1428,1482,1520,1537,1546,1552,1567,1648,1665,1718,1746,1775,1802,1824,1851,1870,1877,2007
 hashmap: 1,15,49,76,106,138,146,149,159,166,169,170,219,229,246,249,266,299,327,336,340,359,380,381,388,392,398,403,432,437,465,496,498,523,560,653,666,670,791,792,852,895,930,953,954,974,1000,1055,1218,1371,1442,1525,1542,1546,1570,1577,1590,1644,2007,2013
-hashset: 1,128,187,381,432,653,694,721,1239,1452,1774
+hashset: 1,41,128,187,381,432,653,694,721,1239,1452,1774
 ino166-Fraction_to_Recurring_Decimalrder: 99,105,230,333,426
 linked list: 2,21,24,25,61,86,138,146,382,432,445,587,705,706,1650
 logic deduction: 444 
@@ -42,7 +42,7 @@ zip: 833
 ## Array
 - Problems:
     - print screen:68-Text Justification; 418-Sentence Screen Fitting
-    - 1D array: 31-Next Permutation|556-Next Greater Element III|1643-Kth Smallest Instructions(has better solution); 605-Can Place Flowers; 1562-Find Latest Group of Size M(hard)
+    - 1D array: 31-Next Permutation|556-Next Greater Element III|1643-Kth Smallest Instructions(has better solution); 41-First Missing Positive; 605-Can Place Flowers; 1562-Find Latest Group of Size M(hard)
         - linear search: 163-Missing Ranges;
     - 2D array: 463-Island Perimeter; 766-Toeplitz Matrix; 1706-Where Will the Ball Fall
         - matrix: 311-Sparse Matrix Multiplication
@@ -425,7 +425,7 @@ Iterate over the array and update at each step the standard set for such problem
 - problems:
     - set operation: 1452-People Whose List of Favorite Companies Is Not a Subset of Another List
     - dedup: 187-Repeated DNA Sequences
-    - find pair: 653. Two Sum IV - Input is a BST
+    - find pair: 41-First Missing Positive; 653. Two Sum IV - Input is a BST
     - Storing states: 1774-Closest Dessert Cost
     - consecutive numbers: 128-Longest Consecutive Sequence
 
@@ -733,6 +733,12 @@ def isXandYConnected(n):
         - key words: number of ways to get target sum/product
         - eg: 1577-Number of Ways Where Square of Number Is Equal to Product of Two Numbers
 
+# Big O tips
+- space
+    - O(1): in-memory modification (eg.41-First Missing Positive)
+
+
 # Needs revisit:
+41-First Missing Positive
 254-Factor Combinations
 1235-Maximum Profit in Job Scheduling (dp)
