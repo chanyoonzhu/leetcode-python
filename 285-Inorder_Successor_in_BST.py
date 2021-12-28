@@ -1,21 +1,27 @@
-# Definition for a binary tree node.
-# class TreeNode(object):
-#     def __init__(self, x):
-#         self.val = x
-#         self.left = None
-#         self.right = None
+"""
+- bst
+- O(log(n))
+""" 
+class Solution:
+    def inorderSuccessor(self, root: 'TreeNode', p: 'TreeNode') -> 'Optional[TreeNode]':
+        if not root:
+            return None
+        if root.val > p.val:
+            closer_successor = self.inorderSuccessor(root.left, p)
+            return closer_successor if closer_successor else root
+            """ or 
+            return self.inorderSuccessor(root.left, p) or root
+            """
+        else:
+            return self.inorderSuccessor(root.right, p)
 
-class Solution(object):
-    def inorderSuccessor(self, root, p):
-        """
-        :type root: TreeNode
-        :type p: TreeNode
-        :rtype: TreeNode
-        """
-        
-        """
-        - O(log(n)), -O(n)
-        - inorder traversal, then search (use binary search instead)
+"""
+- inorder traversal
+- O(log(n)), -O(n)
+- inorder traversal, then search (use binary search instead)
+"""
+class Solution:
+    def inorderSuccessor(self, root: 'TreeNode', p: 'TreeNode') -> 'Optional[TreeNode]':
         
         inorder = self.inorder(root)
         for i in range(len(inorder)):
@@ -33,15 +39,3 @@ class Solution(object):
         if root.right:
             res.extend(self.inorder(root.right))
         return res
-        """
-        
-        """
-        - O(log(n))
-        """ 
-        
-        if not root:
-            return None
-        if root.val > p.val:
-            return self.inorderSuccessor(root.left, p) or root # smart!
-        else: 
-            return self.inorderSuccessor(root.right, p)

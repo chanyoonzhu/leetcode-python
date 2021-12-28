@@ -4,7 +4,7 @@ backtracking: 17,39,40,46,47,78,90,254,282,301,491,526,698,996,1088,1593,1239,13
 bfs: 79,103,116,126,127,133,173,199,200,207,210,212,269,279,297,301,314,317,339,399,407,444,505,515,529,542,637,662,743,752,785,787,803,863,909,919,934,958,959,971,987,1091,1110,1161,1197,1236,1254,1293,1306,1345,1368,1654,1778
 binary search:4,29,33,34,57,81,153,154,162,222,240,259,268,275,279,287,295,300,367,374,410,715,744,774,852,875,911,1011,1055,1060,1146,1231,1272,1283,1428,1482,1552,1608,1648,1723,1802,1870,1891
 bitwise operation: 29,136,137,191,231,268,318,338,342,371,461,473,476,491,693,698,1284,1371,1442,1542,1593,1680,1681
-binary search tree: 99,173,272,333,449,450,490,653,701,729,938,1008,1382
+binary search tree: 99,173,272,285,333,449,450,490,653,701,729,938,1008,1382
 bucket:220,299
 circular array: 213,1658
 Deterministic Finite Automaton: 65
@@ -32,7 +32,7 @@ sort: 31,56,99,164,179,220,252,280,315,524,556,581,593,L391,611,973,1300,1509,16
 stack: 20,32,42,71,84,150,155,224,227,232,331,341,388,394,402,456,496,503,536,581,636,678,716,735,739,772,856,901,907,921,946,962,975,1019,1028,1047,1063,1106,1124,1130,1209,1249,1381,1541,1597,1673,1762,1776,1856,1944,1966
 string: 6,65,151,157,165,408,418,722,824,833,929,1087,1520
 topological sort: 207,210,269,310,329,444.1462
-tree: 100,114,116,222,235,236,298,333,337,339,366,426,450,515,543,549,652,653,687,729,919,1522,1644,1650,1676,1740,2049
+tree: 100,114,116,222,235,236,285,298,333,337,339,366,426,450,515,543,549,652,653,687,729,919,1522,1644,1650,1676,1740,2049
 trie: 139,208,211,212,336,616,642,745
 two pointers: 15,16,42,61,76,86,121,159,167,209,244,246,253,259,360,392,524,581,611,680,904,977,986,1055,1229,1248,1537,1574,1577,1658,1775,1868
 union find: 128,261,305,323,684,721,778,947,952,1562,1627,1722,1970,1998
@@ -657,12 +657,12 @@ If using bfs, usually uses a FIFO queue to store nodes to be visited.
         - pre-order: 100-Same Tree; 114-Flatten Binary Tree to Linked List(recursive/iterative); 156-Binary Tree Upside Down; 297-Serialize and Deserialize Binary Tree; 449. Serialize and Deserialize BST; 536-Construct Binary Tree from String; 652-Find Duplicate Subtrees; 655-Print Binary Tree; 662-Maximum Width of Binary Tree; 671-Second Minimum Node In a Binary Tree; 687-Longest Univalue Path; 951-Flip Equivalent Binary Trees; 545-Boundary of Binary Tree; 1008-Construct Binary Search Tree from Preorder Traversal; 1110-Delete Nodes And Return Forest; 2049-Count Nodes With the Highest Score;
         - in-order traversal: 
             - tip: inorder traversal of BST yields a sorted list
-            - eg. 272-Closest Binary Search Tree Value II(hard); 366-Find Leaves of Binary Tree; 426-Convert Binary Search Tree to Sorted Doubly Linked List;
+            - eg. 285-Inorder Successor in BST; 272-Closest Binary Search Tree Value II(hard); 366-Find Leaves of Binary Tree; 426-Convert Binary Search Tree to Sorted Doubly Linked List;
         - post-order traversal: 124-Binary Tree Maximum Path Sum; 543-Diameter of Binary Tree; 652-Find Duplicate Subtrees;
     - traversal combinations: 105-Construct Binary Tree from Preorder and Inorder Traversal; 106-Construct Binary Tree from Inorder and Postorder Traversal; 889-Construct Binary Tree from Preorder and Postorder Traversal
     - BST(Binary Search Tree): 
         - tip: inorder traversal yields a sorted list
-        - eg.173-Binary Search Tree Iterator(iterative); 272-Closest Binary Search Tree Value II(hard); 653-Two Sum IV - Input is a BST; 938. Range Sum of BST(easy); 450-Delete Node in a BST; 701-Insert into a Binary Search Tree; 1008-Construct Binary Search Tree from Preorder Traversal; 1382-Balance a Binary Search Tree;
+        - eg.173-Binary Search Tree Iterator(iterative); 285-Inorder Successor in BST(classic); 272-Closest Binary Search Tree Value II(hard); 653-Two Sum IV - Input is a BST; 938. Range Sum of BST(easy); 450-Delete Node in a BST; 701-Insert into a Binary Search Tree; 1008-Construct Binary Search Tree from Preorder Traversal; 1382-Balance a Binary Search Tree;
     - Breath-first search(BFS): 
         - eg: 199-Binary Tree Right Side View; 297-Serialize and Deserialize Binary Tree; 314-Binary Tree Vertical Order Traversal; 339-Nested List Weight Sum; 515-Find Largest Value in Each Tree Row; 662-Maximum Width of Binary Tree; 1110-Delete Nodes And Return Forest;
         - complete binary tree
