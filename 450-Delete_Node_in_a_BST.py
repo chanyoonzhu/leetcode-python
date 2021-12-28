@@ -25,6 +25,7 @@ class Solution:
             if not root.right:
                 return root.left
             new_root = root.left
+            # move new_root.right to as the left branch of the successor of root
             right_leftmost = root.right
             while right_leftmost.left:
                 right_leftmost = right_leftmost.left
