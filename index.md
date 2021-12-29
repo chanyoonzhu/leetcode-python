@@ -670,7 +670,7 @@ If using bfs, usually uses a FIFO queue to store nodes to be visited.
     - Tree serialization: 297-Serialize and Deserialize Binary Tree; 652-Find Duplicate Subtrees
     - Tree height: 199-Binary Tree Right Side View; 366-Find Leaves of Binary Tree; 637-Average of Levels in Binary Tree(bfs and dfs); 655-Print Binary Tree; 1161-Maximum Level Sum of a Binary Tree
     - Tree balancing: 1382-Balance a Binary Search Tree (with sorting)
-    - Tree path: 124-Binary Tree Maximum Path Sum; 543-Diameter of Binary Tree; 687-Longest Univalue Path; 1522-Diameter of N-Ary Tree
+    - Tree path: 124-Binary Tree Maximum Path Sum; 298-Binary Tree Longest Consecutive Sequence; 543-Diameter of Binary Tree; 687-Longest Univalue Path; 1522-Diameter of N-Ary Tree
 
 ## Trie
 - when to use: Trie could use less space compared to hashmap when storing many keys with the same prefix (word search, spell checker, etc.)
