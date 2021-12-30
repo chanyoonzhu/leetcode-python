@@ -1,35 +1,59 @@
 # Definition for a binary tree node.
-# class TreeNode(object):
-#     def __init__(self, x):
-#         self.val = x
-#         self.left = None
-#         self.right = None
+# class TreeNode:
+#     def __init__(self, val=0, left=None, right=None):
+#         self.val = val
+#         self.left = left
+#         self.right = right
 
-class Solution(object):
-    def isSubtree(self, s, t):
-        """
-        :type s: TreeNode
-        :type t: TreeNode
-        :rtype: bool
-        """
-        
-        def isSameTree(s, t):
-            if s is None and t is None:
-                return True
-            if s is None or t is None:
-                return False
-            if s.val == t.val:
-                return isSameTree(s.left, t.left) and isSameTree(s.right, t.right)
-            
-        if not s and not t: 
+"""
+- caveat: node values are not unique
+- dfs
+- O(n*s) s - number of nodes in subroot
+"""
+class Solution:
+    def isSubtree(self, root: Optional[TreeNode], subRoot: Optional[TreeNode]) -> bool:
+        if not root and not subRoot:
             return True
-        elif s and t:
-            if s.val == t.val:
-                if isSameTree(s, t):
-                    return True
-            return self.isSubtree(s.left, t) or self.isSubtree(s.right, t)
-        else:
+        if not root or not subRoot:
             return False
+        if root.val == subRoot.val and self.isSameTree(root, subRoot):
+            return True
+        return self.isSubtree(root.left, subRoot) or self.isSubtree(root.right, subRoot)
+        
+    def isSameTree(self, node, other_node):
+        if not node and not other_node:
+            return True
+        if not node or not other_node:
+            return False
+        if node.val != other_node.val:
+            return False
+        return self.isSameTree(node.left, other_node.left) and self.isSameTree(node.right, other_node.right)
+
+"""
+- caveat: node values are not unique
+- dfs
+- O(|n|+|s|)
+"""
+class Solution:
+    def isSubtree(self, root: Optional[TreeNode], subRoot: Optional[TreeNode]) -> bool:
+        if not root and not subRoot:
+            return True
+        if not root or not subRoot:
+            return False
+        
+        sers = set()
+        
+        def serialize(node, cache=None):
+            if not node:
+                return " "
+            ser = f"{node.val}#{serialize(node.left, cache)}#{serialize(node.right, cache)}"
+            if cache != None:
+                cache.add(ser) # optimizing: can hash ser to save space
+            return ser
+        
+        serialize(root, sers)
+        return serialize(subRoot) in sers
+        
                 
                 
                 
