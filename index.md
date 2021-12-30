@@ -661,8 +661,9 @@ If using bfs, usually uses a FIFO queue to store nodes to be visited.
         - post-order traversal: 124-Binary Tree Maximum Path Sum; 543-Diameter of Binary Tree; 652-Find Duplicate Subtrees;
     - traversal combinations: 105-Construct Binary Tree from Preorder and Inorder Traversal; 106-Construct Binary Tree from Inorder and Postorder Traversal; 889-Construct Binary Tree from Preorder and Postorder Traversal
     - BST(Binary Search Tree): 
+        - a node needs to be larger than the largest node in its left subtree and smaller than the smallest node in its right subtree (eg.333)
         - tip: inorder traversal yields a sorted list
-        - eg.173-Binary Search Tree Iterator(iterative); 285-Inorder Successor in BST(classic); 272-Closest Binary Search Tree Value II(hard); 653-Two Sum IV - Input is a BST; 938. Range Sum of BST(easy); 450-Delete Node in a BST; 701-Insert into a Binary Search Tree; 1008-Construct Binary Search Tree from Preorder Traversal; 1382-Balance a Binary Search Tree;
+        - eg.173-Binary Search Tree Iterator(iterative); 285-Inorder Successor in BST(classic); 272-Closest Binary Search Tree Value II(hard); *333-Largest BST Subtree; 653-Two Sum IV - Input is a BST; 938. Range Sum of BST(easy); 450-Delete Node in a BST; 701-Insert into a Binary Search Tree; 1008-Construct Binary Search Tree from Preorder Traversal; 1382-Balance a Binary Search Tree;
     - Breath-first search(BFS): 
         - eg: 199-Binary Tree Right Side View; 297-Serialize and Deserialize Binary Tree; 314-Binary Tree Vertical Order Traversal; 339-Nested List Weight Sum; 515-Find Largest Value in Each Tree Row; 662-Maximum Width of Binary Tree; 1110-Delete Nodes And Return Forest;
         - complete binary tree
