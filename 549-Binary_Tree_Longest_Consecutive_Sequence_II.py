@@ -4,14 +4,16 @@
 #         self.val = val
 #         self.left = left
 #         self.right = right
+
+"""
+- post-order traversal
+- O(n): every node is visited once -  The time complexity is the same as an post-order traversal of a binary tree with n nodes.
+- O(n): The extra space comes from implicit stack space due to recursion. For a skewed binary tree, the recursion could go up to nn levels deep.
+"""
 class Solution(object):
     
     longest = 0
-    """
-    - post-order traversal
-    - O(n): every node is visited once -  The time complexity is the same as an post-order traversal of a binary tree with n nodes.
-    - O(n): The extra space comes from implicit stack space due to recursion. For a skewed binary tree, the recursion could go up to nn levels deep.
-    """
+
     def longestConsecutive(self, root):
         """
         :type root: TreeNode
@@ -36,4 +38,4 @@ class Solution(object):
         if right and right.val - 1 == node.val:
             n_dec = max(n_dec, r_dec + 1)        
         self.longest = max(self.longest, n_inc + n_dec - 1)
-        return(n_inc, n_dec)
+        return (n_inc, n_dec)

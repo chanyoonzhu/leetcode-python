@@ -658,7 +658,8 @@ If using bfs, usually uses a FIFO queue to store nodes to be visited.
         - in-order traversal: 
             - tip: inorder traversal of BST yields a sorted list
             - eg. 285-Inorder Successor in BST; 272-Closest Binary Search Tree Value II(hard); 366-Find Leaves of Binary Tree; 426-Convert Binary Search Tree to Sorted Doubly Linked List;
-        - post-order traversal: 124-Binary Tree Maximum Path Sum; 543-Diameter of Binary Tree; 652-Find Duplicate Subtrees;
+        - post-order traversal: 
+            - 124-Binary Tree Maximum Path Sum; 543-Diameter of Binary Tree; 549-Binary Tree Longest Consecutive Sequence II; 652-Find Duplicate Subtrees;
     - traversal combinations: 105-Construct Binary Tree from Preorder and Inorder Traversal; 106-Construct Binary Tree from Inorder and Postorder Traversal; 889-Construct Binary Tree from Preorder and Postorder Traversal
     - BST(Binary Search Tree): 
         - a node needs to be larger than the largest node in its left subtree and smaller than the smallest node in its right subtree (eg.333)
@@ -673,7 +674,7 @@ If using bfs, usually uses a FIFO queue to store nodes to be visited.
         - eg. 297-Serialize and Deserialize Binary Tree; 572-Subtree of Another Tree; 652-Find Duplicate Subtrees
     - Tree height: 199-Binary Tree Right Side View; 366-Find Leaves of Binary Tree; 637-Average of Levels in Binary Tree(bfs and dfs); 655-Print Binary Tree; 1161-Maximum Level Sum of a Binary Tree
     - Tree balancing: 1382-Balance a Binary Search Tree (with sorting)
-    - Tree path: 124-Binary Tree Maximum Path Sum; 298-Binary Tree Longest Consecutive Sequence; 543-Diameter of Binary Tree; 687-Longest Univalue Path; 1522-Diameter of N-Ary Tree
+    - Tree path: 124-Binary Tree Maximum Path Sum; 298-Binary Tree Longest Consecutive Sequence|549-Binary Tree Longest Consecutive Sequence II; 543-Diameter of Binary Tree; 687-Longest Univalue Path; 1522-Diameter of N-Ary Tree
 
 ## Trie
 - when to use: Trie could use less space compared to hashmap when storing many keys with the same prefix (word search, spell checker, etc.)
