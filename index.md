@@ -19,7 +19,7 @@ ino166-Fraction_to_Recurring_Decimalrder: 99,105,230,333,426
 linked list: 2,21,24,25,61,86,138,146,382,432,445,587,705,706,1650
 logic deduction: 444 
 map: 205
-math:7,9,12,50,149,166,168,204,268,277,279,296,319,360,384,391,470,621,794,836,837,952,1041,1344,1569,1610,1627,1643,1998
+math:7,9,12,50,149,166,168,204,268,277,279,296,319,360,384,391,470,621,794,836,837,952,1041,1344,1569,1610,1627,1643,1998,2119
 merge sort: 315,1574
 misc:169,229(moore voting)
 preorder: 105,106,113,331,437,449,545,652,666,889,971,987,1008,1028,1569
@@ -489,6 +489,8 @@ heapify time complexity: O(n), heap push/pop time complexity: O(logn)
     - division:
         - eg. 7-Reverse Integer; 9-Palindrome Number
         - long division: 166-Fraction to Recurring Decimal
+    - mod:
+        - eg: 2119-A Number After a Double Reversal
     - line formula:
         - eg: 149-Max Points on a Line
     - quadratic formula:
