@@ -35,7 +35,7 @@ topological sort: 207,210,269,310,329,444.1462
 tree: 100,114,116,222,235,236,285,298,333,337,339,366,426,450,515,543,549,572,652,653,687,729,919,1522,1644,1650,1676,1740,2049
 trie: 139,208,211,212,336,616,642,745
 two pointers: 15,16,42,61,76,86,121,159,167,209,244,246,253,259,360,392,524,581,611,680,904,977,986,1055,1229,1248,1537,1574,1577,1658,1775,1868
-union find: 128,261,305,323,684,721,778,947,952,1562,1627,1722,1970,1998
+union find: 128,261,305,323,684,721,778,947,952,1562,1627,1722,1970,1998,2076
 zip: 833
 
 
@@ -718,7 +718,7 @@ def isXandYConnected(n):
 
 ```
 - problem:
-    - find connected groups: 128-Longest Consecutive Sequence; 305-Number of Islands II(hard); 323-Number of Connected Components in an Undirected Graph; 721-Accounts Merge; 803-Bricks Falling When Hit (hard); 1722-Minimize Hamming Distance After Swap Operations (implicit); 952-Largest Component Size by Common Factor; 1562-Find Latest Group of Size M(hard); 1627-Graph Connectivity With Threshold | 1970-Last Day Where You Can Still Cross; 1998-GCD Sort of an Array
+    - find connected groups: 128-Longest Consecutive Sequence; 305-Number of Islands II(hard); 323-Number of Connected Components in an Undirected Graph; 721-Accounts Merge; 803-Bricks Falling When Hit (hard); 1722-Minimize Hamming Distance After Swap Operations (implicit); 952-Largest Component Size by Common Factor; 1562-Find Latest Group of Size M(hard); 1627-Graph Connectivity With Threshold | 1970-Last Day Where You Can Still Cross; 1998-GCD Sort of an Array; 2076-Process Restricted Friend Requests(hard)
     - cycle in graph: 261-Graph Valid Tree; 684-Redundant Connection
     - operation chaining: 399-Evaluate Division
 
