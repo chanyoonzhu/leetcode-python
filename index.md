@@ -213,7 +213,7 @@ while start <= end:
 - summary: implement a data structure with required APIs and targeted complexity
 - problems: 
     - hashset/hashmap implementation:
-        - modulo with linkedlist/bst
+        - modulo with a list of linkedlists/bst
         - eg: 705-Design HashSet, 706-Design HashMap
     - hashmap: 244-Shortest Word Distance II
     - hashmap / doubly linked list: 146,380,381,432,460,1146,1381

@@ -13,9 +13,9 @@ class Bucket:
         self.head = Node(-1)
         
     def insert(self, value):
-        if not self.exists(value):
+        if not self.exists(value): # easy to miss: no duplicate
             newNode = Node(value, self.head.next)
-            self.head.next = newNode # inserting at front is easier than at back
+            self.head.next = newNode
     
     def delete(self, value):
         if self.exists(value):
