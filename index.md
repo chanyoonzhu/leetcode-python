@@ -30,7 +30,7 @@ segment tree: 307,308,327,850
 sliding window: 3,76,159,209,239,340,395,837,862,904,930,992,1004,1052,1234,1358,1371,1423,1498,1509,1537,1574,1577,1610,1658,1696,1793,1839
 sort: 31,56,99,164,179,220,252,280,315,524,556,581,593,L391,611,973,1300,1509,1608,1610
 stack: 20,32,42,71,84,150,155,224,227,232,331,341,388,394,402,456,496,503,536,581,636,678,716,735,739,772,856,901,907,921,946,962,975,1019,1028,1047,1063,1106,1124,1130,1209,1249,1381,1541,1597,1673,1762,1776,1856,1944,1966
-string: 6,65,151,157,165,408,418,722,824,833,929,1087,1520
+string: 6,65,151,157,165,408,418,443,722,824,833,929,1087,1520
 topological sort: 207,210,269,310,329,444.1462
 tree: 100,114,116,222,235,236,285,298,333,337,339,366,426,450,515,543,549,572,652,653,687,729,919,1522,1644,1650,1676,1740,2049
 trie: 139,208,211,212,336,616,642,745
@@ -610,12 +610,15 @@ heapify time complexity: O(n), heap push/pop time complexity: O(logn)
             
 
 ## String:
+    - tip: add dummy value at the end to simplify processing (eg. 443, calculator problems)
     - problems:
         - string manipulation: 
             - tips: use reversed string to avoid index shift (833)
             - eg: 6-Zigzag Conversion; 824-Goat Latin
         - string parsing:
             65-Valid Number; Calculator problems(see "## Stack"); 408-Valid Word Abbreviation
+        - compression:
+            - eg. 443-String Compression
 
 ## Sweep Lines:
 - Key words:
