@@ -9,20 +9,19 @@
 class Solution:
     def productExceptSelf(self, nums: List[int]) -> List[int]:
         n = len(nums)
-        res = [0] * n
-        left_prods = [1] * n
-        right_prods = [1] * n
-        for i in range(1, n):
-            left_prods[i] = left_prods[i - 1] * nums[i - 1] # don't need to multiply the last num
-            right_prods[n - i - 1] = right_prods[n - i] * nums[n - i] # don't need to multiply the last num
-            
+        lefts, rights = [1], [1]
+        
         for i in range(n):
-            res[i] = left_prods[i] * right_prods[i]
-            
+            lefts.append(lefts[-1] * nums[i])
+            rights.insert(0, rights[0] * nums[n-1-i])
+        
+        res = []
+        for i in range(n):
+            res.append(lefts[i] * rights[i+1])
         return res
 
 """
-- space optimized
+- space optimized (use res to store lefts, a variable to store accumulated rights)
 - O(n), O(1)
 """
 class Solution:
@@ -30,8 +29,8 @@ class Solution:
         n = len(nums)
         res = [0] * n
         
-        for i in range(n):
-            res[i] = res[i - 1] * nums[i - 1] if i > 0 else 1
+        for i in range(1, n):
+            res[i] = res[i-1] * nums[i-1]
         
         right = 1
         for i in range(n - 1, -1, -1):
