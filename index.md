@@ -16,7 +16,7 @@ greedy: 11,42,45,53,55,135,253,358,410,435,455,621,630,678,767,774,785,843,853,8
 hashmap: 1,15,49,76,106,138,146,149,159,166,169,170,219,229,246,249,266,299,327,336,340,359,380,381,388,392,398,403,432,437,465,496,498,523,560,653,666,670,791,792,852,895,930,953,954,974,1000,1055,1218,1371,1442,1525,1542,1546,1570,1577,1590,1644,2007,2013
 hashset: 1,41,128,187,381,432,653,694,721,1239,1452,1774
 ino166-Fraction_to_Recurring_Decimalrder: 99,105,230,333,426
-linked list: 2,21,24,25,61,86,138,146,382,432,445,587,705,706,1650
+linked list: 2,21,24,25,61,83,86,138,146,382,432,445,587,705,706,1650
 logic deduction: 444 
 map: 205
 math:7,9,12,50,67,149,166,168,204,268,277,279,296,319,360,384,391,470,621,794,836,837,952,1041,1344,1569,1610,1627,1643,1998,2119
@@ -441,6 +441,7 @@ heapify time complexity: O(n), heap push/pop time complexity: O(logn)
 - tips:
     use dummy node to avoid checking edgecases 146
 - problems:
+    - add/remove: 83-Remove Duplicates from Sorted List
     - find out the size of a circular linkedlist or the middle of the linkedlist
         - algorithm: fast and slow pointers
         - eg: 143-Reorder List
