@@ -10,7 +10,7 @@ circular array: 213,1658
 Deterministic Finite Automaton: 65
 divide and conquer: 53,215,241,307,308,312,327,395,973,1000,1547
 dfs: 17,79,91,93,95,99,100,105,106,113,124,129,133,156,200,207,210,212,230,236,241,254,261,272,297,298,301,310,329,331,333,337,364,394,399,449,463,490,529,536,543,545,549,572,637,652,653,655,662,666,671,684,687,690,694,695,743,753,778,785,787,803,827,863,889,934,947,951,959,975,987,1028,1110,1161,1236,1306,1340,1368,1462,1522,1559,1569,1644,1676,1740,1766,1778,2049
-dynamic programming: 5,10,32,39,45,53,55,63,64,70,72,91,96,97,115,139,152,188,198,213,221,256,265,276,279,300,312,322,361,375,403,410,413,416,435,446,464,473,474,486,494,516,518,542,552,562,576,583,629,634,647,673,712,727,740,746,805,813,837,871,877,879,887,920,931,935,940,956,983,1000,1027,1035,1039,1048,1066,1092,1105,1130,1140,1143,1155,1216,1235,1259,1269,1277,1278,1301,1312,1314,1335,1406,1458,1510,1547,1548,1594,1643,1696,1746,1774,1824,1879,1937,1947,1981
+dynamic programming: 5,10,32,39,45,53,55,63,64,70,72,84,91,96,97,115,139,152,188,198,213,221,256,265,276,279,300,312,322,361,375,403,410,413,416,435,446,464,473,474,486,494,516,518,542,552,562,576,583,629,634,647,673,712,727,740,746,805,813,837,871,877,879,887,920,931,935,940,956,983,1000,1027,1035,1039,1048,1066,1092,1105,1130,1140,1143,1155,1216,1235,1259,1269,1277,1278,1301,1312,1314,1335,1406,1458,1510,1547,1548,1594,1643,1696,1746,1774,1824,1879,1937,1947,1981
 graph: 785,863
 greedy: 11,42,45,53,55,135,253,358,410,435,455,621,630,678,767,774,785,843,853,871,875,877,954,962,1011,1130,1231,1353,1383,1402,1419,1428,1482,1520,1537,1546,1552,1567,1648,1665,1718,1746,1775,1802,1824,1851,1870,1877,2007
 hashmap: 1,15,49,76,106,138,146,149,159,166,169,170,219,229,246,249,266,299,327,336,340,359,380,381,388,392,398,403,432,437,465,496,498,523,560,653,666,670,791,792,852,895,930,953,954,974,1000,1055,1218,1371,1442,1525,1542,1546,1570,1577,1590,1644,2007,2013
@@ -29,7 +29,7 @@ range sum: 307,308,327,1314,930,1442
 segment tree: 307,308,327,850
 sliding window: 3,76,159,209,239,340,395,837,862,904,930,992,1004,1052,1234,1358,1371,1423,1498,1509,1537,1574,1577,1610,1658,1696,1793,1839
 sort: 31,56,99,164,179,220,252,280,315,524,556,581,593,L391,611,973,1300,1509,1608,1610
-stack: 20,32,42,71,84,150,155,224,227,232,331,341,388,394,402,456,496,503,536,581,636,678,716,735,739,772,856,901,907,921,946,962,975,1019,1028,1047,1063,1106,1124,1130,1209,1249,1381,1541,1597,1673,1762,1776,1856,1944,1966
+stack: 20,32,42,71,84,85,150,155,224,227,232,331,341,388,394,402,456,496,503,536,581,636,678,716,735,739,772,856,901,907,921,946,962,975,1019,1028,1047,1063,1106,1124,1130,1209,1249,1381,1541,1597,1673,1762,1776,1856,1944,1966
 string: 6,65,151,157,165,408,418,443,722,824,833,929,1087,1520
 topological sort: 207,210,269,310,329,444.1462
 tree: 100,114,116,222,235,236,285,298,333,337,339,366,426,450,515,543,549,572,652,653,687,729,919,1522,1644,1650,1676,1740,2049
@@ -306,7 +306,7 @@ space can be optimized to O(1) if only need to track constant time of variables 
     - dp[i] depends on k previous cases dp[j] where j < i:
         - eg: 935-Knight Dialer
     - dp[i] depends on dp[j] where j in [1...i]:
-        - eg. 64-Minimum Path Sum; 96-Unique Binary Search Trees; 542-01 Matrix; 221-Maximal Square | 1277-Count Square Submatrices with All Ones; 446-Arithmetic Slices II - Subsequence|1027-Longest Arithmetic Subsequence;673-Number of Longest Increasing Subsequence; 931-Minimum Falling Path Sum | 1937-Maximum Number of Points with Cost; (revisit above examples!) 940. Distinct Subsequences II; 1105-Filling Bookcase Shelves; 1235-Maximum Profit in Job Scheduling; 1259-Handshakes That Don't Cross
+        - eg. 64-Minimum Path Sum; 96-Unique Binary Search Trees; 542-01 Matrix; 221-Maximal Square|85-Maximal Rectangle(hard)|1277-Count Square Submatrices with All Ones; 446-Arithmetic Slices II - Subsequence|1027-Longest Arithmetic Subsequence;673-Number of Longest Increasing Subsequence; 931-Minimum Falling Path Sum | 1937-Maximum Number of Points with Cost; (revisit above examples!) 940. Distinct Subsequences II; 1105-Filling Bookcase Shelves; 1235-Maximum Profit in Job Scheduling; 1259-Handshakes That Don't Cross
     - dp[i][j] depends on dp[i+1][j-1]:
         - tip: use subproblem size (diff between i and j) as the outer loop
         - eg: 312-Burst Balloons(hard)|1039-Minimum Score Triangulation of Polygon|1130-Minimum Cost Tree From Leaf Values; 375-Guess Number Higher or Lower II; 486, 516-Longest Palindromic Subsequence, 877, 1246-Palindrome Removal(hard); 1312; 1959-Minimum Total Space Wasted With K Resizing Operations
@@ -608,7 +608,7 @@ heapify time complexity: O(n), heap push/pop time complexity: O(logn)
             -eg. 1673-Find the Most Competitive Subsequence; 402-Remove K Digits
         - window max/min (with monotonically increasing/decreasing stack)
             - intuition: it is very useful to get "next bigger item", "next smaller item", "previous bigger item", "previous smaller item" and therefore "window max" and "window min"
-            - eg: 42-Trapping Rain Water(11); 84-Largest Rectangle in Histogram(hard); 907-Sum of Subarray Minimums; 1856-Maximum Subarray Min-Product(similar:907); 962-Maximum Width Ramp|1124-Longest Well-Performing Interval
+            - eg: 42-Trapping Rain Water(11); 84-Largest Rectangle in Histogram(hard)|85-Maximal Rectangle; 907-Sum of Subarray Minimums; 1856-Maximum Subarray Min-Product(similar:907); 962-Maximum Width Ramp|1124-Longest Well-Performing Interval
         - collision: 1776-Car Fleet II
             
 
@@ -754,5 +754,6 @@ def isXandYConnected(n):
 
 # Needs revisit:
 41-First Missing Positive
+84-Largest Rectangle in Histogram
 254-Factor Combinations
 1235-Maximum Profit in Job Scheduling (dp)
