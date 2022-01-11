@@ -1,5 +1,6 @@
 """
 - monotonically decreasing stack
+- intuition: if there's a number x on the left of number y and x < y, y can never be the left boundary of the maximum width ramp because x will alwasy form a wider ramp
 - O(n), O(n)
 """
 class Solution:
