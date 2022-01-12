@@ -1,19 +1,18 @@
+"""
+Questions to ask: 
+Q: Children with a higher rating get more candies than their neighbors. What about the same rating? 
+A: can be higher or lower. eg: ratings: [6,5,4,4,3,2] candies needed: [3,2,1,3,2,1]
+"""
+"""
+- O(n), O(n)
+- two pass with one array: first pass only satisfy condition with left neighbor, second pass satisfy condition with right neighbor 
+- and pick max of current and first pass
+"""
 class Solution(object):
-    """
-    Questions to ask: 
-    Q: Children with a higher rating get more candies than their neighbors. What about the same rating? 
-    A: can be higher or lower. eg: ratings: [6,5,4,4,3,2] candies needed: [3,2,1,3,2,1]
-    """
     def candy(self, ratings):
         """
         :type ratings: List[int]
         :rtype: int
-        """
-        
-        """
-        - O(n), O(n)
-        - two pass with one array: first pass only satisfy condition with left neighbor, second pass satisfy condition with right neighbor 
-        - and pick max of current and first pass
         """
         
         n = len(ratings)
@@ -30,16 +29,13 @@ class Solution(object):
         
         return sum(candies)
     
-        """
-        - O(n), O(1)
-        - only the local increasing and decreasing sequences determine the candies needed, a rating equal to the previous rating resets the candy needed to 1. What's happening in the next increasing/decreasing period won't affect the previous one.
-        """
-            
-    def candy(self, ratings):
-        """
-        :type ratings: List[int]
-        :rtype: int
-        """
+"""
+- O(n), O(1)
+- only the local increasing and decreasing sequences determine the candies needed, a rating equal to the previous rating resets the candy needed to 1. 
+    What's happening in the next increasing/decreasing period won't affect the previous one.
+"""
+class Solution:
+    def candy(self, ratings: List[int]) -> int:       
         # up - number of continuous increasing rating before current child, also the number of candies needed for the left neighbor
         # down - number of continuous decreasing ratings before current child, also the number of candies needed for the child at the head of decreasing sequence, also the number of candies needed to compensate for all previous children that form continuous decreasing sequence when a member adds to the decreasing sequence
         # peak - number of candies needed for the child at local rating peak
