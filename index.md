@@ -1,7 +1,7 @@
 all, any: 833
 array: 6,31,41,54,56,58,59,68,73,122,151,157,163,186,204,238,268,311,349,350,380,381,463,498,556,605,766,849,896,1146,1371,1381,1526,1567,1706,2121
 backtracking: 17,39,40,46,47,78,90,254,282,301,491,526,698,996,1088,1593,1239,1307,1681,1718,1723,1774
-bfs: 79,103,116,126,127,133,173,199,200,207,210,212,269,279,297,301,314,317,339,399,407,444,505,515,529,542,637,662,743,752,785,787,803,863,909,919,934,958,959,971,987,1091,1110,1161,1197,1236,1254,1293,1306,1345,1368,1654,1778
+bfs: 79,103,116,126,127,130,133,173,199,200,207,210,212,269,279,297,301,314,317,339,399,407,444,505,515,529,542,637,662,743,752,785,787,803,863,909,919,934,958,959,971,987,1091,1110,1161,1197,1236,1254,1293,1306,1345,1368,1654,1778
 binary search:4,29,33,34,35,57,81,153,154,162,222,240,259,268,275,279,287,295,300,367,374,410,715,744,774,852,875,911,1011,1055,1060,1146,1231,1272,1283,1428,1482,1552,1608,1648,1723,1802,1870,1891
 bitwise operation: 29,136,137,191,231,268,318,338,342,371,461,473,476,491,693,698,1284,1371,1442,1542,1593,1680,1681
 binary search tree: 99,109,173,272,285,333,449,450,490,653,701,729,938,1008,1382
@@ -9,7 +9,7 @@ bucket:220,299
 circular array: 213,1658
 Deterministic Finite Automaton: 65
 divide and conquer: 53,215,241,307,308,312,327,395,973,1000,1547
-dfs: 17,79,91,93,95,99,100,105,106,113,124,129,133,156,200,207,210,212,230,236,241,254,261,272,297,298,301,310,329,331,333,337,364,394,399,449,463,490,529,536,543,545,549,572,637,652,653,655,662,666,671,684,687,690,694,695,743,753,778,785,787,803,827,863,889,934,947,951,959,975,987,1028,1110,1161,1236,1306,1340,1368,1462,1522,1559,1569,1644,1676,1740,1766,1778,2049
+dfs: 17,79,91,93,95,99,100,105,106,112,113,124,129,130,133,156,200,207,210,212,230,236,241,254,261,272,297,298,301,310,329,331,333,337,364,394,399,449,463,490,529,536,543,545,549,572,637,652,653,655,662,666,671,684,687,690,694,695,743,753,778,785,787,803,827,863,889,934,947,951,959,975,987,1028,1110,1161,1236,1306,1340,1368,1462,1522,1559,1569,1644,1676,1740,1766,1778,2049
 dynamic programming: 5,10,32,39,45,53,55,63,64,70,72,84,91,96,97,115,139,152,188,198,213,221,256,265,276,279,300,312,322,361,375,403,410,413,416,435,446,464,473,474,486,494,516,518,542,552,562,576,583,629,634,647,673,712,727,740,746,805,813,837,871,877,879,887,920,931,935,940,956,983,1000,1027,1035,1039,1048,1066,1092,1105,1130,1140,1143,1155,1216,1235,1259,1269,1277,1278,1301,1312,1314,1335,1406,1458,1510,1547,1548,1594,1643,1696,1746,1774,1824,1879,1937,1947,1981
 graph: 785,863
 greedy: 11,42,45,53,55,134,135,253,358,410,435,455,621,630,678,767,774,785,843,853,871,875,877,954,962,1011,1130,1231,1353,1383,1402,1419,1428,1482,1520,1537,1546,1552,1567,1648,1665,1718,1746,1775,1802,1824,1851,1870,1877,2007
@@ -32,7 +32,7 @@ sort: 31,56,99,164,179,220,252,280,315,524,556,581,593,L391,611,973,1300,1509,16
 stack: 20,32,42,71,84,85,150,155,224,227,232,331,341,388,394,402,456,496,503,536,581,636,678,716,735,739,772,856,901,907,921,946,962,975,1019,1028,1047,1063,1106,1124,1130,1209,1249,1381,1541,1597,1673,1762,1776,1856,1944,1966
 string: 6,65,151,157,165,408,418,443,722,824,833,929,1087,1520
 topological sort: 207,210,269,310,329,444.1462
-tree: 100,109,114,116,222,235,236,285,298,333,337,339,366,426,450,515,543,549,572,652,653,687,729,919,1522,1644,1650,1676,1740,2049
+tree: 100,109,112,114,116,222,235,236,285,298,333,337,339,366,426,450,515,543,549,572,652,653,687,729,919,1522,1644,1650,1676,1740,2049
 trie: 139,208,211,212,336,616,642,745
 two pointers: 11,15,16,27,42,61,76,86,121,159,167,209,244,246,253,259,360,392,524,581,611,680,904,977,986,1055,1229,1248,1537,1574,1577,1658,1775,1868
 union find: 128,261,305,323,684,721,778,947,952,1562,1627,1722,1970,1998,2076
@@ -288,8 +288,8 @@ or
 - problems:
     - map hidden graph
         - eg: 1778-Shortest Path in a Hidden Grid; 1810-Minimum Path Cost in a Hidden Grid
-    - find contiguous "islands"
-        - eg: 200-Number of Islands | 694-Number of Distinct Islands | 1254-Number of Closed Islands | 934-Shortest Bridge (bfs + dfs); 463-Island Perimeter; 959-Regions Cut By Slashes (need pixelating); 803-Bricks Falling When Hit (hard); 827-Making A Large Island(mark by index)
+    - find contiguous regions
+        - eg: 130-Surrounded Regions; 200-Number of Islands | 694-Number of Distinct Islands | 1254-Number of Closed Islands | 934-Shortest Bridge (bfs + dfs); 463-Island Perimeter; 959-Regions Cut By Slashes (need pixelating); 803-Bricks Falling When Hit (hard); 827-Making A Large Island(mark by index)
     - min cost: see ## BFS
     - operation chaining:
         - eg: 399-Evaluate Division
@@ -389,7 +389,7 @@ Pick the locally optimal move at each step, and that will lead to the globally o
 Iterate over the array and update at each step the standard set for such problems: 1.current element 2.current local maximum sum (at this given point) 3.global maximum sum seen so far.
     - eg: 1402,1520,1665
 - problems:
-    - general: 11-Container With Most Water|42-Trapping Rain Water; 134-Gas Station
+    - general: 11-Container With Most Water|42-Trapping Rain Water; 134-Gas Station; 135-Candy;
     - greedy with sort: 853-Car Fleet; 1775-Equal Sum Arrays With Minimum Number of Operations; 1537-Get the Maximum Score; 954-Array of Doubled Pairs|2007-Find Original Array From Doubled Array; 1877-Minimize Maximum Pair Sum in Array
     - violate rule first, greedily remediate after: 
         - tip: using heap to greedily pick the largest item to remediate
@@ -664,7 +664,7 @@ eg: 56, 57, 218, 252, 253-Meeting Rooms II, 435, 452, 616-Add Bold Tag in String
 If using bfs, usually uses a FIFO queue to store nodes to be visited. 
 - Problems:
     - dfs:
-        - pre-order: 95-Unique Binary Search Trees II(hard); 100-Same Tree; 114-Flatten Binary Tree to Linked List(recursive/iterative); 156-Binary Tree Upside Down; 297-Serialize and Deserialize Binary Tree; 449. Serialize and Deserialize BST; 536-Construct Binary Tree from String; 572-Subtree of Another Tree; 652-Find Duplicate Subtrees; 655-Print Binary Tree; 662-Maximum Width of Binary Tree; 671-Second Minimum Node In a Binary Tree; 687-Longest Univalue Path; 951-Flip Equivalent Binary Trees; 545-Boundary of Binary Tree; 1008-Construct Binary Search Tree from Preorder Traversal; 1110-Delete Nodes And Return Forest; 2049-Count Nodes With the Highest Score;
+        - pre-order: 95-Unique Binary Search Trees II(hard); 100-Same Tree; 114-Flatten Binary Tree to Linked List(recursive/iterative); 112-Path Sum; 156-Binary Tree Upside Down; 297-Serialize and Deserialize Binary Tree; 449. Serialize and Deserialize BST; 536-Construct Binary Tree from String; 572-Subtree of Another Tree; 652-Find Duplicate Subtrees; 655-Print Binary Tree; 662-Maximum Width of Binary Tree; 671-Second Minimum Node In a Binary Tree; 687-Longest Univalue Path; 951-Flip Equivalent Binary Trees; 545-Boundary of Binary Tree; 1008-Construct Binary Search Tree from Preorder Traversal; 1110-Delete Nodes And Return Forest; 2049-Count Nodes With the Highest Score;
         - in-order traversal: 
             - tip: inorder traversal of BST yields a sorted list
             - eg. 285-Inorder Successor in BST; 272-Closest Binary Search Tree Value II(hard); 366-Find Leaves of Binary Tree; 426-Convert Binary Search Tree to Sorted Doubly Linked List;
