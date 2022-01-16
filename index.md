@@ -379,8 +379,8 @@ space can be optimized to O(1) if only need to track constant time of variables 
     - space: O(V)
 - Algorithms: DFS and BFS
 - Problems:
-    - classic: 
-        - eg. 1376. Time Needed to Inform All Employees
+    - acyclic graph: 
+        - eg. 1376-Time Needed to Inform All Employees; 1377-Frog Position After T Seconds
     - detect cycle:
         - eg: 261-Graph Valid Tree; 684-Redundant Connection;
     - eg: 785-Is Graph Bipartite?;
