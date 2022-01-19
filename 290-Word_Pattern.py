@@ -17,7 +17,7 @@ class Solution:
                 if mapping[pattern] != word:
                     return False
             else:
-                if word in mapped:
+                if word in mapped: # easy to miss: bidirectional check
                     return False
                 mapping[pattern] = word
                 mapped.add(word)
