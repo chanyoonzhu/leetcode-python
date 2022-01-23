@@ -14,7 +14,7 @@ dynamic programming: 5,10,32,39,44,45,53,55,63,64,70,72,84,91,96,97,115,120,139,
 graph: 785,863
 greedy: 11,42,45,53,55,134,135,253,358,410,435,455,621,630,678,767,774,785,843,853,871,875,877,954,962,1011,1130,1231,1353,1383,1402,1405,1419,1428,1482,1520,1537,1546,1552,1567,1648,1665,1718,1746,1775,1802,1824,1851,1870,1877,2007
 hashmap: 1,15,49,76,106,138,146,149,159,166,169,170,219,229,246,249,266,299,327,336,340,359,380,381,388,392,398,403,432,437,465,496,498,523,560,609,653,666,670,791,792,852,895,930,953,954,974,1000,1055,1218,1371,1442,1525,1542,1546,1570,1577,1590,1644,2007,2013
-hashset: 1,41,128,187,290,379,381,432,653,694,721,1239,1452,1774
+hashset: 1,41,128,187,290,379,381,432,653,694,721,1239,1452,1647,1774
 inorder: 99,105,230,333,426
 linked list: 2,21,24,25,61,83,86,109,116,117,138,146,148,382,432,445,587,705,706,1650
 logic deduction: 444 
@@ -435,7 +435,7 @@ Iterate over the array and update at each step the standard set for such problem
 ## Hashset
 - problems:
     - set operation: 1452-People Whose List of Favorite Companies Is Not a Subset of Another List
-    - dedup: 187-Repeated DNA Sequences; 290-Word Pattern; 379-Design Phone Directory
+    - dedup: 187-Repeated DNA Sequences; 290-Word Pattern; 379-Design Phone Directory; 1647-Minimum Deletions to Make Character Frequencies Unique
     - find pair: 41-First Missing Positive; 653. Two Sum IV - Input is a BST
     - Storing states: 1774-Closest Dessert Cost
     - consecutive numbers: 128-Longest Consecutive Sequence
