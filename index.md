@@ -1,5 +1,5 @@
 all, any: 833
-array: 6,31,41,54,56,58,59,68,73,122,151,157,163,186,204,238,251,268,289,311,349,350,380,381,463,498,556,605,766,849,896,1146,1304,1371,1381,1526,1567,1706,2121
+array: 6,31,41,54,56,58,59,68,73,122,151,157,163,186,204,238,251,268,289,311,349,350,380,381,463,498,556,605,766,849,896,1146,1304,1371,1381,1526,1567,1706,1822,2121
 backtracking: 17,39,40,46,47,78,90,254,282,291,301,491,526,698,996,1088,1593,1239,1307,1681,1718,1723,1774
 bfs: 79,103,116,117,126,127,130,133,173,199,200,207,210,212,269,279,297,301,314,317,339,399,407,444,505,515,529,542,637,662,743,752,785,787,803,863,909,919,934,958,959,971,987,1091,1110,1161,1197,1236,1254,1293,1306,1345,1368,1376,1448,1654,1778
 binary search:4,29,33,34,35,57,81,153,154,162,222,240,259,268,275,279,287,295,300,367,374,410,715,744,774,852,875,911,1011,1055,1060,1146,1231,1272,1283,1428,1482,1552,1608,1648,1723,1802,1870,1891
@@ -46,7 +46,7 @@ zip: 833
     - reuse previously computed value: 2121-Intervals Between Identical Elements
     - 1D array: 31-Next Permutation|556-Next Greater Element III|1643-Kth Smallest Instructions(has better solution);  41-First Missing Positive; 58-Length of Last Word; 605-Can Place Flowers; 1304-Find N Unique Integers Sum up to Zero; 1562-Find Latest Group of Size M(hard)
         - linear search: 163-Missing Ranges;
-        - linear scanL: 896-Monotonic Array
+        - linear scan: 896-Monotonic Array; 1822-Sign of the Product of an Array
     - 2D array: 
         - tip: in-place transformation: (289)
         - eg: 251-Flatten 2D Vector; 289-Game of Life; 463-Island Perimeter; 766-Toeplitz Matrix; 1706-Where Will the Ball Fall
