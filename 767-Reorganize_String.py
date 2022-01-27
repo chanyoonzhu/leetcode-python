@@ -1,6 +1,9 @@
 """
+- similar: 358
+"""
+"""
 - greedy
-- intuition: greedily put most common chars in the odd index, then fill up even index with the rest chars
+- intuition: greedily fill the odd index, then even index, using chars with most common freq to least
 """
 class Solution:
     def reorganizeString(self, s: str) -> str:
