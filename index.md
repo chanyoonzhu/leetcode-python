@@ -35,7 +35,7 @@ string: 5,6,65,151,157,165,214,408,418,443,722,824,833,929,984,1087,1520
 topological sort: 207,210,269,310,329,444.1462
 tree: 100,109,112,114,116,222,235,236,285,298,333,337,339,366,426,450,515,543,549,572,652,653,687,729,919,1325,1339,1367,1372,1522,1644,1650,1676,1740,2049
 trie: 139,208,211,212,336,616,642,745
-two pointers: 11,15,16,27,42,61,76,86,121,159,167,209,244,246,253,259,360,392,524,581,611,680,904,977,986,1055,1229,1248,1537,1574,1577,1658,1775,1868
+two pointers: 11,15,16,27,42,61,76,86,121,159,167,209,244,246,253,259,360,392,462,524,581,611,680,904,977,986,1055,1229,1248,1537,1574,1577,1658,1775,1868
 union find: 128,261,305,323,684,721,778,947,952,1562,1627,1722,1970,1998,2076
 zip: 833
 
@@ -672,7 +672,7 @@ eg: 56, 57, 218, 252, 253-Meeting Rooms II, 435, 452, 616-Add Bold Tag in String
 ## Two pointers:
 - problems:
     - array: 
-        - eg: 27-Remove Element; 244. Shortest Word Distance II; 360-Sort Transformed Array; 977-Squares of a Sorted Array;
+        - eg: 27-Remove Element; 244. Shortest Word Distance II; 360-Sort Transformed Array; 462-Minimum Moves to Equal Array Elements II; 977-Squares of a Sorted Array;
         - n sums (with sort): 15-3Sum; 16-3Sum Closest; 611-Valid Triangle Number; 653. Two Sum IV - Input is a BST;
     - palindrom: 680-Valid Palindrome II; 246-Strobogrammatic Number
     - two sequences: 392-Is_Subsequence; 1537-Get the Maximum Score; 1868-Product of Two Run-Length Encoded Arrays

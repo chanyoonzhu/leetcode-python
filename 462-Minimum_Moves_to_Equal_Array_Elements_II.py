@@ -1,4 +1,19 @@
 """
+- two pointer
+- O(nlogn), O(logn)
+"""
+class Solution:
+    def minMoves2(self, nums: List[int]) -> int:
+        l, r = 0, len(nums) - 1
+        nums.sort()
+        res = 0
+        while l <= r:
+            res += nums[r] - nums[l] # need nums[r] - nums[l] number of moves for nums at l and r to converge
+            l += 1
+            r -= 1
+        return res
+
+"""
 - Math: median
 - key: the median of the sorted must be the number all others should move to
 - intuition: nums[0] and nums[n-1] cost same moves when converge to anything in between;
