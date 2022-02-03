@@ -1,3 +1,34 @@
+"""
+- edge cases:
+(ab, c*ab) => True c* can match empty string
+"""
+
+
+"""
+- dynamic programming (top-down)
+- O(sp), O(sp)
+"""
+class Solution:
+    def isMatch(self, s: str, p: str) -> bool:
+        return self.match(s, p)
+        
+    @lru_cache(None)
+    def match(self, s, p):
+        if not p:
+            return not s
+        
+        can_first_match = len(s) and (s[0] == p[0] or p[0] == ".")
+        
+        if len(p) > 1 and p[1] == "*":
+            # match first or skip
+            return (can_first_match and self.match(s[1:], p)) or self.match(s, p[2:])
+        else:
+            return can_first_match and self.match(s[1:], p[1:])
+
+"""
+- dynamic programming (bottom-up)
+- O(sp), O(sp)
+"""
 class Solution(object):
     def isMatch(self, s, p):
         """
