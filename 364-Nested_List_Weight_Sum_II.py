@@ -42,7 +42,7 @@
 #        """
 
 """
-- dfs
+- dfs (two passes - get max_depth first)
 - O(n), O(n)
 """
 class Solution:
@@ -61,3 +61,29 @@ class Solution:
     
     def getMaxDepth(self, nestedList: List[NestedInteger]) -> int:
         return 1 + max([self.getMaxDepth(nestedInt.getList()) for nestedInt in nestedList if not nestedInt.isInteger()], default=0)
+
+"""
+- dfs (one pass)
+- O(n), O(n)
+"""
+class Solution:
+    def __init__(self):
+        self.depth_to_sum = collections.defaultdict(int)
+        
+    def depthSumInverse(self, nestedList: List[NestedInteger]) -> int:
+        max_depth = self.dfs(nestedList, 1)
+        res = 0
+        for depth, count in self.depth_to_sum.items():
+            res += count * (max_depth - depth + 1)
+        return res
+        
+    def dfs(self, nestedList, depth):
+        if not nestedList:
+            return 0
+        cur_depth = depth
+        for ni in nestedList:
+            if ni.isInteger():
+                self.depth_to_sum[cur_depth] += ni.getInteger()
+            else:
+                depth = max(depth, self.dfs(ni.getList(), cur_depth + 1))
+        return depth
