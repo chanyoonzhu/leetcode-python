@@ -66,6 +66,9 @@ class Solution:
 - dfs (one pass)
 - O(n), O(n)
 """
+"""
+- todo: improve - 算个所有array 的 sum，到最后，sum*depth - 那个正向求和的总数
+"""
 class Solution:
     def __init__(self):
         self.depth_to_sum = collections.defaultdict(int)
