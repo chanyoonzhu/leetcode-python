@@ -1,18 +1,20 @@
 """
-- Dynamic programming: dp[i] the largest sum that includes the number at index i
+- Dynamic programming: dp[i] the largest sum that ends at number at index i
 - can also be understood as Greedy algorithm: 1. find current element 2. find current local maximum sum (at this given point) 3. find global maximum sum seen so far.
 - O(n), O(n)
 """
 class Solution(object):
-    def maxSubArray(self, nums):
+    def maxSubArray(self, nums: List[int]) -> int:
         """
         :type nums: List[int]
         :rtype: int
         """
-        dp = [float("-inf")] * (len(nums) + 1)
+        N = len(nums)
+        dp = nums[:] # i - max sum ending at number with idx i
         
-        for i, num in enumerate(nums):
-            dp[i + 1] = max(dp[i] + num, num)
+        for i in range(1, N):
+            x = nums[i]
+            dp[i] = max(dp[i-1] + x, dp[i])
         
         return max(dp)
 
@@ -27,11 +29,14 @@ class Solution(object):
         :type nums: List[int]
         :rtype: int
         """
-        prev, max_sum = 0, float("-inf")
-        for n in nums:
-            prev = max(prev + n, n)
-            max_sum = max(max_sum, prev) 
-        return max_sum
+        N = len(nums)
+        global_max = prev_max = nums[0]
+        
+        for i in range(1, N):
+            prev_max = max(nums[i], prev_max + nums[i])
+            global_max = max(prev_max, global_max)
+        
+        return global_max
 
 """
 - divide and conquer

@@ -305,7 +305,7 @@ space can be optimized to O(1) if only need to track constant time of variables 
 - Bottom up: loop using memoization (calculate those won't change first, eg.1143, 1340) - look at the transformation formula from the top-down solution to figure out what needs to be calculated first in the loop. Can use the subproblem size as the outer loop if dp(i, j) need dp(i + 1, j - 1) (eg.312，375, 486, 877, 1312)
 - problems:
     - dp[i] depends on dp[i-1]: 
-        - eg.70-Climbing Stairs; 198-House Robber|213. House Robber II|740-Delete and Earn; 256-Paint House|265-Paint House II; 152-Maximum Product Subarray(min/max); 276-Paint Fence(a hard medium); 413-Arithmetic Slices; 91-Decode Ways;139-Word Break|140-Word Break II; 647-Palindromic Substrings; 837-New 21 Game; 931-Minimum Falling Path Sum;
+        - eg. 53-Maximum Subarray; 70-Climbing Stairs; 198-House Robber|213. House Robber II|740-Delete and Earn; 256-Paint House|265-Paint House II; 152-Maximum Product Subarray(min/max); 276-Paint Fence(a hard medium); 413-Arithmetic Slices; 91-Decode Ways;139-Word Break|140-Word Break II; 647-Palindromic Substrings; 837-New 21 Game; 931-Minimum Falling Path Sum;
     - dp[i] depends on k previous cases dp[j] where j < i:
         - eg: 651-4 Keys Keyboard; 935-Knight Dialer
     - dp[i] depends on dp[j] where j in [1...i]:
@@ -537,7 +537,7 @@ heapify time complexity: O(n), heap push/pop time complexity: O(logn)
 
 
 ## Priority Queue (Heap):
-- tip: stores tuples in queues, a tuple is comprised of number (a group of numbers) needs to be sorted and the information need to pass when that number is popped from the heap
+- tip: stores tuples in queues, a tuple is comprised of number (a group of numbers) needs to be sorted and the information need to pass when that number is popped from the heap (eg.373)
 - key words: sort
 - problems:
     - queue with conditions: 1882-Process Tasks Using Servers
