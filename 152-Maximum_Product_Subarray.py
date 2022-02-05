@@ -5,17 +5,13 @@
 """
 class Solution:
     def maxProduct(self, nums: List[int]) -> int:
-        N = len(nums)
-        min_max = [(1, 1)]
-        
-        for i in range(N):
-            if nums[i] == 0:
-                min_max.append((0, 0))
-            elif nums[i] > 0:
-                prev_min, prev_max = min_max[-1]
-                min_max.append((prev_min * nums[i], max(prev_max * nums[i], nums[i])))
+        dp = [(1, 1)] # min, max
+        for n in nums:
+            prev_min, prev_max = dp[-1]
+            if n == 0:
+                dp.append((0, 0))
+            elif n > 0:
+                dp.append((prev_min * n, max(prev_max * n, n)))
             else:
-                prev_min, prev_max = min_max[-1]
-                min_max.append((min(prev_max * nums[i], nums[i]), prev_min * nums[i]))
-        
-        return max([max_ for _, max_ in  min_max[1:]])
+                dp.append((min(prev_max * n, n), prev_min * n))
+        return max(max_ for _, max_ in dp[1:])
