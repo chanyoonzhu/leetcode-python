@@ -17,6 +17,7 @@ hashmap: 1,15,49,76,106,138,146,149,159,166,169,170,219,229,246,249,266,299,327,
 hashset: 1,41,128,187,290,379,381,432,653,694,721,1239,1452,1647,1774,2061
 inorder: 99,105,230,333,426
 linked list: 2,21,24,25,61,83,86,109,116,117,138,146,148,382,432,445,587,705,706,1650
+doubly linked list: 716
 logic deduction: 444 
 map: 205
 math:7,9,12,50,67,149,166,168,204,223,263,268,277,279,296,319,360,384,391,462,470,621,794,836,837,952,1041,1344,1569,1610,1627,1643,1998,2119
@@ -34,6 +35,7 @@ stack: 20,32,42,71,84,85,150,155,224,227,232,331,341,388,394,402,456,496,503,536
 string: 5,6,65,151,157,165,214,408,418,443,722,824,833,929,984,1087,1520
 topological sort: 207,210,269,310,329,444.1462
 tree: 100,109,112,114,116,222,235,236,285,298,333,337,339,366,426,450,515,543,549,572,652,653,687,729,919,1325,1339,1367,1372,1522,1644,1650,1676,1740,2049
+treemap: 716
 trie: 139,208,211,212,336,616,642,745
 two pointers: 11,15,16,27,42,61,76,86,121,159,167,209,244,246,253,259,360,392,462,524,581,611,680,904,977,986,1055,1229,1248,1537,1574,1577,1658,1775,1868
 union find: 128,261,305,323,684,721,778,947,952,1562,1627,1722,1970,1998,2076
@@ -227,7 +229,7 @@ while start <= end:
     - Fenwick tree / segment tree: 307,308,327
 - tips:
     use hashmap to achieve O(1) retrieval of a key
-    use hashmap and doubly linked list to achieve retrieving min/max in O(1) eg:(LRU/LFU)146,432,460
+    use hashmap and doubly linked list to achieve retrieving min/max in O(1) eg:(LRU/LFU)146,432,460,716-Max Stack
     use Fenwick tree or Segment tree to solve range sum/max/min problem
 
 ## DFS - don't forget to reset visited back when all the branched dfs does not succeed.
@@ -706,6 +708,18 @@ If using bfs, usually uses a FIFO queue to store nodes to be visited.
     - Tree height: 199-Binary Tree Right Side View; 366-Find Leaves of Binary Tree; 637-Average of Levels in Binary Tree(bfs and dfs); 655-Print Binary Tree; 1161-Maximum Level Sum of a Binary Tree
     - Tree balancing: 1382-Balance a Binary Search Tree (with sorting)
     - Tree path: 124-Binary Tree Maximum Path Sum; 298-Binary Tree Longest Consecutive Sequence|549-Binary Tree Longest Consecutive Sequence II; 543-Diameter of Binary Tree; 687-Longest Univalue Path; 1522-Diameter of N-Ary Tree
+
+## TreeMap
+- supported in Python using SortedDict (sorted map with O(logn) insertion/deletion)
+```
+from sortedcontainers import SortedDict
+treemap = SortedDict({})
+treemap.setdefault(x, [])
+treemap[x].append(1)
+treemap.peekitem(-1)[0] # peek largest key
+treemap[x] # [1] get value
+```
+- eg: 716-Max Stack
 
 ## Trie
 - when to use: Trie could use less space compared to hashmap when storing many keys with the same prefix (word search, spell checker, etc.)
