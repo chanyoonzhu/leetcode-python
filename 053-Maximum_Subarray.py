@@ -1,4 +1,9 @@
 """
+https://leetcode.com/problems/maximum-subarray/
+- summary: numbers can be negative, use dp (dp[i] the largest sum that ends at number at index i)
+"""
+
+"""
 - Dynamic programming: dp[i] the largest sum that ends at number at index i
 - can also be understood as Greedy algorithm: 1. find current element 2. find current local maximum sum (at this given point) 3. find global maximum sum seen so far.
 - O(n), O(n)
