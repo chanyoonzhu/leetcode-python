@@ -17,16 +17,16 @@ class AllOne:
         """
         Initialize your data structure here.
         """
-        # key: doubly-linkedlist with decreasing value (key counts)
+        # key: doubly-linkedlist with increasing value (key counts)
         self.head = Node()
         self.tail = Node()
         self.head.next = self.tail
         self.tail.prev = self.head
-        self.cache = collections.defaultdict(Node) # key to node
+        self.key_to_node = collections.defaultdict(Node) # key to node
         
     def _insert_before(self, next, key):
-        if next.count + 1 != next.prev.count: # node with target count doesn't exist, need to create a new node
-            node = Node(next.count + 1)
+        if next.count - 1 != next.prev.count: # node with target count doesn't exist, need to create a new node
+            node = Node(next.count - 1)
             node.next, node.prev = next, next.prev
             node.prev.next = node.next.prev = node
         else: # node with target count exists, reuse existing node
@@ -34,48 +34,49 @@ class AllOne:
         node.keys.add(key)
         return node
     
-    
     def _insert_after(self, prev, key):
-        if prev.count - 1 != prev.next.count: # node with target count doesn't exist, need to create a new node
-            node = Node(prev.count - 1)
+        if prev.count + 1 != prev.next.count: # node with target count doesn't exist, need to create a new node
+            node = Node(prev.count + 1)
             node.prev, node.next = prev, prev.next
             node.prev.next = node.next.prev = node
         else: # node with target count exists, reuse existing node
             node = prev.next
         node.keys.add(key)
-        return node
-            
+        return node  
+        
+    def _remove_node(self, node):
+        prev, next = node.prev, node.next
+        prev.next, next.prev = next, prev
+        del node          
         
     def inc(self, key: str) -> None:
         """
-        Inserts a new key <Key> with value 1. Or increments an existing key by 1.
+        Inserts a new key <Key> with count 1. Or increments an existing key count by 1.
         """
-        if key not in self.cache:
-            self.cache[key] = self._insert_before(self.tail, key)
+        if key not in self.key_to_node:
+            self.key_to_node[key] = self._insert_after(self.head, key)
         else:
-            node = self.cache[key]
-            self.cache[key] = self._insert_before(node, key)
+            node = self.key_to_node[key]
+            self.key_to_node[key] = self._insert_after(node, key)
             node.keys.remove(key)
             if not node.keys:
-                node.prev.next, node.next.prev = node.next, node.prev
-                node.next = node.prev = None # del node
+                self._remove_node(node)
         
 
     def dec(self, key: str) -> None:
         """
-        Decrements an existing key by 1. If Key's value is 1, remove it from the data structure.
+        Decrements an existing key by 1. If Key's count is 1, remove it from the data structure.
         """
-        node = self.cache[key]
+        node = self.key_to_node[key]
         node.keys.remove(key)
-        del self.cache[key]
+        del self.key_to_node[key]
         if node.count > 1:
-            self.cache[key] = self._insert_after(node, key)
+            self.key_to_node[key] = self._insert_before(node, key)
         if not node.keys:
-            node.prev.next, node.next.prev = node.next, node.prev
-            node.next = node.prev = None
+            self._remove_node(node)
 
 
-    def getMaxKey(self) -> str:
+    def getMinKey(self) -> str:
         """
         Returns one of the keys with maximal value.
         """
@@ -86,7 +87,7 @@ class AllOne:
         return ""
         
 
-    def getMinKey(self) -> str:
+    def getMaxKey(self) -> str:
         """
         Returns one of the keys with Minimal value.
         """
