@@ -1,4 +1,9 @@
 """
+- https://leetcode.com/problems/longest-palindromic-subsequence/
+- intuition: greedily match from two ends into middle
+"""
+
+"""
 - dynamic programming (top-down)
 - O(n^2), O(n^2)
 """
