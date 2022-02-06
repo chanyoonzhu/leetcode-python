@@ -31,25 +31,21 @@ class Solution:
 class Solution:
     def numIslands(self, grid: List[List[str]]) -> int:
         
-        result = 0
+        res = 0
         M, N = len(grid), len(grid[0])
-        visited = set()
+        DIR = [(1, 0), (-1, 0), (0, 1), (0, -1)]
         
-        def bfs(r, c):
-            nonlocal M, N
-            q = collections.deque()
-            q.append((r, c))
-            while q:
-                i, j = q.popleft()
-                for ii, jj in [(i + 1, j), (i - 1, j), (i, j + 1), (i, j - 1)]:
-                    if 0 <= ii < M and 0 <= jj < N and (ii, jj) not in visited and grid[ii][jj] == "1":
-                        visited.add((ii, jj))
-                        q.append((ii, jj))
+        def traverse(r, c):
+            grid[r][c] = "X"
+            for i, j in DIR:
+                nr, nc = r + i, c + j
+                if 0 <= nr < M and 0 <= nc < N and grid[nr][nc] == "1":
+                    traverse(nr, nc)
+            
         
-        for r in range(M):
-            for c in range(N):
-                if (r, c) not in visited and grid[r][c] == "1":
-                    result += 1
-                    visited.add((r, c))
-                    bfs(r, c)
-        return result
+        for i in range(M):
+            for j in range(N):
+                if grid[i][j] == "1":
+                    res += 1
+                    traverse(i, j)
+        return res
