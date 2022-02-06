@@ -572,7 +572,7 @@ heapify time complexity: O(n), heap push/pop time complexity: O(logn)
 
 ## Sorting
 - quick sort 
-    - algorithm:
+    - algorithm: (classic eg.215)
         1. find a random pivot
         2. put the pivot in its sorted position (elements to its left are smaller and elements to its right are greater)
         3. recursively sort the left and the right partition

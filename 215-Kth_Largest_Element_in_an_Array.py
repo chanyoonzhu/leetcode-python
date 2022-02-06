@@ -1,4 +1,9 @@
 """
+- https://leetcode.com/problems/kth-largest-element-in-an-array/submissions/
+- sort -> max heap -> quickselect
+"""
+
+"""
 - sort
 - O(nlogn), O(1)
 """
@@ -11,6 +16,19 @@ class Solution:
         """   
         nums.sort()
         return nums[-k]
+
+"""
+- max heap
+- O(klogn), O(n)
+"""
+class Solution:
+    def findKthLargest(self, nums: List[int], k: int) -> int:
+        h = [-n for n in nums]
+        heapq.heapify(h)
+        res = 0
+        for _ in range(k):
+            res = heapq.heappop(h)
+        return -res
 
 """
 - max heap
@@ -31,25 +49,25 @@ class Solution:
 - time: O(n) like quick select, but only "sort" one partition each time, merge to O(n) on average, worst case is O(n^2) if reversely sorted
 - space: O(1)
 """
-class Solution:    
+class Solution:
     def findKthLargest(self, nums: List[int], k: int) -> int:
-        return self.quickSort(nums, 0, len(nums) - 1, k)
+        return self.quickSelect(nums, 0, len(nums) - 1, k)
         
-    def quickSort(self, nums, start, end, k):
+    def quickSelect(self, nums, start, end, k):
         idx = self.partition(nums, start, end)
-        if idx + 1 == k:
+        if idx == k - 1:
             return nums[idx]
-        elif idx + 1 < k:
-            return self.quickSort(nums, idx + 1, end, k)
+        elif idx < k - 1:
+            return self.quickSelect(nums, idx + 1, end, k)
         else:
-            return self.quickSort(nums, start, idx - 1, k)
-    
+            return self.quickSelect(nums, start, idx - 1, k)
+        
     def partition(self, nums, start, end):
         pivot = nums[end]
         idx = start
-        for i in range(start, end):
-            if nums[i] >= pivot:
-                nums[i], nums[idx] = nums[idx], nums[i]
+        for ptr in range(start, end):
+            if nums[ptr] >= pivot:
+                nums[idx], nums[ptr] = nums[ptr], nums[idx]
                 idx += 1
         nums[idx], nums[end] = pivot, nums[idx]
         return idx
