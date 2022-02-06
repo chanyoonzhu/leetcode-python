@@ -176,7 +176,7 @@ while start <= end:
     - compression/serialization:
         - eg: 187-Repeated DNA Sequences; 287-Find the Duplicate Number; 318-Maximum Product of Word Lengths; 1284-Minimum Number of Flips to Convert Binary Matrix to Zero Matrix (bfs)
     - enumeration (can be solved using backtracking):
-        - eg: 90-Subsets II; 491-Increasing Subsequences; 526-Beautiful Arrangement; 698-Partition to K Equal Sum Subsets; 1386-Cinema Seat Allocation; 1593-Split a String Into the Max Number of Unique Substrings; 1681-Minimum Incompatibility
+        - eg: 90-Subsets II; 464-Can I Win; 491-Increasing Subsequences; 526-Beautiful Arrangement; 698-Partition to K Equal Sum Subsets; 1386-Cinema Seat Allocation; 1593-Split a String Into the Max Number of Unique Substrings; 1681-Minimum Incompatibility
 
 ## BFS
 - key word: shorted path (eg. 1345); 
