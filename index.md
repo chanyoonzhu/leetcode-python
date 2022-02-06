@@ -57,8 +57,8 @@ zip: 833
 ## backtracking 
     - complexity: time - O(2^n) each position can be chosen or not; space - O(n)
     - tip: 
-        * dedup: sort and skip same number (eg. 40-Combination Sum II)
-    - eg: 17-Letter Combinations of a Phone Number; 39-Combination Sum|40-Combination Sum II; 78-Subsets(classic)|90-Subsets II|46-Permutations|47-Permutations II; 254-Factor Combinations; 282-Expression Add Operators; 291-Word Pattern II; 491-Increasing Subsequences; 526-Beautiful Arrangement; 996-Number of Squareful Arrays; 1239-Maximum Length of a Concatenated String with Unique Characters; 698-Partition to K Equal Sum Subsets; 1088-Confusing Number II; 1593-Split a String Into the Max Number of Unique Substrings; 1681-Minimum Incompatibility; 1307-Verbal Arithmetic Puzzle(hard); 1718-Construct the Lexicographically Largest Valid Sequence (with greedy); 1723-Find Minimum Time to Finish All Jobs(hard, with binary search); 1774-Closest Dessert Cost；465-Optimal Account Balancing (hard)
+        * dedup: sort and skip same number (eg. 40-Combination Sum II; 47-Permutations II)
+    - eg: 17-Letter Combinations of a Phone Number; 39-Combination Sum|40-Combination Sum II; 47-Permutations II; 78-Subsets(classic)|90-Subsets II|46-Permutations|47-Permutations II; 254-Factor Combinations; 282-Expression Add Operators; 291-Word Pattern II; 491-Increasing Subsequences; 526-Beautiful Arrangement; 996-Number of Squareful Arrays; 1239-Maximum Length of a Concatenated String with Unique Characters; 698-Partition to K Equal Sum Subsets; 1088-Confusing Number II; 1593-Split a String Into the Max Number of Unique Substrings; 1681-Minimum Incompatibility; 1307-Verbal Arithmetic Puzzle(hard); 1718-Construct the Lexicographically Largest Valid Sequence (with greedy); 1723-Find Minimum Time to Finish All Jobs(hard, with binary search); 1774-Closest Dessert Cost；465-Optimal Account Balancing (hard)
     - state compression with bitmasking: see "## Bitmasking"
 
 ## binary search

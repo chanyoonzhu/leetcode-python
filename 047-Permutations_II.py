@@ -11,7 +11,7 @@ class Solution:
             if not nums:
                 result.append(path)
             else:
-                prev, i = -11, 0
+                prev, i = -11, 0 # key: dedup: same number only picked once for a slot
                 while i < len(nums):
                     if nums[i] != prev:
                         backtrack(nums[:i] + nums[i + 1:], path + [nums[i]])
