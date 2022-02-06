@@ -222,7 +222,7 @@ while start <= end:
         - eg: 705-Design HashSet, 706-Design HashMap
     - hashmap: 244-Shortest Word Distance II
     - hashmap / doubly linked list: 146,380,381,432,460,1146,1381
-    - array O(1): 380-Insert Delete GetRandom O(1)(O(1) removal at index i by switching elements)
+    - array O(1): 380-Insert Delete GetRandom O(1)|381-Insert Delete GetRandom O(1) - Duplicates allowed((O(1) removal at index i by switching elements))
     - stack: 
         155-Min Stack
     - heap: 295

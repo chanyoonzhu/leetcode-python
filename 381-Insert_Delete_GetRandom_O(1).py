@@ -1,50 +1,43 @@
-class RandomizedCollection(object):
+"""
+- https://leetcode.com/problems/insert-delete-getrandom-o1-duplicates-allowed/solution/
+- Similar: 380
+- intuition: build upon 380, since dups allowed, the dictionary value can't just be a counter but instead a hashset (cannot be a list because O(n) for insertion deletion)
+"""
 
-    """
-    - array + hashmap + hashset
-    - similar question: 380
-    - caveat: since dups allowed, the dictionary value can't just be a list because item search is not O(1), has to use a hashset
-    """
+"""
+- array + hashmap + hashset
+- all time O(1)
+"""
+class RandomizedCollection:
+
     def __init__(self):
-        """
-        Initialize your data structure here.
-        """
         self.nums = []
-        self.pos = collections.defaultdict(set)
+        self.nums_to_indexes = defaultdict(set)
         
 
     def insert(self, val: int) -> bool:
-        """
-        Inserts a value to the collection. Returns true if the collection did not already contain the specified element.
-        """
-        doesContain = False
-        if self.pos[val]:
-            doesContain = True
+        is_present = val in self.nums_to_indexes
+        self.nums_to_indexes[val].add(len(self.nums))
         self.nums.append(val)
-        self.pos[val].add(len(self.nums) - 1)
-        return doesContain
+        return not is_present
         
 
     def remove(self, val: int) -> bool:
-        """
-        Removes a value from the collection. Returns true if the collection contained the specified element.
-        """
-        if not self.pos[val]:
+        if val not in self.nums_to_indexes:
             return False
-        index, last, last_index = self.pos[val].pop(), self.nums[-1], len(self.nums) - 1 # self.pos[val][-1] won't work on set, has to use self.pos[val].pop()
-        self.nums[index] = last
-        self.pos[last].add(index)
-        self.pos[last].remove(last_index)
+        remove_idx, last_idx = self.nums_to_indexes[val].pop(), len(self.nums) - 1
+        last = self.nums[last_idx]
+        self.nums[remove_idx] = last
+        self.nums_to_indexes[last].add(remove_idx)
+        self.nums_to_indexes[last].remove(last_idx)
+        if len(self.nums_to_indexes[val]) == 0:
+            del self.nums_to_indexes[val] # caveat: delete and pop at the end, since remove_idx can be the same as last idx
         self.nums.pop()
         return True
         
-        
+
     def getRandom(self) -> int:
-        """
-        Get a random element from the collection.
-        """
-        index = random.randint(0, len(self.nums) - 1)
-        return self.nums[index]
+        return self.nums[random.randint(0, len(self.nums) - 1)]
         
 
 
