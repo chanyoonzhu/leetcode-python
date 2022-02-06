@@ -1,8 +1,12 @@
 """
-- array and hashmap
-- time complexity for all APIs: O(1)
+- https://leetcode.com/problems/insert-delete-getrandom-o1/
 - intuition: set/hashmap can be used to create the insert/remove api pretty easily, but random needs random access so an array is needed
 - array removal at index i is O(n), can be optimized to O(1) if we remove the last element and switch the last element with the element at index i
+"""
+
+"""
+- array and hashmap
+- time complexity for all APIs: O(1)
 """
 class RandomizedSet:
 
@@ -24,7 +28,7 @@ class RandomizedSet:
         remove_idx = self.num_to_idx[val]
         self.nums[remove_idx] = last_val
         self.num_to_idx[last_val] = remove_idx
-        self.nums.pop()
+        self.nums.pop() # pop at the end, since remove_idx can be the last idx
         del self.num_to_idx[val]
         return True
 
