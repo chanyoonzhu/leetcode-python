@@ -1,3 +1,7 @@
+"""
+- https://leetcode.com/problems/find-leaves-of-binary-tree/
+- summary: use a hashmap to keep the nodes of same height (starting from the bottom), sort hashmap and print (can use an array to optimize)
+"""
 # Definition for a binary tree node.
 # class TreeNode:
 #     def __init__(self, val=0, left=None, right=None):
@@ -9,20 +13,18 @@
 - O(nlogn),O(n)
 """
 class Solution:
+    def __init__(self):
+        self.height_to_vals = defaultdict(list)
+        
     def findLeaves(self, root: Optional[TreeNode]) -> List[List[int]]:
-        
-        if not root: return []
-        
-        self.heights = defaultdict(list)
-        self.find_height(root, self.heights)
-        return [self.heights[h] for h in sorted(self.heights)]
-        
-        
-    def find_height(self, node, heights):
-        if not node: 
-            return -1
-        height = 1 + max(self.find_height(node.left, heights), self.find_height(node.right, heights))
-        heights[height].append(node.val)
+        self._getHeight(root)
+        return [self.height_to_vals[h] for h in sorted(self.height_to_vals)]
+    
+    def _getHeight(self, node):
+        if not node:
+            return 0
+        height = 1 + max(self._getHeight(node.left), self._getHeight(node.right))
+        self.height_to_vals[height].append(node.val)
         return height
 
 """
