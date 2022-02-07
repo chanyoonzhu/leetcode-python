@@ -4,7 +4,7 @@ backtracking: 17,39,40,46,47,78,90,254,282,291,301,491,526,698,996,1088,1593,123
 bfs: 79,103,116,117,126,127,130,133,173,199,200,207,210,212,269,279,297,301,314,317,339,399,407,444,505,515,529,542,637,662,743,752,785,787,803,863,909,919,934,958,959,971,987,1091,1110,1161,1197,1236,1254,1293,1306,1345,1368,1376,1448,1654,1778
 binar352,367,374,410,715,744,774,852,875,911,1011,1055,1060,1146,1231,1272,1283,1428,1482,1552,1608,1648,1723,1802,1870,1891
 bitwise operation: 29,136,137,191,201,231,268,318,338,342,371,461,473,476,491,693,698,1284,1371,1386,1442,1542,1593,1680,1681
-binary search tree: 99,109,173,272,285,333,449,450,490,653,701,729,938,1008,1373,1382
+binary search tree: 99,109,173,272,285,333,449,450,490,653,701,729,938,1008,1373,1382,2040
 bucket:220,299
 circular array: 213,1658
 Deterministic Finite Automaton: 65
@@ -136,7 +136,7 @@ while start <= end:
 - Examples: 57,911,1146(bisect), 278,374-Guess Number Higher or Lower(basic), 981(strictly increasing, find lower), 315
 - problems:
     - binary search the answer: get the possible range of answer, binary search between range and see if current number can satisfy condition using greedy algorithm
-        - eg: 287-Find the Duplicate Number; 410-Split Array Largest Sum|774; 778-Swim in Rising Water(graph)|875|1011|1231|1283|1300|1482|1552|1648|1802(complex)|1870; 1891-Cutting Ribbons;1723-Find Minimum Time to Finish All Jobs(hard, with backtracking); 279-Perfect Squares
+        - eg: 287-Find the Duplicate Number; 410-Split Array Largest Sum|774; 778-Swim in Rising Water(graph)|875|1011|1231|1283|1300|1482|1552|1648|1802(hard)|1870; 1891-Cutting Ribbons;1723-Find Minimum Time to Finish All Jobs(hard, with backtracking); 279-Perfect Squares; 2040-Kth Smallest Product of Two Sorted Arrays(hard)
     - multiplication/division: 29-Divide Two Integers; 367-Valid Perfect Square; 
     - arrays: 
         - find target:
@@ -794,3 +794,4 @@ def isXandYConnected(n):
 254-Factor Combinations
 979-Distribute Coins in Binary Tree
 1235-Maximum Profit in Job Scheduling (dp)
+2040-Kth Smallest Product of Two Sorted Arrays
