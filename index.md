@@ -735,6 +735,7 @@ class TrieNode:
 ## Union Find
 - key word: connected group in a graph
 - algorithm: union find by rank (assign node with higher rank as parent of a connected group)
+- complexity: nlog(n) to union all n elements - see [this article](https://www.geeksforgeeks.org/union-find-algorithm-set-2-union-by-rank/)
 ```
 parents = [i for i in range(n)]
         
@@ -759,7 +760,7 @@ def isXandYConnected(n):
 
 ```
 - problem:
-    - find connected groups: 128-Longest Consecutive Sequence; 305-Number of Islands II(hard); 323-Number of Connected Components in an Undirected Graph; 721-Accounts Merge; 803-Bricks Falling When Hit (hard); 1722-Minimize Hamming Distance After Swap Operations (implicit); 952-Largest Component Size by Common Factor; 1562-Find Latest Group of Size M(hard); 1627-Graph Connectivity With Threshold | 1970-Last Day Where You Can Still Cross; 1998-GCD Sort of an Array; 2076-Process Restricted Friend Requests(hard)
+    - find connected groups: 128-Longest Consecutive Sequence; 305-Number of Islands II(hard); 323-Number of Connected Components in an Undirected Graph; 547-Number of Provinces; 721-Accounts Merge; 803-Bricks Falling When Hit (hard); 1722-Minimize Hamming Distance After Swap Operations (implicit); 952-Largest Component Size by Common Factor; 1562-Find Latest Group of Size M(hard); 1627-Graph Connectivity With Threshold | 1970-Last Day Where You Can Still Cross; 1998-GCD Sort of an Array; 2076-Process Restricted Friend Requests(hard)
     - cycle in graph: 261-Graph Valid Tree; 684-Redundant Connection
     - operation chaining: 399-Evaluate Division
 
