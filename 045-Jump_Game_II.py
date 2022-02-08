@@ -10,18 +10,17 @@ class Solution(object):
         """
         n = len(nums)
         dp = [float("inf")] * n
-        
         dp[0] = 0
         for i in range(n):
-            if dp[i] != float("inf"):
-                for j in range(i + 1, min(n, i + nums[i] + 1)):
-                    dp[j] = min(dp[j], dp[i] + 1)
+            step = nums[i]
+            for j in range(i + 1, min(i + step + 1, n)): # easy to miss: bound by n
+                dp[j] = min(dp[j], dp[i] + 1)
         return dp[-1]
 
- """
+"""
 - O(n)
 - Greedy
-- use prev_reachable_index until it cannot reach current index, then update it to max current reachable. 
+- intuition: for each i, get farthest it can reach (curr_reachable_index), only walk when prev can reach could not reach current index i
 """
 class Solution(object):
     def jump(self, nums):
