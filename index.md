@@ -4,7 +4,7 @@ backtracking: 17,39,40,46,47,78,90,254,282,291,301,491,526,698,996,1088,1593,123
 bfs: 79,103,116,117,126,127,130,133,173,199,200,207,210,212,269,279,297,301,314,317,339,399,407,444,505,515,529,542,637,662,743,752,785,787,803,863,909,919,934,958,959,971,987,1091,1110,1161,1197,1236,1254,1293,1306,1345,1368,1376,1448,1654,1778
 binar352,367,374,410,715,744,774,852,875,911,1011,1055,1060,1146,1231,1272,1283,1428,1482,1552,1608,1648,1723,1802,1870,1891
 bitwise operation: 29,136,137,191,201,231,268,318,338,342,371,461,473,476,491,693,698,1284,1371,1386,1442,1542,1593,1680,1681
-binary search tree: 99,109,173,272,285,333,449,450,490,653,701,729,938,1008,1373,1382,2040
+binary search tree: 99,109,173,235,272,285,333,449,450,490,653,701,729,938,1008,1373,1382,2040
 bucket:220,299
 circular array: 213,1658
 Deterministic Finite Automaton: 65
@@ -698,7 +698,7 @@ If using bfs, usually uses a FIFO queue to store nodes to be visited.
     - BST(Binary Search Tree): 
         - a node needs to be larger than the largest node in its left subtree and smaller than the smallest node in its right subtree (eg.333, 1373)
         - tip: inorder traversal yields a sorted list
-        - eg. 95-Unique Binary Search Trees II(hard); 109-Convert Sorted List to Binary Search Tree; 173-Binary Search Tree Iterator(iterative); 285-Inorder Successor in BST(classic); 272-Closest Binary Search Tree Value II(hard); *333-Largest BST Subtree; 653-Two Sum IV - Input is a BST; 938. Range Sum of BST(easy); 450-Delete Node in a BST; 701-Insert into a Binary Search Tree; 1008-Construct Binary Search Tree from Preorder Traversal; 1373-Maximum Sum BST in Binary Tree; 1382-Balance a Binary Search Tree;
+        - eg. 95-Unique Binary Search Trees II(hard); 109-Convert Sorted List to Binary Search Tree; 173-Binary Search Tree Iterator(iterative); 235-Lowest Common Ancestor of a Binary Search Tree; 285-Inorder Successor in BST(classic); 272-Closest Binary Search Tree Value II(hard); *333-Largest BST Subtree; 653-Two Sum IV - Input is a BST; 938. Range Sum of BST(easy); 450-Delete Node in a BST; 701-Insert into a Binary Search Tree; 1008-Construct Binary Search Tree from Preorder Traversal; 1373-Maximum Sum BST in Binary Tree; 1382-Balance a Binary Search Tree;
     - Breath-first search(BFS): 
         - eg: 199-Binary Tree Right Side View; 297-Serialize and Deserialize Binary Tree; 314-Binary Tree Vertical Order Traversal; 339-Nested List Weight Sum; 515-Find Largest Value in Each Tree Row; 662-Maximum Width of Binary Tree; 1110-Delete Nodes And Return Forest;
         - complete binary tree
