@@ -221,7 +221,7 @@ while start <= end:
         - modulo with a list of linkedlists/bst
         - eg: 705-Design HashSet, 706-Design HashMap
     - hashmap: 244-Shortest Word Distance II; 380-Insert Delete GetRandom O(1)|381-Insert Delete GetRandom O(1) - Duplicates allowed((O(1) removal at index i by switching elements))
-    - hashmap / doubly linked list: 146;432-All O`one Data Structure,460,1146,1381
+    - hashmap / doubly linked list: 146-LRU Cache; 432-All O`one Data Structure,460,1146,1381
     - array O(1): 380-Insert Delete GetRandom O(1)|381-Insert Delete GetRandom O(1) - Duplicates allowed((O(1) removal at index i by switching elements))
     - stack: 
         155-Min Stack
@@ -452,7 +452,7 @@ heapify time complexity: O(n), heap push/pop time complexity: O(logn)
 
 ## LinkedList
 - tips:
-    use dummy node to avoid checking edgecases 146, 116/117
+    use dummy node to avoid checking edgecases 146-LRU Cache, 116/117
 - problems:
     - add/remove: 83-Remove Duplicates from Sorted List
     - find out the size of a circular linkedlist or the middle of the linkedlist

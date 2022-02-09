@@ -75,61 +75,72 @@ class LRUCache:
 - instinct: O(1) get can be achieved through hashmap; O(1) move elements can be achieved through linkedlist and hashmap
 - caveat: use dummy node for linkedlist avoids checking edge cases
 """
-class Node:
-    def __init__(self, key, prev=None, next=None):
-        self.key = key
-        self.prev = prev
-        self.next = next
-
 class LRUCache:
 
     def __init__(self, capacity: int):
         self.capacity = capacity
-        self.dict = dict()
-        self.head = Node(0)  # dummy head, all keys are positive so using 0 is safe
-        self.tail = Node(0)  # dummy tail
-        self.head.next = self.tail
-        self.tail.prev = self.head
+        self.size = 0
+        self.key_to_node = defaultdict(Node)
+        self.dll = DoublyLinkedList()
         
 
     def get(self, key: int) -> int:
-        if key in self.dict:
-            val, node = self.dict[key]
-            self.move_to_head(node)
-            return val
-        return -1
+        # get the value
+        if key not in self.key_to_node:
+            return -1
+        val = self.key_to_node[key].val
+        # move to front
+        self.dll.remove(self.key_to_node[key])
+        self.dll.add_to_front(self.key_to_node[key])
+        return val
         
 
     def put(self, key: int, value: int) -> None:
-        if key in self.dict:
-            self.dict[key][0] = value
-            self.move_to_head(self.dict[key][1])
-        else:
-            node = Node(key)
-            self.dict[key] = [value, node]
-            self.make_head(node)  
-        if len(self.dict) > self.capacity:
-            self.remove_from_tail()
-    
-    def make_head(self, node):
-        node.prev = self.head
-        node.next = self.head.next
-        self.head.next.prev = node
-        self.head.next = node
-    
-    def move_to_head(self, node):
-        if node.prev != self.head:
-            node.prev.next = node.next
-            node.next.prev = node.prev
-            self.make_head(node)
-    
-    def remove_from_tail(self): # can be optimized to remove any node, which move_to_head can call.
-        node = self.tail.prev
-        del self.dict[node.key]
-        node.prev.next = node.next
-        node.next.prev = node.prev
-        node.next = None
-        node.prev = None
+        if key not in self.key_to_node: # create
+            if self.size == self.capacity: # needs remove
+                removed_key = self.dll.remove(self.dll.tail.prev)
+                del self.key_to_node[removed_key]
+            else:
+                self.size += 1 # just add
+            self.key_to_node[key] = Node(key, value)
+            self.dll.add_to_front(self.key_to_node[key])
+        else: # update
+            # update value
+            self.key_to_node[key].val = value
+            # move to front
+            self.dll.remove(self.key_to_node[key])
+            self.dll.add_to_front(self.key_to_node[key])
+  
+class Node:
+    def __init__(self, key=-1, val=-1, prev=None, next=None):
+        self.key = key
+        self.val = val
+        self.prev = prev
+        self.next = next
+        
+class DoublyLinkedList:
+    def __init__(self):
+        self.head = Node()
+        self.tail = Node()
+        self.head.next, self.tail.prev = self.tail, self.head
+        
+    def remove(self, node):
+        prev, next = node.prev, node.next
+        prev.next, next.prev = next, prev
+        node.prev = node.next = None
+        return node.key
+        
+    def add_to_front(self, node):
+        next = self.head.next
+        node.prev, node.next = self.head, next
+        self.head.next = next.prev = node
+        
+
+
+# Your LRUCache object will be instantiated and called as such:
+# obj = LRUCache(capacity)
+# param_1 = obj.get(key)
+# obj.put(key,value)
 
 # Your LRUCache object will be instantiated and called as such:
 # obj = LRUCache(capacity)
