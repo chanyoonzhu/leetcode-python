@@ -340,7 +340,7 @@ space can be optimized to O(1) if only need to track constant time of variables 
             - 0/1 knapsack: each element can be used 0 or 1 time
                 - eg: 416-Partition Equal Subset Sum|956-Tallest Billboard(hard, need max);474-Ones and Zeroes(two bags)|879-Profitable Schemes; 871-Minimum Number of Refueling Stops(hard, todo); 1981-Minimize the Difference Between Target and Chosen Elements;805-Split Array With Same Average;
             - 0/n knapsack: each element can be used 0 or infinite amount of times
-                - eg: 039-Combination Sum; 264-Ugly Number II; 322-Coin Change|691-Stickers to Spell Word(hard, with state compression)|1125-Smallest Sufficient Team; 983-Minimum Cost For Tickets; 1449-Form Largest Integer With Digits That Add up to Target
+                - eg: 039-Combination Sum; 139-Word Break; 264-Ugly Number II; 322-Coin Change|691-Stickers to Spell Word(hard, with state compression)|1125-Smallest Sufficient Team; 983-Minimum Cost For Tickets; 1449-Form Largest Integer With Digits That Add up to Target
             - pos/neg knapsack: 494-Target Sum; 956-Tallest Billboard; 1049-Last Stone Weight II
             - two bags: 474-Ones and Zeroes(two bags)|879-Profitable Schemes; 956-Tallest Billboard(can be resolved with one bag)
         - eg: 630-Course Schedule III; 1774-Closest Dessert Cost
