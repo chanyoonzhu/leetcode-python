@@ -731,6 +731,7 @@ class TrieNode:
         self.isWord = False # mark word end
         self.children = collections.defaultdict(TrieNode)
 ```
+- tips: use dfs to get all strings that start with the given prefix (can store whole sentence at the end node - eg.642)
 - eg: 211-Design Add and Search Words Data Structure(basic); 139-Word Break|140-Word Break II; 616-Add Bold Tag in String; 642-Design Search Autocomplete System; 745-Prefix and Suffix Search(2 Tries);
 
 ## Union Find
