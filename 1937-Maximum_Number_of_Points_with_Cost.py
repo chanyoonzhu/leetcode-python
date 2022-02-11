@@ -38,18 +38,33 @@ class Solution:
 
 """
 - dynamic programming (bottom-up)
+- similar: 1014-Best_Sightseeing_Pair
 - O(m*n), O(n)
 - TLE
 """
 class Solution:
     def maxPoints(self, points: List[List[int]]) -> int:
-
-        dp = [0] * len(points[0])
-        for line in points:
-            # after this loop, dp[i] will be the max for previous lines if next line choosing column i (it bubbles up max value from side to middle)
-            for i in range(1, len(line)):
-                dp[i] = max(dp[i], dp[i - 1] - 1)
-                dp[-i - 1] = max(dp[-i - 1], dp[-i] - 1)
-            for i in range(len(line)):
-                dp[i] += line[i]
+        M, N = len(points), len(points[0])
+        dp = [0] * N
+        
+        for r in range(M):
+            left_max, right_max = self.buildLeftRightMax(dp)
+            dp = [0] * N
+            for c in range(N):
+                dp[c] = points[r][c] + max(left_max[c], right_max[c])
         return max(dp)
+    
+    def buildLeftRightMax(self, arr):
+        """
+        eg. [6,4,2,4,6] -> [6,5,4,5,6]
+        """
+        N = len(arr)
+        cur_max = 0
+        left_max, right_max = [0] * N, [0] * N
+        for i in range(N):
+            cur_max = max(cur_max - 1, arr[i])
+            left_max[i] = cur_max
+        for i in range(N-1, -1, -1):
+            cur_max = max(cur_max - 1, arr[i]) # decrement cur_max by 1 now one cell farther
+            right_max[i] = cur_max
+        return left_max, right_max

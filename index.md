@@ -399,7 +399,7 @@ Pick the locally optimal move at each step, and that will lead to the globally o
 Iterate over the array and update at each step the standard set for such problems: 1.current element 2.current local maximum sum (at this given point) 3.global maximum sum seen so far.
     - eg: 1402,1520,1665
 - problems:
-    - general(regional min/max): 11-Container With Most Water|42-Trapping Rain Water; 121-Best Time to Buy and Sell Stock|1014-Best Sightseeing Pair; 134-Gas Station; 135-Candy;
+    - general(regional min/max): 11-Container With Most Water|42-Trapping Rain Water; 121-Best Time to Buy and Sell Stock|1014-Best Sightseeing Pair|1937-Maximum_Number_of_Points_with_Cost; 134-Gas Station; 135-Candy;
     - greedy with sort: 853-Car Fleet; 1775-Equal Sum Arrays With Minimum Number of Operations; 1537-Get the Maximum Score; 954-Array of Doubled Pairs|2007-Find Original Array From Doubled Array; 1877-Minimize Maximum Pair Sum in Array
     - violate rule first, greedily remediate after: 
         - tip: using heap to greedily pick the largest item to remediate
@@ -769,10 +769,6 @@ def isXandYConnected(n):
 ## Other
 - Account Balance: 465-Optimal Account Balancing (hashmap + backtracking)
 - Deterministic Finite Automaton: 65-Valid Number
-
-## Tricks
-- bubble up dp mem array from side to middle
-    - eg. 1937-Maximum Number of Points with Cost
 
 # Classic:
 ## Sums:
