@@ -27,19 +27,20 @@ class Solution:
 class Solution:
     def networkDelayTime(self, times: List[List[int]], n: int, k: int) -> int:
         
-        dists = [0] + [float("inf")] * n
+        visited = set()
+        graph = defaultdict(set)
+        for u, v, t in times:
+            graph[u].add((v, t))
         
-        graph = collections.defaultdict(list)
-        for src, dst, time in times:
-            graph[src].append((time, dst))
-        
-        h = [(0, k)]
-        
+        h = [(0, k)] # time, node
         while h:
-            time, node = heapq.heappop(h) # greedily pop the smallest time
-            if time < dists[node]: # only continue on route with smallest time
-                dists[node] = time
-                for next_time, next_node in graph[node]:
-                    heapq.heappush(h, (time + next_time, next_node))
-        result = max(dists)
-        return result if result < float("inf") else -1
+            # bfs
+            accumulative_time, v = heapq.heappop(h) # greedily pop the smallest time(accumulated)
+            visited.add(v)
+            if len(visited) == n:
+                return accumulative_time
+            for nei, time in graph[v]:
+                if nei not in visited:
+                    heapq.heappush(h, (accumulative_time + time, nei))
+            
+        return -1
