@@ -2,33 +2,33 @@ import collections
 
 """
 - dfs
-- O(n^2), O(n)
+- O(V+E), O(V+E)
 """
 class Solution(object):
-    def validTree(self, n, edges):
-
-        graph = defaultdict(list)
-        for u, v in edges:
-            graph[u].append(v)
-            graph[v].append(u)
+    def validTree(self, n: int, edges: List[List[int]]) -> bool:
+        graph = defaultdict(set)
+        for v, u in edges:
+            graph[v].add(u)
+            graph[u].add(v)
             
-        
         visited = set()
         
-        def has_cycle(x, prev):
-            visited.add(x)
-            for nei in graph[x]:
-                if nei != prev: # easy to miss
-                    if nei in visited:
-                        return False
-                    else:
-                        has_cycle(nei, x)
-            return True
-        
-                
-        if not has_cycle(0, -1): # test no cycle
-            return sum(visited) == n
-        return False
+        # check cycle
+        if not self.hasNoCycle(0, -1, visited, graph):
+            return False
+
+        # check not connect
+        return len(visited) == n
+    
+    # return False if cycle
+    def hasNoCycle(self, v, prev_v, visited, graph):
+        if v in visited:
+            return False
+        visited.add(v)
+        for nei in graph[v]:
+            if nei != prev_v and not self.hasNoCycle(nei, v, visited, graph): # easy to miss: need to exclude prev node (don't go back)
+                return False
+        return True
 
 """
 - union find
