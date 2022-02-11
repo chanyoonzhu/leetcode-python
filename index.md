@@ -1,6 +1,6 @@
 all, any: 833
 array: 6,31,41,54,56,58,59,68,73,122,151,157,163,186,204,238,251,268,289,311,349,350,380,381,463,498,556,605,766,768,849,896,1146,1304,1371,1381,1526,1567,1706,1822,2121
-backtracking: 17,39,40,46,47,78,90,254,282,291,301,491,526,698,996,1088,1593,1239,1307,1681,1718,1723,1774
+backtracking: 17,39,40,46,47,78,90,254,282,291,301,489,491,526,698,996,1088,1593,1239,1307,1681,1718,1723,1774
 bfs: 79,103,116,117,126,127,130,133,173,199,200,207,210,212,269,279,297,301,314,317,339,399,407,444,505,515,529,542,637,662,743,752,785,787,803,863,909,919,934,958,959,971,987,1091,1110,1161,1197,1236,1254,1293,1306,1345,1368,1376,1448,1654,1778
 binar352,367,374,410,715,744,774,852,875,911,1011,1055,1060,1146,1231,1272,1283,1428,1482,1552,1608,1648,1723,1802,1870,1891
 bitwise operation: 29,136,137,191,201,231,268,318,338,342,371,461,473,476,491,693,698,1284,1371,1386,1442,1542,1593,1680,1681
@@ -190,8 +190,8 @@ while start <= end:
     - String: 752-Open the Lock
     - Dijkstra's Algorithm:
         - key words: minimal cost of paths (unlike regular shortest path where cost is always 1, each connection can have various cost)
-        - easy to miss: visited.add() happens at node pop, not node push, since shortest cost is found when node with smallest cost pops, when pushing a node we could pushing one with cost larger than smallest cost
-        - intuition: similar as bfs, difference is that instead of using a queue and always pop left (which is by default the minimal cost), use a heap to store tuple (total_cost, node) to always pop the smallest cost; also need an array/map to memoize smallest cost to each node
+        - caveat: visited.add() happens at node pop, not node push, since shortest cost is found when node with the smallest cost pops, when pushing a node we could push one with cost larger than smallest cost
+        - intuition: similar as bfs, difference is that instead of using a queue and always pop left (which is by default the minimal cost), use a heap to store tuple (total_cost, node) to always pop the smallest cost; also need an array/map to memoize smallest cost to each node; IMPORTANT - the use of heap guarantees that a node with smallest price route always popped first (no matter how many stops it takes to arrive at it) 
         - eg. 743-Network Delay Time (classic); 505-The Maze II; 787-Cheapest Flights Within K Stops; 407-Trapping Rain Water II (implicit); 656-Coin Path(hard, TLE); 1368-Minimum Cost to Make at Least One Valid Path in a Grid(have better solutions using dfs)
     - tree traversal: see "## Tree"
     - construct sequence with topological sort (see "## Topological Sort")
@@ -293,7 +293,7 @@ or
 ## 2D DFS/BFS
 - problems:
     - map hidden graph
-        - eg: 1778-Shortest Path in a Hidden Grid; 1810-Minimum Path Cost in a Hidden Grid
+        - eg: 489-Robot Room Cleaner; 1778-Shortest Path in a Hidden Grid; 1810-Minimum Path Cost in a Hidden Grid
     - find contiguous regions
         - eg: 130-Surrounded Regions; 200-Number of Islands | 694-Number of Distinct Islands | 1254-Number of Closed Islands | 934-Shortest Bridge (bfs + dfs); 463-Island Perimeter; 959-Regions Cut By Slashes (need pixelating); 803-Bricks Falling When Hit (hard); 827-Making A Large Island(mark by index); 2061-Number of Spaces Cleaning Robot Cleaned(with state)
     - min cost: see ## BFS
@@ -381,8 +381,8 @@ space can be optimized to O(1) if only need to track constant time of variables 
 
 ## Graph
 - Complexity
-    - time: O(V + E) V - number of nodes; E: number of edges
-    - space: O(V)
+    - time: O(V + E) V - number of nodes; E: number of edges (each node and each edge is traversed exactly once)
+    - space: O(V + E) for the adjacency graph (V keys, one value for each E)
 - Algorithms: DFS and BFS
 - Problems:
     - acyclic graph: 

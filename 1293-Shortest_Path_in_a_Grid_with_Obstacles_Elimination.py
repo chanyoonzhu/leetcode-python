@@ -1,17 +1,18 @@
 """
 - bfs
+- key: keep track of eliminated in queue, only push new pos to queue if not visited or take less eliminated steps to get to new pos
 - O(mnk), O(mn)
 """
 class Solution:
     def shortestPath(self, grid: List[List[int]], k: int) -> int:
         q = collections.deque()
-        q.append((0, 0, 0, 0))
+        q.append((0, 0, 0, 0)) # r, c, step, eliminated
         visited = {}
-        visited[(0, 0)] = 0 # need to stores eliminated as value
+        visited[(0, 0)] = 0 # need to store eliminated as value
         M, N = len(grid), len(grid[0])
         while q:
             r, c, step, eliminated = q.popleft()
-            if r == M - 1 and c == N - 1 and eliminated <= k:
+            if r == M - 1 and c == N - 1:
                 return step
             for i, j in [(1, 0), (-1, 0), (0, 1), (0, -1)]:
                 rr, cc = r + i, c + j
