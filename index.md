@@ -136,7 +136,7 @@ while start <= end:
 - Examples: 57,911,1146(bisect), 278,374-Guess Number Higher or Lower(basic), 981(strictly increasing, find lower), 315
 - problems:
     - binary search the answer: get the possible range of answer, binary search between range and see if current number can satisfy condition using greedy algorithm
-        - eg: 287-Find the Duplicate Number; 410-Split Array Largest Sum|774; 778-Swim in Rising Water(graph)|875|1011|1231|1283|1300|1482|1552|1648|1802(hard)|1870; 1891-Cutting Ribbons;1723-Find Minimum Time to Finish All Jobs(hard, with backtracking); 279-Perfect Squares; 2040-Kth Smallest Product of Two Sorted Arrays(hard)
+        - eg: 287-Find the Duplicate Number; 410-Split Array Largest Sum|774; 778-Swim in Rising Water(graph)|875|1011|1231|1283|1300|1482; 1552-Magnetic Force Between Two Balls; 1648|1802(hard)|1870; 1891-Cutting Ribbons;1723-Find Minimum Time to Finish All Jobs(hard, with backtracking); 279-Perfect Squares; 2040-Kth Smallest Product of Two Sorted Arrays(hard)
     - multiplication/division: 29-Divide Two Integers; 367-Valid Perfect Square; 
     - arrays: 
         - find target:

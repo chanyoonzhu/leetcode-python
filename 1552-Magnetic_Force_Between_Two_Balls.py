@@ -5,23 +5,22 @@
 class Solution:
     def maxDistance(self, position: List[int], m: int) -> int:
         position.sort()
-        low, high = 1, position[-1] - position[0]
-        
-        def can_distribute(x):
-            remain = m - 1
-            cur_pos = position[0]
-            for pos in position:
-                if pos - cur_pos >= x:
-                    remain -= 1
-                    if remain <= 0:
-                        return True
-                    cur_pos = pos
-            return False
-        
-        while low < high:
-            mid = low + (high - low + 1) // 2
-            if can_distribute(mid):
-                low = mid
+        lo, hi = 0, position[-1] - position[0]
+        while lo < hi:
+            mid = lo + (hi - lo + 1) // 2
+            if self.canAllocate(mid, m, position):
+                lo = mid
             else:
-                high = mid - 1
-        return low
+                hi = mid - 1
+        return lo
+    
+    def canAllocate(self, min_dist, m, position):
+        next_min_pos = position[0] + min_dist
+        m -= 1
+        for pos in position:
+            if pos >= next_min_pos:
+                m -= 1
+                if m == 0:
+                    return True
+                next_min_pos = pos + min_dist
+        return False
