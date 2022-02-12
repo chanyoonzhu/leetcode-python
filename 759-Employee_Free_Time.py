@@ -1,10 +1,11 @@
 """
 # Definition for an Interval.
+"""
 class Interval(object):
     def __init__(self, start=None, end=None):
         self.start = start
         self.end = end
-"""
+
 
 class Solution(object):
     """
@@ -31,8 +32,22 @@ class Solution(object):
         return res
 
     """
-    - line sweeping solution - todo
+    - line sweeping solution
     """
+    class Solution:
+        def employeeFreeTime(self, schedule: '[[Interval]]') -> '[Interval]':
+            schedules = []
+            for s_list in schedule:
+                schedules.extend(s_list)
+            schedules = sorted(schedules, key=lambda x: x.start)
+            res = []
+            prev_start, prev_end = schedules[0].start, schedules[0].end
+            for s in schedules[1:]:
+                start, end = s.start, s.end
+                if start > prev_end:
+                    res.append(Interval(prev_end, start))
+                prev_start, prev_end = start, max(prev_end, end)
+            return res
 
     """
     - O(Clogn) solution with priority queue: todo
