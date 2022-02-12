@@ -33,7 +33,7 @@ SQL: 176
 sort: 31,56,99,148,164,179,220,252,280,315,524,556,581,593,L391,611,973,1300,1509,1608,1610
 stack: 20,32,42,71,84,85,150,155,224,227,232,331,341,388,394,402,456,496,503,536,581,636,678,716,735,739,768,772,856,901,907,921,946,962,975,1019,1028,1047,1063,1106,1124,1130,1209,1249,1381,1541,1597,1673,1762,1776,1856,1944,1966
 string: 5,6,65,151,157,165,214,408,418,443,722,824,833,929,984,1087,1520
-topological sort: 207,210,269,310,329,444.1462
+topological sort: 207,210,269,310,329,444,1462,2115
 tree: 100,109,112,114,116,222,235,236,285,298,333,337,339,366,426,450,515,543,549,572,652,653,687,729,919,1325,1339,1367,1372,1522,1644,1650,1676,1740,2049
 treemap: 716,2034
 trie: 139,208,211,212,336,616,642,745
@@ -556,7 +556,7 @@ heapify time complexity: O(n), heap push/pop time complexity: O(logn)
         - eg. 1052; 1509-Minimum Difference Between Largest and Smallest Value in Three Moves
     - substring that has given numbers of certain characters: 
         - algorithm: move right pointer to right until satisfies condition, then move left pointer to right to tighten window until condition not satisfied
-        - eg. 3-Longest Substring Without Repeating Characters | 159-Longest Substring with At Most Two Distinct Characters | 340-Longest Substring with At Most K Distinct Characters | 992-Subarrays with K Different Integers | 395-Longest Substring with At Least K Repeating Characters; 76,1234; similar:904;1004-Max Consecutive Ones III;1248-Count Number of Nice Subarrays (loose end); 1358-Number of Substrings Containing All Three Characters; 1371-Find the Longest Substring Containing Vowels in Even Counts; 1438-Longest Continuous Subarray With Absolute Diff Less Than or Equal to Limit;1839-Longest Substring Of All Vowels in Order; 1658-Minimum Operations to Reduce X to Zero
+        - eg. 3-Longest Substring Without Repeating Characters | 159-Longest Substring with At Most Two Distinct Characters | 340-Longest Substring with At Most K Distinct Characters | 992-Subarrays with K Different Integers | 395-Longest Substring with At Least K Repeating Characters; 76,1234; similar:904;1004-Max Consecutive Ones III;1248-Count Number of Nice Subarrays (loose end); 1358-Number of Substrings Containing All Three Characters; 1371-Find the Longest Substring Containing Vowels in Even Counts; 1438-Longest Continuous Subarray With Absolute Diff Less Than or Equal to Limit(hard); 1839-Longest Substring Of All Vowels in Order; 1658-Minimum Operations to Reduce X to Zero
     - subarray sum with a target: sliding window with prefix-sum / two pointers
         - eg: 209-Minimum Size Subarray Sum; 713-Subarray Product Less Than K; 930-Binary Subarrays With Sum; 1658-Minimum Operations to Reduce X to Zero
     - use a sliding window to keep the running sum of last n items: 837-New 21 Game
@@ -671,7 +671,7 @@ eg: 56, 57, 218, 252, 253-Meeting Rooms II, 435, 452, 616-Add Bold Tag in String
         2. add nodes with indegrees == 0 to queue
         3. while q, pop node and bfs search neighbors of nodes, decrease their indegrees by 1, if indegree turns to 0, append to q
     - key words: construct sequence
-    - eg: 207-Course Schedule | 210. Course Schedule II | 1462-Course Schedule IV; 310-Minimum Height Trees; 444-Sequence Reconstruction; 269-Alien Dictionary(hard)
+    - eg: 207-Course Schedule | 210. Course Schedule II | 1462-Course Schedule IV; 310-Minimum Height Trees; 444-Sequence Reconstruction; 269-Alien Dictionary(hard); 2115-Find All Possible Recipes from Given Supplies
 
 ## Two pointers:
 - problems:
