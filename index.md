@@ -1,7 +1,7 @@
 all, any: 833
 array: 6,31,41,54,56,58,59,68,73,122,151,157,163,186,204,238,251,268,289,311,349,350,380,381,463,498,556,605,766,768,849,896,1014,1146,1304,1371,1381,1526,1567,1706,1822,2121
 backtracking: 17,39,40,46,47,78,90,254,282,291,301,489,491,526,698,996,1088,1593,1239,1307,1681,1718,1723,1774
-bfs: 79,103,116,117,126,127,130,133,173,199,200,207,210,212,269,279,297,301,314,317,339,399,407,444,505,515,529,542,637,662,743,752,785,787,803,863,909,919,934,958,959,971,987,1091,1110,1161,1197,1236,1254,1293,1306,1345,1368,1376,1448,1654,1778
+bfs: 79,103,116,117,126,127,130,133,173,199,200,207,210,212,269,279,297,301,314,317,339,399,407,444,505,515,529,542,637,662,743,752,785,787,803,863,909,919,934,958,959,971,987,994,1091,1110,1161,1197,1236,1254,1293,1306,1345,1368,1376,1448,1654,1778
 binar352,367,374,410,715,744,774,852,875,911,1011,1055,1060,1146,1231,1272,1283,1428,1482,1552,1608,1648,1723,1802,1870,1891
 bitwise operation: 29,136,137,191,201,231,268,318,338,342,371,461,473,476,491,693,698,1284,1371,1386,1442,1542,1593,1680,1681
 binary search tree: 99,109,173,235,272,285,333,449,450,490,653,701,729,938,1008,1373,1382,2040
@@ -186,7 +186,7 @@ while start <= end:
 - problems:
     - all shortest paths: 301
     - 1D (array): 1654-Minimum Jumps to Reach Home; 279-Perfect Squares
-    - 2D shortest paths: 505-The Maze II;542-01 Matrix; 317-Shortest Distance from All Buildings(hard); 909-Snakes and Ladders(1d conversion); 1091-Shortest Path in Binary Matrix; 1284-Minimum Number of Flips to Convert Binary Matrix to Zero Matrix (hard); 1293-Shortest Path in a Grid with Obstacles Elimination (hard)
+    - 2D shortest paths: 505-The Maze II;542-01 Matrix; 317-Shortest Distance from All Buildings(hard); 909-Snakes and Ladders(1d conversion); 994-Rotting Oranges; 1091-Shortest Path in Binary Matrix; 1284-Minimum Number of Flips to Convert Binary Matrix to Zero Matrix (hard); 1293-Shortest Path in a Grid with Obstacles Elimination (hard)
     - String: 752-Open the Lock
     - Dijkstra's Algorithm:
         - key words: minimal cost of paths (unlike regular shortest path where cost is always 1, each connection can have various cost)
