@@ -310,7 +310,7 @@ space can be optimized to O(1) if only need to track constant time of variables 
     - dp[i] depends on dp[i-1]: 
         - eg. 53-Maximum Subarray; 70-Climbing Stairs; 198-House Robber|213. House Robber II|740-Delete and Earn; 256-Paint House|265-Paint House II; 152-Maximum Product Subarray(min/max); 276-Paint Fence(a hard medium); 413-Arithmetic Slices; 91-Decode Ways;139-Word Break|140-Word Break II; 647-Palindromic Substrings; 837-New 21 Game; 931-Minimum Falling Path Sum;
     - dp[i] depends on k previous cases dp[j] where j < i:
-        - eg: 45-Jump Game II; 651-4 Keys Keyboard; 935-Knight Dialer
+        - eg: 45-Jump Game II; 651-4 Keys Keyboard; 935-Knight Dialer; 1218-Longest Arithmetic Subsequence of Given Difference
     - dp[i] depends on dp[j] where j in [1...i]:
         - eg. 64-Minimum Path Sum; 96-Unique Binary Search Trees; 542-01 Matrix; 221-Maximal Square|85-Maximal Rectangle(hard)|1277-Count Square Submatrices with All Ones; 446-Arithmetic Slices II - Subsequence|1027-Longest Arithmetic Subsequence;673-Number of Longest Increasing Subsequence; 931-Minimum Falling Path Sum | 1937-Maximum Number of Points with Cost; (revisit above examples!) 940. Distinct Subsequences II; 1105-Filling Bookcase Shelves; 1235-Maximum Profit in Job Scheduling; 1259-Handshakes That Don't Cross
     - dp[i][j] depends on dp[i+1][j-1]:
