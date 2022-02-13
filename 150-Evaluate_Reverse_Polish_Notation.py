@@ -4,32 +4,22 @@
 """
 class Solution:
     def evalRPN(self, tokens: List[str]) -> int:
-        operands = []
         
-        def compute(op2, op1, operator):
-            if operator == "+":
-                return op1 + op2
-            elif operator == "-":
-                return op1 - op2
-            elif operator == "*":
-                return op1 * op2
-            elif operator == "/":
-                if (op1 > 0) == (op2 > 0): # easy to miss
-                    return op1 // op2
-                else:
-                    return math.ceil(op1 / op2)
-                
-        def parseNum(token):
-            if token[0] == "-":
-                return -int(token[1:])
-            return int(token)
+        func = {
+            "+": lambda x, y: x + y,
+            "-": lambda x, y: x - y,
+            "*": lambda x, y: x * y,
+            "/": lambda x, y: x // y if (x >= 0) == (y > 0) else -(abs(x) // abs(y)),
+        }
         
+        
+        ops_stack = []
         for token in tokens:
-            if token in "/+*-":
-                operands.append(compute(operands.pop(), operands.pop(), token))
+            if token in "+-*/":
+                op2, op1 = ops_stack.pop(), ops_stack.pop()
+                ops_stack.append(func[token](op1, op2))
             else:
-                operands.append(parseNum(token))
-                
-        return operands[-1]
+                ops_stack.append(int(token))
+        return ops_stack[0]
                 
         
