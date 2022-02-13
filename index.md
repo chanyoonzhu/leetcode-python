@@ -9,7 +9,7 @@ bucket:220,299
 circular array: 213,1658
 Deterministic Finite Automaton: 65
 divide and conquer: 53,215,241,307,308,312,327,395,973,1000,1547
-dfs: 17,79,91,93,95,99,100,105,106,112,113,124,129,130,133,156,200,207,210,212,230,236,241,254,261,272,297,298,301,310,329,331,333,337,364,394,399,449,463,490,529,536,543,545,549,572,637,652,653,655,662,666,671,684,687,690,694,695,743,753,778,785,787,803,827,863,889,934,947,951,959,975,979,987,1028,1110,1161,1236,1306,1325,1339,1340,1367,1368,1372,1373,1376,1448,1462,1522,1559,1569,1644,1676,1740,1766,1778,2049,2096
+dfs: 17,79,91,93,94,95,99,100,105,106,112,113,124,129,130,133,156,200,207,210,212,230,236,241,254,261,272,297,298,301,310,329,331,333,337,364,394,399,449,463,490,529,536,543,545,549,572,637,652,653,655,662,666,671,684,687,690,694,695,743,753,778,785,787,803,827,863,889,934,947,951,959,975,979,987,1028,1110,1161,1236,1306,1325,1339,1340,1367,1368,1372,1373,1376,1448,1462,1522,1559,1569,1644,1676,1740,1766,1778,2049,2096
 dynamic programming: 5,10,32,39,44,45,53,55,63,64,70,72,84,91,96,97,115,120,139,152,188,198,213,221,256,264,265,276,279,300,312,322,361,375,403,410,413,416,435,446,464,473,474,486,494,516,518,542,552,562,576,583,629,634,647,651,673,712,727,740,746,805,813,837,871,877,879,887,920,931,935,940,956,983,1000,1027,1035,1039,1048,1066,1092,1105,1130,1140,1143,1155,1216,1235,1259,1269,1277,1278,1301,1312,1314,1335,1406,1411,1458,1510,1547,1548,1594,1643,1696,1746,1774,1824,1879,1937,1947,1981
 graph: 785,863,1615
 greedy: 11,42,45,53,55,121,134,135,253,358,410,435,455,621,630,678,767,774,785,843,853,871,875,877,954,962,984,1014,1011,1130,1231,1353,1383,1402,1405,1419,1428,1482,1057,1520,1537,1546,1552,1567,1648,1665,1718,1746,1775,1802,1824,1851,1870,1877,2007
@@ -34,7 +34,7 @@ sort: 31,56,99,148,164,179,220,252,280,315,524,556,581,593,L391,611,973,1300,150
 stack: 20,32,42,71,84,85,150,155,224,227,232,331,341,388,394,402,456,496,503,536,581,636,678,716,735,739,768,772,856,901,907,921,946,962,975,1019,1028,1047,1063,1106,1124,1130,1209,1249,1381,1541,1597,1673,1762,1776,1856,1944,1966
 string: 5,6,65,151,157,165,214,408,418,443,722,824,833,929,984,1087,1520
 topological sort: 207,210,269,310,329,444,1462,2115
-tree: 100,109,112,114,116,222,235,236,285,298,333,337,339,366,426,450,515,543,549,572,652,653,687,729,919,1325,1339,1367,1372,1522,1644,1650,1676,1740,2049,2096
+tree: 94,100,109,112,114,116,222,235,236,285,298,333,337,339,366,426,450,515,543,549,572,652,653,687,729,919,1325,1339,1367,1372,1522,1644,1650,1676,1740,2049,2096
 treemap: 716,2034
 trie: 139,208,211,212,336,616,642,745
 two pointers: 11,15,16,27,42,61,76,86,121,159,167,209,244,246,253,259,360,392,462,524,581,611,680,904,977,986,1055,1229,1248,1537,1574,1577,1658,1775,1868
@@ -248,7 +248,7 @@ while start <= end:
     stack = []
     while stack or node:
         if node:
-            stack.append(node.left)
+            stack.append(node)
             node = node.left
         else:
             node = stack.pop()
@@ -260,7 +260,7 @@ or
     stack = []
     while stack or node:
         while node:
-            stack.append(node.left)
+            stack.append(node)
             node = node.left
         node = stack.pop()
         print(node.val)
@@ -691,7 +691,7 @@ If using bfs, usually uses a FIFO queue to store nodes to be visited.
         - pre-order: 95-Unique Binary Search Trees II(hard); 100-Same Tree; 114-Flatten Binary Tree to Linked List(recursive/iterative); 112-Path Sum; 156-Binary Tree Upside Down; 297-Serialize and Deserialize Binary Tree; 449. Serialize and Deserialize BST; 536-Construct Binary Tree from String; 572-Subtree of Another Tree|1367-Linked List in Binary Tree; 652-Find Duplicate Subtrees; 655-Print Binary Tree; 662-Maximum Width of Binary Tree; 671-Second Minimum Node In a Binary Tree; 687-Longest Univalue Path; 951-Flip Equivalent Binary Trees; 545-Boundary of Binary Tree; 1008-Construct Binary Search Tree from Preorder Traversal; 1110-Delete Nodes And Return Forest; 1325-Delete Leaves With a Given Value; 1339-Maximum Product of Splitted Binary Tree; 1372-Longest ZigZag Path in a Binary Tree; 1448-Count Good Nodes in Binary Tree 2049-Count Nodes With the Highest Score; 2096-Step-By-Step Directions From a Binary Tree Node to Another;
         - in-order traversal: 
             - tip: inorder traversal of BST yields a sorted list
-            - eg. 285-Inorder Successor in BST; 272-Closest Binary Search Tree Value II(hard); 366-Find Leaves of Binary Tree; 426-Convert Binary Search Tree to Sorted Doubly Linked List;
+            - eg. 94-Binary Tree Inorder Traversal; 285-Inorder Successor in BST; 272-Closest Binary Search Tree Value II(hard); 366-Find Leaves of Binary Tree; 426-Convert Binary Search Tree to Sorted Doubly Linked List;
         - post-order traversal: 
             - 124-Binary Tree Maximum Path Sum; 543-Diameter of Binary Tree; 549-Binary Tree Longest Consecutive Sequence II; 652-Find Duplicate Subtrees; 979-Distribute Coins in Binary Tree;
     - traversal combinations: 105-Construct Binary Tree from Preorder and Inorder Traversal; 106-Construct Binary Tree from Inorder and Postorder Traversal; 889-Construct Binary Tree from Preorder and Postorder Traversal
