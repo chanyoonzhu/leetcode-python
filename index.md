@@ -227,7 +227,9 @@ while start <= end:
         155-Min Stack
     - heap: 295
     - treemap(sorted dict): 2034-Stock Price Fluctuation
-    - Fenwick tree / segment tree: 307,308,327
+    - Fenwick tree / segment tree: 
+        - key word: range sum/min/max
+        - eg. 307-Range Sum Query - Mutable; 308,327
 - tips:
     use hashmap to achieve O(1) retrieval of a key
     use hashmap and doubly linked list to achieve retrieving min/max in O(1) eg:(LRU/LFU)146,432,460,716-Max Stack
