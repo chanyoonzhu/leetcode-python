@@ -20,7 +20,7 @@ linked list: 2,21,24,25,61,83,86,109,116,117,138,146,148,382,432,445,587,705,706
 doubly linked list: 716
 logic deduction: 444 
 map: 205
-math:7,9,12,50,67,149,166,168,204,223,263,268,277,279,296,319,360,384,391,462,470,621,794,836,837,952,1041,1344,1569,1610,1627,1643,1998,2119
+math:7,9,12,50,67,149,166,168,204,223,263,268,277,279,296,319,360,384,391,462,470,621,794,836,837,952,1041,1344,1569,1610,1627,1643,1998,2119,2128
 merge sort: 148,315,1574
 misc:169,229(moore voting)
 preorder: 105,106,113,331,437,449,545,652,666,889,971,987,1008,1028,1569
@@ -491,6 +491,7 @@ heapify time complexity: O(n), heap push/pop time complexity: O(logn)
     - eg: 587-Erect the Fence
 - Math deduction:
     - eg. 277-Find the Celebrity; 319-Bulb Switcher; 462-Minimum Moves to Equal Array Elements II; 877-Stone Game
+    - matrix flip: 2128-Remove All Ones With Row and Column Flips
 - Bachet's conjecture:
     - eg: 279-Perfect Squares
 - Statistics:
