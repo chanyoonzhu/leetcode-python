@@ -1,18 +1,13 @@
-class Solution(object):
-    def findReplaceString(self, S, indexes, sources, targets):
-        """
-        :type S: str
-        :type indexes: List[int]
-        :type sources: List[str]
-        :type targets: List[str]
-        :rtype: str
-        """
+"""
+- string
+"""
+class Solution:
+    def findReplaceString(self, s: str, indices: List[int], sources: List[str], targets: List[str]) -> str:
         
-        S = list(S)
+        S = list(s)
         
-        for i, source, target in sorted(zip(indexes, sources, targets), reverse = True):
-            
-            if all(i+j < len(S) and source[j] == S[i+j] for j in range(len(source))):
-                S[i:i+len(source)] = list(target)
-                
+        for idx, source, target in sorted(zip(indices, sources, targets), reverse=True): # replace larger index first
+            if s[idx:idx+len(source)] == source:
+                S[idx:idx+len(source)] = list(target)
+        
         return "".join(S)

@@ -39,7 +39,6 @@ treemap: 716,2034
 trie: 139,208,211,212,336,616,642,745
 two pointers: 11,15,16,27,42,61,76,86,121,159,167,209,244,246,253,259,360,392,462,524,581,611,680,777,904,977,986,1055,1229,1248,1537,1574,1577,1658,1775,1868
 union find: 128,261,305,323,684,721,778,947,952,1562,1627,1722,1970,1998,2076
-zip: 833
 
 
 ## Array
@@ -640,7 +639,7 @@ heapify time complexity: O(n), heap push/pop time complexity: O(logn)
     - problems:
         - string manipulation: 
             - tips: use reversed string to avoid index shift (833)
-            - eg: 6-Zigzag Conversion; 824-Goat Latin
+            - eg: 6-Zigzag Conversion; 824-Goat Latin; 833-Find And Replace in String
         - string parsing:
             65-Valid Number; Calculator problems(see "## Stack"); 408-Valid Word Abbreviation
         - compression:
