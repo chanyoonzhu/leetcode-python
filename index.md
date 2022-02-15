@@ -10,7 +10,7 @@ circular array: 213,1658
 Deterministic Finite Automaton: 65
 divide and conquer: 53,215,241,248,307,308,312,327,395,973,1000,1547
 dfs: 17,79,91,93,94,95,99,100,105,106,112,113,124,129,130,133,156,200,207,210,212,230,236,241,254,261,272,297,298,301,310,329,331,333,337,364,394,399,449,463,490,529,536,543,545,549,572,637,652,653,655,662,666,671,684,687,690,694,695,743,753,778,785,787,803,827,863,889,934,947,951,959,968,975,979,987,1028,1110,1161,1236,1306,1325,1339,1340,1367,1368,1372,1373,1376,1448,1462,1522,1559,1569,1644,1676,1740,1766,1778,2049,2096
-dynamic programming: 5,10,32,39,44,45,53,55,63,64,70,72,84,91,96,97,115,120,139,152,188,198,213,221,256,264,265,276,279,300,312,322,361,375,403,410,413,416,435,446,464,473,474,486,494,516,518,542,552,562,576,583,629,634,647,651,673,712,727,740,746,805,813,837,871,877,879,887,920,931,935,940,956,968,983,1000,1027,1035,1039,1048,1066,1092,1105,1130,1140,1143,1155,1216,1235,1259,1269,1277,1278,1301,1312,1314,1335,1406,1411,1458,1510,1547,1548,1594,1643,1696,1746,1774,1824,1879,1937,1947,1981
+dynamic programming: 5,10,32,39,44,45,53,55,63,64,70,72,84,91,96,97,115,120,139,152,188,198,213,221,256,264,265,276,279,300,312,322,361,375,403,410,413,416,435,446,464,473,474,486,494,516,518,542,552,562,576,583,629,634,647,651,673,712,727,740,746,805,813,818,837,871,877,879,887,920,931,935,940,956,968,983,1000,1027,1035,1039,1048,1066,1092,1105,1130,1140,1143,1155,1216,1235,1259,1269,1277,1278,1301,1312,1314,1335,1406,1411,1458,1510,1547,1548,1594,1643,1696,1746,1774,1824,1879,1937,1947,1981
 graph: 785,863,1615
 greedy: 11,42,45,53,55,121,134,135,253,358,410,435,455,621,630,678,767,774,785,843,853,871,875,877,954,962,984,1014,1011,1130,1231,1353,1383,1402,1405,1419,1428,1482,1057,1520,1537,1546,1552,1567,1648,1665,1718,1746,1775,1802,1824,1851,1870,1877,2007
 hashmap: 1,15,49,76,106,138,146,149,159,166,169,170,219,229,244,246,249,266,299,327,336,340,359,380,381,388,392,398,403,432,437,465,496,498,523,560,609,653,666,670,791,792,811,852,895,930,953,954,974,1000,1055,1218,1371,1386,1442,1525,1542,1546,1570,1577,1590,1615,1644,2007,2013,2034
@@ -48,7 +48,7 @@ union find: 128,261,305,323,684,721,778,947,952,1562,1627,1722,1970,1998,2076
     - 1D array: 31-Next Permutation|556-Next Greater Element III|1643-Kth Smallest Instructions(has better solution);  41-First Missing Positive; 58-Length of Last Word; 605-Can Place Flowers; 1304-Find N Unique Integers Sum up to Zero; 1562-Find Latest Group of Size M(hard)
         - linear search: 163-Missing Ranges;
         - linear scan: 896-Monotonic Array; 1822-Sign of the Product of an Array
-        - sort + linear scan: 539-Minimum Time Difference
+        - sort + linear scan: 539-Minimum Time Difference`
     - 2D array: 
         - tip: in-place transformation: (289)
         - eg: 251-Flatten 2D Vector; 289-Game of Life; 463-Island Perimeter; 766-Toeplitz Matrix; 1706-Where Will the Ball Fall; 1275-Find Winner on a Tic Tac Toe Game;
@@ -372,14 +372,14 @@ space can be optimized to O(1) if only need to track constant time of variables 
         - eg: 115-Distinct Subsequences; 1155-Number of Dice Rolls With Target Sum; 279-Perfect Squares; 1269-Number of Ways to Stay in the Same Place After Some Steps; 276-Paint Fence(a hard medium); 552-Student Attendance Record II(hard); 879-Profitable Schemes(hard); 940-Distinct Subsequences II (hard)
         - combination/permutation: 
             - tip: 分类讨论
-            - 629-K Inverse Pairs Array; 634-Find the Derangement of An Array(hard); 920-Number of Music Playlists(hard); 1411-Number of Ways to Paint N × 3 Grid(hard)
+            - 629-K Inverse Pairs Array; 634-Find the Derangement of An Array(hard); 818-Race Car; 920-Number of Music Playlists(hard); 968-Binary Tree Cameras; 1411-Number of Ways to Paint N × 3 Grid(hard)
     - subarray max/min: 
         - can also use greedy
         - eg: 53-Maximum Subarray; 1746-Maximum Subarray Sum After One Operation
     - subsequence:
         - eg: 300-Longest Increasing Subsequence
     - others:
-        - eg: 188-Best Time to Buy and Sell Stock IV; 968-Binary Tree Cameras;
+        - eg: 188-Best Time to Buy and Sell Stock IV;
 
 ## Graph
 - Complexity
