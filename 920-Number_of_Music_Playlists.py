@@ -9,11 +9,12 @@ class Solution:
         @lru_cache(None)
         def dp(songs, list_size):
             if songs == 0 and list_size == 0: return 1
-            if songs == 0 or songs > list_size: return 0 # every song must be listened at least once, so songs > list_size
-            # case 1: the last added one is new song, listen i - 1 songs with j - 1 different songs, then the last one is definitely new song with the choices of N - (j - 1).
-            ways = dp(songs - 1, list_size - 1) * (n - (songs - 1)) % MOD
-            if songs - k > 0: # can add old song to the last one
-                # case 2: the last added one is an old song: listen i - 1 songs with j different songs, then the last one is definitely old song with the choices of j-k because k songs can't be chosed from j - 1 to j - k
+            # to speed up, can change above line to: if songs == list_size: return math.factorial(songs)
+            if songs == 0 or songs > list_size: return 0 # no song to play or some song not played even once -> violates the rule
+            # case 1: current pick is never played before, any song can be current pick so * songs
+            ways = dp(songs - 1, list_size - 1) * songs % MOD
+            # case 2: current pick is played before, current pick can choose from (song - k) songs
+            if songs - k > 0:
                 ways += dp(songs, list_size - 1) * (songs - k) % MOD
             return ways % MOD
         return dp(n, goal)
@@ -31,7 +32,7 @@ class Solution:
         
         for gi in range(1, goal + 1):
             for ni in range(1, n + 1):
-                dp[gi][ni] = dp[gi-1][ni-1] * (n - (ni - 1)) % MOD
+                dp[gi][ni] = dp[gi-1][ni-1] * ni % MOD
                 if ni > k: 
                     dp[gi][ni] = (dp[gi][ni] + dp[gi-1][ni] * (ni - k)) % MOD
         return dp[goal][n]
