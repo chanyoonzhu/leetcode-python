@@ -45,6 +45,7 @@ class Solution:
 
 """
 - hashmap
+- use a map to track - key: current char in s: remaining part of words that start with that char
 - smart solution!
 """
 class Solution:

@@ -433,7 +433,8 @@ Iterate over the array and update at each step the standard set for such problem
         - numbers:
             - eg. 166-Fraction to Recurring Decimal; 388-Longest Absolute File Path
         - strings:
-            - eg: 49-Group Anagrams; 290|291-Word Pattern II; 392-Is_Subsequence
+            - eg: 49-Group Anagrams; 290|291-Word Pattern II; 392-Is_Subsequence; 
+            - prefix: 792-Number of Matching Subsequences
         - coordinates:
             - eg: 149-Max Points on a Line
         - arrays:
