@@ -1,10 +1,10 @@
 all, any: 833
 array: 6,31,41,54,56,58,59,68,73,122,151,157,163,186,204,238,251,268,289,311,349,350,380,381,463,498,539,556,605,766,768,849,896,1014,1146,1304,1371,1381,1526,1567,1706,1822,2121
-backtracking: 17,39,40,46,47,78,90,254,282,291,301,489,491,526,698,996,1088,1593,1239,1307,1681,1718,1723,1774
+backtracking: 17,39,40,46,47,78,90,254,282,291,301,489,491,526,698,996,1088,1539,1593,1239,1307,1681,1718,1723,1774
 bfs: 79,103,116,117,126,127,130,133,173,199,200,207,210,212,269,279,297,301,314,317,339,399,407,444,505,515,529,542,637,662,743,752,785,787,803,863,909,919,934,958,959,971,987,994,1091,1110,1161,1197,1236,1254,1293,1306,1345,1368,1376,1448,1654,1778
 binar352,367,374,410,715,744,774,852,875,911,1011,1055,1060,1146,1231,1272,1283,1428,1482,1552,1608,1648,1723,1802,1870,1891
 bitwise operation: 29,136,137,191,201,231,268,318,338,342,371,461,473,476,491,693,698,1284,1371,1386,1442,1542,1593,1680,1681
-binary search tree: 99,109,173,235,272,285,333,449,450,490,653,701,729,938,1008,1373,1382,2040
+binary search tree: 99,109,173,235,272,285,333,449,450,490,653,701,729,938,1008,1373,1382,1539,2040
 bucket:220,299
 circular array: 213,1658
 Deterministic Finite Automaton: 65
@@ -47,7 +47,7 @@ union find: 128,261,305,323,684,721,778,947,952,990,1562,1627,1722,1970,1998,207
     - reuse previously computed value: 2121-Intervals Between Identical Elements
     - 1D array: 31-Next Permutation|556-Next Greater Element III|1643-Kth Smallest Instructions(has better solution);  41-First Missing Positive; 58-Length of Last Word; 605-Can Place Flowers; 1304-Find N Unique Integers Sum up to Zero; 1562-Find Latest Group of Size M(hard)
         - linear search: 163-Missing Ranges;
-        - linear scan: 896-Monotonic Array; 1822-Sign of the Product of an Array
+        - linear scan: 896-Monotonic Array; 1539-Kth Missing Positive Number; 1822-Sign of the Product of an Array
         - sort + linear scan: 539-Minimum Time Difference`
     - 2D array: 
         - tip: in-place transformation: (289)
@@ -61,7 +61,7 @@ union find: 128,261,305,323,684,721,778,947,952,990,1562,1627,1722,1970,1998,207
     - eg: 17-Letter Combinations of a Phone Number; 39-Combination Sum|40-Combination Sum II; 47-Permutations II; 78-Subsets(classic)|90-Subsets II|46-Permutations|47-Permutations II; 254-Factor Combinations; 282-Expression Add Operators; 291-Word Pattern II; 491-Increasing Subsequences; 526-Beautiful Arrangement; 996-Number of Squareful Arrays; 1239-Maximum Length of a Concatenated String with Unique Characters; 698-Partition to K Equal Sum Subsets; 1088-Confusing Number II; 1593-Split a String Into the Max Number of Unique Substrings; 1681-Minimum Incompatibility; 1307-Verbal Arithmetic Puzzle(hard); 1718-Construct the Lexicographically Largest Valid Sequence (with greedy); 1723-Find Minimum Time to Finish All Jobs(hard, with binary search); 1774-Closest Dessert Cost；465-Optimal Account Balancing (hard)
     - state compression with bitmasking: see "## Bitmasking"
 
-## binary search
+## Binary search
 - Key words:
 find, sorted
 - Three templates
@@ -140,7 +140,7 @@ while start <= end:
     - multiplication/division: 29-Divide Two Integers; 367-Valid Perfect Square; 
     - arrays: 
         - find target:
-            eg. 34-Find First and Last Position of Element in Sorted Array; 35-Search Insert Position; 162-Find Peak Element (unsorted); 825-Friends Of Appropriate Ages; 1060-Missing Element in Sorted Array
+            eg. 34-Find First and Last Position of Element in Sorted Array; 35-Search Insert Position; 162-Find Peak Element (unsorted); 825-Friends Of Appropriate Ages; 1060-Missing Element in Sorted Array; 1539-Kth Missing Positive Number; 
             - with edge cases: 744-Find Smallest Letter Greater Than Target
         - rotated arrays:
             - tip: when there are duplicates, add duplicates removal steps (154, 81)
