@@ -47,7 +47,7 @@ union find: 128,261,305,323,684,721,778,947,952,990,1562,1627,1722,1970,1998,207
     - reuse previously computed value: 2121-Intervals Between Identical Elements
     - 1D array: 31-Next Permutation|556-Next Greater Element III|1643-Kth Smallest Instructions(has better solution);  41-First Missing Positive; 58-Length of Last Word; 605-Can Place Flowers; 1304-Find N Unique Integers Sum up to Zero; 1562-Find Latest Group of Size M(hard)
         - linear search: 163-Missing Ranges;
-        - linear scan: 896-Monotonic Array; 1539-Kth Missing Positive Number; 1822-Sign of the Product of an Array
+        - linear scan: 157-Read_N_Characters_Given_Read4(API); 896-Monotonic Array; 1539-Kth Missing Positive Number; 1822-Sign of the Product of an Array
         - sort + linear scan: 539-Minimum Time Difference`
     - 2D array: 
         - tip: in-place transformation: (289)
