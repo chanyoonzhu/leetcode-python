@@ -26,27 +26,25 @@ class Solution:
 """
 class Solution:
     def minKnightMoves(self, x: int, y: int) -> int:
-        if (x, y) == (0, 0):
+        if (x, y) == (0, 0): # easy to forget: corner case
             return 0
-        pos1, pos2 = set(), set() # pos from target, pos from origin
+        pos1, pos2 = set(), set() # pos from target, pos from origin, use set than deque to simplify check in Line 49
         step = 0
-        pos2.add((x, y))
-        pos1.add((0, 0))
-        visited = set()
-        visited.add((0, 0))
-        visited.add((x, y))
+        visited = set([(0, 0), (x, y)])
+        pos1 = set([(0, 0)])
+        pos2 = set([(x, y)])
         DIR = [(-2, 1), (-1, 2), (1, 2), (2, 1), (2, -1), (1, -2), (-1, -2), (-2, -1)]
         
         
         while True:
             if len(pos2) < len(pos1): # search from smaller set
                 pos1, pos2 = pos2, pos1
-            new_pos1 = set()
+            new_pos1 = set() # stores next pos
             while pos1:
                 r, c = pos1.pop()
                 for i, j in DIR:
                     nr, nc = r + i, c + j
-                    if (nr, nc) in pos2:
+                    if (nr, nc) in pos2: # check here is more efficient than checking at pop
                         return step + 1
                     if (nr, nc) not in visited:                            
                         new_pos1.add((nr, nc))

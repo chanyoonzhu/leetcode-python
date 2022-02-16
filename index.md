@@ -197,7 +197,7 @@ while start <= end:
     - construct sequence with topological sort (see "## Topological Sort")
     - bidrectional dfs
         - purpose: speeding up bfs
-        - patterns: use two sets to store current nodes visited from beginning and end layers; for each round of bfs, search from the set with fewer nodes
+        - patterns: use two sets to store current nodes visited from beginning and end layers; for each round of bfs, search from the set with fewer nodes, check if neighbor nodes belong to the other set and return steps needed
         - 127-Word Ladder|126-Word Ladder II(hard); 1197-Minimum Knight Moves; 1345-Jump Game IV
     - not only min distance, but need routes with min distance:
         - eg: 126-Word Ladder II
