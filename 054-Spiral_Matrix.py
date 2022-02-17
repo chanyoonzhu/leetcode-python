@@ -1,36 +1,31 @@
-class Solution(object):
-    def spiralOrder(self, matrix):
-        """
-        :type matrix: List[List[int]]
-        :rtype: List[int]
-        """
-        
-        
-        if matrix is None or len(matrix) == 0 or len(matrix[0]) == 0:
-            return []
+"""
+- 2D Array
+- O(mn), O(mn)
+"""
+class Solution:
+    def spiralOrder(self, matrix: List[List[int]]) -> List[int]:
+        u, d, l, r = 0, len(matrix) - 1, 0, len(matrix[0]) - 1
+        direction = 0
         
         res = []
-        currDic = 0
-        n, s, w, e = 0, len(matrix) - 1, 0, len(matrix[0]) - 1
-        while n <= s and w <= e:
-            # four directions
-            if currDic == 0:
-                for j in range(w, e + 1):
-                    res.append(matrix[n][j])
-                n += 1
-            elif currDic == 1:
-                for i in range(n, s + 1):
-                    res.append(matrix[i][e])
-                e -= 1
-            elif currDic == 2:
-                for j in range(e, w-1, -1):
-                    res.append(matrix[s][j])
-                s -= 1
-            elif currDic == 3:
-                for i in range(s, n-1, -1):
-                    res.append(matrix[i][w])
-                w += 1 
-            currDic = (currDic + 1) % 4
+        while l <= r and u <= d:
+            if direction == 0: # to right:
+                for j in range(l, r + 1):
+                    res.append(matrix[u][j])
+                u += 1
+            elif direction == 1:
+                for i in range(u, d + 1): # to down
+                    res.append(matrix[i][r])
+                r -= 1
+            elif direction == 2: # to left:
+                for j in range(r, l-1, -1):
+                    res.append(matrix[d][j])
+                d -= 1
+            elif direction == 3: # to up
+                for i in range(d, u-1, -1):
+                    res.append(matrix[i][l])
+                l += 1
+            direction = (direction + 1) % 4
         return res
 
 matrix = [[1,2,3],[4,5,6],[7,8,9]]
