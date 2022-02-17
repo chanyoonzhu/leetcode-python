@@ -28,13 +28,11 @@ class Solution(object):
         :type nums: List[int]
         :rtype: int
         """
-        
-        prev_reachable_index = curr_reachable_index = 0
-        result = 0
-        
+        cur_reachable = next_reachable = 0
+        steps = 0
         for i in range(len(nums)):
-            if prev_reachable_index < i:
-                result += 1
-                prev_reachable_index = curr_reachable_index
-            curr_reachable_index = max(curr_reachable_index, i + nums[i])
-        return result
+            if cur_reachable < i: # not walk until can't reach
+                steps += 1
+                cur_reachable = next_reachable # when has to walk, greedily walk to the farthest 
+            next_reachable = max(next_reachable, i + nums[i]) # keep track of the farthest one can walk to
+        return steps
