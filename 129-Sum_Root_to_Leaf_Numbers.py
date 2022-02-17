@@ -5,44 +5,43 @@
 #         self.left = None
 #         self.right = None
 
-class Solution(object):
-    def sumNumbers(self, root):
-        """
-        :type root: TreeNode
-        :rtype: int
-        """
-
-        """
-        - dfs
-        - better solution: https://leetcode.com/problems/sum-root-to-leaf-numbers/discuss/41383/Python-solutions-(dfs%2Bstack-bfs%2Bqueue-dfs-recursively).
-        """
-        def dfs(root, n):
-            if not root: return n
-            n = n * 10 + root.val
-            if not root.left and not root.right:
-                return n
-            elif root.left and root.right:
-                return dfs(root.left, n) + dfs(root.right, n)
-            elif root.left:
-                return dfs(root.left, n)
-            else:
-                return dfs(root.right, n)
-            
-        return dfs(root, 0)
-
-        """
-        - redo
-        """
-
-        def sumNumbers(self, root: 'TreeNode') -> 'int':
+"""
+- dfs - recursive
+- O(n), O(n)
+"""
+class Solution:
+    def sumNumbers(self, root: Optional[TreeNode]) -> int:
+        return self.dfs(root, 0)
         
-            def helper(root, num, sum_):
-                if not root:
-                    return sum_
-                num = num * 10 + root.val
+    def dfs(self, node, total):
+        if not node:
+            return 0
+        total = total * 10 + node.val
+        if not node.left and not node.right:
+            return total
+        l = self.dfs(node.left, total)
+        r = self.dfs(node.right, total)
+        return l + r
+
+"""
+- dfs - iterative
+- O(n), O(n)
+"""
+class Solution:
+    def sumNumbers(self, root: Optional[TreeNode]) -> int:
+        
+        root_to_leaf = 0
+        stack = [(root, 0)]
+        
+        while stack:
+            root, curr_number = stack.pop()
+            if root:
+                curr_number = curr_number * 10 + root.val
+                # if it's a leaf, update root-to-leaf sum
                 if not root.left and not root.right:
-                    sum_ += num
-                    return sum_
-                return helper(root.left, num, sum_) + helper(root.right, num, sum_)
-    
-            return helper(root, 0, 0)
+                    root_to_leaf += curr_number
+                else:
+                    stack.append((root.left, curr_number))
+                    stack.append((root.right, curr_number))
+                        
+        return root_to_leaf
