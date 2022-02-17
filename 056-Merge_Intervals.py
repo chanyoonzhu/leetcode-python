@@ -1,18 +1,18 @@
-class Solution(object):
-    """
-    - sweep lines
-    - O(nlog(n)), -O(n)
-    """
+"""
+- sweep lines
+- O(nlog(n)), O(n)
+"""
+class Solution:
     def merge(self, intervals: List[List[int]]) -> List[List[int]]:
-        intervals = sorted(intervals, key=lambda x: x[0])
-        result = []
-        for i in range(len(intervals)):
-            start, end = intervals[i]
-            if not result:
-                result.append([start, end])
+        res = []
+        intervals.sort(key=lambda x: x[0])
+        
+        s_prev, e_prev = intervals[0]
+        for s, e in intervals[1:]:
+            if s > e_prev:
+                res.append([s_prev, e_prev])
+                s_prev, e_prev = s, e
             else:
-                if start > result[-1][1]:
-                    result.append([start, end])
-                else:
-                    result[-1][1] = max(result[-1][1], end)
-        return result
+                e_prev = max(e_prev, e)
+        res.append([s_prev, e_prev])
+        return res
