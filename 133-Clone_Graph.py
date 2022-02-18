@@ -7,7 +7,15 @@ class Node:
 """
 
 """
+clarification:
+1. node values unique? yes
+2. repeated edges? No
+3. self loops? No
+4. all nodes connected? Yes
+"""
+"""
 - hashmap + dfs - recursive
+- key: use val_to_clone_node map to memoize cloned node
 - O(n), O(n)
 """
 class Solution:
