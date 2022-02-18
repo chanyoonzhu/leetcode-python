@@ -4,7 +4,7 @@ backtracking: 17,39,40,46,47,78,90,254,282,291,301,489,491,526,698,996,1088,1539
 bfs: 79,103,116,117,126,127,130,133,173,199,200,207,210,212,269,279,297,301,314,317,339,399,407,444,505,515,529,542,637,662,743,752,785,787,803,863,909,919,934,958,959,971,987,994,1091,1110,1161,1197,1236,1254,1293,1306,1345,1368,1376,1448,1654,1778
 binar352,367,374,410,715,744,774,852,875,911,1011,1055,1060,1146,1231,1272,1283,1428,1482,1552,1608,1648,1723,1802,1870,1891
 bitwise operation: 29,136,137,191,201,231,268,318,338,342,371,461,473,476,491,693,698,1284,1371,1386,1442,1542,1593,1680,1681
-binary search tree: 99,109,173,235,272,285,333,449,450,490,653,701,729,938,1008,1373,1382,1539,2040
+binary search tree: 99,109,173,235,272,275,285,333,449,450,490,653,701,729,938,1008,1373,1382,1539,2040
 bucket:220,299
 circular array: 213,1658
 Deterministic Finite Automaton: 65
@@ -30,7 +30,7 @@ range sum: 307,308,327,1314,930,1442
 segment tree: 307,308,327,850
 sliding window: 3,76,159,209,239,340,395,837,862,904,930,992,1004,1052,1234,1358,1371,1423,1498,1509,1537,1574,1577,1610,1658,1696,1793,1839
 SQL: 176
-sort: 31,56,99,148,164,179,220,252,280,315,524,539,556,581,593,L391,611,973,1300,1509,1608,1610
+sort: 31,56,99,148,164,179,220,252,274,275,280,315,524,539,556,581,593,L391,611,973,1300,1509,1608,1610
 stack: 20,32,42,71,84,85,150,155,224,227,232,331,341,388,394,402,456,496,503,536,581,636,678,716,735,739,768,772,856,901,907,921,946,962,975,1019,1028,1047,1063,1106,1124,1130,1209,1249,1381,1541,1597,1673,1762,1776,1856,1944,1966
 string: 5,6,65,151,157,165,214,408,418,443,722,824,833,929,984,1087,1520,1554
 topological sort: 207,210,269,310,329,444,1462,2115
@@ -140,7 +140,7 @@ while start <= end:
     - multiplication/division: 29-Divide Two Integers; 367-Valid Perfect Square; 
     - arrays: 
         - find target:
-            eg. 34-Find First and Last Position of Element in Sorted Array; 35-Search Insert Position; 162-Find Peak Element (unsorted); 825-Friends Of Appropriate Ages; 1060-Missing Element in Sorted Array; 1539-Kth Missing Positive Number; 
+            eg. 34-Find First and Last Position of Element in Sorted Array; 35-Search Insert Position; 162-Find Peak Element (unsorted); 275-H-Index II; 825-Friends Of Appropriate Ages; 1060-Missing Element in Sorted Array; 1539-Kth Missing Positive Number; 
             - with edge cases: 744-Find Smallest Letter Greater Than Target
         - rotated arrays:
             - tip: when there are duplicates, add duplicates removal steps (154, 81)
@@ -607,6 +607,8 @@ heapify time complexity: O(n), heap push/pop time complexity: O(logn)
     - Example: 280-Wiggle Sort
 - bucket sort
     - eg. 164, 220-Contains Duplicate III
+- counting sort
+    - eg. 274-H-Index;
 - custom sort
     - eg: 179-Largest_Number
 - sorting string:
