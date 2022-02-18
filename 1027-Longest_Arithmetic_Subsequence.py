@@ -15,4 +15,4 @@ class Solution:
             for j in range(i):
                 diff = nums[i] - nums[j]
                 dp[(i, diff)] = max(dp[(i, diff)], dp[(j, diff)] + 1)
-        return max(dp.values()) + 1
+        return max(dp.values()) + 1 # easy to forget: + 1 for the start 
