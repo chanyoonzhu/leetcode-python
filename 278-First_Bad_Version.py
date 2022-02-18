@@ -48,6 +48,32 @@ class Solution(object):
                 left = mid + 1
         return left
 
+
+
 s = Solution()
 s.firstBadVersion_recursive(5)
+
+"""
+isBadVersion(start, end) -> bool
+"""
+"""
+find all bad versions given above API
+"""
+class SolutionFollowUp:
+    def allBadVersion(self, n):
+        self.helper(1, n) ## todo
+
+    def helper(self, start, end):
+        if start < end or not isBadVersion(start, end):
+            return []
+        if isBadVersion(start, start) and isBadVersion(end, end):
+            return list(range(start, end + 1))
+        mid = start + (end - start) // 2
+        l_bads = self.helper(start, mid-1)
+        r_bads = self.helper(mid, end)
+        if l_bads or r_bads:
+            return l_bads or r_bads
+        else:
+            return l_bads + r_bads
+        
         
