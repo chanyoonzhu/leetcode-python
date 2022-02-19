@@ -5,13 +5,13 @@ import collections
 
 class Solution:
     def findSubstringsWithoutRepeatingChars(self, s: str) -> list:
-        counter = collections.Counter()
+        seen = set()
         res = 0
-        for i, c in enumerate(s):
-            if counter[c] > 0:
+        for c in s:
+            if c in seen:
                 res += 1
-                counter = collections.Counter()
-            counter[c] += 1
+                seen.clear()
+            seen.add(c)
         return res + 1
 
 s = Solution()
