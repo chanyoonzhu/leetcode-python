@@ -11,8 +11,22 @@ class Solution:
                 return False
         return True
 
+class Solution2:
+    def pairNumbers(self, nums: list) -> bool:
+        seen = set()
+        for n in nums:
+            if n in seen:
+                seen.remove(n)
+            else:
+                seen.add(n)
+        return len(seen) == 0
+
 s = Solution()
 print(s.pairNumbers([1, 2, 2, 1]))
 print(s.pairNumbers([2,2,2]))
+
+s2 = Solution2()
+print(s2.pairNumbers([1, 2, 2, 1]))
+print(s2.pairNumbers([2,2,2]))
 
 
