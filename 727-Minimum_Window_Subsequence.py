@@ -6,7 +6,7 @@ class Solution:
     def minWindow(self, s1: str, s2: str) -> str:
         
         N1, N2 = len(s1), len(s2)
-        dp = [[float("inf")] * (N1 + 1) for _ in range(N2 + 1)]
+        dp = [[float("inf")] * (N1 + 1) for _ in range(N2 + 1)] # dp[i][j] length of minimum window subsequence of s1[:j+1] and s2[:i+1] endint at letter s1[j]
         
         for i in range(N2 + 1):
             for j in range(N1 + 1):
