@@ -1,15 +1,19 @@
-class MedianFinder(object):
-    
-    """
-    - O(n) for add (O(log(n))binary search + O(n) index shift)
-    - O(1) for find median
-    
+"""
+- binary search (insertion sort)
+- O(n) (for array shifting) + O(logn) (for searching) ≈ O(n): addNum.  O(1): findMedian
+"""
+class MedianFinder:
     def __init__(self):
+        """
+        initialize your data structure here.
+        """
         self.nums = []
         
 
-    def addNum(self, num):
-        # insert
+    def addNum(self, num: int) -> None:
+        bisect.insort(self.nums, num)
+        """
+        # or
         if len(self.nums) == 0:
             self.nums.append(num)
         else:
@@ -27,31 +31,8 @@ class MedianFinder(object):
                 self.nums.insert(l+1, num)
             else:
                 self.nums.insert(l, num)
-
-    def findMedian(self):
-        length = len(self.nums)
-        if length % 2 == 0:
-            return (self.nums[length//2-1] + self.nums[length//2]) / 2.0
-        else:
-            return self.nums[length//2]
-    """
-
-    """
-    - O(n) (for array shifting) + O(logn) (for searching) ≈ O(n): addNum.  O(1): findMedian
-    """
-    class MedianFinder:
-
-    def __init__(self):
         """
-        initialize your data structure here.
-        """
-        self.nums = []
         
-
-    def addNum(self, num: int) -> None:
-        bisect.insort(self.nums, num)
-        
-
     def findMedian(self) -> float:
         div, mod = divmod(len(self.nums), 2)
         if mod:
@@ -60,11 +41,11 @@ class MedianFinder(object):
 
 
     
-    """
-    - two heaps
-    - O(log(n)) add , O(1) find median
-    """
-
+"""
+- two heaps
+- O(log(n)) add , O(1) find median
+"""
+class MedianFinder:
     def __init__(self):
         """
         initialize your data structure here.
@@ -92,6 +73,15 @@ class MedianFinder(object):
             return (-self.small[0] + self.large[0]) / 2.0
         else:
             return -self.small[0]
+
+"""
+- follow-ups:
+1. If all integer numbers from the stream are between 0 and 100, how would you optimize it?
+bucket sort, create an array of bucket of length 101, keep the count of numbers in each bucket, and the count of overall numbers, then it's easy to locate the bucket where the median number resides and find the median by looping through the array-> O(1)
+2. If 99% of all integer numbers from the stream are between 0 and 100, how would you optimize it?
+99% of all integer numbers lie in [0,100] means the median is definitely inside [0,100]. Besides the bucket range [0,100] as mentioned above, we just need to keep the count of all numbers, numbers smaller than 0, and numbers larger than 100, and adjust the index of the median element in our buckets of range [0,100].
+For example, if we have 100 numbers streamed, and one of the number is smaller than 0, that means the median's index moved forward by 1, we just need to find the 49th element in our buckets in a sorted manner.
+"""
         
         
         
