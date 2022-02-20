@@ -4,12 +4,12 @@
 """
 class Solution:
     def minWindow(self, s1: str, s2: str) -> str:
-    
-        M, N = len(s1), len(s2)
-        dp = [[float("inf")] * (M + 1) for _ in range(N + 1)]
         
-        for i in range(N + 1):
-            for j in range(M + 1):
+        N1, N2 = len(s1), len(s2)
+        dp = [[float("inf")] * (N1 + 1) for _ in range(N2 + 1)]
+        
+        for i in range(N2 + 1):
+            for j in range(N1 + 1):
                 if i == 0:
                     dp[i][j] = 0
                 else:
@@ -18,8 +18,10 @@ class Solution:
                     else:
                         dp[i][j] = dp[i][j-1] + 1
                         
-        res = min(dp[-1])
-        if res == float('inf'): return ''
-        for j in range(1, M + 1):
-            if dp[-1][j] == res:
-                return s1[j - res:j]
+        min_len = min(dp[-1])
+        if min_len == float("inf"): return ""
+        for j in range(1, N1 + 1):
+            if dp[-1][j] == min_len:
+                return s1[j-min_len:j]
+        
+        

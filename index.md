@@ -326,7 +326,7 @@ space can be optimized to O(1) if only need to track constant time of variables 
         - key words: longeest common subsequences, shortest common superseequence, edit distance, ...
         - tip: dp[i][j] result at s1[:i1+1] and s2[:i2+1]
         - eg.
-            - longest common subsequences/shortest common superseequence: 97-Interleaving String; 115-Distinct Subsequences; 727. Minimum Window Subsequence; 1143-Longest Common Subsequence; 1092-Shortest Common Supersequence
+            - longest common subsequences/shortest common superseequence: 97-Interleaving String; 115-Distinct Subsequences; 727-Minimum Window Subsequence; 1143-Longest Common Subsequence; 1092-Shortest Common Supersequence
             - sequence matching: 10-Regular Expression Matching; 44-Wildcard Matching
             - edit distance: 72-Edit Distance; 583-Delete Operation for Two Strings|712. Minimum ASCII Delete Sum for Two Strings; 1216-Valid Palindrome III|1312. Minimum Insertion Steps to Make a String Palindrome; 1548-The Most Similar Path in a Graph
             - palindrome: 5-Longest Palindromic Substring; 516-Longest Palindromic Subsequence, 1216-Valid Palindrome III|1312. Minimum Insertion Steps to Make a String Palindrome
