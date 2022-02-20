@@ -1,9 +1,10 @@
+"""
+- dfs with memoization
+- note: path is strictly increasing -> no loop -> DAG -> can use dfs
+- O(mn), O(mn)
+"""
 class Solution:
-
-    """
-    - dfs with memoization
-    - O(mn), O(mn)
-    """
+    
     def longestIncreasingPath(self, matrix: List[List[int]]) -> int:
         
         def dfs(x, y, longest):
@@ -29,6 +30,41 @@ class Solution:
                 result = max(result, dfs(i, j, 1))
         return result
     
-    """
-    - topological sorting # todo
-    """
+"""
+- topological sorting
+- O(mn), O(mn)
+"""
+class Solution:
+    def longestIncreasingPath(self, matrix: List[List[int]]) -> int:
+        M, N = len(matrix), len(matrix[0])
+        indegrees = [[0] * N for _ in range(M)]
+        
+        DIR = [(1, 0), (-1, 0), (0, 1), (0, -1)]
+        
+        for r in range(M):
+            for c in range(N):
+                for i, j in DIR:
+                    nr, nc = r + i, c + j
+                    if 0 <= nr < M and 0 <= nc < N and matrix[nr][nc] > matrix[r][c]:
+                        indegrees[r][c] += 1
+        
+        q = deque()
+        for r in range(M):
+            for c in range(N):
+                if indegrees[r][c] == 0:
+                    q.append((r, c))
+        
+        steps = 0
+        while q:
+            new_q = deque()
+            while q:
+                r, c = q.popleft()
+                for i, j in DIR:
+                    nr, nc = r + i, c + j
+                    if 0 <= nr < M and 0 <= nc < N and matrix[nr][nc] < matrix[r][c]:
+                        indegrees[nr][nc] -= 1
+                        if indegrees[nr][nc] == 0:
+                            new_q.append((nr, nc))
+            q = new_q
+            steps += 1
+        return steps
