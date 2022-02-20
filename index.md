@@ -14,7 +14,7 @@ dynamic programming: 5,10,32,39,44,45,53,55,63,64,70,72,84,91,96,97,115,120,139,
 graph: 785,863,1615
 greedy: 11,42,45,53,55,121,134,135,253,358,410,435,455,621,630,678,767,774,785,843,853,871,875,877,954,962,984,1014,1011,1130,1167,1231,1353,1383,1402,1405,1419,1428,1482,1057,1520,1537,1546,1552,1567,1648,1665,1718,1746,1775,1802,1824,1851,1870,1877,2007
 hashmap: 1,15,49,76,106,133,138,146,149,159,166,169,170,219,229,244,246,249,266,299,327,336,340,359,380,381,388,392,398,403,432,437,465,496,498,523,560,609,653,666,670,791,792,811,852,895,930,953,954,974,1000,1055,1218,1371,1386,1442,1525,1542,1546,1570,1577,1590,1615,1644,2007,2013,2034
-hashset: 1,41,128,187,290,379,381,432,653,694,721,804,1239,1452,1554,1647,1774,2061
+hashset: 1,41,128,187,290,379,381,432,653,694,721,804,1239,1452,1525,1554,1647,1774,2061
 inorder: 99,105,230,333,426
 linked list: 2,21,24,25,61,83,86,109,116,117,138,146,148,369,382,432,445,587,705,706,1650
 doubly linked list: 716
@@ -427,7 +427,7 @@ Iterate over the array and update at each step the standard set for such problem
         - list dict:
             - eg. 1386-Cinema Seat Allocation
         - counter:
-            - eg: 266-Palindrome Permutation; 299-Bulls and Cows(M+); 340-Longest Substring with At Most K Distinct Characters; 791-Custom Sort String; 811-Subdomain Visit Count; 2013-Detect Squares;
+            - eg: 266-Palindrome Permutation; 299-Bulls and Cows(M+); 340-Longest Substring with At Most K Distinct Characters; 791-Custom Sort String; 811-Subdomain Visit Count; 2013-Detect Squares; 1525-Number of Good Ways to Split a String;
         - dedup:
             - eg: 609-Find Duplicate File in System
         - value to subarray/subsequence length:
@@ -542,7 +542,7 @@ heapify time complexity: O(n), heap push/pop time complexity: O(logn)
 - tip: usually solved with O(n) time using hashmap 
 - Problems:
     - prefix-sum
-        - eg.303-Range Sum Query - Immutable|304-Range Sum Query 2D - Immutable; 560-Subarray Sum Equals K,325-Maximum Size Subarray Sum Equals k; 930,974|1590(division),1371-Find the Longest Substring Containing Vowels in Even Counts;1442,437(tree version), 1124, 528-Random Pick with Weight; 1248-Count Number of Nice Subarrays; 1525-Number of Good Ways to Split a String; 1546-Maximum Number of Non-Overlapping Subarrays With Sum Equals Target;
+        - eg.303-Range Sum Query - Immutable|304-Range Sum Query 2D - Immutable; 560-Subarray Sum Equals K,325-Maximum Size Subarray Sum Equals k; 930,974|1590(division),1371-Find the Longest Substring Containing Vowels in Even Counts;1442,437(tree version), 1124, 528-Random Pick with Weight; 1248-Count Number of Nice Subarrays; 1546-Maximum Number of Non-Overlapping Subarrays With Sum Equals Target;
     - prefix-sum % k as key:
         - eg: 523-Continuous Subarray Sum
 

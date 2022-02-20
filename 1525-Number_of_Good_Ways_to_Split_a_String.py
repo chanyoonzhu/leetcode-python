@@ -1,16 +1,18 @@
 """
-- Hashmap + prefix sum
+- Hashmap + hashset
 - O(n), O(1)
 """
 class Solution:
     def numSplits(self, s: str) -> int:
-        result = 0
-        counter_right = collections.Counter(s)
-        counter_left = collections.Counter()
+        counts = Counter(s)
+        res = 0
+        left_seen = set() # left_distinct: len(left_seen)
+        right_distinct = len(counts.keys())
         for c in s:
-            counter_left[c] += 1
-            counter_right[c] -= 1
-            if not counter_right[c]: del counter_right[c]
-            if len(counter_left) == len(counter_right):
-                result += 1
-        return result
+            left_seen.add(c)
+            counts[c] -= 1
+            if counts[c] == 0:
+                right_distinct -= 1
+            if len(left_seen) == right_distinct:
+                res += 1
+        return res
