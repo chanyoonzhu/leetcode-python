@@ -5,7 +5,7 @@ bfs: 79,103,116,117,126,127,130,133,173,199,200,207,210,212,269,279,297,301,314,
 binar352,367,374,410,715,744,774,852,875,911,1011,1055,1060,1146,1231,1272,1283,1428,1482,1552,1608,1648,1723,1802,1870,1891
 bitwise operation: 29,136,137,191,201,231,268,318,338,342,371,461,473,476,491,693,698,1284,1371,1386,1442,1542,1593,1680,1681
 binary search tree: 99,109,173,235,272,275,285,333,449,450,490,653,701,729,938,1008,1373,1382,1539,2040
-bucket:220,299
+bucket:220
 circular array: 213,1658
 Deterministic Finite Automaton: 65
 divide and conquer: 53,215,241,248,307,308,312,327,395,973,1000,1547
@@ -427,7 +427,7 @@ Iterate over the array and update at each step the standard set for such problem
         - list dict:
             - eg. 1386-Cinema Seat Allocation
         - counter:
-            - eg: 266-Palindrome Permutation; 340-Longest Substring with At Most K Distinct Characters; 791-Custom Sort String; 811-Subdomain Visit Count; 2013-Detect Squares;
+            - eg: 266-Palindrome Permutation; 299-Bulls and Cows(M+); 340-Longest Substring with At Most K Distinct Characters; 791-Custom Sort String; 811-Subdomain Visit Count; 2013-Detect Squares;
         - dedup:
             - eg: 609-Find Duplicate File in System
         - value to subarray/subsequence length:
