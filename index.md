@@ -1,5 +1,5 @@
 all, any: 833
-array: 6,31,41,54,56,58,59,68,73,122,151,157,158,163,186,204,238,251,268,289,311,349,350,380,381,463,498,539,556,605,766,768,849,896,1014,1146,1304,1371,1381,1526,1567,1706,1822,2121
+array: 6,31,41,54,56,58,59,68,73,122,151,157,158,163,186,204,238,251,268,289,311,349,350,380,381,463,498,539,556,605,766,768,849,896,1014,1146,1304,1371,1381,1526,1567,1706,1790,1822,2121
 backtracking: 17,39,40,46,47,78,90,254,282,291,301,489,491,526,698,996,1088,1539,1593,1239,1307,1681,1718,1723,1774
 bfs: 79,103,116,117,126,127,130,133,173,199,200,207,210,212,269,279,297,301,314,317,339,399,407,444,505,515,529,542,637,662,743,752,785,787,803,863,909,919,934,958,959,971,987,994,1091,1110,1161,1197,1236,1254,1293,1306,1345,1368,1376,1448,1654,1778
 binar352,367,374,410,715,744,774,852,875,911,1011,1055,1060,1146,1231,1272,1283,1428,1482,1552,1608,1648,1723,1802,1870,1891
@@ -47,7 +47,7 @@ union find: 128,261,305,323,684,721,778,947,952,990,1562,1627,1722,1970,1998,207
     - reuse previously computed value: 2121-Intervals Between Identical Elements
     - 1D array: 31-Next Permutation|556-Next Greater Element III|1643-Kth Smallest Instructions(has better solution);  41-First Missing Positive; 58-Length of Last Word; 605-Can Place Flowers; 1304-Find N Unique Integers Sum up to Zero; 1562-Find Latest Group of Size M(hard)
         - linear search: 163-Missing Ranges;
-        - linear scan: 157-Read_N_Characters_Given_Read4(API)|158-Read_N_Characters_Given_read4_II-Call_Multiple_Times; 896-Monotonic Array; 1539-Kth Missing Positive Number; 1822-Sign of the Product of an Array
+        - linear scan: 157-Read_N_Characters_Given_Read4(API)|158-Read_N_Characters_Given_read4_II-Call_Multiple_Times; 896-Monotonic Array; 1539-Kth Missing Positive Number; 1790-Check if One String Swap Can Make Strings Equal; 1822-Sign of the Product of an Array
         - sort + linear scan: 539-Minimum Time Difference`
     - 2D array: 
         - tip: in-place transformation: (289)
