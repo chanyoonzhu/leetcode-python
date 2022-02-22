@@ -7,26 +7,6 @@ class Solution:
     def isInterleave(self, s1: str, s2: str, s3: str) -> bool:
         
         @lru_cache(None)
-        def dp(i1, i2):
-            if i1 + i2 == len(s3):
-                return i1 == len(s1) and i2 == len(s2) # test if s1 and s2 are used up
-            can_interleave = False
-            if i1 < len(s1):
-                can_interleave = s1[i1] == s3[i1 + i2] and dp(i1 + 1, i2)
-            if i2 < len(s2):
-                can_interleave = can_interleave or (s2[i2] == s3[i1 + i2] and dp(i1, i2 + 1))
-            return can_interleave
-        
-        return dp(0, 0)
-
-"""
-- dp (top-down) interleaving s1[:i1 + 1] and s2[:i2 + 1] to get s3[:i1 + i2 + 2]
-- O(mn), O(mn)
-"""
-class Solution:
-    def isInterleave(self, s1: str, s2: str, s3: str) -> bool:
-        
-        @lru_cache(None)
         def dp(i, j):
             if i == -1 and j == -1:
                 return True
@@ -36,6 +16,18 @@ class Solution:
             if j >= 0 and s2[j] == s3[i+j+1] and dp(i, j-1):
                 return True
             return False
+
+            """ faster
+            if i == n1:
+                return s2[j:] == s3[i+j:]
+            if j == n2:
+                return s1[i:] == s3[i+j:]
+            if s1[i] == s3[i+j] and dp(i+1, j):
+                return True
+            if s2[j] == s3[i+j] and dp(i, j+1):
+                return True
+            return False
+            """
         
         n1, n2 = len(s1), len(s2)
         if n1 + n2 != len(s3): return False
@@ -51,7 +43,7 @@ class Solution:
         n1, n2, n3 = len(s1), len(s2), len(s3)
         if n1 + n2 != n3: return False
         
-        dp = [[False] * (n2 + 1) for _ in range(n1 + 1)]
+        dp = [[False] * (n2 + 1) for _ in range(n1 + 1)]  # dp[i, j] -> s1[:i+1] s2[:j+1] can interleave or not
         dp[0][0] = True
         for i1 in range(n1 + 1):
             for i2 in range(n2 + 1):
