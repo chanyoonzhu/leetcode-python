@@ -7,34 +7,32 @@
 
 """
 - LCA + dfs (recursive)
-- MLE
+- TLE
 """
 class Solution:
     def getDirections(self, root: Optional[TreeNode], startValue: int, destValue: int) -> str:
         
         ancestor = self.lowestCommonAncestor(root, startValue, destValue)
-        path_start = self.dfs(ancestor, startValue, "")
-        path_dest = self.dfs(ancestor, destValue, "")
-        return "U" * len(path_start) + path_dest
+        l_path = "U" * len(self.dfs(ancestor, startValue, ""))
+        r_path = self.dfs(ancestor, destValue, "")
+        return l_path + r_path
+        
         
     def dfs(self, root, target, path):
         if not root:
-            return ""
+            return None
         if root.val == target:
             return path
-        left_path = self.dfs(root.left, target, path + "L")
-        right_path = self.dfs(root.right, target, path + "R")
-        return left_path if left_path else right_path
+        return self.dfs(root.left, target, path + "L") or self.dfs(root.right, target, path + "R")
+                
         
-        
-    def lowestCommonAncestor(self, root, start, end):
+    def lowestCommonAncestor(self, root, start, dest):
         if not root:
             return None
-        mid = root.val == start or root.val == end
-        if mid:
+        if root.val == start or root.val == dest:
             return root
-        l = self.lowestCommonAncestor(root.left, start, end)
-        r = self.lowestCommonAncestor(root.right, start, end)
+        l = self.lowestCommonAncestor(root.left, start, dest)
+        r = self.lowestCommonAncestor(root.right, start, dest)
         if l and r:
             return root
         return l or r
@@ -46,32 +44,25 @@ class Solution:
     def getDirections(self, root: Optional[TreeNode], startValue: int, destValue: int) -> str:
         
         ancestor = self.lowestCommonAncestor(root, startValue, destValue)
-        return self.dfs(ancestor, startValue, destValue)
-        
-    def dfs(self, root, start, dest):
-        ps = pd = ""
-        stack = [(root, "")]
+        stack = [(ancestor, "")]
+        l_path = r_path = ""
         while stack:
             node, path = stack.pop()
-            if node.val == start:
-                ps = path
-            if node.val == dest:
-                pd = path
-            if node.left:
-                stack.append((node.left, path + "L"))
-            if node.right:
-                stack.append((node.right, path + "R"))
-        return "U" * len(ps) + pd
+            if node.val == startValue:
+                l_path = "U" * len(path)
+            elif node.val == destValue:
+                r_path = path
+            if node.left: stack.append((node.left, path + "L"))
+            if node.right: stack.append((node.right, path + "R"))
+        return l_path + r_path     
         
-        
-    def lowestCommonAncestor(self, root, start, end):
+    def lowestCommonAncestor(self, root, start, dest):
         if not root:
             return None
-        mid = root.val == start or root.val == end
-        if mid:
+        if root.val == start or root.val == dest:
             return root
-        l = self.lowestCommonAncestor(root.left, start, end)
-        r = self.lowestCommonAncestor(root.right, start, end)
+        l = self.lowestCommonAncestor(root.left, start, dest)
+        r = self.lowestCommonAncestor(root.right, start, dest)
         if l and r:
             return root
         return l or r
