@@ -4,7 +4,7 @@ backtracking: 17,39,40,46,47,78,90,254,282,291,301,489,491,526,698,996,1088,1539
 bfs: 79,103,116,117,126,127,130,133,173,199,200,207,210,212,269,279,297,301,314,317,339,399,407,444,505,515,529,542,637,662,743,752,785,787,803,863,909,919,934,958,959,971,987,994,1091,1110,1161,1197,1236,1254,1293,1306,1345,1368,1376,1448,1654,1778
 binar352,367,374,410,715,744,774,852,875,911,1011,1055,1060,1146,1231,1272,1283,1428,1482,1552,1608,1648,1723,1802,1870,1891
 bitwise operation: 29,136,137,191,201,231,268,318,338,342,371,461,473,476,491,693,698,1284,1371,1386,1442,1542,1593,1680,1681
-binary search tree: 99,109,173,235,272,275,285,295,333,449,450,490,528,653,701,729,938,1008,1373,1382,1539,2040
+binary search tree: 99,109,173,235,272,275,285,295,333,449,450,490,528,653,701,729,900,938,1008,1373,1382,1539,2040
 bucket:220
 circular array: 213,1658
 Deterministic Finite Automaton: 65
@@ -142,6 +142,8 @@ while start <= end:
         - find target:
             eg. 34-Find First and Last Position of Element in Sorted Array; 35-Search Insert Position; 162-Find Peak Element (unsorted); 275-H-Index II; 295-Find Median from Data Stream; 528-Random Pick with Weight; 825-Friends Of Appropriate Ages; 1060-Missing Element in Sorted Array; 1539-Kth Missing Positive Number; 
             - with edge cases: 744-Find Smallest Letter Greater Than Target
+        - find in range with prefix:
+            eg. 900-RLE Iterator
         - rotated arrays:
             - tip: when there are duplicates, add duplicates removal steps (154, 81)
             - eg. 153-Find Minimum in Rotated Sorted Array|154. Find Minimum in Rotated Sorted Array II|33-Search in Rotated Sorted Array|81-Search in Rotated Sorted Array II; 
