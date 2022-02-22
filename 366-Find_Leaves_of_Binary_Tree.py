@@ -36,9 +36,9 @@ class Solution:
         
         if not root: return []
         
-        self.heights = []
-        self.find_height(root, self.heights)
-        return self.heights
+        heights = []
+        self.find_height(root, heights)
+        return heights
         
         
     def find_height(self, node, heights):
@@ -50,3 +50,28 @@ class Solution:
         else:
             heights[height].append(node.val)
         return height
+
+"""
+- Another solution
+- Tree traversal (height) + array
+- O(n),O(n)
+"""
+class Solution:
+    def findLeaves(self, root: Optional[TreeNode]) -> List[List[int]]:
+        res = []
+
+        
+        def dfs(node):
+            height = -1
+            if node.left:
+                height = max(height, dfs(node.left))
+            if node.right:
+                height = max(height, dfs(node.right))
+            height += 1
+            if len(res) == height:
+                res.append([])
+            res[height].append(node.val)
+            return height
+    
+        dfs(root)
+        return res
