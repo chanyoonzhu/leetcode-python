@@ -5,27 +5,28 @@
 class Solution:
     def openLock(self, deadends: List[str], target: str) -> int:
         
-        deads = set(deadends)
-        if '0000' in deads: return -1 # easy to miss
-        visited = set(['0000'])
-        q = [('0000', 0)]
+        min_turns = 0
+        seen = set(deadends)
+        if "0000" in deadends: return -1 # easy to miss: "0000" is in deadend
+        seen.add("0000")
+        digits = [chr(ord_c) for ord_c in range(ord("0"), ord("9") + 1)]
         
-        def neighbors(x):
-            neighbors = [] 
-            for i in range(4):
-                a = ord(cur[i]) - ord('0')
-                for d in (-1, 1):
-                    nx = (a + d) % 10
-                    neighbors.append(x[:i] + str(nx) + x[i + 1:])
-            return neighbors
-                    
+        def turn(digit):
+            return [digits[(int(digit) + 9) % 10], digits[(int(digit) + 1) % 10]]
+        
+        q = deque(["0000"])
         while q:
-            cur, turns = q.pop(0)
-            if cur == target:
-                return turns
-            for i in range(4):
-                for code in neighbors(cur):
-                    if code not in deads and code not in visited:
-                        visited.add(code)
-                        q.append((code, turns + 1))
+            new_q = deque()
+            while q:
+                comb = q.popleft()
+                if comb == target:
+                    return min_turns
+                for i in range(4):
+                    for next_digit in turn(comb[i]):
+                        new_comb = comb[:i] + next_digit + comb[i+1:]
+                        if new_comb not in seen:
+                            new_q.append(new_comb)
+                            seen.add(new_comb)
+            min_turns += 1
+            q, new_q = new_q, deque()
         return -1

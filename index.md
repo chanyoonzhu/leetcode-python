@@ -182,6 +182,7 @@ while start <= end:
 
 ## BFS
 - key word: shorted path (eg. 1345); 
+- complexity: O(V+E)
 - algorithm:
     elements: queue, visited hashset; 
     steps: while q, if q popped is target, finish, if not, add popped item's neighbors to the q; optimization: visited can be eliminated if allowed to change memory (mark on original data)
