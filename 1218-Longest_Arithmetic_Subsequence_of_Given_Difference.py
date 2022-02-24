@@ -21,6 +21,20 @@ class Solution:
 
 """
 - dynamic programming (buttom-up)
+- dp(i) - Longest Arithmetic Subsequence of Given Difference ending at index i (i needs to be included)
+- O(n^2), O(n)
+"""
+class Solution:
+    def longestSubsequence(self, arr: List[int], difference: int) -> int:
+        dp = defaultdict(lambda: defaultdict(int)) #dp[x][idx] = length
+        res = 0
+        for idx, x in enumerate(arr):
+            dp[x][idx] = max([dp[x-difference][idx2] for idx2 in dp[x-difference]], default = 0) + 1
+            res = max(res, dp[x][idx])
+        return res
+
+"""
+- dynamic programming (buttom-up)
 - O(n), O(n)
 """
 class Solution:
