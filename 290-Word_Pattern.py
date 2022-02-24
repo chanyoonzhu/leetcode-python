@@ -2,24 +2,22 @@
 - hashmap
 - hashmap + hashset
 - O(n), O(1)
-"""
+"""     
 class Solution:
     def wordPattern(self, pattern: str, s: str) -> bool:
-        patterns = list(pattern)
         words = s.split()
-        if len(patterns) != len(words):
+        if len(words) != len(pattern):
             return False
         
-        mapping, mapped = {}, set() # mapping: a -> "dog"
-        for i, word in enumerate(words):
-            pattern = patterns[i]
-            if pattern in mapping:
-                if mapping[pattern] != word:
+        mapping = {} # mapping: word -> char
+        assigned = set() # assigned char
+        for p, w in zip(list(pattern), words):
+            if w not in mapping:
+                if p in assigned: # easy to miss: bidirectional check
                     return False
+                mapping[w] = p
+                assigned.add(p)
             else:
-                if word in mapped: # easy to miss: bidirectional check
+                if mapping[w] != p:
                     return False
-                mapping[pattern] = word
-                mapped.add(word)
         return True
-        
