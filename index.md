@@ -10,7 +10,7 @@ circular array: 213,1658
 Deterministic Finite Automaton: 65
 divide and conquer: 53,215,241,248,307,308,312,327,395,973,1000,1547
 dfs: 17,79,91,93,94,95,99,100,105,106,112,113,124,129,130,133,156,200,207,210,212,230,236,241,254,261,272,297,298,301,302,310,329,331,333,337,364,394,399,449,463,490,529,536,543,545,549,572,637,652,653,655,662,666,671,684,687,690,694,695,743,753,778,785,787,797,803,827,863,889,934,947,951,959,968,975,979,987,1028,1110,1161,1236,1306,1325,1339,1340,1367,1368,1372,1373,1376,1448,1462,1522,1559,1569,1644,1676,1740,1766,1778,2049,2096
-dynamic programming: 5,10,32,39,44,45,53,55,63,64,70,72,84,91,96,97,115,120,139,152,188,198,213,221,256,264,265,276,279,300,312,322,361,375,403,410,413,416,435,446,464,473,474,486,494,516,518,542,552,562,576,583,629,634,647,651,673,712,727,740,746,805,813,818,837,871,877,879,887,920,931,935,940,956,968,983,1000,1027,1035,1039,1048,1066,1092,1105,1130,1140,1143,1155,1216,1235,1259,1269,1277,1278,1301,1312,1314,1335,1406,1411,1458,1510,1547,1548,1594,1643,1696,1746,1774,1824,1879,1931,1937,1947,1981
+dynamic programming: 5,10,32,39,44,45,53,55,63,64,70,72,84,91,96,97,115,120,139,152,188,198,213,221,256,264,265,276,279,300,312,322,361,375,403,410,413,416,435,446,464,473,474,486,494,516,518,542,552,562,576,583,629,634,647,651,673,712,727,740,746,805,813,818,837,871,877,879,887,920,931,935,940,956,968,983,1000,1027,1035,1039,1048,1066,1092,1105,1130,1140,1143,1155,1216,1235,1259,1269,1277,1278,1301,1312,1314,1335,1406,1411,1458,1510,1547,1548,1594,1643,1696,1746,1774,1824,1879,1931,1937,1947,1981,1987
 graph: 785,797,863,1615
 greedy: 11,42,45,53,55,121,134,135,253,358,410,435,455,621,630,678,767,774,785,843,853,871,875,877,954,962,984,1014,1011,1130,1167,1231,1353,1383,1402,1405,1419,1428,1482,1057,1520,1537,1546,1552,1567,1648,1665,1718,1746,1775,1802,1824,1851,1870,1877,2007
 hashmap: 1,15,49,76,106,133,138,146,149,159,166,169,170,219,229,244,246,249,266,299,327,336,340,359,380,381,388,392,398,403,432,437,465,496,498,523,560,609,653,666,670,791,792,811,852,895,930,953,954,974,1000,1055,1218,1371,1386,1442,1477,1525,1542,1546,1570,1577,1590,1615,1644,2007,2013,2031,2034
@@ -319,7 +319,7 @@ space can be optimized to O(1) if only need to track constant time of variables 
     - dp[i] depends on k previous cases dp[j] where j < i:
         - eg: 45-Jump Game II; 651-4 Keys Keyboard; 935-Knight Dialer; 1218-Longest Arithmetic Subsequence of Given Difference
     - dp[i] depends on dp[j] where j in [1...i]:
-        - eg. 64-Minimum Path Sum; 96-Unique Binary Search Trees; 542-01 Matrix; 221-Maximal Square|85-Maximal Rectangle(hard)|1277-Count Square Submatrices with All Ones; 446-Arithmetic Slices II - Subsequence|1027-Longest Arithmetic Subsequence;673-Number of Longest Increasing Subsequence; 931-Minimum Falling Path Sum | 1937-Maximum Number of Points with Cost; (revisit above examples!) 940. Distinct Subsequences II; 1105-Filling Bookcase Shelves; 1235-Maximum Profit in Job Scheduling; 1259-Handshakes That Don't Cross
+        - eg. 64-Minimum Path Sum; 96-Unique Binary Search Trees; 542-01 Matrix; 221-Maximal Square|85-Maximal Rectangle(hard)|1277-Count Square Submatrices with All Ones; 446-Arithmetic Slices II - Subsequence|1027-Longest Arithmetic Subsequence;673-Number of Longest Increasing Subsequence; 931-Minimum Falling Path Sum | 1937-Maximum Number of Points with Cost; (revisit above examples!) 940-Distinct Subsequences II|1987-Number of Unique Good Subsequences; 1105-Filling Bookcase Shelves; 1235-Maximum Profit in Job Scheduling; 1259-Handshakes That Don't Cross
     - dp[i][j] depends on dp[i+1][j-1]:
         - tip: use subproblem size (diff between i and j) as the outer loop
         - eg: 312-Burst Balloons(hard)|1039-Minimum Score Triangulation of Polygon|1130-Minimum Cost Tree From Leaf Values; 375-Guess Number Higher or Lower II; 486, 516-Longest Palindromic Subsequence, 877, 1246-Palindrome Removal(hard); 1312; 1959-Minimum Total Space Wasted With K Resizing Operations
@@ -374,7 +374,7 @@ space can be optimized to O(1) if only need to track constant time of variables 
     - string/serialized list or set as memoization key: 464-Can I Win; 1048-Longest String Chain
     - number of ways:
         - tip: can use dp[i] to store number of ways when ending at element i, then the result is sum(dp) (eg.940)
-        - eg: 115-Distinct Subsequences; 1155-Number of Dice Rolls With Target Sum; 279-Perfect Squares; 1269-Number of Ways to Stay in the Same Place After Some Steps; 276-Paint Fence(a hard medium); 552-Student Attendance Record II(hard); 879-Profitable Schemes(hard); 940-Distinct Subsequences II (hard)
+        - eg: 115-Distinct Subsequences; 1155-Number of Dice Rolls With Target Sum; 279-Perfect Squares; 1269-Number of Ways to Stay in the Same Place After Some Steps; 276-Paint Fence(a hard medium); 552-Student Attendance Record II(hard); 879-Profitable Schemes(hard); 940-Distinct Subsequences II (hard)|1987-Number of Unique Good Subsequences(hard)
         - combination/permutation: 
             - tip: 分类讨论
             - 629-K Inverse Pairs Array; 634-Find the Derangement of An Array(hard); 818-Race Car; 920-Number of Music Playlists(hard); 968-Binary Tree Cameras; 1411-Number of Ways to Paint N × 3 Grid(hard)
