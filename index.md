@@ -31,7 +31,7 @@ segment tree: 307,308,327,850,2031
 sliding window: 3,76,159,209,239,340,395,837,862,904,930,992,1004,1052,1234,1358,1371,1423,1498,1509,1537,1574,1577,1610,1658,1696,1793,1839
 SQL: 176
 sort: 31,56,99,148,164,179,220,252,274,275,280,315,524,539,556,581,593,L391,611,973,1300,1509,1608,1610
-stack: 20,32,42,71,84,85,150,155,224,227,232,331,341,388,394,402,456,496,503,536,581,636,678,716,735,739,768,772,856,901,907,921,946,962,975,1019,1028,1047,1063,1106,1124,1130,1209,1249,1381,1541,1597,1673,1762,1776,1856,1944,1966
+stack: 20,32,42,71,84,85,150,155,224,227,232,331,341,388,394,402,456,496,503,536,581,636,678,716,726,735,739,768,772,856,901,907,921,946,962,975,1019,1028,1047,1063,1106,1124,1130,1209,1249,1381,1541,1597,1673,1762,1776,1856,1944,1966
 string: 5,6,65,151,157,165,214,408,418,443,722,824,833,929,984,1087,1520,1554
 topological sort: 207,210,269,310,329,444,1462,2115
 tree: 94,100,109,112,114,116,222,235,236,285,298,333,337,339,366,426,450,515,543,549,572,652,653,687,729,919,1325,1339,1367,1372,1522,1644,1650,1676,1740,2049,2096
@@ -634,11 +634,11 @@ heapify time complexity: O(n), heap push/pop time complexity: O(logn)
     - straight forward stack:
         - eg: 071-Simplify_Path; 388-Longest Absolute File Path; 636-Exclusive Time of Functions; 716-Max Stack(hard); 735-Asteroid Collision; 1047-Remove All Adjacent Duplicates In String; 1209-Remove All Adjacent Duplicates in String II;
     - parenthesis: 
-        - eg. 20-Valid Parentheses; 32, 394-Decode String; 536-Construct Binary Tree from String; 678, 856-Score of Parentheses; 921-Minimum Add to Make Parentheses Valid(basic); 1087-Brace Expansion(no stack); 1249, 1541; 772-Basic Calculator III
+        - eg. 20-Valid Parentheses; 32, 394-Decode String; 536-Construct Binary Tree from String; 678, 856-Score of Parentheses; 726-Number of Atoms; 772-Basic Calculator III; 921-Minimum Add to Make Parentheses Valid(basic); 1087-Brace Expansion(no stack); 1249, 1541;
         - can also use two passes: 32
     - math evaluation:
         - tip: can use either a stack or a recursive solution
-        - eg. 150-Evaluate Reverse Polish Notation; 224-Basic Calculator|227-Basic Calculator II|772-Basic Calculator III; 1106-Parsing A Boolean Expression
+        - eg. 150-Evaluate Reverse Polish Notation; 224-Basic Calculator|227-Basic Calculator II|772-Basic Calculator III; 72- Number of Atoms; 1106-Parsing A Boolean Expression
     - dfs:
         - graph traversal: see "## DFS"
         - other: 341-Flatten Nested List Iterator 
