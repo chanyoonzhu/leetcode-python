@@ -30,33 +30,65 @@
 #        :rtype void
 #        """
 
-class Solution(object):
+# """
+# This is the robot's control interface.
+# You should not implement it, or speculate about its implementation
+# """
+#class Robot:
+#    def move(self):
+#        """
+#        Returns true if the cell in front is open and robot moves into the cell.
+#        Returns false if the cell in front is blocked and robot stays in the current cell.
+#        :rtype bool
+#        """
+#
+#    def turnLeft(self):
+#        """
+#        Robot will stay in the same cell after calling turnLeft/turnRight.
+#        Each turn will be 90 degrees.
+#        :rtype void
+#        """
+#
+#    def turnRight(self):
+#        """
+#        Robot will stay in the same cell after calling turnLeft/turnRight.
+#        Each turn will be 90 degrees.
+#        :rtype void
+#        """
+#
+#    def clean(self):
+#        """
+#        Clean the current cell.
+#        :rtype void
+#        """
+
+class Solution:
+    def __init__(self):
+        self.moves = [(-1, 0), (0, 1), (1, 0), (0, -1)] # up, right, down, left
+        self.visited = set()
+        
     def cleanRoom(self, robot):
         """
         :type robot: Robot
         :rtype: None
         """
-        visited = set()
-        face = 0
-        iStart = jStart = 0
-        self.dfs(robot, iStart, jStart, face, visited)
-    
-    def dfs(self, robot, i, j, face, visited):
+        self.dfs(robot, 0, 0, 0)
+        
+    def dfs(self, robot, i, j, direction):
+        self.visited.add((i, j))
         robot.clean()
-        visited.add((i,j))
-        faceNew = face
-        for _ in range(4):
+        ni, nj = i + self.moves[direction][0], j + self.moves[direction][1]
+        new_dir = direction
+        for _ in range(len(self.moves)):
+            ni, nj = i + self.moves[new_dir][0], j + self.moves[new_dir][1]
+            if (ni, nj) not in self.visited and robot.move():
+                self.dfs(robot, ni, nj, new_dir)
+            new_dir = (new_dir + 1) % len(self.moves)
             robot.turnRight()
-            # next facing direction
-            faceNew = (faceNew + 1) % 4
-            # next position
-            iNew = i + faceNew - 1 if faceNew % 2 == 0 else i
-            jNew = j - faceNew + 2 if faceNew % 2 == 1 else j
-            if (iNew, jNew) not in visited and robot.move():
-                self.dfs(robot, iNew, jNew, faceNew, visited) 
-        # go back to where it came from
-        robot.turnLeft()
-        robot.turnLeft()
+        # backtracking - returning from where it came
+        robot.turnRight()
+        robot.turnRight()
         robot.move()
-        robot.turnLeft()
-        robot.turnLeft()
+        robot.turnRight()
+        robot.turnRight()
+        
