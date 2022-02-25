@@ -1,3 +1,7 @@
+"""
+- stack
+- O(n^2) - need multiplication of prev chars, O(n)
+"""
 from collections import Counter
 
 class Solution:
