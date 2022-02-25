@@ -7,6 +7,7 @@ class Solution:
         result = 0
         
         def backtrack(x, rotation, digits):
+            # note: cannot check 0 == next_x or next_x > n and return here because we need 0 to pass through
             nonlocal result
             if x != rotation: 
                 result += 1
