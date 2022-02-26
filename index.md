@@ -302,6 +302,7 @@ or
     - nested list: 339-Nested List Weight Sum(also bfs); 341-Flatten Nested List Iterator(stack); 364-Nested List Weight Sum II
 
 ## 2D DFS/BFS
+- tip: modify element in memory to simplify calculation (803-Bricks Falling When Hit)
 - problems:
     - map hidden graph
         - eg: 489-Robot Room Cleaner; 1778-Shortest Path in a Hidden Grid; 1810-Minimum Path Cost in a Hidden Grid
