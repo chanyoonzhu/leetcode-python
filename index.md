@@ -568,6 +568,9 @@ heapify time complexity: O(n), heap push/pop time complexity: O(logn)
         - eg: 253-Meeting Rooms II; 1353-Maximum Number of Events That Can Be Attended; 502-IPO, 630-Course Schedule III(greedy * 2)|1383-Maximum Performance of a Team; 767-Reorganize String|358-Rearrange String k Distance Apart(hard)|621-Task Scheduler; 1057-Campus Bikes; 1167-Minimum Cost to Connect Sticks; 1499-Max Value of Equation; 1851-Minimum Interval to Include Each Query;
     - Dijkstra's Algorithm (see "## BFS")
 
+## Recursion
+- eg: 631-Design Excel Sum Formula
+
 ## Sliding window -
 - problems:
     - fixed length sliding window:
