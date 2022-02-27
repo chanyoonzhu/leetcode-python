@@ -4,36 +4,34 @@
 """
 class Solution:
     def minFlips(self, mat: List[List[int]]) -> int:
-        
-        bitmask = [1 << i for i in range(len(mat[0]))]
         M, N = len(mat), len(mat[0])
-        q = collections.deque()
-        q.append((mat, 0))
-        visited = set()
-        visited.add(self.serialize(mat, M, N, bitmask))
+        ser = self.serialize(mat, M, N)
+        q = deque([(ser, 0)]) # serialized mat, steps
+        visited = set(ser)
         
         while q:
-            cur_mat, steps = q.popleft()
-            if sum([sum(row) for row in cur_mat]) == 0:
+            ser, steps = q.popleft()
+            if sum(ser) == 0:
                 return steps
             for r in range(M):
                 for c in range(N):
-                    next_mat = [row[:] for row in cur_mat]
-                    for rr, cc in [(r, c), (r + 1, c), (r - 1, c), (r, c + 1), (r, c - 1)]:
-                        if 0 <= rr < M and 0 <= cc < N:
-                            next_mat[rr][cc] = 1 - next_mat[rr][cc]
-                    serialized_mat = self.serialize(next_mat, M, N, bitmask)
-                    if serialized_mat not in visited:
-                        q.append((next_mat, steps + 1))
-                        visited.add(serialized_mat)
+                    new_ser = list(ser)
+                    for i, j in [(0, 0), (1, 0), (-1, 0), (0, -1), (0, 1)]: # easy to miss: also need to flip itself
+                        nr, nc = r + i, c + j
+                        if 0 <= nr < M and 0 <= nc < N:
+                            self.flip(new_ser, nr, nc)
+                    if tuple(new_ser) not in visited:
+                        q.append((new_ser, steps + 1))
+                        visited.add(tuple(new_ser))
         return -1
     
-    def serialize(self, mat, M, N, bitmask):
-        serialized = []
-        for i in range(M):
-            serialized_row = 0
-            for j in range(N):
-                if mat[i][j]:
-                    serialized_row |= bitmask[j]
-            serialized.append(serialized_row)
-        return tuple(serialized)
+    def flip(self, ser_list, r, c):
+        ser_list[r] ^= (1 << c)
+        
+    def serialize(self, mat, m, n):
+        ser = [0] * m
+        for i in range(m):
+            for j in range(n):
+                if mat[i][j] == 1:
+                    ser[i] |= (1 << j)
+        return ser
