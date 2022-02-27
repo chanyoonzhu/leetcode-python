@@ -58,12 +58,34 @@ class Solution2:
                 return slot
             heapq.heappush(h, (slot + n, n))
 
+class Solution3:
+    def calcWaitTime(self, efficiency: list, customers: int) -> int:
+        lo, hi = 0, min(efficiency) * customers
+
+        def canHandle(t):
+            served = len(efficiency) # easy to miss: not 0
+            for hours in efficiency:
+                served += t // hours
+                if served >= customers:
+                    return True
+            return False
+
+        while lo < hi:
+            mid = lo + (hi - lo) // 2
+            if canHandle(mid):
+                hi = mid
+            else:
+                lo = mid + 1
+        return lo
+
 efficiency = [6,7,3,4,1,5]
 customers = 100000000
 s1 = Solution()
 s2 = Solution2()
+s3 = Solution3()
 # print(s1.calcWaitTime(efficiency, customers))
 print(s2.calcWaitTime(efficiency, customers))
+print(s3.calcWaitTime(efficiency, customers))
 
 
             
