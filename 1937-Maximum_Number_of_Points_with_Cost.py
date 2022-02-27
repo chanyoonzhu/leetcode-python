@@ -40,31 +40,22 @@ class Solution:
 - dynamic programming (bottom-up)
 - similar: 1014-Best_Sightseeing_Pair
 - O(m*n), O(n)
-- TLE
 """
 class Solution:
     def maxPoints(self, points: List[List[int]]) -> int:
-        M, N = len(points), len(points[0])
-        dp = [0] * N
         
-        for r in range(M):
-            left_max, right_max = self.buildLeftRightMax(dp)
-            dp = [0] * N
-            for c in range(N):
-                dp[c] = points[r][c] + max(left_max[c], right_max[c])
-        return max(dp)
-    
-    def buildLeftRightMax(self, arr):
-        """
-        eg. [6,4,2,4,6] -> [6,5,4,5,6]
-        """
-        N = len(arr)
-        cur_max = 0
-        left_max, right_max = [0] * N, [0] * N
-        for i in range(N):
-            cur_max = max(cur_max - 1, arr[i])
-            left_max[i] = cur_max
-        for i in range(N-1, -1, -1):
-            cur_max = max(cur_max - 1, arr[i]) # decrement cur_max by 1 now one cell farther
-            right_max[i] = cur_max
-        return left_max, right_max
+        M, N  = len(points), len(points[0])
+        prev_dp = points[0] # max points at i
+        
+        for i in range(1, M):
+            dp = prev_dp[:] # rolling max of prev_row
+            rolling_max = 0
+            for j in range(N): # left pass
+                rolling_max = max(rolling_max - 1, dp[j])
+                dp[j] = max(dp[j], rolling_max)
+            rolling_max = 0
+            for j in range(N-1, -1, -1): # right pass
+                rolling_max = max(rolling_max - 1, dp[j])
+                dp[j] = max(dp[j], rolling_max)
+            prev_dp = [dp[j] + points[i][j] for j in range(N)]
+        return max(prev_dp)
