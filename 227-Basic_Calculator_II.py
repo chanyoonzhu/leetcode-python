@@ -38,28 +38,36 @@ class Solution:
     def calculate(self, s: str) -> int:
         # .... + x    (+-*/)    y   (+-*/)
         #   res prev prev_op   cur  cur_op
-        result = prev = cur = 0
-        prev_op = '+'
-        s += '+' # smart!
-        for i in range(len(s)):
-            c = s[i]
-            if c == ' ':
+        res = prev = cur = 0 # prev and cur handles all */, no */ calculation penetrates to res (only +- between res and prev)
+        res_op = prev_op = "+" # op between res and prev; op between prev and cur
+        
+        for c in s + "+":
+            if c == " ":
                 continue
             if c.isdigit():
-                cur = cur * 10 + ord(c) - ord('0')
+                cur = cur * 10 + ord(c) - ord("0")
             else:
-                if prev_op == '*':
-                    prev *= cur
-                elif prev_op == '/':
-                    if prev * cur < 0: 
-                        prev = -(abs(prev) // abs(cur))
-                    else:
-                        prev //= cur
+                if prev_op in "*/": # calculates */ as we see them
+                    prev = self.compute(prev, cur, prev_op)
                 else:
-                    result += prev
-                    prev = cur if prev_op == "+" else -cur
-                cur, prev_op = 0, c
-        return result + prev
+                    res = self.compute(res, prev, res_op)
+                    prev = cur
+                    res_op = prev_op
+                prev_op = c
+                cur = 0
+        return self.compute(res, prev, res_op)
+                
+    def compute(self, n1, n2, op):
+        if op == "+":
+            return n1 + n2
+        elif op == "-":
+            return n1 - n2
+        elif op == "*":
+            return n1 * n2
+        elif op == "/":
+            if (n1 >= 0) == (n2 >= 0):
+                return n1 // n2
+            return -(abs(n1) // abs(n2))
 
 sl = Solution()
 print(sl.calculate("3+2*2"))
