@@ -573,7 +573,7 @@ heapify time complexity: O(n), heap push/pop time complexity: O(logn)
 
 ## Recursion
 - parenthesis:
-    - 224-Basic Calculator; 1096-Brace Expansion II;
+    - 224-Basic Calculator; 726-Number of Atoms; 1096-Brace Expansion II;
 - eg: 631-Design Excel Sum Formula
 
 ## Sliding window -
@@ -647,7 +647,7 @@ heapify time complexity: O(n), heap push/pop time complexity: O(logn)
         - can also use two passes: 32
     - math evaluation:
         - tip: can use either a stack or a recursive solution
-        - eg. 150-Evaluate Reverse Polish Notation; 224-Basic Calculator|227-Basic Calculator II|772-Basic Calculator III; 72-Number of Atoms; 1106-Parsing A Boolean Expression; 1096-Brace Expansion II;
+        - eg. 150-Evaluate Reverse Polish Notation; 224-Basic Calculator|227-Basic Calculator II|772-Basic Calculator III; 726-Number of Atoms; 1106-Parsing A Boolean Expression; 1096-Brace Expansion II;
     - dfs:
         - graph traversal: see "## DFS"
         - other: 341-Flatten Nested List Iterator 

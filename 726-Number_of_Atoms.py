@@ -58,5 +58,51 @@ class Solution:
             cur_element = "" # easy to miss: reset
             cur_multi = 0
         return printFromCounts(stack[0])
+
+    
+"""
+- recursion
+- O(n), O(n)
+"""
+class Solution:
+    def countOfAtoms(self, formula: str) -> str:
+        
+        def helper(formula):
+            counts = Counter()
+            i = 0
+            cur = ""
+            count = 0
+            while i < len(formula):
+                c = formula[i]
+                if c.isdigit():
+                    count = count * 10 + ord(c) - ord("0")
+                elif c.isalpha():
+                    if ord(c) in range(ord('A'), ord('Z') + 1):
+                        if cur: counts[cur] += (count if count else 1) # easy to miss: else 1
+                        cur = c
+                    elif ord(c) in range(ord('a'), ord('z') + 1):
+                        cur += c
+                    count = 0
+                elif c == "(":
+                    if cur: counts[cur] += (count if count else 1)
+                    cur, count = "", 0
+                    inner_counts, consumed = helper(formula[i+1:])
+                    counts += inner_counts
+                    i += consumed
+                elif c == ")":
+                    if cur: counts[cur] += (count if count else 1)
+                    cur, count = "", 0
+                    while i + 1 < len(formula) and formula[i+1].isdigit():
+                        count = count * 10 + ord(formula[i+1]) - ord("0")
+                        i += 1
+                    for ele in counts:
+                        counts[ele] *= (count if count else 1)
+                    return (counts, i + 1)  
+                i += 1
+            return (counts, i)
+             
+        counts = helper(formula + "Y")[0]
+        return ''.join([f"{ele}{counts[ele] if counts[ele] > 1 else ''}" for ele in sorted(counts)])
+        
                         
                 
