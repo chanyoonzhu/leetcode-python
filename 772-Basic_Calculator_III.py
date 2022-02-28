@@ -1,50 +1,49 @@
 """
-- recursion
+- recursion (a combination of 224(+- with parenthensis) and 227(+-*/ with no parenthesis))
+- https://leetcode.com/problems/basic-calculator-iii/discuss/1805832/Solve-this-problem-combining-the-solution-to-Basic-Calculator-I-and-II-with-recursion
 """
 class Solution:
     def calculate(self, s: str) -> int:
+    
+        def compute(n1, n2, op):
+            if op == "+":
+                return n1 + n2
+            elif op == "-":
+                return n1 - n2
+            elif op == "*":
+                return n1 * n2
+            elif op == "/":
+                if (n1 >= 0) == (n2 >= 0):
+                    return n1 // n2
+                return -(abs(n1) // abs(n2))
         
         def helper(s):
+            res = prev = cur = 0 
+            res_op = prev_op = "+"
             
-            def compute(n1, n2, op):
-                if op == '+':
-                    return n1 + n2
-                if op == '-':
-                    return n1 - n2
-                if op == '*':
-                    return n1 * n2
-                if op == '/':
-                    if n1 * n2 < 0:
-                        return -(abs(n1) // abs(n2))
-                    return n1 // n2
-            
-            result = prev = cur = 0
-            prev_op = '+'
-
             i = 0
             while i < len(s):
                 c = s[i]
                 if c.isdigit():
-                    cur = cur * 10 + ord(c) - ord('0')
-                elif c == '(':
-                    nested_result, consumed_count = helper(s[i + 1:])
-                    cur = nested_result
-                    i += consumed_count # increase by consumed space in nested calculation
-                elif c == ')':
-                    prev = compute(prev, cur, prev_op)
-                    result += prev
-                    return (result, i + 1) # key: need to track spaces consumed
-                else:
+                    cur = cur * 10 + ord(c) - ord("0")
+                elif c in "*/+-)":
                     if prev_op in "*/":
                         prev = compute(prev, cur, prev_op)
-                    else:
-                        result += prev
-                        prev = cur if prev_op == '+' else -cur
-                    cur, prev_op = 0, c
+                    elif prev_op in "+-":
+                        res = compute(res, prev, res_op)
+                        prev = cur
+                        res_op = prev_op
+                    prev_op = c
+                    cur = 0
+                    if c == ")":
+                        return (compute(res, prev, res_op), i + 1)
+                elif c == "(":
+                    cur, consumed = helper(s[i+1:])
+                    i += consumed
                 i += 1
-            return (result + prev, i)
-        
-        return helper(s + '+')[0]
+            return (compute(res, prev, res_op), i)
+                
+        return helper(s + "+")[0]
 
 """
 - two stacks
