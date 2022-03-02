@@ -1,4 +1,31 @@
 """
+- dynamic programming (top-down)
+- O(mn), O(mn)
+"""
+class Solution:
+    def minWindow(self, s1: str, s2: str) -> str:
+        
+        @lru_cache(None)
+        def dp(i1, i2): # dp(i1, i2) -> length of minimum window of s2[:i2+1] being a subsequence of s1[:i1+1]
+            if i2 < 0: # s2 fully matched
+                return 0
+            if i1 < 0: # s2 not fully matched when s1 exhausted
+                return float("inf")
+            if s1[i1] == s2[i2]:
+                return 1 + dp(i1-1, i2-1) # greedily match as we see equal
+            else:
+                return 1 + dp(i1-1, i2) # match next in s1
+            
+        min_len = float("inf")
+        for i in range(len(s1)):
+            min_len = min(min_len, dp(i, len(s2)-1))
+                
+        if min_len == float("inf"): return ""
+        for i in range(len(s1)):
+            if dp(i, len(s2)-1) == min_len:
+                return s1[i-min_len+1:i+1]
+
+"""
 - dynamic programming
 - O(mn), O(mn)
 """
