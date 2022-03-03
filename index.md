@@ -36,7 +36,7 @@ string: 5,6,65,151,157,165,214,408,418,443,722,824,833,929,984,1087,1520,1554
 topological sort: 207,210,269,310,329,444,1462,2115
 tree: 94,100,109,112,114,116,222,235,236,285,298,333,337,339,366,426,450,515,543,549,572,652,653,687,729,919,1325,1339,1367,1372,1522,1644,1650,1676,1740,2049,2096
 treemap: 716,2034
-trie: 139,208,211,212,336,616,642,745,2135
+trie: 139,208,211,212,336,616,642,745,1166,2135
 two pointers: 11,15,16,27,42,54,61,76,86,121,159,167,209,244,246,253,259,360,392,462,524,581,611,680,777,904,977,986,1055,1229,1248,1537,1574,1577,1658,1775,1868,2018
 union find: 128,261,305,323,684,721,778,947,952,990,1562,1627,1722,1970,1998,2076,2092
 
@@ -766,7 +766,7 @@ class TrieNode:
         self.children = collections.defaultdict(TrieNode)
 ```
 - tips: use dfs to get all strings that start with the given prefix (can store whole sentence at the end node - eg.642)
-- eg: 211-Design Add and Search Words Data Structure(basic); 139-Word Break|140-Word Break II; 616-Add Bold Tag in String; 642-Design Search Autocomplete System; 745-Prefix and Suffix Search(2 Tries); 2135-Count Words Obtained After Adding a Letter;
+- eg: 211-Design Add and Search Words Data Structure(basic); 139-Word Break|140-Word Break II; 616-Add Bold Tag in String; 642-Design Search Autocomplete System; 745-Prefix and Suffix Search(2 Tries); 1166-Design File System; 2135-Count Words Obtained After Adding a Letter;
 
 ## Union Find
 - key word: connected group in a graph
