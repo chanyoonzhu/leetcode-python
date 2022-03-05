@@ -15,15 +15,14 @@ class Solution:
         
         self.res = 0
         
-        def dfs(node):
+        # returns: number of tokens (x) need move between itself and its parent: 
+        # when x > 0 -> need to move x to its parent, when x < 0 -> need to move x from parent to itself
+        def dfs(node): 
             if not node:
                 return 0
             l, r = dfs(node.left), dfs(node.right)
-            self.res += abs(l) + abs(r) # number of moves needed to distribute to all children
-            # number of tokens need move to(+)/from(-) parent
-            # if need move >= 1: keep 1 for itself (-1)
-            # if need move <= 0: need 1 from parent abs(need move) += 1 (by -1)
-            return node.val + l + r - 1
+            self.res += abs(l) + abs(r)
+            return node.val + l + r - 1 # -1 -> one token for itself
         
         dfs(root)
         return self.res
