@@ -7,7 +7,8 @@ bitwise operation: 29,136,137,191,201,231,268,318,338,342,371,461,473,476,491,69
 binary search tree: 99,109,173,235,272,275,285,295,302,333,449,450,490,528,653,701,729,900,938,1008,1373,1382,1539,2040
 bucket:220
 circular array: 213,1658
-Deterministic Finite Automaton: 65
+concurrency: 1117
+deterministic finite automaton: 65
 divide and conquer: 53,215,241,248,307,308,312,327,395,973,1000,1547
 dfs: 17,79,91,93,94,95,99,100,105,106,112,113,124,129,130,133,156,200,207,210,212,230,236,241,254,261,272,297,298,301,302,310,329,331,333,337,364,394,399,449,463,490,529,536,543,545,549,572,637,652,653,655,662,666,671,684,687,690,694,695,743,753,778,785,787,797,803,827,863,889,934,947,951,959,968,975,979,987,1028,1110,1161,1236,1306,1325,1339,1340,1367,1368,1372,1373,1376,1448,1462,1522,1559,1569,1644,1676,1740,1766,1778,2049,2096
 dynamic programming: 5,10,32,39,44,45,53,55,63,64,70,72,84,91,96,97,115,120,139,152,188,198,213,221,256,264,265,276,279,300,312,322,361,375,403,410,413,416,435,446,464,473,474,486,494,516,518,542,552,562,568,576,583,629,634,647,651,664,673,712,727,740,746,805,813,818,837,871,877,879,887,920,931,935,940,956,968,983,1000,1027,1035,1039,1048,1066,1092,1105,1130,1140,1143,1155,1216,1235,1240,1259,1269,1277,1278,1301,1312,1314,1335,1406,1411,1458,1510,1531,1547,1548,1594,1643,1696,1746,1774,1824,1879,1931,1937,1947,1961,1981,1987
@@ -215,8 +216,9 @@ while start <= end:
 - tip: cache previous result to save time
 - eg: 418-Sentence Screen Fitting
 
-## Counter
-    eg: 900-RLE Iterator; 1419-Minimum Number of Frogs Croaking
+## Concurrency
+    - tips: Barrier, Semaphore
+    - eg: 1117-Building H2O
 
 ## Divide and Conquer
 - problems:
@@ -440,7 +442,7 @@ Iterate over the array and update at each step the standard set for such problem
         - list dict:
             - eg. 1386-Cinema Seat Allocation
         - counter:
-            - eg: 266-Palindrome Permutation; 299-Bulls and Cows(M+); 340-Longest Substring with At Most K Distinct Characters; 791-Custom Sort String; 811-Subdomain Visit Count; 2013-Detect Squares; 1347-Minimum Number of Steps to Make Two Strings Anagram; 1525-Number of Good Ways to Split a String; 2031-Count Subarrays With More Ones Than Zeros(H);
+            - eg: 266-Palindrome Permutation; 299-Bulls and Cows(M+); 340-Longest Substring with At Most K Distinct Characters; 791-Custom Sort String; 811-Subdomain Visit Count; 900-RLE Iterator; 1347-Minimum Number of Steps to Make Two Strings Anagram; 1419-Minimum Number of Frogs Croaking; 1525-Number of Good Ways to Split a String; 2031-Count Subarrays With More Ones Than Zeros(H); 2013-Detect Squares; 
         - dedup:
             - eg: 609-Find Duplicate File in System
         - value to subarray/subsequence length:
@@ -463,11 +465,6 @@ Iterate over the array and update at each step the standard set for such problem
     - find pair: 41-First Missing Positive; 653. Two Sum IV - Input is a BST
     - Storing states: 1774-Closest Dessert Cost; 2061-Number of Spaces Cleaning Robot Cleaned
     - consecutive numbers: 128-Longest Consecutive Sequence
-
-## Heap - 
-heapify time complexity: O(n), heap push/pop time complexity: O(logn)
-- eg:
-    - median: 295
 
 ## LinkedList
 - tips:
@@ -564,6 +561,7 @@ heapify time complexity: O(n), heap push/pop time complexity: O(logn)
 
 ## Priority Queue (Heap):
 - tip: stores tuples in queues, a tuple is comprised of number (a group of numbers) needs to be sorted and the information need to pass when that number is popped from the heap (eg.373)
+- complexity: heapify time complexity: O(n), heap push/pop time complexity: O(logn)
 - key words: sort
 - problems:
     - queue with conditions: 1882-Process Tasks Using Servers
