@@ -1,0 +1,29 @@
+from threading import Semaphore
+
+"""
+- Concurrency
+- O(n), O(n)
+"""
+class BoundedBlockingQueue(object):
+
+    def __init__(self, capacity: int):
+        self.pushing = Semaphore(capacity)
+        self.pulling = Semaphore(0) # cannot dequeue when empty           
+        self.queue = collections.deque() # append and popleft is threadsafe, otherwise need a lock
+        
+
+    def enqueue(self, element: int) -> None:
+        self.pushing.acquire() # subtract 1 from self.pushing semaphore     
+        self.queue.append(element)              
+        self.pulling.release() # add 1 to self.pulling semaphore 
+        
+
+    def dequeue(self) -> int:
+        self.pulling.acquire()                
+        res = self.queue.popleft()                
+        self.pushing.release()
+        return res
+
+
+    def size(self) -> int:
+        return len(self.queue)
