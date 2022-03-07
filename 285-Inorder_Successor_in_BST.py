@@ -16,6 +16,21 @@ class Solution:
             return self.inorderSuccessor(root.right, p)
 
 """
+- bst (iterative)
+- O(log(n))
+""" 
+class Solution:
+    def inorderSuccessor(self, root: TreeNode, p: TreeNode) -> Optional[TreeNode]:
+        successor = None
+        while root:
+            if p.val >= root.val:
+                root = root.right
+            else:
+                successor = root
+                root = root.left
+        return successor
+
+"""
 - inorder traversal
 - O(log(n)), -O(n)
 - inorder traversal, then search (use binary search instead)
