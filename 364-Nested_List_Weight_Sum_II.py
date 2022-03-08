@@ -64,29 +64,24 @@ class Solution:
 
 """
 - dfs (one pass)
+- intuition, weight sum = total * max_height - height sum
 - O(n), O(n)
 """
-"""
-- todo: improve - 算个所有array 的 sum，到最后，sum*depth - 那个正向求和的总数
-"""
 class Solution:
-    def __init__(self):
-        self.depth_to_sum = collections.defaultdict(int)
-        
     def depthSumInverse(self, nestedList: List[NestedInteger]) -> int:
-        max_depth = self.dfs(nestedList, 1)
-        res = 0
-        for depth, count in self.depth_to_sum.items():
-            res += count * (max_depth - depth + 1)
-        return res
+        depth_prod_value, total, max_depth = self.dfs(nestedList, 1)
+        return total * (max_depth + 1) - depth_prod_value
         
-    def dfs(self, nestedList, depth):
-        if not nestedList:
-            return 0
-        cur_depth = depth
+    def dfs(self, nestedList, depth): # returns: depth * value, sum of all elements, largest height, 
+        depth_prod_value = total = max_depth = 0
         for ni in nestedList:
             if ni.isInteger():
-                self.depth_to_sum[cur_depth] += ni.getInteger()
+                depth_prod_value += depth * ni.getInteger()
+                total += ni.getInteger()
+                max_depth = max(max_depth, depth)
             else:
-                depth = max(depth, self.dfs(ni.getList(), cur_depth + 1))
-        return depth
+                ni_depth_prod_value, ni_total, ni_max_depth = self.dfs(ni.getList(), depth + 1)
+                depth_prod_value += ni_depth_prod_value
+                total += ni_total
+                max_depth = max(max_depth, ni_max_depth)
+        return depth_prod_value, total, max_depth
