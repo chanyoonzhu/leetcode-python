@@ -11,17 +11,17 @@
 """
 class Solution:
     def findSecondMinimumValue(self, root: Optional[TreeNode]) -> int:
-        if not root: return -1
-        minimum = root.val
-        second_min = self.dfs(root, minimum)
-        return second_min if second_min < float("inf") else -1
-    
-    def dfs(self, node, minimum):
-        if not node:
-            return float("inf")
-        if node.val > minimum:
-            return node.val
-        else:
-            l_min = self.dfs(node.left, minimum)
-            r_min = self.dfs(node.right, minimum)
-            return min(l_min, r_min)
+        min_val = root.val
+        res = float("inf")
+        
+        def dfs(node):
+            nonlocal res
+            if not node:
+                return
+            if node.val > min_val:
+                res = min(res, node.val)
+            dfs(node.left)
+            dfs(node.right)
+        
+        dfs(root)
+        return res if res < float("inf") else -1
