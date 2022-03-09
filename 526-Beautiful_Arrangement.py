@@ -24,13 +24,13 @@ class Solution:
     def countArrangement(self, n: int) -> int:
         
         @lru_cache(None)
-        def backtracking(bitmask, remain):
-            if remain == 0:
+        def backtracking(bitmask, i):
+            if i == 0:
                 return 1
             count = 0
             for k in range(n):
-                if bitmask & (1 << k) and (remain % (k + 1) == 0 or (k + 1) % remain  == 0): # check availability of number k: bitmask & (1 << k)
-                    count += backtracking(bitmask ^ (1 << k), remain - 1) # turn off availability of number k: bitmask ^ (1 << k)
+                if bitmask & (1 << k) and (i % (k + 1) == 0 or (k + 1) % i  == 0): # check availability of number k: bitmask & (1 << k)
+                    count += backtracking(bitmask ^ (1 << k), i - 1) # turn off availability of number k: bitmask ^ (1 << k)
             return count
         
         bitmask = 2 ** (n) - 1 # all 111...11 (all available)
