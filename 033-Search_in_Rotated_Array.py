@@ -35,7 +35,7 @@ class Solution(object):
 
 """
 - binary search
-- intuition: figure out which part is strictly increasing by comparing nums[low] with nums[mid], find out which strictly increasing part to exclude
+- intuition: at least one half of the array is in order, figure out which part is strictly increasing by comparing nums[low] with nums[mid], find number is in the strictly increasing half or the other half
 - O(logN), O(1)
 """
 class Solution:
