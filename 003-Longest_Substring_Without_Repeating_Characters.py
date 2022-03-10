@@ -6,13 +6,14 @@ class Solution:
     def lengthOfLongestSubstring(self, s: str) -> int:
         chars = set()
         l = 0
-        result = 0
+        res = 0
         for r, c in enumerate(s):
             if c not in chars:
-                result = max(result, r - l + 1)
+                res = max(res, r - l + 1)
+                chars.add(c)
             else:
-                while c in chars:
+                while s[l] != c:
                     chars.remove(s[l])
                     l += 1
-            chars.add(c)
-        return result
+                l += 1
+        return res
