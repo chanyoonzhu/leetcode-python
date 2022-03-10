@@ -1,33 +1,26 @@
-class FreqStack(object):
+"""
+- hashmap + counter
+"""
+class FreqStack:
 
     def __init__(self):
-        self.stack = []
-        self.cnt = collections.Counter()
-        self.freq = collections.defaultdict(list)
-        self.maxFreq = 0
-        
+        self.counts = Counter()
+        self.freq_to_vals = defaultdict(list)
+        self.max_freq = 0
 
-    def push(self, x):
-        """
-        :type x: int
-        :rtype: void
-        """
-        self.stack.append(x)
-        self.cnt[x] += 1
-        self.freq[self.cnt[x]].append(x)
-        self.maxFreq = max(self.maxFreq, self.cnt[x])
+    # O(1)
+    def push(self, val: int) -> None:
+        self.counts[val] += 1
+        self.freq_to_vals[self.counts[val]].append(val)
+        self.max_freq = max(self.max_freq, self.counts[val])
         
-
-    def pop(self):
-        """
-        :rtype: int
-        """
-        res = self.freq[self.maxFreq].pop()
-        if len(self.freq[self.maxFreq]) == 0:
-            del self.freq[self.maxFreq]
-            self.maxFreq -= 1
-        self.cnt[res] -= 1
-        return res
+    # O(1)
+    def pop(self) -> int:
+        maxi = self.freq_to_vals[self.max_freq].pop()
+        if len(self.freq_to_vals[self.max_freq]) == 0:
+            self.max_freq -= 1
+        self.counts[maxi] -= 1
+        return maxi
         
 
 
