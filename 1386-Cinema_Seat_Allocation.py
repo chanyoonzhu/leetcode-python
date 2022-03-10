@@ -18,4 +18,4 @@ class Solution:
             if not groups: groups += (reserved & int('0001111000', 2)) == 0
             res += groups
 
-        return res + 2 * (n - len(seats))
+        return res + 2 * (n - len(seats)) # don't forget to add rows without any reserved seats!
