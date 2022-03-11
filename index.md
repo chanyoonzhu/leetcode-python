@@ -331,7 +331,7 @@ space can be optimized to O(1) if only need to track constant time of variables 
         - tip: use subproblem size (diff between i and j) as the outer loop
         - eg: 312-Burst Balloons(hard)|1039-Minimum Score Triangulation of Polygon|1130-Minimum Cost Tree From Leaf Values; 375-Guess Number Higher or Lower II; 486, 516-Longest Palindromic Subsequence, 664-Strange Printer; 877, 1246-Palindrome Removal(hard); 1312; 1959-Minimum Total Space Wasted With K Resizing Operations
     - dp[i][k] depends on dp[i+1][k-1] and dp[i+1][k]:
-         - eg: 1531-String Compression II(hard); 1639-Number of Ways to Form a Target String Given a Dictionary;
+         - eg: 188-Best Time to Buy and Sell Stock IV; 1531-String Compression II(hard); 1639-Number of Ways to Form a Target String Given a Dictionary;
     - intervals: sequence needs to be divided into k distinct intervals
         - key words: split array
         - dp[i][k] depends on dp[j][k-1] where j = [1...i]
