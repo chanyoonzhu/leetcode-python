@@ -8,11 +8,11 @@ class Node:
         self.parent = None
 """
 
+"""
+- hashset
+- O(h), O(h), h = n in worst case
+"""
 class Solution:
-    """
-    - hashset
-    - O(h), O(h), h = n in worst case
-    """
     def lowestCommonAncestor(self, p: 'Node', q: 'Node') -> 'Node':
         
         p_ancestor = set()
@@ -25,10 +25,12 @@ class Solution:
             q = q.parent
         return q
     
-    """
-    - two pointers: instinct: height(p) + height(q) - height(lca) =  height(q) + height(p) - height(lca)
-    - O(h), O(1), h = n in worst case
-    """
+"""
+- two pointers: 
+- instinct: for each node to travel to ancestor after 1 switch, p travels: p to a (ancestor), a to root, q to a; q travels: q to a, a to root, p to a => the distance they travel are equal
+- O(h), O(1), h = n in worst case
+"""
+class Solution:
     def lowestCommonAncestor(self, p: 'Node', q: 'Node') -> 'Node':
         
         p1, q1 = p, q
