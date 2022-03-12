@@ -10,10 +10,11 @@
 """
 class Solution:
     def rangeSumBST(self, root: Optional[TreeNode], low: int, high: int) -> int:
-        if low > high or not root: return 0
-        if low <= root.val <= high:
-            return self.rangeSumBST(root.left, low, root.val - 1) + root.val + self.rangeSumBST(root.right, root.val + 1, high)
-        elif root.val > high:
+        if not root:
+            return 0
+        if root.val > high:
             return self.rangeSumBST(root.left, low, high)
-        else:
+        elif root.val < low:
             return self.rangeSumBST(root.right, low, high)
+        else:
+            return root.val + self.rangeSumBST(root.right, root.val, high) + self.rangeSumBST(root.left, low, root.val)
