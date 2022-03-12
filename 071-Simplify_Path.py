@@ -23,14 +23,18 @@ class Solution:
 - stack (two-pass with split)
 - O(n), O(n)
 """
-class Solution(object):
-    def simplifyPath(self, path):
-        places = [p for p in path.split("/") if p!="." and p!=""]
+class Solution:
+    def simplifyPath(self, path: str) -> str:
         stack = []
-        for p in places:
-            if p == "..":
-                if stack:
-                    stack.pop()
-            else:
-                stack.append(p)
+        chunks = path.split("/")
+        for chunk in chunks:
+            if chunk:
+                if chunk == "..":
+                    if stack:
+                        stack.pop()
+                elif chunk == ".":
+                    continue
+                else:
+                    stack.append(chunk)
+                    
         return "/" + "/".join(stack)
