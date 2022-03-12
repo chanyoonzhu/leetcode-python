@@ -611,7 +611,7 @@ Iterate over the array and update at each step the standard set for such problem
     - variations:
         quick select: 
             - key word: get largest/smallest k
-            - complexity: O(n) on average since only sorting one partition; O(n^2) worst case
+            - complexity: O(n) on average since only sorting one partition n + 1/2n + 1/4n + ... = O(2n) = O(n); O(n^2) worst case
             - eg.215-Kth_Largest_Element_in_an_Array, 973-K Closest Points to Origin
 - merge sort: 
     - algorithm:

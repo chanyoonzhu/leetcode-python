@@ -47,29 +47,28 @@ class Solution:
         N = len(points)
         dists = [(self.getDistSquared(points[i]), i) for i in range(N)]
         
-        l, r = 0, N - 1
-        pivot_index = r
+        
+        l, r = 0, len(dists) - 1
         while l <= r:
-            pivot_index = self.partition(dists, l, r)
-            if pivot_index == k - 1:
-                return [points[i] for _, i in dists[:k]]
-            if pivot_index < k - 1:
-                left = pivot_index + 1
+            idx = self.partition(dists, l, r)
+            if idx == k - 1:
+                return [points[i] for dist, i in dists[:k]]
+            elif idx < k - 1:
+                l = idx + 1
             else:
-                right = pivot_index - 1        
-    
+                r = idx - 1
+        
+            
+    def partition(self, dists, start, end):
+        pivot = dists[end][0]
+        idx = start
+        for i in range(start, end):
+            if dists[i][0] <= pivot:
+                dists[i], dists[idx] = dists[idx], dists[i]
+                idx += 1
+        dists[end], dists[idx] = dists[idx], dists[end]
+        return idx
     
     def getDistSquared(self, point: List[int]) -> int:
         x, y = point
         return x ** 2 + y ** 2
-
-    
-    def partition(self, dists, l, r):
-        end = dists[r][0]
-        idx = l
-        for i in range(l, r):
-            if dists[idx][0] <= end:
-                dists[idx], dists[i] = dists[i], dists[idx]
-                idx += 1
-        dists[idx], dists[r] = dists[r], dists[idx]
-        return idx
