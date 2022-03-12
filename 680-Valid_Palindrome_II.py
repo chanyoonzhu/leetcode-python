@@ -1,27 +1,4 @@
 """
-- two pointers - wrong answer: "ebcbbececabbacecbbcbe" -> should be "True" not "False"
-"""
-class Solution:
-    def validPalindrome(self, s: str) -> bool:
-        l, r = 0, len(s) - 1
-        removed = 0
-        while l < r:
-            if s[l] != s[r]:
-                if removed:
-                    return False
-                else:
-                    removed += 1
-                    if s[l] == s[r - 1]:
-                        r -= 1
-                    elif s[l + 1] == s[r]:
-                        l += 1
-                    else:
-                        return False
-            l += 1
-            r -= 1           
-        return True
-
-"""
 - two pointers
 - O(n), O(1)
 """
@@ -45,3 +22,21 @@ class Solution:
             else:
                 return False
         return True
+
+"""
+- recursive
+- O(n), O(n)
+"""
+class Solution:
+    def validPalindrome(self, s):
+        return self.palindromHelper(s)
+    
+    def palindromHelper(self, s, has_removed=False):
+        if not s or len(s) == 1:
+            return True
+        if s[0] == s[-1]:
+            return self.palindromHelper(s[1:-1], has_removed)
+        if s[0] != s[-1]:
+            if has_removed:
+                return False
+            return self.palindromHelper(s[1:], True) or self.palindromHelper(s[:-1], True)
