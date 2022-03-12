@@ -12,18 +12,20 @@
 class Solution:
     def rightSideView(self, root: Optional[TreeNode]) -> List[int]:
         
+        if not root:
+            return []
         res = []
-        bfs = deque()
-        if root: bfs.append((0, root))
-            
-        while bfs:
-            height, node = bfs.popleft()
-            if height == len(res):
-                res.append(node.val)
-            else:
-                res[height] = node.val
-            if node.left: bfs.append((height + 1, node.left))
-            if node.right: bfs.append((height + 1, node.right))
+        q = deque([root])
         
+        while q:
+            next_q = deque()
+            res.append(q[-1].val)
+            while q:
+                node = q.popleft()
+                if node.left:
+                    next_q.append(node.left)
+                if node.right:
+                    next_q.append(node.right)
+            q = next_q
         return res
         
