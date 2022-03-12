@@ -37,13 +37,13 @@ class Solution:
                 mapping[email].append(i)
         
         def dfs(i):
-            if visited_accounts[i]: return set()
             visited_accounts[i] = True
             emails = set()
             for email in accounts[i][1:]:
                 emails.add(email)
                 for nei_account in mapping[email]:
-                    emails |= dfs(nei_account)
+                    if not visited_accounts[nei_account]:
+                        emails |= dfs(nei_account)
             return emails
                 
         for i, account in enumerate(accounts):
