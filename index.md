@@ -38,7 +38,7 @@ topological sort: 207,210,269,310,329,444,1462,2115
 tree: 94,100,102,104,109,112,114,116,222,235,236,285,298,333,337,339,366,426,450,510,515,543,549,572,652,653,687,729,919,1325,1339,1367,1372,1522,1644,1650,1676,1740,2049,2096
 treemap: 716,2034
 trie: 139,208,211,212,336,588,616,642,745,1166,2135
-two pointers: 11,15,16,27,42,54,61,76,86,121,159,167,209,244,246,253,259,360,392,408,462,524,581,611,670,680,777,904,977,986,1055,1229,1248,1537,1574,1577,1658,1775,1868,2018
+two pointers: 11,15,16,27,42,54,61,76,86,121,125,159,167,209,244,246,253,259,360,392,408,462,524,581,611,670,680,777,904,977,986,1055,1229,1248,1537,1574,1577,1658,1775,1868,2018
 union find: 128,261,305,323,684,721,778,947,952,990,1562,1627,1722,1970,1998,2076,2092
 
 
@@ -59,7 +59,7 @@ union find: 128,261,305,323,684,721,778,947,952,990,1562,1627,1722,1970,1998,207
     - complexity: time - O(2^n) each position can be chosen or not; space - O(n)
     - tip: 
         * dedup: sort and skip same number (eg. 40-Combination Sum II; 47-Permutations II)
-    - eg: 17-Letter Combinations of a Phone Number; 39-Combination Sum|40-Combination Sum II; 47-Permutations II; 78-Subsets(classic)|90-Subsets II|46-Permutations|47-Permutations II; 254-Factor Combinations; 282-Expression Add Operators; 291-Word Pattern II; 491-Increasing Subsequences; 526-Beautiful Arrangement; 996-Number of Squareful Arrays; 1239-Maximum Length of a Concatenated String with Unique Characters; 698-Partition to K Equal Sum Subsets; 1593-Split a String Into the Max Number of Unique Substrings; 1681-Minimum Incompatibility; 1307-Verbal Arithmetic Puzzle(hard); 1718-Construct the Lexicographically Largest Valid Sequence (with greedy); 1723-Find Minimum Time to Finish All Jobs(hard, with binary search); 1774-Closest Dessert Cost；465-Optimal Account Balancing (hard)
+    - eg: 17-Letter Combinations of a Phone Number; 39-Combination Sum|40-Combination Sum II; 47-Permutations II; 78-Subsets(classic)|90-Subsets II|46-Permutations|47-Permutations II; 254-Factor Combinations; 282-Expression Add Operators; 291-Word Pattern II; 301-Remove Invalid Parentheses; 491-Increasing Subsequences; 526-Beautiful Arrangement; 996-Number of Squareful Arrays; 1239-Maximum Length of a Concatenated String with Unique Characters; 698-Partition to K Equal Sum Subsets; 1593-Split a String Into the Max Number of Unique Substrings; 1681-Minimum Incompatibility; 1307-Verbal Arithmetic Puzzle(hard); 1718-Construct the Lexicographically Largest Valid Sequence (with greedy); 1723-Find Minimum Time to Finish All Jobs(hard, with binary search); 1774-Closest Dessert Cost；465-Optimal Account Balancing (hard)
         - number: 
             - eg. 1088-Confusing Number II
         - 2D
@@ -715,7 +715,7 @@ O(n), O(n)
         - boundaries: 54-Spiral Matrix;
     - 2D array:
         - eg: 2018-Check if Word Can Be Placed In Crossword
-    - palindrom: 680-Valid Palindrome II; 246-Strobogrammatic Number
+    - palindrom: 125-Valid Palindrome; 680-Valid Palindrome II; 246-Strobogrammatic Number
     - two sequences: 392-Is_Subsequence; 1537-Get the Maximum Score; 1868-Product of Two Run-Length Encoded Arrays
     - sliding window (see "## sliding window")
     - linked list cycle (see "## Linked List")
