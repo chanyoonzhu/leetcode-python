@@ -1,3 +1,7 @@
+"""
+- backtrack / dynamic programming (knapsack)
+- O(n^2 + 2^n + w)
+"""
 class Solution:
     def wordBreak(self, s: str, wordDict: List[str]) -> List[str]:
                 
@@ -15,3 +19,24 @@ class Solution:
                     
         paths = dp(0, [[]])
         return [" ".join(path) for path in paths]
+
+"""
+- similar
+"""
+class Solution:
+    def wordBreak(self, s: str, wordDict: List[str]) -> List[str]:
+        words = set(wordDict)
+        N = len(s)
+        res = []
+        
+        @lru_cache(None)
+        def dp(i, path):
+            if i == len(s):
+                res.append(path.lstrip())
+            for word in words:
+                if s[i:i+len(word)] == word:
+                    dp(i+len(word), path + " " + word)
+                    
+                    
+        dp(0, "")
+        return res

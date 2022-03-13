@@ -1,6 +1,6 @@
 all, any: 833
 array: 6,31,41,54,56,58,59,68,73,122,151,157,158,163,186,204,238,251,268,289,311,349,350,380,381,463,498,539,556,605,766,768,849,896,1014,1146,1304,1371,1381,1526,1567,1706,1779,1790,1822,2121
-backtracking: 17,39,40,46,47,78,90,254,282,291,301,489,491,526,698,996,1088,1539,1593,1239,1307,1681,1718,1723,1774
+backtracking: 17,39,40,46,47,78,90,140,254,282,291,301,489,491,526,698,996,1088,1539,1593,1239,1307,1681,1718,1723,1774
 bfs: 79,102,103,116,117,126,127,130,133,173,199,200,207,210,212,269,279,297,301,314,317,339,399,407,444,505,515,529,542,637,662,743,752,785,787,803,863,909,919,934,958,959,971,987,994,1091,1110,1161,1197,1236,1254,1293,1306,1345,1368,1376,1448,1654,1778
 binary search: 4,29,33,34,57,69,81,153,154,162,222,240,259,268,275,279,287,295,300,352,367,374,410,715,744,774,852,875,911,1011,1055,1060,1146,1231,1272,1283,1428,1482,1552,1608,1648,1723,1802,1870,1891
 bitwise operation: 29,136,137,191,201,231,268,318,338,342,371,461,473,476,491,693,698,1284,1371,1386,1442,1542,1593,1680,1681
@@ -61,7 +61,7 @@ union find: 128,261,305,323,684,721,778,947,952,990,1562,1627,1722,1970,1998,207
         * dedup: sort and skip same number (eg. 40-Combination Sum II; 47-Permutations II)
     - eg: 17-Letter Combinations of a Phone Number; 39-Combination Sum|40-Combination Sum II; 47-Permutations II; 78-Subsets(classic)|90-Subsets II|46-Permutations|47-Permutations II; 254-Factor Combinations; 291-Word Pattern II; 301-Remove Invalid Parentheses; 491-Increasing Subsequences; 526-Beautiful Arrangement; 996-Number of Squareful Arrays; 1239-Maximum Length of a Concatenated String with Unique Characters; 698-Partition to K Equal Sum Subsets; 1593-Split a String Into the Max Number of Unique Substrings; 1681-Minimum Incompatibility; 1307-Verbal Arithmetic Puzzle(hard); 1718-Construct the Lexicographically Largest Valid Sequence (with greedy); 1723-Find Minimum Time to Finish All Jobs(hard, with binary search); 1774-Closest Dessert Cost；465-Optimal Account Balancing (hard)
         - list all possibilities:
-            - eg. 282-Expression Add Operators;
+            - eg. 140-Word Break II; 282-Expression Add Operators;
         - number: 
             - eg. 1088-Confusing Number II
         - 2D
