@@ -100,37 +100,40 @@ class Solution(object):
             return node_copy
         """
         
-        """
-        - O(n), O(1)
-        - interleaving linkedlist
-        """
-        if head is None:
+"""
+- O(n), O(1)
+- intuition: attach each copy node right next to its original node
+- interleaving linkedlist
+"""
+class Solution:
+    def copyRandomList(self, head: 'Optional[Node]') -> 'Optional[Node]':
+        if not head:
             return None
         
-        pointer = head
-        while pointer:
-            _next = pointer.next
-            pointer.next = Node(pointer.val, _next, None)
-            pointer = pointer.next.next
-          
-        # assign random
-        pointer = head
-        while pointer: 
-            copy = pointer.next
-            if pointer.random:
-                copy.random = pointer.random.next
-            pointer = pointer.next.next
-       
-        # detach
-        pointer = head
-        copy_head = head.next
-        while pointer:
-            copy = pointer.next
-            pointer.next = copy.next
-            if pointer.next:
-                copy.next = pointer.next.next
-            pointer = pointer.next
+        # copy next pointers
+        original = head
+        while original:
+            new = Node(original.val, original.next)
+            original.next = new
+            original = new.next
         
+        # copy random pointers
+        original = head
+        while original:
+            if original.random: # easy to miss
+                original.next.random = original.random.next
+            original = original.next.next
+            
+        # detach interleaved nodes
+        original = head
+        copy_head = head.next
+        while original:
+            copy = original.next
+            original.next = copy.next
+            if original.next: # easy to miss
+                copy.next = original.next.next
+            original = original.next
+    
         return copy_head
 
 """

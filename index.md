@@ -482,6 +482,8 @@ Iterate over the array and update at each step the standard set for such problem
         - 116|117-Populating Next Right Pointers in Each Node I/II
     - addition:
         - 369-Plus One Linked List;
+    - copy linkedlist:
+        - 138-Copy List with Random Pointer;
 
 ## Fenwick Tree (or binary index tree):
 - used to solve numerous RANGE QUERY problems like finding minimum, maximum, sum, greatest common divisor, least common denominator in array in logarithmic time.
