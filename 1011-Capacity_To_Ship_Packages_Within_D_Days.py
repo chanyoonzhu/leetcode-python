@@ -1,40 +1,30 @@
+"""
+- binary search
+- O(log(sum(weights))), O(1)
+"""
 class Solution:
     def shipWithinDays(self, weights: List[int], D: int) -> int:
         
-        max_capacity = sum(weights)
-        min_capacity = max(weights)
+        r = sum(weights)
+        l = max(weights)
         
-        def binary_search(l, r):
-            if l == r:
-                return l
+        def can_ship(capacity):
+            days_taken = 0
+            remain_capacity = capacity
+            for w in weights:
+                if w <= remain_capacity:
+                    remain_capacity -= w
+                else:
+                    days_taken += 1
+                    if days_taken >= D:
+                        return False
+                    remain_capacity = capacity - w # easy to miss: need to subtract w
+            return True
+        
+        while l < r:
             mid = l + (r - l) // 2
             if can_ship(mid):
-                return binary_search(l, mid)
+                r = mid
             else:
-                return binary_search(mid + 1, r)
-        
-        def can_ship(capacity):
-            days_taken = 0
-            load = 0
-            for weight in weights:
-                load += weight
-                if load > capacity:
-                    days_taken += 1
-                    load = weight
-            if load > 0: days_taken += 1
-            return days_taken <= D
-        
-        """ other solutions:
-        def can_ship(capacity):
-            days_taken = 0
-            load = 0
-            for weight in weights:
-                if (load + weight > capacity):
-                    days_taken += 1
-                    load = 0
-                load += weight
-            if load: days_taken += 1
-            return days_taken <= D
-        """
-        
-        return binary_search(min_capacity, max_capacity)
+                l = mid + 1
+        return l
