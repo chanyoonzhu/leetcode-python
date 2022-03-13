@@ -15,3 +15,22 @@ class Solution:
             return add(idx1 - 1, idx2 - 1, digit + res, carry)
         
         return str(add(len(num1) - 1, len(num2) - 1, "", 0))
+
+"""
+two pointers
+- O(n), O(1)
+"""
+class Solution:
+    def addStrings(self, num1: str, num2: str) -> str:
+        ptr1, ptr2 = len(num1) - 1, len(num2) - 1
+        res, carry, kth = 0, 0, 0
+        while ptr1 >= 0 or ptr2 >= 0:
+            d1 = ord(num1[ptr1]) - ord("0") if ptr1 >= 0 else 0
+            d2 = ord(num2[ptr2]) - ord("0") if ptr2 >= 0 else 0
+            
+            carry, d = divmod(d1 + d2 + carry, 10)
+            res += d * (10 ** kth)
+            ptr1 -= 1
+            ptr2 -= 1
+            kth += 1
+        return str(res + carry * (10 ** kth))
