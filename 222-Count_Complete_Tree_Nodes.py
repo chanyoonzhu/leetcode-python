@@ -103,7 +103,7 @@ class Solution2:
 
 """
 - binary search
-- O(logn)
+- O(logn*logn)
 """
 class Solution:
     def countNodes(self, root: Optional[TreeNode]) -> int:
