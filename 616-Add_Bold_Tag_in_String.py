@@ -21,12 +21,9 @@ class Solution:
         for i, is_bold in enumerate(bolds):
             if is_bold and not prev_is_bold:
                 res.append("<b>")
-                res.append(s[i])
             elif not is_bold and prev_is_bold:
                 res.append("</b>")
-                res.append(s[i])
-            else:
-                res.append(s[i])
+            res.append(s[i])
             prev_is_bold = is_bold
         if prev_is_bold: res.append("</b>")
         
