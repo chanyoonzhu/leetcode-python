@@ -206,7 +206,7 @@ while start <= end:
         - key words: minimal cost of paths (unlike regular shortest path where cost is always 1, each connection can have various cost)
         - caveat: visited.add() happens at node pop, not node push, since shortest cost is found when node with the smallest cost pops, when pushing a node we could push one with cost larger than smallest cost
         - intuition: similar as bfs, difference is that instead of using a queue and always pop left (which is by default the minimal cost), use a heap to store tuple (total_cost, node) to always pop the smallest cost; also need an array/map to memoize smallest cost to each node; IMPORTANT - the use of heap guarantees that a node with smallest price route always popped first (no matter how many stops it takes to arrive at it) 
-        - eg. 743-Network Delay Time (classic); 505-The Maze II; 787-Cheapest Flights Within K Stops; 407-Trapping Rain Water II (implicit); 656-Coin Path(hard, TLE); 1368-Minimum Cost to Make at Least One Valid Path in a Grid(have better solutions using dfs)
+        - eg. 743-Network Delay Time (classic); 407-Trapping Rain Water II (implicit); 505-The Maze II; 656-Coin Path(hard, TLE); 778. Swim in Rising Water; 787-Cheapest Flights Within K Stops; 1368-Minimum Cost to Make at Least One Valid Path in a Grid(have better solutions using dfs)
     - tree traversal: see "## Tree"
     - construct sequence with topological sort (see "## Topological Sort")
     - bidrectional dfs
