@@ -71,5 +71,48 @@ class Solution(object):
                 
         return ' '.join(helper(num)) if num != 0 else 'Zero'
 
+"""
+- O(logn)
+"""
+class Solution:
+    def numberToWords(self, num: int) -> str:
+        groups = ["Thousand", "Million", "Billion", "Trillion"]
+        ones = ["One", "Two", "Three", "Four", "Five", "Six", "Seven", "Eight", "Nine"]
+        tens = ["Twenty", "Thirty", "Forty", "Fifty", "Sixty", "Seventy", "Eighty", "Ninety"]
+        ten_to_twenty = ["Ten", "Eleven", "Twelve", "Thirteen", "Fourteen", "Fifteen", "Sixteen", "Seventeen", "Eighteen", "Nineteen"]
+        
+        def hundredToWords(num):
+            if not num:
+                return ""
+            if num < 10:
+                return ones[num-1]
+            elif 10 <= num < 20:
+                return ten_to_twenty[num-10]
+            elif num < 100:
+                ten, one = divmod(num, 10)
+                print_tens = tens[ten-2]
+                if one: 
+                    print_tens += " " + ones[one-1]
+                return print_tens
+            else:
+                hundred, mod = divmod(num, 100)
+                print_mod = hundredToWords(mod)
+                print_hundred = ones[hundred-1] + " Hundred"
+                if print_mod: print_hundred += " " + print_mod
+                return print_hundred
+
+        group_i = -1
+        group_size = 1000
+        res = ""
+        while num:
+            num, mod = divmod(num, group_size)
+            group_print = hundredToWords(mod)
+            if group_i >= 0 and group_print:
+                res = group_print + f" {groups[group_i]}" + ((" " + res) if res else "")
+            else:
+                res = group_print + res
+            group_i += 1
+        return res if res else "Zero"
+
 sl = Solution()
 print(sl.numberToWords(2345))
