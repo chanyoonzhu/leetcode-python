@@ -158,6 +158,8 @@ while start <= end:
             - eg. 4-Median of Two Sorted Arrays
         - 2D:
             - eg. 302-Smallest Rectangle Enclosing Black Pixels
+    - tree:
+        - eg. 222-Count Complete Tree Nodes;
     - merge intervals: see "## sweep line"
 
 ## Bitwise Operation

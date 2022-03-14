@@ -101,4 +101,40 @@ class Solution2:
                 return 0
             return 1 + self.getDepth(root.left)
 
+"""
+- binary search
+- O(logn)
+"""
+class Solution:
+    def countNodes(self, root: Optional[TreeNode]) -> int:
+        if not root: return 0
+        depth = self.getDepth(root)
+        last_node_idx = self.binarySearch(root, depth)
+        return 2 ** (depth - 1) + last_node_idx
+        
+    def existInLastRow(self, idx, root, depth):
+        node = root
+        for i in range(depth-2, -1, -1):
+            if idx & (1 << i):
+                node = node.right
+            else:
+                node = node.left
+        return node != None
+        
+    def binarySearch(self, node, depth):
+        last_row_count = 2 ** (depth - 1)
+        lo, hi = 0, last_row_count - 1
+        while lo < hi:
+            mid = lo + (hi - lo + 1) // 2
+            if self.existInLastRow(mid, node, depth):
+                lo = mid
+            else:
+                hi = mid - 1
+        return lo
+    
+    def getDepth(self, node):
+        if not node:
+            return 0
+        return 1 + self.getDepth(node.left)
+
             
