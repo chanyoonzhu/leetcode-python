@@ -19,7 +19,8 @@ class Solution:
 
 """
 - binary search
-- intuition:  The number of positive integers which are missing before the arr[idx] is equal to arr[idx] - (idx + 1). Find index (lo) such that's the last index with missing number < k
+- intuition:  The number of positive integers which are missing before the arr[idx] is equal to arr[idx] - (idx + 1). 
+  Find index (lo) such that's the last index with missing number < k
 - O(logn), O(1)
 """
 class Solution:
