@@ -535,8 +535,8 @@ Iterate over the array and update at each step the standard set for such problem
     - division:
         - eg. 7-Reverse Integer; 9-Palindrome Number; 263-Ugly Number;
         - long division: 166-Fraction to Recurring Decimal
-    - mod:
-        - eg: 2119-A Number After a Double Reversal
+    - modulo:
+        - eg: 780-Reaching Points; 2119-A Number After a Double Reversal
     - line formula:
         - eg: 149-Max Points on a Line
     - quadratic formula:
