@@ -1,30 +1,31 @@
-class Solution(object):
-    def wallsAndGates(self, rooms):
+"""
+- bfs
+- search from gates
+- O(mn), O(mn)
+"""
+class Solution:
+    def wallsAndGates(self, rooms: List[List[int]]) -> None:
         """
-        :type rooms: List[List[int]]
-        :rtype: void Do not return anything, modify rooms in-place instead.
+        Do not return anything, modify rooms in-place instead.
         """
-        for i in range(len(rooms)):
-            for j in range(len(rooms[0])):
-                if rooms[i][j] == 0:
-                    q = [(i, j, 0)]
-                    visited = [[0] * len(rooms[0]) for _ in rooms]
-                    visited[i][j] = 1
-                    while q:
-                        x, y, dist = q.pop(0)
-                        if self.updateDistance(rooms, visited, x-1, y, dist+1): q.append((x-1, y, dist+1))
-                        if self.updateDistance(rooms, visited, x+1, y, dist+1): q.append((x+1, y, dist+1))
-                        if self.updateDistance(rooms, visited, x, y-1, dist+1): q.append((x, y-1, dist+1))
-                        if self.updateDistance(rooms, visited, x, y+1, dist+1): q.append((x, y+1, dist+1))
-                        
+        
+        M, N = len(rooms), len(rooms[0])
+        DIR = [(1, 0), (-1, 0), (0, 1), (0, -1)]
+        
+        def bfs(r, c):
+            q = deque([(r, c, 0)])# r, c, step
+            while q:
+                x, y, step = q.popleft()
+                for i, j in DIR:
+                    nx, ny = x + i, y + j
+                    if 0 <= nx < M and 0 <= ny < N and rooms[nx][ny] > step + 1:
+                        rooms[nx][ny] = step + 1
+                        q.append((nx, ny, step + 1))
+            
     
-    def updateDistance(self, rooms, visited, i, j, dist):
-        if i >= 0 and i < len(rooms) and j >= 0 and j < len(rooms[0]):
-            if not visited[i][j] and rooms[i][j] != -1 and rooms[i][j] != 0:
-                visited[i][j] = 1
-                rooms[i][j] = min(rooms[i][j], dist)
-                return True
-            visited[i][j] = 1
-        return False
+        for r in range(M):
+            for c in range(N):
+                if rooms[r][c] == 0:
+                    bfs(r, c)
             
         
