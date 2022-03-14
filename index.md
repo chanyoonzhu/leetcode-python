@@ -17,7 +17,7 @@ greedy: 11,42,45,53,55,121,134,135,253,358,410,435,455,517,621,630,678,767,774,7
 hashmap: 1,15,49,76,106,133,138,146,149,159,166,169,170,219,229,244,246,249,266,299,327,336,340,359,380,381,388,392,398,403,432,437,465,496,498,523,560,609,653,666,670,791,792,811,852,895,930,953,954,974,1000,1055,1218,1347,1371,1386,1442,1477,1525,1542,1546,1570,1577,1590,1615,1644,1761,2007,2013,2031,2034
 hashset: 1,41,128,187,290,379,381,432,653,694,721,804,1239,1452,1525,1554,1647,1774,2061
 inorder: 99,105,230,333,426
-linked list: 2,21,24,25,61,83,86,109,116,117,138,146,148,369,382,432,445,587,705,706,1650
+linked list: 2,21,24,25,61,83,86,109,116,117,138,146,148,369,382,432,445,587,705,706,708,1650
 doubly linked list: 716
 logic deduction: 444 
 map: 205
@@ -479,7 +479,7 @@ Iterate over the array and update at each step the standard set for such problem
     - reverse a linkedlist:
         - eg: 143-Reorder List; 25-Reverse Nodes in k-Group
     - link cycle
-        - two pointers: 61-Rotate List
+        - two pointers: 61-Rotate List; 708-Insert into a Sorted Circular Linked List;
     - connect:
         - 116|117-Populating Next Right Pointers in Each Node I/II
     - addition:
