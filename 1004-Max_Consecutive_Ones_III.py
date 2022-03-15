@@ -4,15 +4,16 @@
 """
 class Solution:
     def longestOnes(self, nums: List[int], k: int) -> int:
-        total_k = left = result = 0
-        for i in range(len(nums)):
-            if nums[i] == 0:
-                total_k += 1
-                if total_k > k:
-                    # let left skip the next 0
-                    while nums[left] != 0:
-                        left += 1
-                    left += 1
-                    total_k -= 1
-            result = max(result, i - left + 1)
-        return result
+        res = 0
+        cur_k = k
+        l = 0
+        for r, x in enumerate(nums):
+            if x == 0:
+                if cur_k:
+                    cur_k -= 1
+                else: # k becomes negative, need to exlude the leftmost 0
+                    while nums[l] != 0:
+                        l += 1
+                    l += 1
+            res = max(res, r - l + 1)
+        return res
