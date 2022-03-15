@@ -5,6 +5,31 @@
 #         self.left = None
 #         self.right = None
 
+"""
+- bst
+- O(logn), O(logn)
+"""
+class Solution:
+    def closestValue(self, root: Optional[TreeNode], target: float) -> int:
+        min_dist = float("inf")
+        res = root.val
+        
+        def binary_search(node, target):
+            nonlocal min_dist, res
+            if not node:
+                return
+            diff = abs(node.val - target)
+            if diff < min_dist:
+                min_dist = diff
+                res = node.val
+            if target < node.val:
+                binary_search(node.left, target)
+            else:
+                binary_search(node.right, target)
+        
+        binary_search(root, target)
+        return res
+
 class Solution(object):
     def closestValue(self, root, target):
         """
