@@ -707,7 +707,8 @@ O(n), O(n)
 - Variations: 
     - streaming intervals (can usually solve using bisect), eg: 352-Data Stream as Disjoint Intervals; 715. Range Module; 729, 731, 732, 57
     - greedy with priority queue: 759-Employee Free Time; 1353-Maximum Number of Events That Can Be Attended; 1834-Single-Threaded CPU
-- eg: 56. Merge Intervals; 57, 218, 252, 253-Meeting Rooms II, 435, 452, 616-Add Bold Tag in String; 759-Employee Free Time; 986-Interval List Intersections, 1229-Meeting Scheduler, 1272-Remove Interval, 1288, Lint391; hard-352, 391(2D), 759, 850(2D)
+- eg: 56. Merge Intervals; 57, 218, 252, 253-Meeting Rooms II, 435, 452, 616-Add Bold Tag in String; 759-Employee Free Time; 986-Interval List Intersections, 1229-Meeting Scheduler, 1272-Remove Interval, 1288, Lint391; hard-352, 391(2D), 759, 850(2D); 1094-Car Pooling;
+
 
 ## Topological Sort:
     - algorithm: 
