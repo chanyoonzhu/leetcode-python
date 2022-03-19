@@ -16,15 +16,13 @@ class Solution:
                 return [1] * (slots) + [total_spaces - slots]
         
         def printLine(words, space_counts):
-            i = 0
-            while i < len(space_counts):
-                words.insert(i * 2 + 1, ' ' * space_counts[i])
-                i += 1
+            for i in range(len(space_counts)):
+                words[i] = words[i] + ' ' * space_counts[i]
             return ''.join(words)
         
         while word_i < len(words):
             letter_taken, line_words = 0, []
-            while word_i < len(words) and letter_taken + len(words[word_i]) + len(line_words) <= maxWidth:
+            while word_i < len(words) and letter_taken + len(words[word_i]) + len(line_words) <= maxWidth: # len(line_words) is the number of space groups needed
                 letter_taken += len(words[word_i])
                 line_words.append(words[word_i])
                 word_i += 1
