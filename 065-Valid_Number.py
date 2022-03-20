@@ -6,13 +6,19 @@
     e cannot appear twice, and there must be at least one digit before and after e
     All other non-digit char is invalid
 """
+"""
+examples:
+valid: ["2", "0089", "-0.1", "+3.14", "4.", "-.9", "2e10", "-90E3", "3e+7", "+6e-1", "53.5e93", "-123.456e789"]
+invalid: ["abc", "1a", "1e", "e3", "99e2.5", "--6", "-+3", "95a54e53"].
+"""
 class Solution:
     def isNumber(self, s: str) -> bool:
         s = s.strip()
         found_dot = found_e = found_digit = False
         for i, c in enumerate(s):
             if c in '+-':
-                if i > 0 and s[i-1] != 'e':
+                # need to be sign (index == 0) or after e/E
+                if i > 0 and s[i-1] not in 'eE':
                     return False
             elif c == '.':
                 if found_dot or found_e: return False
