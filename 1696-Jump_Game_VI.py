@@ -7,7 +7,7 @@ class Solution:
     def maxResult(self, nums: List[int], k: int) -> int:
         
         @lru_cache
-        def dp(i):
+        def dp(i): # max points from i to end
             # easy to miss: must end at len(nums) - 1
             if i >= len(nums): return float("-inf")
             if i == len(nums) - 1: return nums[i]
@@ -51,7 +51,7 @@ class Solution(object):
         """
         n = len(nums)
         result = nums[-1]
-        q = [(-nums[-1], n - 1)]
+        q = [(-nums[-1], n - 1)] # result, i
         
         for i in range(n - 2, -1, -1):
             while q[0][1] > i + k:
@@ -99,7 +99,7 @@ class Solution(object):
 """
 class Solution:
     def maxResult(self, nums: List[int], k: int) -> int:
-        q = collections.deque([0])
+        q = collections.deque([0]) # mono-decreasing queue
         N = len(nums)
 
         for i in range(1, N):
