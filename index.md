@@ -14,13 +14,12 @@ dfs: 17,79,91,93,94,95,99,100,104,105,106,112,113,124,129,130,133,156,200,207,21
 dynamic programming: 5,10,32,39,44,45,53,55,63,64,70,72,84,91,96,97,115,120,139,152,188,198,213,221,256,264,265,276,279,300,312,322,361,375,403,410,413,416,435,446,464,473,474,486,494,516,518,542,552,562,568,576,583,629,634,647,651,664,673,712,727,740,746,805,813,818,837,854,871,877,879,887,920,931,935,940,956,968,983,1000,1027,1035,1039,1048,1066,1092,1105,1130,1140,1143,1155,1216,1235,1240,1259,1269,1277,1278,1301,1312,1314,1335,1406,1411,1458,1510,1531,1547,1548,1594,1639,1643,1696,1746,1774,1824,1879,1931,1937,1947,1961,1981,1987
 graph: 568,785,797,863,1615,1761
 greedy: 11,42,45,53,55,121,134,135,253,358,410,435,455,517,621,630,678,767,774,785,843,853,871,875,877,954,962,984,995,1014,1011,1130,1167,1231,1353,1383,1402,1405,1419,1428,1482,1057,1520,1537,1546,1552,1567,1648,1665,1718,1746,1775,1802,1824,1851,1870,1877,2007
-hashmap: 1,15,49,76,106,133,138,146,149,159,166,169,170,219,229,244,246,249,266,273,299,327,336,340,359,380,381,388,392,398,403,432,437,465,496,498,523,560,609,653,666,670,791,792,811,852,895,930,953,954,974,1000,1055,1218,1347,1371,1386,1442,1477,1507,1525,1542,1546,1570,1577,1590,1615,1644,1761,2007,2013,2031,2034
+hashmap: 1,15,49,76,106,133,138,146,149,159,166,169,170,205,219,229,244,246,249,266,273,299,327,336,340,359,380,381,388,392,398,403,432,437,465,496,498,523,560,609,653,666,670,791,792,811,852,895,930,953,954,974,1000,1055,1218,1347,1371,1386,1442,1477,1507,1525,1542,1546,1570,1577,1590,1615,1644,1761,2007,2013,2031,2034
 hashset: 1,41,128,187,290,379,381,432,653,694,721,804,1239,1452,1525,1554,1647,1774,2061
 inorder: 99,105,230,333,426
 linked list: 2,21,24,25,61,83,86,109,116,117,138,146,148,369,382,432,445,587,705,706,708,1650
 doubly linked list: 716
 logic deduction: 444 
-map: 205
 math:7,9,12,50,67,149,166,168,204,223,233,263,268,277,279,296,319,360,384,391,462,470,621,660,794,836,837,952,1041,1344,1569,1610,1627,1643,1998,2119,2128
 merge sort: 148,315,1574
 misc:169,229(moore voting)
@@ -454,7 +453,7 @@ Iterate over the array and update at each step the standard set for such problem
         - numbers:
             - eg. 166-Fraction to Recurring Decimal; 388-Longest Absolute File Path
         - strings:
-            - eg: 49-Group Anagrams; 290|291-Word Pattern II; 273-Integer to English Words; 392-Is_Subsequence; 1507-Reformat Date;
+            - eg: 49-Group Anagrams; 205Isomorphic Strings; 290|291-Word Pattern II; 273-Integer to English Words; 392-Is_Subsequence; 1507-Reformat Date;
             - prefix: 792-Number of Matching Subsequences
         - coordinates:
             - eg: 149-Max Points on a Line
@@ -594,7 +593,7 @@ Iterate over the array and update at each step the standard set for such problem
             - eg. 1423-Maximum Points You Can Obtain from Cards; 1509-Minimum Difference Between Largest and Smallest Value in Three Moves;
     - substring that has given numbers of certain characters: 
         - algorithm: move right pointer to right until satisfies condition, then move left pointer to right to tighten window until condition not satisfied
-        - eg. 3-Longest Substring Without Repeating Characters | 159-Longest Substring with At Most Two Distinct Characters | 340-Longest Substring with At Most K Distinct Characters | 992-Subarrays with K Different Integers | 395-Longest Substring with At Least K Repeating Characters; 76,1234; similar:904;1004-Max Consecutive Ones III;1248-Count Number of Nice Subarrays (loose end); 1358-Number of Substrings Containing All Three Characters; 1371-Find the Longest Substring Containing Vowels in Even Counts; 1438-Longest Continuous Subarray With Absolute Diff Less Than or Equal to Limit(hard); 1839-Longest Substring Of All Vowels in Order; 1658-Minimum Operations to Reduce X to Zero
+        - eg. 3-Longest Substring Without Repeating Characters | 159-Longest Substring with At Most Two Distinct Characters | 340-Longest Substring with At Most K Distinct Characters | 992-Subarrays with K Different Integers | 395-Longest Substring with At Least K Repeating Characters; 76-Minimum Window Substring; 1234; similar:904;1004-Max Consecutive Ones III;1248-Count Number of Nice Subarrays (loose end); 1358-Number of Substrings Containing All Three Characters; 1371-Find the Longest Substring Containing Vowels in Even Counts; 1438-Longest Continuous Subarray With Absolute Diff Less Than or Equal to Limit(hard); 1839-Longest Substring Of All Vowels in Order; 1658-Minimum Operations to Reduce X to Zero
     - subarray sum with a target: sliding window with prefix-sum / two pointers
         - eg: 209-Minimum Size Subarray Sum; 713-Subarray Product Less Than K; 930-Binary Subarrays With Sum; 1658-Minimum Operations to Reduce X to Zero
     - use a sliding window to keep the running sum of last n items: 837-New 21 Game

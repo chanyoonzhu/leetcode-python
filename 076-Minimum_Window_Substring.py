@@ -125,44 +125,33 @@ class Solution(object):
                         left_longest, right_longest = left - 1, right
         return s[left_longest:right_longest+1] if longest != float("inf") else ""
 
-    """
-    - sliding window: performance improved when length of s far greater than t - filter s to avoid traverse all elements of s twice (right and left pointer)
-    - O(n+k), O(k)
-    """
-    def minWindow_optimized_for_s_length_far_greater_than_t(self, s, t):
-        """
-        :type s: str
-        :type t: str
-        :rtype: str
-        """
-        
-        left_ptr = 0
-        longest = float("inf")
-        left_longest = right_longest = 0
-        char_needed = Counter(t)
-        filtered_s = []
-        char_window = defaultdict(int)
+"""
+- sliding window: performance improved when length of s far greater than t - filter s to avoid traverse all elements of s twice (right and left pointer)
+- O(n+k), O(k)
+"""
+class Solution:
+    def minWindow(self, s: str, t: str) -> str:
+        t_counts = Counter(t)
+        filtered_s = [(c, i) for i, c in enumerate(s) if c in t_counts]
+        s_counts = defaultdict(int)
         matched = 0
-        for i, char in enumerate(s):
-            if char in t:
-                filtered_s.append((char, i))
-        
-        for right_ptr in range(len(filtered_s)):
-            char_right, right = filtered_s[right_ptr]
-            char_window[char_right] += 1
-            if char_window[char_right] == char_needed[char_right]:
+        min_len = float("inf")
+        res = ""
+        left = 0
+        for c, s_right in filtered_s:
+            s_counts[c] += 1
+            if s_counts[c] == t_counts[c]:
                 matched += 1
-            while matched == len(char_needed) and left_ptr <= right_ptr:
-                char_left, left = filtered_s[left_ptr]
-                left_ptr += 1
-                if char_left in char_window:
-                    char_window[char_left] -= 1
-                    if char_window[char_left] < char_needed[char_left]:
-                        matched -= 1
-                if right - left + 1 < longest:
-                    longest = right - left + 1
-                    left_longest, right_longest = left, right
-        return s[left_longest:right_longest+1] if longest != float("inf") else ""
+            while matched == len(t_counts) and left <= s_right:
+                c_left, s_left = filtered_s[left]
+                left += 1
+                s_counts[c_left] -= 1
+                if s_counts[c_left] < t_counts[c_left]:
+                    matched -= 1
+                if s_right - s_left + 1 < min_len:
+                    min_len = s_right - s_left + 1
+                    res = s[s_left:s_right+1]
+        return res if min_len < float("inf") else ""
 
 sl = Solution()
 print(sl.minWindow("ADOBECODEBANC", "ABC"))
