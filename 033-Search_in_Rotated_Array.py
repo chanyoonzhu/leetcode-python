@@ -49,12 +49,12 @@ class Solution:
                 return mid
 
             if nums[low] <= nums[mid]:
-                if nums[low] <= target <= nums[mid]: # low - mid is strictly increasing
+                if nums[low] <= target < nums[mid]: # low - mid is strictly increasing
                     high = mid - 1
                 else:
                     low = mid + 1
             else:
-                if nums[mid] <= target <= nums[high]: # mid - high is strictly increasing
+                if nums[mid] < target <= nums[high]: # mid - high is strictly increasing
                     low = mid + 1
                 else:
                     high = mid - 1
