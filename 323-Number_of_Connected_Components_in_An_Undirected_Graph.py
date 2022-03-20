@@ -9,29 +9,29 @@
 """
 class Solution:
     def countComponents(self, n: int, edges: List[List[int]]) -> int:
-        parents = list(range(n))
-        rank = [0] * n
+        uf = UnionFind(n)
+        for v1, v2 in edges:
+            uf.union(v1, v2)
         
-        def find(x):
-            if parents[x] != x:
-                parents[x] = find(parents[x])
-            return parents[x]
+        return len({uf.find(v) for v in range(n)})
+            
+    
+class UnionFind:
+    def __init__(self, n):
+        self.parents = list(range(n))
         
-        def union(x, y): # union by rank
-            rx, ry = find(x), find(y)
-            if rx == ry:
-                return
-            if rank[rx] > rank[ry]:
-                parents[ry] = rx
-            elif rank[rx] < rank[ry]:
-                parents[rx] = ry
+    def find(self, x):
+        if self.parents[x] != x:
+            self.parents[x] = self.find(self.parents[x])
+        return self.parents[x]
+    
+    def union(self, x, y):
+        px, py = self.find(x), self.find(y)
+        if px != py:
+            if px < py:
+                self.parents[py] = px
             else:
-                parents[rx] = ry
-                rank[ry] += 1
-        
-        for x, y in edges:
-            union(x, y)
-        return len({find(i) for i in range(n)})
+                self.parents[px] = py
 
 print(Solution().countComponents(4,
 [[0,1],[2,3],[1,2]]))
