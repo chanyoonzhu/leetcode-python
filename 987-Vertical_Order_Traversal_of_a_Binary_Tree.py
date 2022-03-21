@@ -36,28 +36,24 @@ class Solution(object):
             prev_x = x
         return res
 
-        """
-        bfs
-        - O(nlogn): O(n) for traversal, O(nlogn) for search, O(n) for extracting result
-        - O(n): O(n) for traversal, O(n) -  At any given moment, the queue contains no more than two levels of nodes in the tree. The maximal number of nodes at one level is n/2 , which is the number of the leaf nodes in a balanced binary tree, O(n) for extracting result
-        """
-        lst = []            
-        queue = deque[(0, 0, root)]
-        while queue:
-            x, y, node = queue.popleft()
-            lst.append((x, y, node.val))
+"""
+bfs
+- O(nlogn): O(n) for traversal, O(nlogn) for search, O(n) for extracting result
+- O(n): O(n) for traversal, O(n) -  At any given moment, the queue contains no more than two levels of nodes in the tree. The maximal number of nodes at one level is n/2 , which is the number of the leaf nodes in a balanced binary tree, O(n) for extracting result
+"""
+class Solution:
+    def verticalTraversal(self, root: Optional[TreeNode]) -> List[List[int]]:
+        col_to_vals = defaultdict(list)
+        q = deque([(root, 0, 0)]) # node, row, col
+        while q:
+            node, row, col = q.popleft()
+            col_to_vals[col].append((row, node.val))
             if node.left:
-                queue.append((x-1, y+1, node.left))
+                q.append((node.left, row + 1, col - 1))
             if node.right:
-                queue.append((x+1, y+1, node.right))
+                q.append((node.right, row + 1, col + 1))
+        
+        for col in col_to_vals:
+            col_to_vals[col] = sorted(col_to_vals[col])
             
-        lst.sort()
-        res = []
-        prev_x = None
-        for x, y, val in lst:
-            if x == prev_x:
-                res[-1].append(val)
-            else:
-                res.append([val])
-            prev_x = x
-        return res
+        return [[val for _, val in col_to_vals[col]] for col in sorted(col_to_vals)]
