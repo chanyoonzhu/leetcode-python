@@ -15,3 +15,8 @@ class Solution(object):
         for i in range(k):
             res.append(heapq.heappop(heap)[1])
         return res
+
+
+"""
+- todo: quick sort
+"""
