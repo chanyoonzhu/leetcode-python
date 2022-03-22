@@ -1,3 +1,29 @@
+"""
+- reverse whole then reverse word
+- O(n), O(1)
+"""
+class Solution:
+    def reverseWords(self, s: str) -> str:
+        chars = list(s)
+        n = len(chars)
+        self.reverse(chars, 0, n - 1)
+        l = r = 0
+        while r < len(chars):
+            while r < len(chars) and chars[r] != " ":
+                r += 1
+            self.reverse(chars, l, r-1)
+            l = r = r + 1
+            while r < len(chars) and chars[r] == " ":
+                del chars[r]
+        return ''.join(chars).strip()
+        
+    def reverse(self, s, l, r):
+        while l < r:
+            s[l], s[r] = s[r], s[l]
+            l += 1
+            r -= 1
+
+
 class Solution:
     def reverseWords(self, s: str) -> str:
         

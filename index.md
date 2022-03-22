@@ -680,7 +680,7 @@ Iterate over the array and update at each step the standard set for such problem
             - eg: 859-Buddy Strings
         - string manipulation: 
             - tips: convert to list, use reversed string to avoid index shift (833)
-            - eg: 6-Zigzag Conversion; 824-Goat Latin; 833-Find And Replace in String; 1249-Minimum Remove to Make Valid Parentheses;
+            - eg: 6-Zigzag Conversion; 151-Reverse Words in a String; 824-Goat Latin; 833-Find And Replace in String; 1249-Minimum Remove to Make Valid Parentheses;
         - string parsing:
             65-Valid Number; Calculator problems(see "## Stack"); 408-Valid Word Abbreviation
         - compression:
