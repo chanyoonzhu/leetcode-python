@@ -48,8 +48,7 @@ class Solution:
                         return False
                     ptr1 += 1
                     ptr2 += 1
-                    sublen = 0
-                else: # not digit
+                else: # ptr2 is digit
                     ptr2_start = ptr2
                     while ptr2 < n2 and abbr[ptr2].isdigit():
                         ptr2 += 1
