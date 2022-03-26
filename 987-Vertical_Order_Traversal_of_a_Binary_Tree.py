@@ -47,7 +47,7 @@ class Solution:
         q = deque([(root, 0, 0)]) # node, row, col
         while q:
             node, row, col = q.popleft()
-            col_to_vals[col].append((row, node.val))
+            col_to_vals[col].append((row, node.val)) # later sort by row, then node.val
             if node.left:
                 q.append((node.left, row + 1, col - 1))
             if node.right:
