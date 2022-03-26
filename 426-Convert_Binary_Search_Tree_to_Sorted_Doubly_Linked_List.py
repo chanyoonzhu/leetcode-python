@@ -33,38 +33,7 @@ class Solution:
         rightmost.right = leftmost
         leftmost.left = rightmost
         return leftmost
-
-"""
-- dfs (in-order traversal): global variable
-- O(n), O(n)
-"""
-class Solution:
-    def treeToDoublyList(self, root: 'Node') -> 'Node':
         
-        def dfs(node):
-            """
-            Performs standard inorder traversal:
-            left -> node -> right
-            and links all nodes into DLL
-            """
-            nonlocal leftmost, rightmost
-            if node:
-                dfs(node.left)
-                if rightmost:
-                    rightmost.right = node
-                    node.left = rightmost
-                else:
-                    leftmost = node        
-                rightmost = node
-                dfs(node.right)
-        
-        if not root: return None
-        leftmost, rightmost = None, None
-        dfs(root)
-        leftmost.left = rightmost
-        rightmost.right = leftmost
-        return leftmost
-
 """
 - dfs (in-order traversal): iterative
 - O(n), O(n)
