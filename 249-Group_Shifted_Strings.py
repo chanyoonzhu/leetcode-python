@@ -17,4 +17,4 @@ class Solution:
         for s in strings:
             encode_to_str[encode(s)].append(s)
             
-        return [val for val in encode_to_str.values()]
+        return encode_to_str.values()
