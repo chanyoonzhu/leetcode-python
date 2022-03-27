@@ -26,7 +26,7 @@ class Solution:
             if nums[i] < nums[high_i]:
                 low_i = i
                 swap_l, swap_r = low_i, high_i # greedily update with the smallest swap_l
-            if nums[i] > nums[high_i]:
+            elif nums[i] > nums[high_i]:
                 high_i = i # update high seen so far
         if swap_l < swap_r:
             nums[swap_l], nums[swap_r]  = nums[swap_r], nums[swap_l]
