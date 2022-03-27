@@ -71,4 +71,25 @@ class Solution:
                 heapq.heappush(h, (lists[i].val, i))
                 lists[i] = lists[i].next
         return res.next
+
+"""
+- same as previous, modify in-place
+- O(Nlogk), O(n)
+"""
+class Solution:
+    def mergeKLists(self, lists: List[Optional[ListNode]]) -> Optional[ListNode]:
+        res = ptr = ListNode()
+        h = [] # number, list index
+        for i, l in enumerate(lists):
+            if l:
+                h.append((l.val, i))
+        heapq.heapify(h)
+        while h:
+            x, i = heapq.heappop(h)
+            ptr.next = lists[i]
+            ptr = ptr.next
+            if lists[i].next:
+                lists[i] = lists[i].next
+                heapq.heappush(h, (lists[i].val, i))  
+        return res.next
             
