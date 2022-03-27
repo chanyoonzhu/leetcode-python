@@ -5,33 +5,34 @@
 """
 class Solution:
     def shortestDistance(self, grid: List[List[int]]) -> int:
-        
         M, N = len(grid), len(grid[0])
-        house_no = 2
-        dists = [[0] * N for _ in range(M)]
-        DIR = [(1, 0), (-1, 0), (0, 1), (0, -1)]
         
-        def bfs(r, c, i):
-            q = deque()
-            q.append((r, c, 0))
+        dp = [[0] * N for _ in range(M)]
+        DIR = [(0, 1), (0, -1), (1, 0), (-1, 0)]
+        
+        def calc_dist(r, c, iid):
+            empty_mark = 0 if iid == 3 else iid - 1
+            q = deque([(r, c, 0)])
             while q:
-                rr, cc, dist = q.popleft()
-                for di, dj in DIR:
-                    nr, nc = rr + di, cc + dj
-                    if 0 <= nr < M and 0 <= nc < N and grid[nr][nc] == (i - 1 if i > 3 else 0): # easy to miss, only visited empty spaces that are reachable to all previously traversed houses
-                        grid[nr][nc] = i
-                        dists[nr][nc] += (dist + 1)
-                        q.append((nr, nc, dist + 1))
+                i, j, dist = q.popleft()
+                for ii, jj in DIR:
+                    ni, nj = i + ii, j + jj
+                    if 0 <= ni < M and 0 <= nj < N and grid[ni][nj] == empty_mark: # easy to miss, only visited empty spaces that are reachable to all previously traversed houses
+                        dp[ni][nj] += dist + 1
+                        grid[ni][nj] = iid
+                        q.append((ni, nj, dist + 1))
         
-        for r in range(M):
-            for c in range(N):
-                if grid[r][c] == 1:
-                    house_no += 1 # starts from 3
-                    bfs(r, c, house_no)
+        iid = 3 # building id starts at 3
+        for i in range(M):
+            for j in range(N):
+                if grid[i][j] == 1:
+                    calc_dist(i, j, iid)
+                    iid += 1
         
-        result = float("inf")
-        for r in range(M):
-            for c in range(N):
-                if grid[r][c] == house_no:
-                    result = min(result, dists[r][c])
-        return result if result < float("inf") else -1
+        res = float("inf")
+        for i in range(M):
+            for j in range(N):
+                if grid[i][j] == iid - 1: # must equal to last id
+                    res = min(res, dp[i][j])
+                    
+        return res if res < float("inf") else -1
