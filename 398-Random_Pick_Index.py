@@ -5,17 +5,20 @@
 class Solution:
 
     def __init__(self, nums: List[int]):
-        self.indexes_mapping = collections.defaultdict(list)
-        for i, n in enumerate(nums):
-            self.indexes_mapping[n].append(i)
-
-    def pick(self, target: int) -> int:
-        indexes = self.indexes_mapping[target]
-        rand_i = random.randint(0, len(indexes) - 1)
-        return indexes[rand_i]
+        self.num_to_idx = self._prepare(nums)
+        
+    def _prepare(self, nums):
+        num_to_idx = defaultdict(list)
+        for i, x in enumerate(nums):
+            num_to_idx[x].append(i)
+        return num_to_idx
+    
+    def pick(self, target):
+        indexes = self.num_to_idx[target]
+        return indexes[random.randint(0, len(indexes) - 1)]
 
 """
-- reservoir sampling
+- reservoir sampling - suitable for array of a large size 
 - init: O(n), O(n); pick: O(n), O(1)
 """
 class Solution:
