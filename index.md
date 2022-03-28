@@ -25,7 +25,7 @@ merge sort: 148,315,1574
 misc:169,229(moore voting)
 preorder: 105,106,113,331,437,449,545,652,666,889,971,987,1008,1028,1569
 priority queue: 23,215,218,239,253,295,347,358,373,404,621,630,632,642,759,767,778,973,1167,1229,1353,1383,1438,1439,1499,1675,1696,1834,1851,1882
-queue:232,239,346,656,1057,1425,1438,1499,1696
+queue:232,239,346,656,658,1057,1425,1438,1499,1696
 range sum: 307,308,327,1314,930,1442
 segment tree: 307,308,327,850,2031
 sliding window: 3,76,159,209,239,340,395,837,862,904,930,992,1004,1052,1234,1358,1371,1423,1498,1509,1537,1574,1577,1610,1658,1696,1793,1839
@@ -580,7 +580,7 @@ Iterate over the array and update at each step the standard set for such problem
 
 ## Queue
 - complexity: push/pop O(1)
-- eg: 346-Moving Average from Data Stream;
+- eg: 346-Moving Average from Data Stream; 658-Find K Closest Elements;
 
 ## Recursion
 - parenthesis:
