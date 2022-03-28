@@ -42,7 +42,7 @@ class Solution:
                 return h
             for ii, jj in [(i + 1, j), (i - 1, j), (i, j + 1), (i, j - 1)]:
                 if 0 <= ii < M and 0 <= jj < N and (ii, jj) not in visited:
-                    heapq.heappush(pq, (max(h, grid[ii][jj]), ii, jj))
+                    heapq.heappush(pq, (max(h, grid[ii][jj]), ii, jj)) # easy to miss: take h is h is larger than current
                     visited.add((ii, jj))
 
 """
