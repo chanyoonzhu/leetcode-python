@@ -722,7 +722,7 @@ O(n), O(n)
 ## Two pointers:
 - problems:
     - array: 
-        - eg: 27-Remove Element; 88-Merge Sorted Array; 244. Shortest Word Distance II; 360-Sort Transformed Array; 408-Valid Word Abbreviation; 415-Add Strings; 462-Minimum Moves to Equal Array Elements II; 977-Squares of a Sorted Array;
+        - eg: 27-Remove Element; 88-Merge Sorted Array; 244. Shortest Word Distance II; 246-Strobogrammatic Number; 360-Sort Transformed Array; 408-Valid Word Abbreviation; 415-Add Strings; 462-Minimum Moves to Equal Array Elements II; 977-Squares of a Sorted Array;
         - n sums (with sort): 15-3Sum; 16-3Sum Closest; 18-4Sum; 611-Valid Triangle Number; 653. Two Sum IV - Input is a BST; 777-Swap Adjacent in LR String;
         - boundaries: 54-Spiral Matrix;
     - 2D array:
