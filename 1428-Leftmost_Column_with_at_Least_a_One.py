@@ -45,24 +45,21 @@ class Solution(object):
         else:
             return self.find_one_first_index(matrix, row, mid, right)
 
-    """
-    - Greedy: Start at Top Right, Move Only Left and Down
-    - O(m + n), O(1)
-    """
-    def leftMostColumnWithOne(self, binaryMatrix):
-        """
-        :type binaryMatrix: BinaryMatrix
-        :rtype: int
-        """
-        m, n = binaryMatrix.dimensions()
-        i, j = 0, n - 1
-        while True:
-            if j < 0 or i >= m:
-                return j + 1 if j < n - 1 else -1
-            while j >= 0 and binaryMatrix.get(i, j) == 1:
-                j -= 1
-            while j >= 0 and i < m and binaryMatrix.get(i, j) == 0:
-                i += 1
+"""
+- Greedy: Start at bottom right, Move only left and up
+- O(m + n), O(1)
+"""
+class Solution:
+    def leftMostColumnWithOne(self, binaryMatrix: 'BinaryMatrix') -> int:
+        M, N = binaryMatrix.dimensions()[0], binaryMatrix.dimensions()[1]
+        r, c = M - 1, N - 1
+        res = N
+        while r >= 0:
+            while c >= 0 and binaryMatrix.get(r, c) == 1: # greedily check the first one in this column
+                c -= 1
+                res = min(res, c)
+            r -= 1 # move up
+        return res + 1 if res < N else -1
         
         
         
