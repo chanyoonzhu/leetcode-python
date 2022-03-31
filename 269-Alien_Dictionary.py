@@ -1,6 +1,7 @@
 """
 - topological sort with bfs
 - key: compare words pair by pair
+- O(C)
 """      
 class Solution:
     def alienOrder(self, words: List[str]) -> str:
