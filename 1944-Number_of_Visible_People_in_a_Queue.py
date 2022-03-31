@@ -11,8 +11,8 @@ class Solution:
         for i in range(n):
             height = heights[i]
             while stack and heights[stack[-1]] <= height:
-                res[stack.pop()] += 1
+                res[stack.pop()] += 1 # stack popped can see i because i is higher
             if stack:
-                res[stack[-1]] += 1
+                res[stack[-1]] += 1 # stack[-1] can see i because stack[-1] is higher
             stack.append(i)
         return res
