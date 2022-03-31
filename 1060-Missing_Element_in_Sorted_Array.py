@@ -23,7 +23,6 @@ class Solution:
     def missingElement(self, nums: List[int], k: int) -> int:
         N = len(nums)
         l, r = 0, N - 1
-        first = nums[0]
         while l < r:
             mid = l + (r - l + 1) // 2
             missing = self.getNumOfMissing(nums, l, mid)
