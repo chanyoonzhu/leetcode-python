@@ -1,5 +1,5 @@
 """
-- monotonically increasing stack
+- monotonically decreasing stack
 - O(n), O(n)
 """
 class Solution:
