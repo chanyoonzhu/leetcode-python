@@ -78,7 +78,7 @@ class Solution:
 """
 class Solution:
     def mergeKLists(self, lists: List[Optional[ListNode]]) -> Optional[ListNode]:
-        res = ptr = ListNode()
+        head = ptr = ListNode()
         h = [] # number, list index
         for i, l in enumerate(lists):
             if l:
@@ -91,5 +91,5 @@ class Solution:
             if lists[i].next:
                 lists[i] = lists[i].next
                 heapq.heappush(h, (lists[i].val, i))  
-        return res.next
+        return head.next
             
