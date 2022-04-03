@@ -20,7 +20,7 @@ inorder: 99,105,230,333,426
 linked list: 2,21,24,25,61,83,86,109,116,117,138,146,148,369,382,432,445,587,705,706,708,1650
 doubly linked list: 716
 logic deduction: 444 
-math:7,9,12,43,50,67,149,166,168,204,223,233,263,268,277,279,296,319,360,384,391,462,470,621,660,794,836,837,952,1041,1344,1569,1610,1627,1643,1998,2119,2128
+math:7,9,12,43,50,67,149,166,168,204,223,233,263,268,277,279,296,319,360,384,391,462,470,621,660,794,836,837,952,1041,1344,1569,1610,1627,1643,1998,2033,2119,2128
 merge sort: 148,315,1574
 misc:169,229(moore voting)
 preorder: 105,106,113,331,437,449,545,652,666,889,971,987,1008,1028,1569
@@ -514,7 +514,7 @@ Iterate over the array and update at each step the standard set for such problem
     - algorithms: Jarvis Algorithm, Graham Scan, Monotone Chain
     - eg: 587-Erect the Fence
 - Math deduction:
-    - eg. 233-Number of Digit One; 277-Find the Celebrity; 319-Bulb Switcher; 462-Minimum Moves to Equal Array Elements II; 877-Stone Game
+    - eg. 233-Number of Digit One; 277-Find the Celebrity; 319-Bulb Switcher; 877-Stone Game
     - matrix flip: 2128-Remove All Ones With Row and Column Flips|995-Minimum Number of K Consecutive Bit Flips
 - Bachet's conjecture:
     - eg: 279-Perfect Squares
@@ -538,7 +538,7 @@ Iterate over the array and update at each step the standard set for such problem
         - eg. 7-Reverse Integer; 9-Palindrome Number; 263-Ugly Number;
         - long division: 166-Fraction to Recurring Decimal
     - modulo:
-        - eg: 780-Reaching Points; 2119-A Number After a Double Reversal
+        - eg: 462-Minimum Moves to Equal Array Elements II; 780-Reaching Points; 2033-Minimum Operations to Make a Uni-Value Grid; 2119-A Number After a Double Reversal
     - line formula:
         - eg: 149-Max Points on a Line
     - quadratic formula:
