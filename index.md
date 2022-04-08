@@ -10,7 +10,7 @@ circular array: 213,1658
 concurrency: 1117,1188
 deterministic finite automaton: 65
 divide and conquer: 53,215,241,248,307,308,312,327,395,973,1000,1547,1763
-dfs: 17,79,91,93,94,95,99,100,104,105,106,112,113,124,129,130,133,156,200,207,210,212,230,236,241,254,261,272,297,298,301,302,310,329,331,333,337,364,394,399,449,463,490,529,536,543,545,549,572,637,652,653,655,662,666,671,684,687,690,694,695,743,753,778,785,787,797,803,827,863,864,865,889,934,947,951,959,968,975,979,987,1028,1110,1161,1236,1306,1325,1339,1340,1367,1368,1372,1373,1376,1448,1462,1522,1559,1569,1644,1676,1740,1766,1778,2049,2096
+dfs: 17,79,91,93,94,95,99,100,104,105,106,112,113,124,129,130,133,156,200,207,210,212,226,230,236,241,254,261,272,297,298,301,302,310,329,331,333,337,364,394,399,449,463,490,529,536,543,545,549,572,637,652,653,655,662,666,671,684,687,690,694,695,743,753,778,785,787,797,803,827,863,864,865,889,934,947,951,959,968,975,979,987,1028,1110,1161,1236,1306,1325,1339,1340,1367,1368,1372,1373,1376,1448,1462,1522,1559,1569,1644,1676,1740,1766,1778,2049,2096
 dynamic programming: 5,10,32,39,44,45,53,55,63,64,70,72,84,91,96,97,115,120,139,152,188,198,213,221,256,264,265,276,279,300,312,322,361,375,403,410,413,416,435,446,464,473,474,486,494,516,518,542,552,562,568,576,583,629,634,647,651,664,673,712,727,740,746,805,813,818,837,854,871,877,879,887,920,931,935,940,956,968,983,1000,1027,1035,1039,1048,1066,1092,1105,1130,1140,1143,1155,1216,1235,1240,1259,1269,1277,1278,1301,1312,1314,1335,1406,1411,1458,1510,1531,1547,1548,1594,1639,1643,1696,1746,1774,1824,1879,1931,1937,1947,1961,1981,1987,2060
 graph: 568,785,797,863,1615,1761
 greedy: 11,42,45,53,55,121,134,135,253,358,410,435,455,517,621,630,678,767,774,785,843,853,871,875,877,954,962,984,995,1014,1011,1130,1167,1231,1353,1383,1402,1405,1419,1428,1482,1057,1520,1537,1546,1552,1567,1648,1665,1718,1746,1775,1802,1824,1851,1870,1877,2007
@@ -743,7 +743,7 @@ If using bfs, usually uses a FIFO queue to store nodes to be visited.
             - tip: inorder traversal of BST yields a sorted list
             - eg. 94-Binary Tree Inorder Traversal; 285-Inorder Successor in BST|510-Inorder Successor in BST II; 272-Closest Binary Search Tree Value II(hard); 366-Find Leaves of Binary Tree; 426-Convert Binary Search Tree to Sorted Doubly Linked List;
         - post-order traversal: 
-            - 124-Binary Tree Maximum Path Sum; 543-Diameter of Binary Tree; 549-Binary Tree Longest Consecutive Sequence II; 652-Find Duplicate Subtrees; 979-Distribute Coins in Binary Tree;
+            - 124-Binary Tree Maximum Path Sum; 543-Diameter of Binary Tree; 226-Invert Binary Tree; 549-Binary Tree Longest Consecutive Sequence II; 652-Find Duplicate Subtrees; 979-Distribute Coins in Binary Tree;
     - traversal combinations: 105-Construct Binary Tree from Preorder and Inorder Traversal; 106-Construct Binary Tree from Inorder and Postorder Traversal; 889-Construct Binary Tree from Preorder and Postorder Traversal
     - BST(Binary Search Tree): 
         - a node needs to be larger than the largest node in its left subtree and smaller than the smallest node in its right subtree (eg.333, 1373)
