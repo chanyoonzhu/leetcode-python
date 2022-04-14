@@ -445,9 +445,9 @@ Iterate over the array and update at each step the standard set for such problem
         - value to index:
             - eg. 219-Contains Duplicate II; 670-Maximum Swap; 825-Friends Of Appropriate Ages
         - list dict:
-            - eg. 1386-Cinema Seat Allocation
+            - eg. 1152-Analyze User Website Visit Pattern; 1386-Cinema Seat Allocation
         - counter:
-            - eg: 266-Palindrome Permutation; 299-Bulls and Cows(M+); 340-Longest Substring with At Most K Distinct Characters; 791-Custom Sort String; 811-Subdomain Visit Count; 895-Maximum Frequency Stack; 900-RLE Iterator; 1347-Minimum Number of Steps to Make Two Strings Anagram; 1419-Minimum Number of Frogs Croaking; 1525-Number of Good Ways to Split a String; 2031-Count Subarrays With More Ones Than Zeros(H); 2013-Detect Squares; 
+            - eg: 266-Palindrome Permutation; 299-Bulls and Cows(M+); 340-Longest Substring with At Most K Distinct Characters; 791-Custom Sort String; 811-Subdomain Visit Count; 895-Maximum Frequency Stack; 900-RLE Iterator; 1152-Analyze User Website Visit Pattern; 1347-Minimum Number of Steps to Make Two Strings Anagram; 1419-Minimum Number of Frogs Croaking; 1525-Number of Good Ways to Split a String; 2031-Count Subarrays With More Ones Than Zeros(H); 2013-Detect Squares; 
         - dedup:
             - eg: 609-Find Duplicate File in System
         - value to subarray/subsequence length:
@@ -498,7 +498,7 @@ Iterate over the array and update at each step the standard set for such problem
 ## Math
 - permutation and combination
     - formula: P(n, r) = n! / (n - r)!   C(n, r) = n! / (r! * (n - r)!)
-    - eg. 1569; 1643-Kth Smallest Instructions
+    - eg. 1152-Analyze User Website Visit Pattern; 1569; 1643-Kth Smallest Instructions
 - Gauss sum:
     - n + (n + 1) + ... + (n + k) = (n + n + k) * (k + 1) // 2
     - eg. 268-Missing Number; 1648, 1802
