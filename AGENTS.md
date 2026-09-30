@@ -2,6 +2,7 @@
 
 ## LeetCode solution documentation
 
+- Name problem files with a four-digit problem number (for example, `0098-Validate_Binary_Search_Tree.py`), including leading zeroes.
 - When adding a new approach to a problem file, append a separate `Solution` class after existing solutions; do not overwrite or remove previous solutions unless the user explicitly asks for replacement or refactoring.
 - At the very top of each problem file, list useful clarification questions as file-level comments, not inside a solution class. Ask the user before proceeding when an answer is unclear and would materially change the solution; otherwise record the applicable assumption or constraint there.
 - For every new solution or materially updated solution, include a clear triple-quoted docstring near the solution. State when the solution was added or updated using a month and year (for example, `September 2026`), summarize the approach, and give time and auxiliary-space complexity in Big O notation.
