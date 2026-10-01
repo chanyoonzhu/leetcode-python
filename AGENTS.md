@@ -10,4 +10,5 @@
 - Cover important corner cases, including empty or minimal inputs when the implementation handles them, as well as boundary shapes or values specific to the problem. Include a large-input case when it checks an important implementation property such as avoiding recursion limits.
 - Keep the test-case list concise and logical. It documents what an interviewer would reasonably grade; it does not require adding a test framework or runnable tests unless requested.
 - Keep solutions clean, readable, and efficient: use descriptive names, avoid needless work, and make control flow easy to follow. Respect explicit constraints such as preserving the input; do not mutate input data when the user asks for a non-mutating solution.
+- When adding a user-provided approach, fix obvious formatting and clean-code issues while preserving its intended algorithm and complexity tradeoff; document any correction that changes behavior.
 - Keep helpers as class methods (for example, `_dfs`) rather than defining them as nested functions inside the public solution method.
