@@ -1,3 +1,12 @@
+# Clarification questions / assumptions:
+# - Should each duplicated subtree shape be returned once, even if it appears
+#   more than twice? Yes; return one representative node per duplicated shape.
+# - Does the order of returned representatives matter? No; this DFS appends a
+#   representative when it encounters the second copy in postorder.
+# - Are node values integers? Yes, as in the problem; `|` is therefore safe as
+#   a serialization delimiter.
+# - Can the tree be empty? Yes; return an empty list.
+
 # Definition for a binary tree node.
 # class TreeNode:
 #     def __init__(self, val=0, left=None, right=None):
@@ -5,47 +14,62 @@
 #         self.left = left
 #         self.right = right
 
-"""
-- dfs + hashing
-- caveat: # need to use either pre/post-order, inorder won't work since two different tree can have the same serialized string
-- O(n), O(n)
-"""
-class Solution:
-    def findDuplicateSubtrees(self, root: Optional[TreeNode]) -> List[Optional[TreeNode]]:
-        subtrees = set()
-        in_result = set()
-        result = []
-        
-        def dfs(node):
-            if not node: return ""
-            ser = f"{node.val},{dfs(node.left)},{dfs(node.right)}"
-            if ser in subtrees and ser not in in_result:
-                result.append(node)
-                in_result.add(ser)
-            subtrees.add(ser)
-            return ser
-        
-        dfs(root)
-        return list(result)
 
-"""
-- class method
-"""
 class Solution:
-    def findDuplicateSubtrees(self, root: Optional[TreeNode]) -> List[Optional[TreeNode]]:
-        serialized = set()
-        in_result = set()
-        res = []
-        self.dfs(serialized, in_result, res, root)
-        return res
-        
-    def dfs(self, serialized, in_result, res, node):
-        if not node:
+    """Find duplicate subtrees by serializing each subtree, updated October 2026.
+
+    A postorder DFS builds a serialization from the node value and its left and
+    right subtree serializations. Keep one set of all serializations and a
+    second set to ensure each duplicate type contributes only one node.
+
+    Time: O(n^2) worst case because constructing and storing all subtree
+    strings can take quadratic total space and work for a skewed tree.
+    Auxiliary space: O(n^2) for stored subtree strings in the worst case, plus
+    O(h) recursion stack space, where h is the tree height.
+    """
+
+    def findDuplicateSubtrees(self, root: TreeNode | None) -> list[TreeNode]:
+        serialized_all: set[str] = set()
+        serialized_duplicated: set[str] = set()
+        results: list[TreeNode] = []
+
+        self._dfs(root, serialized_all, serialized_duplicated, results)
+        return results
+
+    def _dfs(
+        self,
+        root: TreeNode | None,
+        serialized_all: set[str],
+        serialized_duplicated: set[str],
+        results: list[TreeNode],
+    ) -> str:
+        if not root:
             return ""
-        ser = f"{str(node.val)}#{self.dfs(serialized, in_result, res, node.left)}#{self.dfs(serialized, in_result, res, node.right)}"
-        if ser not in serialized:
-            serialized.add(ser)
-        elif ser not in in_result:
-            in_result.add(ser)
-            res.append(node)
-        return ser
+
+        left_serialized = self._dfs(
+            root.left, serialized_all, serialized_duplicated, results
+        )
+        right_serialized = self._dfs(
+            root.right, serialized_all, serialized_duplicated, results
+        )
+        tree_serialized = f"{root.val}|{left_serialized}|{right_serialized}"
+
+        if tree_serialized in serialized_all:
+            if tree_serialized not in serialized_duplicated:
+                serialized_duplicated.add(tree_serialized)
+                results.append(root)
+        else:
+            serialized_all.add(tree_serialized)
+
+        return tree_serialized
+
+
+# Interview-relevant test cases:
+# Core behavior:
+# - [1, 2, 3, 4, null, 2, 4, null, null, 4] -> representatives for [2, 4]
+#   and [4], each returned once.
+# - [1, 2, 3] -> [] (no duplicate subtrees).
+# Boundaries and corner cases:
+# - [] -> []
+# - [1] -> []
+# - [0, 0, 0] -> one representative for the leaf subtree [0].
